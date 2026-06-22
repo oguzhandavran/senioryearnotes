@@ -1,0 +1,16 @@
+{
+  "cssTheme": "Primary",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "mühendislik-theme"
+  ],
+  "baseFontSize": 16,
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "JetBrains Mono",
+  "nativeMenus": false,
+  "showRibbon": true,
+  "showViewHeader": false,
+  "baseFontSizeAction": false,
+  "accentColor": ""
+}

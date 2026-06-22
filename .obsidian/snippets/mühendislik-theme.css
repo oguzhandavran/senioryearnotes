@@ -1,0 +1,53 @@
+/* ===========================
+   Mühendislik Vault - Custom CSS
+   =========================== */
+
+/* Callout renkleri - ders bazlı */
+.callout[data-callout="emd"] { --callout-color: 220, 80, 60; }
+.callout[data-callout="mst"] { --callout-color: 24, 180, 100; }
+.callout[data-callout="ok"]  { --callout-color: 255, 165, 0; }
+.callout[data-callout="ssi"] { --callout-color: 148, 103, 189; }
+.callout[data-callout="ss"]  { --callout-color: 91, 155, 213; }
+.callout[data-callout="sinav"] {
+  --callout-color: 255, 50, 50;
+  border-left: 4px solid rgb(255, 50, 50);
+  background: rgba(255, 50, 50, 0.08);
+}
+.callout[data-callout="formul"] {
+  --callout-color: 255, 200, 0;
+  background: rgba(255, 200, 0, 0.07);
+}
+.callout[data-callout="tanim"] {
+  --callout-color: 80, 200, 255;
+  background: rgba(80, 200, 255, 0.07);
+}
+
+/* Matematik blokları daha büyük */
+.math-block { font-size: 1.05em; }
+
+/* Tablo başlıkları vurgulu */
+th { background: var(--background-secondary) !important; font-weight: 700; }
+
+/* İç linkler vurgulu */
+.internal-link { font-weight: 600; text-decoration-style: dashed; }
+
+/* Graf görünümü için node tooltip */
+.graph-view.color-fill-tag { color: #f0f0f0; }
+
+/* Kod blokları - LaTeX/Python için */
+pre code { font-size: 0.88em; line-height: 1.6; }
+
+/* Başlık hiyerarşisi renkleri */
+.markdown-rendered h1 { color: #7dcfff; border-bottom: 2px solid rgba(125,207,255,0.3); padding-bottom: 4px; }
+.markdown-rendered h2 { color: #bb9af7; }
+.markdown-rendered h3 { color: #9ece6a; }
+.markdown-rendered h4 { color: #e0af68; }
+
+/* HOME sayfası için özel stil */
+.markdown-rendered .home-card {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: var(--background-secondary);
+  margin: 4px;
+}

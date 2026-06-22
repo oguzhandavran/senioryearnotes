@@ -1,0 +1,65 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:\"Elektromanyetik Dalga Teorisi\"",
+      "color": {
+        "a": 1,
+        "rgb": 14459648
+      }
+    },
+    {
+      "query": "path:\"Mühendislik\"",
+      "color": {
+        "a": 1,
+        "rgb": 1611274
+      }
+    },
+    {
+      "query": "path:\"Otomatik Kontrol\"",
+      "color": {
+        "a": 1,
+        "rgb": 16744272
+      }
+    },
+    {
+      "query": "path:\"Sayısal Sinyal\"",
+      "color": {
+        "a": 1,
+        "rgb": 9699539
+      }
+    },
+    {
+      "query": "path:\"Sinyaller\"",
+      "color": {
+        "a": 1,
+        "rgb": 5963777
+      }
+    },
+    {
+      "query": "file:HOME",
+      "color": {
+        "a": 1,
+        "rgb": 16777215
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.5,
+  "lineSizeMultiplier": 1.2,
+  "collapse-forces": true,
+  "centerStrength": 0.5,
+  "repelStrength": 14,
+  "linkStrength": 0.8,
+  "linkDistance": 200,
+  "scale": 0.13348388671875,
+  "close": false
+}

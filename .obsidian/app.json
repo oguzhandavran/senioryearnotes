@@ -1,0 +1,29 @@
+{
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "attachmentFolderPath": "DATASET",
+  "newFileLocation": "current",
+  "alwaysUpdateLinks": true,
+  "foldHeading": false,
+  "foldIndent": false,
+  "showFrontmatter": false,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "legacyEditor": false,
+  "strictLineBreaks": false,
+  "showLineNumber": true,
+  "spellcheck": false,
+  "spellcheckLanguages": null,
+  "promptDelete": false,
+  "trashOption": "local",
+  "readableLineLength": true,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscaleEmbeddedImages": true
+  },
+  "showTabTitle": true,
+  "frameStyle": "hidden",
+  "showInlineTitle": true
+}

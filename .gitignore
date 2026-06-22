@@ -1,0 +1,22 @@
+# Kaynak materyal — büyük dosyalar, repo'ya girmesin
+DATASET/
+
+# Obsidian şablonlar
+_templates/
+
+# Claude plugin ve session dosyaları
+.claudian/
+
+# Obsidian çalışma durumu (makine-spesifik)
+.obsidian/workspace.json
+.obsidian/workspaces.json
+
+# Obsidian önbellek ve geçici dosyalar
+.obsidian/cache
+.trash/
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
+*~
+*.swp
