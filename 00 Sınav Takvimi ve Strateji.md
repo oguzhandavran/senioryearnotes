@@ -6,17 +6,17 @@ tags: [meta, strateji, sınav]
 
 ← [[HOME]]
 
-## Dersler ve Öncelik
+## Sınav Tarihleri (Resmi Takvim)
 
-> Hangi derse daha az hazırsın? O dersi önce çalış.
+| Tarih          | Sınav                                                             | Saat  | Sınav Gecesi                                                                    |
+| -------------- | ----------------------------------------------------------------- | ----- | ------------------------------------------------------------------------------- |
+| **29 Haz Pzt** | [[MST Ana Sayfa\|MST&B]] | 09:00 | [[MST Sınav Gecesi\|MST Sınav Gecesi]] |
+| **30 Haz Sal** | [[Sİnyaller ve Sistemler/SS Ana Sayfa\|SS]]                       | 09:00 | [[Sİnyaller ve Sistemler/SS Sınav Gecesi\|SS Sınav Gecesi]]                     |
+| **1 Tem Çar**  | [[Sayısal Sinyal İşleme/SSI Ana Sayfa\|SSİ]]                      | 09:00 | [[Sayısal Sinyal İşleme/SSI Sınav Gecesi\|SSI Sınav Gecesi]]                    |
+| **2 Tem Per**  | [[Otomatik Kontrol/OK Ana Sayfa\|OK]]                             | 09:00 | [[Otomatik Kontrol/OK Sınav Gecesi\|OK Sınav Gecesi]]                           |
+| **3 Tem Cum**  | [[Elektromanyetik Dalga Teorisi/EMD Ana Sayfa\|EMD]]              | 09:00 | [[Elektromanyetik Dalga Teorisi/EMD Sınav Gecesi\|EMD Sınav Gecesi]]            |
 
-| # | Ders | Kaynak | Öncelik |
-|---|------|--------|---------|
-| 1 | [[Elektromanyetik Dalga Teorisi/EMD Ana Sayfa\|EMD]] | bolum 1-4 PDF + EMT_Mega_Kopya | 🔴 Yüksek |
-| 2 | [[Mühendislik Sİstem Tasarımı ve Benzetimi/MST Ana Sayfa\|MST&B]] | Kimi_Agent kitabı + örnek çözümler | 🔴 Yüksek |
-| 3 | [[Otomatik Kontrol/OK Ana Sayfa\|OK]] | 1-16 PDF + çalışma soruları | 🟡 Orta |
-| 4 | [[Sayısal Sinyal İşleme/SSI Ana Sayfa\|SSİ]] | Ecmel notları + DSP formül kartı | 🟡 Orta |
-| 5 | [[Sİnyaller ve Sistemler/SS Ana Sayfa\|SS]] | SinyallerveSistemler ders notu | 🟢 Düşük |
+> Bugün: `=dateformat(today, "dd MMMM")` — ilk sınava **`=round(date("2026-06-29") - today)`** gün kaldı.
 
 ---
 
@@ -24,23 +24,23 @@ tags: [meta, strateji, sınav]
 
 ```mermaid
 gantt
-    title Bütünleme Çalışma Planı
+    title Bütünleme Çalışma Planı (Gerçek Tarihler)
     dateFormat  YYYY-MM-DD
-    section EMD
-    Maxwell + Dalga Yayılması    :2026-06-22, 1d
-    Yansıma + İletim Hatları     :2026-06-23, 1d
-    section MST-B
-    Mekanik + Elektrik Sistemler :2026-06-23, 1d
-    Durum Uzayı + Doğrusallaştır :2026-06-24, 1d
-    section OK
-    Routh + KYE                  :2026-06-24, 1d
-    Bode + PID                   :2026-06-25, 1d
-    section SSI
-    Z-Dönüşümü + DFT             :2026-06-25, 1d
-    Filtreler                    :2026-06-26, 1d
-    section SS
-    Konvolüsyon + Fourier        :2026-06-26, 1d
-    Laplace + LTI                :2026-06-27, 1d
+    section MST (29 Haz)
+    Mekanik + Durum Uzayı    :2026-06-22, 2d
+    Elektrik + Tekrar        :2026-06-24, 1d
+    section SS (30 Haz)
+    Fourier + Laplace        :2026-06-24, 1d
+    LTI + Konvolüsyon        :2026-06-25, 1d
+    section SSI (1 Tem)
+    Z-Dönüşümü + DFT        :2026-06-25, 1d
+    Filtreler + Tekrar       :2026-06-26, 1d
+    section OK (2 Tem)
+    Routh + KYE              :2026-06-26, 1d
+    Bode + Hata              :2026-06-27, 1d
+    section EMD (3 Tem)
+    Maxwell + Dalga          :2026-06-28, 1d
+    Yansıma + İletim Hattı  :2026-06-29, 1d
 ```
 
 ---

@@ -78,7 +78,8 @@ $$m\ddot{x}(t) + b\dot{x}(t) + kx(t) = f(t)$$
 $$\boxed{G(s) = \frac{X(s)}{F(s)} = \frac{1}{ms^2 + bs + k}}$$
 
 > [!tanim] İkinci Dereceden Standart Form
-> $$\omega_n = \sqrt{\frac{k}{m}}, \qquad \zeta = \frac{b}{2\sqrt{mk}}$$
+> - **Doğal Frekans**: $\omega_n = \sqrt{\frac{k}{m}}$
+> - **Sönüm Oranı**: $\zeta = \frac{b}{2\sqrt{mk}}$
 
 ---
 
@@ -107,7 +108,7 @@ $$\frac{Y_1(s)}{F(s)} = \frac{m_2s^2 + b_2s + k_2}{\Delta(s)}, \qquad \frac{Y_2(
 
 ## Lagrange Yöntemi
 
-Daha karmaşık sistemlerde Newton yerine kullanılır.
+<span style="color:rgb(255, 255, 0)">Daha karmaşık sistemlerde Newton yerine kullanılır.</span>
 
 $$\frac{d}{dt}\!\left(\frac{\partial \mathcal{L}}{\partial \dot{q}_i}\right) - \frac{\partial \mathcal{L}}{\partial q_i} + \frac{\partial D}{\partial \dot{q}_i} = Q_i$$
 
@@ -223,9 +224,23 @@ $$\boxed{\frac{\Theta_m(s)}{V_a(s)} = \frac{K_t/R_a J_m}{s\!\left(s + \dfrac{R_a
 
 $$\frac{T_1}{T_2} = \frac{r_1}{r_2} = \frac{N_1}{N_2}, \qquad \frac{\theta_2}{\theta_1} = \frac{N_1}{N_2}$$
 
+> [!info] Dişli Formülü Terimleri
+> - **T**: Tork (moment)
+> - **r**: Dişli yarıçapı
+> - **N**: Diş sayısı
+> - **θ**: Dönme açısı
+
 **Yük yansıtma (motor miline):**
 
 $$J_t = J_a + J_L\!\left(\frac{N_1}{N_2}\right)^{\!2}, \qquad D_t = D_a + D_L\!\left(\frac{N_1}{N_2}\right)^{\!2}$$
+
+> [!info] Yük Yansıtma Terimleri
+> - **J_t**: Toplam eylemsizlik (motor + yük)
+> - **J_a**: Motor eylemsizliği
+> - **J_L**: Yük eylemsizliği
+> - **D_t**: Toplam sönüm
+> - **D_a**: Motor sönümü
+> - **D_L**: Yük sönümü
 
 ---
 

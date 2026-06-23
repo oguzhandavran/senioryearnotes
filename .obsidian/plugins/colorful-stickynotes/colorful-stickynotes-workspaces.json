@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "activeWorkspaceId": null,
+  "workspaces": [
+    {
+      "id": "ws_mqqjzoy2",
+      "name": "Sticky workspace 1",
+      "windows": [],
+      "updatedAt": 1782213661009
+    },
+    {
+      "id": "ws_mqqk0g2t",
+      "name": "Sticky workspace 2",
+      "windows": [],
+      "updatedAt": 1782213684581
+    }
+  ],
+  "trash": []
+}

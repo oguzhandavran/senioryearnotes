@@ -172,4 +172,4 @@ $$T_r \approx 1.320\text{ s},\quad T_p \approx 3.293\text{ s},\quad T_s \approx 
 
 ← [[01 Giriş Kapalı Çevrim ve Blok Diyagramları]] | [[OK Ana Sayfa]] | → [[03 Kararlı Hal Hataları]]
 
-**İlgili:** [[../Mühendislik Sİstem Tasarımı ve Benzetimi/05 Kök Yer Eğrisi ve Kompansasyon|MST&B - KYE]]
+**İlgili:** [[05 Kök Yer Eğrisi ve Kompansasyon|MST&B - KYE]]

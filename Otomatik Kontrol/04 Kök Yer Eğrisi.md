@@ -181,4 +181,4 @@ $$\%OS = 100 e^{-\pi\zeta/\sqrt{1-\zeta^2}}$$
 
 ← [[03 Kararlı Hal Hataları]] | [[OK Ana Sayfa]] | → [[05 Frekans Analizi ve Bode Diyagramı]]
 
-**İlgili:** [[../Mühendislik Sİstem Tasarımı ve Benzetimi/05 Kök Yer Eğrisi ve Kompansasyon|MST&B - KYE & Kompansasyon]]
+**İlgili:** [[05 Kök Yer Eğrisi ve Kompansasyon|MST&B - KYE & Kompansasyon]]

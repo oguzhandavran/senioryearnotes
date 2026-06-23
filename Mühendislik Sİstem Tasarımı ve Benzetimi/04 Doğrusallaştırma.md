@@ -121,6 +121,23 @@ $$\delta i = g_m \delta v$$
 
 ---
 
+## Jacobian Özdeğer → Denge Nokta Tipi
+
+| Özdeğer | Nokta Tipi | Davranış |
+|---------|-----------|---------|
+| $\lambda = \pm j\omega$ (saf sanal) | **Center Point** (Merkez) | $x(t) = A\sin t + B\cos t$ — kapalı yörüngeler |
+| $\lambda_{1,2}$ gerçel, zıt işaret | **Saddle Point** | Kararsız — bir yönde çekici, diğerinde itici |
+| $\text{Re}(\lambda) < 0$ karmaşık | **Stable Spiral** | İçe sarılan spiral |
+| $\text{Re}(\lambda) > 0$ karmaşık | **Unstable Spiral** | Dışa sarılan spiral |
+| $\lambda_{1,2}$ gerçel, negatif | **Stable Node** | Doğrudan denge noktasına yaklaşma |
+| $\lambda_{1,2}$ gerçel, pozitif | **Unstable Node** | Doğrudan uzaklaşma |
+
+> [!sinav] Sınav İpucu
+> Saf sanal özdeğer → center point (salınım, NE kararlı NE kararsız — sınır kararlı)  
+> Zıt işaretli gerçel → saddle point (her zaman kararsız!)
+
+---
+
 ## Lyapunov ile Kararlılık (Giriş)
 
 Lineerleştirilmiş sistemin özdeğerleri:
@@ -156,6 +173,76 @@ flowchart TD
 > - $\sin x \approx x$, $\cos x \approx 1$ (küçük açı: $x_e = 0$ için)
 > - $e^x \approx 1 + x$ (küçük sapmalar için)
 > - Sıfır girişte denge: $f(x_e, 0) = 0$'ı çöz
+
+---
+
+## Çözümlü Örnek 4 — Trigonometrik Nonlineer Sistem ($x_e = \pi/4$)
+
+**Sistem:** $\ddot{x} + 2\dot{x} + \cos x = 0$
+
+**Doğrusal olmayan kısım:** $\cos x$
+
+**Denge noktası bulma** ($\ddot{x}=\dot{x}=0$): $\cos x_e = 0 \implies x_e = \pi/2$ (veya $x_e = \pi/4$'te analiz istendi)
+
+**$x_e = \pi/4$ etrafında Taylor açılımı:**
+
+$x = \delta x + \pi/4$ (minimal sapma) yaz:
+
+$$\frac{d^2(\delta x)}{dt^2} + 2\frac{d(\delta x)}{dt} + \cos\!\left(\delta x + \frac{\pi}{4}\right) = 0$$
+
+$\cos$ için Taylor:
+
+$$\cos\!\left(\delta x + \frac{\pi}{4}\right) \approx \cos\!\left(\frac{\pi}{4}\right) - \sin\!\left(\frac{\pi}{4}\right)\cdot\delta x = \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}}\,\delta x$$
+
+Denklem:
+
+$$\ddot{\delta x} + 2\dot{\delta x} + \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}}\,\delta x = 0$$
+
+Sabit terimi ($1/\sqrt{2}$) sağa al ve Laplace'a geç:
+
+$$\delta X(s)\!\left(s^2 + 2s - \frac{\sqrt{2}}{2}\right) = -\frac{\sqrt{2}}{2}$$
+
+$$\boxed{\delta X(s) = \frac{-\sqrt{2}/2}{s^2+2s-\sqrt{2}/2}}$$
+
+Özdeğerler: $s = -1 \pm \sqrt{1+\sqrt{2}/2} \approx -1 \pm 1.30$ → $s_1 \approx 0.30 > 0$ → **kararsız denge** (saddle point bölgesi)
+
+---
+
+## Çözümlü Örnek 5 — Doğrusal Olmayan Direnç Devresi
+
+**Devre:** $L=1$ H endüktör + nonlineer direnç ($i_r = 2e^{0.1V_r}$) + $V(t)$ gerilim kaynağı, $V_r$ çıkış
+
+**Hedef:** $V_L(s)/V(s)$
+
+**Adım 1 — Ters çöz:** $V_r = 10\ln(i_r/2)$
+
+**Adım 2 — KVL:**
+
+$$L\frac{di}{dt} + 10\ln\!\frac{i}{2} - 20 = V(t)$$
+
+**Adım 3 — Denge noktası** ($V=0$, $\dot{i}=0$):
+
+$$10\ln\!\frac{i_0}{2} = 20 \implies i_0 = 2e^2 \approx 14.78 \text{ A}$$
+
+**Adım 4 — Lineerizasyon** ($i = i_0 + \delta i$):
+
+$$\ln\!\frac{i_0+\delta i}{2} \approx \ln\!\frac{i_0}{2} + \frac{1}{i_0}\,\delta i$$
+
+Denge şartını çıkar:
+
+$$L\frac{d(\delta i)}{dt} + \frac{10}{i_0}\,\delta i = V(t)$$
+
+$$\frac{d(\delta i)}{dt} + \underbrace{\frac{10}{14.78}}_{0.677}\,\delta i = V(t)$$
+
+**Adım 5 — Laplace:**
+
+$$\delta I(s)(s + 0.677) = V(s) \implies \delta I(s) = \frac{V(s)}{s+0.677}$$
+
+**Adım 6 — Çıkış** ($V_L = L\cdot s\cdot\delta I$, $L=1$):
+
+$$\boxed{\frac{V_L(s)}{V(s)} = \frac{s}{s+0.677}}$$
+
+*Yüksek geçiren karakteristik — saf DC girişe sıfır yanıt (beklenen: endüktör DC'de kısa devre)*
 
 ---
 

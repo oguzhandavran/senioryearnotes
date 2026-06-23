@@ -61,7 +61,7 @@ graph LR
     style SS fill:#5B9BD5,color:#fff
 ```
 
-- **[[../Mühendislik Sİstem Tasarımı ve Benzetimi/MST Ana Sayfa|MST&B]]** — Transfer fonksiyonu, Laplace, KYE ortak
+- **[[MST Ana Sayfa|MST&B]]** — Transfer fonksiyonu, Laplace, KYE ortak
 - **[[../Sİnyaller ve Sistemler/SS Ana Sayfa|SS]]** — Laplace dönüşümü temeli
 
 ## Temel Formüller (Hızlı Erişim)

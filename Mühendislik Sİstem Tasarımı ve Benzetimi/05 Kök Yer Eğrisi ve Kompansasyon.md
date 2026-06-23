@@ -63,6 +63,20 @@ $$G_c(s) = K_c(s + z_c)$$
 **Açı şartı:**
 $$\angle G_c(s_d) G_p(s_d) = \pm 180°$$
 
+**Geometrik yöntem ($z_c$ bulma):**
+
+$s_d = -\sigma + j\omega_d$ için, $z_c$ henüz bilinmiyor:
+
+$$\sum\angle\text{sıfırlar} - \sum\angle\text{kutuplar} = 180°(2k+1)$$
+
+Sıfır $z_c$ açısı: $\theta_{z_c} = \angle(s_d + z_c) = \arctan\!\dfrac{\omega_d}{z_c - \sigma}$
+
+Gerekli açıyı diğer kutup/sıfır açılarından hesapla, sonra:
+
+$$\tan(\theta_{z_c}) = \frac{\omega_d}{z_c - \sigma} \implies z_c = \sigma + \frac{\omega_d}{\tan(\theta_{z_c})}$$
+
+*"tan(β Pisagor)" yöntemi: baskın kutuptan yatay eksen açısı $\beta = \arccos(\zeta)$, sıfır konumunu Pisagor geometrisiyle bul.*
+
 ---
 
 ## Çözümlü Örnek 1: PD Tasarımı

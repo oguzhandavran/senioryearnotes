@@ -1,0 +1,53 @@
+{
+  "cascadeColors": true,
+  "colorBackground": false,
+  "palette": [
+    {
+      "id": "H7vSgtps46Tm5e9KoclL2",
+      "name": "Kırmızı",
+      "value": "#ff3e41"
+    },
+    {
+      "id": "4lerAj4morGNqTXztVe8G",
+      "name": "Mavi",
+      "value": "#3da1ff"
+    },
+    {
+      "id": "KMo_p3-VtP8xgCClwSIvV",
+      "name": "Yeşil",
+      "value": "#3dff91"
+    },
+    {
+      "id": "f0BycjbMigztVcyxpyaZO",
+      "name": "Magenta",
+      "value": "#ff3eff"
+    },
+    {
+      "id": "YsmhAt5Qbz9plpk5WAYCo",
+      "name": "Sarı",
+      "value": "#d5ff3d"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "Elektromanyetik Dalga Teorisi",
+      "color": "YsmhAt5Qbz9plpk5WAYCo"
+    },
+    {
+      "path": "Mühendislik Sİstem Tasarımı ve Benzetimi",
+      "color": "H7vSgtps46Tm5e9KoclL2"
+    },
+    {
+      "path": "Otomatik Kontrol",
+      "color": "f0BycjbMigztVcyxpyaZO"
+    },
+    {
+      "path": "Sayısal Sinyal İşleme",
+      "color": "4lerAj4morGNqTXztVe8G"
+    },
+    {
+      "path": "Sİnyaller ve Sistemler",
+      "color": "KMo_p3-VtP8xgCClwSIvV"
+    }
+  ]
+}

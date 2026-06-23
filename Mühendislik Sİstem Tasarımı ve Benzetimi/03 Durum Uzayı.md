@@ -84,7 +84,6 @@ $$A = \begin{bmatrix} 0 & 1 \\ -2 & -3 \end{bmatrix}, \quad B = \begin{bmatrix} 
 
 ## Çözümlü Örnek 3: İki Kütleli Sistem
 
-```svg
 <svg width="400" height="140" xmlns="http://www.w3.org/2000/svg">
   <!-- Wall left -->
   <rect x="10" y="20" width="8" height="100" fill="#a9b1d6"/>
@@ -118,7 +117,7 @@ $$A = \begin{bmatrix} 0 & 1 \\ -2 & -3 \end{bmatrix}, \quad B = \begin{bmatrix} 
     </marker>
   </defs>
 </svg>
-```
+
 
 **Denklemler:**
 $$m_1\ddot{x}_1 = -k_1 x_1 - k_2(x_1-x_2) - b_1\dot{x}_1$$

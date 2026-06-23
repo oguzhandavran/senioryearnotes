@@ -21,6 +21,14 @@ $$\boxed{G(s) = \frac{X(s)}{F(s)} = \frac{1}{ms^2 + bs + k}}$$
 
 **Lagrange:** $\dfrac{d}{dt}\!\left(\dfrac{\partial T}{\partial \dot{q}_i}\right) - \dfrac{\partial T}{\partial q_i} + \dfrac{\partial V}{\partial q_i} + \dfrac{\partial D}{\partial \dot{q}_i} = Q_i$
 
+<span style="color:rgb(255, 255, 0)">> [!tip] T — Kinetik Enerji<br>> $$T = \frac{1}{2}m\dot{q}^2 \quad \text{veya} \quad T = \frac{1}{2}I\dot{\theta}^2$$</span>
+
+<span style="color:rgb(255, 255, 0)">> [!example] V — Potansiyel Enerji<br>> $$V = \frac{1}{2}kq^2$$</span>
+
+<span style="color:rgb(255, 255, 0)">> [!warning] D — Rayleigh Dissipation (Sönüm)<br>> $$D = \frac{1}{2}b\dot{q}^2$$</span>
+
+<span style="color:rgb(255, 255, 0)"><span style="color:rgb(255, 255, 0)"><span style="color:rgb(255, 255, 0)">> [!info] Koordinatlar ve Kuvvetler<br>> - <b>q<i>i</b>: Genelleştirilmiş koordinat (konum)<br>> - <b>Q</i>i</b>: Genelleştirilmiş dış kuvvet (uygulanmış)</span></span></span>
+
 ---
 
 ## Elektrik Sistemleri

@@ -26,15 +26,7 @@ tags: [mst, elektrik, rlc, kvl, kcl, transfer-fonksiyonu, op-amp]
 
 ## RLC Seri Devre
 
-```
-   v_in(t)
-     +
-     |    R          L         C
-     └───┤├───┐──[LLLL]──┬──┤ ├──┐
-               │           │        │
-              ─┴─         v_c      ─┴─
-              GND                  GND
-```
+![[rlc-seri-devre.svg]]
 
 **KVL:** $v_{in} = v_R + v_L + v_C = Ri + L\dfrac{di}{dt} + \dfrac{1}{C}\int i\,dt$
 
@@ -76,7 +68,7 @@ $$V_2(s) = V_{in}(s) \cdot \frac{Z_2}{Z_1 + Z_2}$$
 
 ## Çözümlü Örnek 1: R-L-R₂-C Mesh Devresi
 
-```svg
+
 <svg width="420" height="180" xmlns="http://www.w3.org/2000/svg">
   <!-- Sol kaynak -->
   <circle cx="40" cy="90" r="18" fill="none" stroke="#7dcfff" stroke-width="2"/>
@@ -106,7 +98,7 @@ $$V_2(s) = V_{in}(s) \cdot \frac{Z_2}{Z_1 + Z_2}$$
   <!-- v_out label -->
   <text x="370" y="90" font-size="11" fill="#7dcfff">v_C</text>
 </svg>
-```
+
 
 **Mesh 1** ($i_1$): $R_1 i_1 + L s (i_1 - i_2) = V_{in}$
 

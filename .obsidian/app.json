@@ -11,7 +11,7 @@
   "livePreview": true,
   "legacyEditor": false,
   "strictLineBreaks": false,
-  "showLineNumber": true,
+  "showLineNumber": false,
   "spellcheck": false,
   "spellcheckLanguages": null,
   "promptDelete": false,
@@ -25,5 +25,5 @@
   },
   "showTabTitle": true,
   "frameStyle": "hidden",
-  "showInlineTitle": true
+  "showInlineTitle": false
 }
