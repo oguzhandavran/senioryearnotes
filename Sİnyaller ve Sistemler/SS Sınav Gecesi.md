@@ -4,7 +4,8 @@ tags: [ss, sinyaller-sistemler, sinav-gecesi, ozet]
 
 # SS — Sınav Gecesi Özeti
 
-> Tek sayfa. Fourier'den Laplace'a.
+> Kapsam: B1 tam · B2 (2.5 hariç) · B3 (3.6'ya kadar) · B4 (4.5'e kadar)
+> **Laplace yok. DTFT yok.**
 
 ---
 
@@ -46,7 +47,27 @@ $$c_k = \frac{1}{T_0}\int_{T_0} x(t)e^{-jk\omega_0 t}dt$$
 
 ---
 
-## 4 — Fourier Dönüşümü (Periyodik Olmayan)
+## 3.6 — Ayrık Zamanlı Fourier Serisi (DTFS)
+
+Periyodik DT sinyali $x[n]$ (periyot $N$):
+
+$$\boxed{x[n] = \sum_{k=\langle N\rangle} a_k\, e^{jk(2\pi/N)n}}$$
+
+$$\boxed{a_k = \frac{1}{N}\sum_{n=\langle N\rangle} x[n]\, e^{-jk(2\pi/N)n}}$$
+
+> Fark: $a_k$ **periyodik** — $a_{k+N}=a_k$. Yalnızca $N$ tane bağımsız katsayı var.
+
+**CT Fourier Serisi ile Karşılaştırma:**
+
+| | CT ($x(t)$, periyot $T_0$) | DT ($x[n]$, periyot $N$) |
+|--|--------------------------|--------------------------|
+| Katsayılar | $c_k = \frac{1}{T_0}\int x(t)e^{-jk\omega_0 t}dt$ | $a_k = \frac{1}{N}\sum x[n]e^{-jk(2\pi/N)n}$ |
+| Bağımsız katsayı | $\infty$ | $N$ tane |
+| Çarpma | $x\cdot y \leftrightarrow \sum_l c_l d_{k-l}$ | $x[n]y[n] \leftrightarrow \sum_l a_l b_{k-l}$ (periyodik) |
+
+---
+
+## 4 — Fourier Dönüşümü CTFT (4.1–4.5)
 
 $$X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt, \quad x(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty}X(j\omega)e^{j\omega t}d\omega$$
 
@@ -57,63 +78,59 @@ $$X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}dt, \quad x(t) = \frac{1
 | $\delta(t)$ | $1$ |
 | $1$ | $2\pi\delta(\omega)$ |
 | $e^{-at}u(t)$, $a>0$ | $\frac{1}{a+j\omega}$ |
+| $e^{-a|t|}$, $a>0$ | $\frac{2a}{a^2+\omega^2}$ |
 | $\text{rect}(t/\tau)$ | $\tau\,\text{sinc}(\omega\tau/2)$ |
-| $e^{-a\|t\|}$ | $\frac{2a}{a^2+\omega^2}$ |
+| $u(t)$ | $\pi\delta(\omega)+\frac{1}{j\omega}$ |
+| $\cos(\omega_0 t)$ | $\pi[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)]$ |
+| Periyodik $x(t)$ ($c_k$'li) | $2\pi\sum_k c_k\delta(\omega-k\omega_0)$ |
 
-**Özellikler:**
+**Özellikler (4.3):**
 
-| | İşlem | FT |
-|-|-------|----|
+| Özellik | İşlem | CTFT |
+|---------|-------|------|
+| Doğrusallik | $ax+by$ | $aX+bY$ |
 | Zaman kayması | $x(t-t_0)$ | $e^{-j\omega t_0}X(j\omega)$ |
 | Frekans kayması | $e^{j\omega_0 t}x(t)$ | $X(j(\omega-\omega_0))$ |
-| Konvolüsyon | $x*h$ | $X\cdot H$ |
+| Eşlenik simetri | $x^*(t)$ | $X^*(-j\omega)$ |
+| Zaman ölçekleme | $x(at)$ | $\frac{1}{|a|}X(j\omega/a)$ |
 | Türev | $dx/dt$ | $j\omega X(j\omega)$ |
-| Parseval | $\int\|x\|^2 dt$ | $\frac{1}{2\pi}\int\|X\|^2 d\omega$ |
+| İntegral | $\int x\,dt$ | $\frac{1}{j\omega}X+\pi X(0)\delta(\omega)$ |
+| **Evrişim (4.4)** | $x*h$ | $X\cdot H$ |
+| **Çarpma (4.5)** | $x(t)\cdot h(t)$ | $\frac{1}{2\pi}X*H$ |
+| Parseval | $\int|x|^2 dt$ | $\frac{1}{2\pi}\int|X|^2 d\omega$ |
 | Dualite | $X(t)$ | $2\pi x(-\omega)$ |
 
----
-
-## 5 — Laplace Dönüşümü
-
-$$X(s) = \int_0^{\infty}x(t)e^{-st}dt \quad (s=\sigma+j\omega)$$
-
-**Temel çiftler:**
-
-| $x(t)$ | $X(s)$ | ROC |
-|--------|--------|-----|
-| $u(t)$ | $1/s$ | $\text{Re}(s)>0$ |
-| $e^{-at}u(t)$ | $1/(s+a)$ | $\text{Re}(s)>-a$ |
-| $te^{-at}u(t)$ | $1/(s+a)^2$ | $\text{Re}(s)>-a$ |
-| $\sin(\omega_0 t)u(t)$ | $\omega_0/(s^2+\omega_0^2)$ | $\text{Re}(s)>0$ |
-| $\cos(\omega_0 t)u(t)$ | $s/(s^2+\omega_0^2)$ | $\text{Re}(s)>0$ |
-
-**Özellikler:**
-- Gecikme: $x(t-t_0)u(t-t_0) \leftrightarrow e^{-st_0}X(s)$
-- Türev: $\mathcal{L}\{dx/dt\} = sX(s)-x(0^-)$
-- Son değer: $\lim_{t\to\infty}x(t) = \lim_{s\to0}sX(s)$
-- Başlangıç: $x(0^+) = \lim_{s\to\infty}sX(s)$
-
-**Ters Laplace (PFD):** $X(s)/s$ kısmi kesirlere ayır, çiftleri kullan.
-
----
-
-## 6 — Sistem Analizi (Kararlılık ve Tip)
-
-**Kararlı LTI:** Tüm kutuplar sol yarıda ($\text{Re}(s) < 0$)
-
-**Kapalı çevrim TF:** $T(s) = G(s)/(1+G(s))$ (unity)
+> [!tip] Çarpma ↔ Evrişim Dualitesi (4.5)
+> Zaman domeninde **çarpım** → frekans domeninde **evrişim** (÷2π)
+> Zaman domeninde **evrişim** → frekans domeninde **çarpım**
+> Bu dualite frekans seçici süzgeçlemenin temelidir.
 
 ---
 
 ## Tuzaklar
 
 > [!warning] SS Sınav Tuzakları
-> - Sinyal çiftleri: $e^{-at}u(t)$ ≠ $e^{-at}$ (tek taraflı!)
-> - Konvolüsyon grafiği: birini çevir ($h(-\tau)$), kaydır, entegre et
-> - Fourier: $\delta(\omega)$ sonsuz genlikli ama normalize, anlık olarak Parseval'ı düşün
-> - Laplace türev: $sX(s)-x(0^-)$ başlangıç şartı sıfır değilse eklenir
-> - Parseval (Fourier): $1/(2\pi)$ faktörü var!
-> - Son değer teoremi: önce kararlılık! (Laplace da, Z de)
+> - $e^{-at}u(t)$ ≠ $e^{-at}$ — tek taraflı! $t<0$ için sıfır.
+> - Konvolüsyon grafiği: $h(-\tau)$ çevir, kaydır, entegre et; sınırları dikkatli kur.
+> - **Parseval (CTFT):** $\frac{1}{2\pi}$ faktörü var — unutma!
+> - DTFS: $a_k$ periyodik ($a_{k+N}=a_k$), toplam N terim üzerinden.
+> - **Çarpma özelliği:** $x\cdot y \leftrightarrow \frac{1}{2\pi}X*Y$ — evrişim ile karıştırma.
+> - Periyodik sinyalin CTFT'si: $2\pi\sum c_k\delta(\omega-k\omega_0)$ — impuls dizisi.
+> - Doğrusal faz = zaman gecikmesi, sinyali bozmaz.
+
+---
+
+## Sınav Kontrol Listesi
+
+- [ ] Sinyal sınıflandırması: periyodik, enerji/güç, çift/tek
+- [ ] CT & DT konvolüsyon integrali/toplamı hesaplayabiliyorum
+- [ ] CTFS katsayısı $c_k$ bulabiliyorum + Parseval uygulayabiliyorum
+- [ ] DTFS katsayısı $a_k$ bulabiliyorum (N terim, periyodik)
+- [ ] CTFT analiz/sentez integrali yapabiliyorum
+- [ ] Periyodik sinyalin CTFT'sini yazabiliyorum ($2\pi c_k \delta$)
+- [ ] 4.3 özelliklerini (kayma, türev, eşlenik, ölçekleme) uygulayabiliyorum
+- [ ] Evrişim özelliği: zaman konv. = frekans çarpım
+- [ ] Çarpma özelliği: zaman çarpım = frekans konv./2π
 
 ---
 

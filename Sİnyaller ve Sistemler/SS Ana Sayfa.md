@@ -13,6 +13,17 @@ aliases: [SS, Sinyaller ve Sistemler]
 
 ---
 
+## Sınav Kapsamı (Bütünleme)
+
+> [!warning] Kapsam — Oppenheim kitabı bölüm bazlı
+> - **Bölüm 1** — Tamamı (Sinyaller ve Sistemler)
+> - **Bölüm 2** — 2.5 (Tekillik Fonksiyonları) **hariç**
+> - **Bölüm 3** — **3.6'ya kadar** dahil (3.7+ yok)
+> - **Bölüm 4** — **4.5'e kadar** dahil (Çarpma Özelliği) (4.6+ yok)
+> - **Laplace yok · DTFT (Bölüm 5) yok · Z-dönüşümü yok**
+
+---
+
 ## Konu Haritası
 
 ```mermaid
@@ -48,14 +59,31 @@ mindmap
 
 ## Konular
 
-| # | Konu | Bağlantı | Öncelik |
-|---|------|----------|---------|
-| 1 | Sinyal Sınıflandırması | [[01 Sinyal Sınıflandırması]] | 🔴 |
-| 2 | LTI Sistemler & Konvolüsyon | [[02 LTI Sistemler ve Konvolüsyon]] | 🔴 |
-| 3 | Fourier Serisi | [[03 Fourier Serisi]] | 🟡 |
-| 4 | Fourier Dönüşümü | [[04 Fourier Dönüşümü]] | 🔴 |
-| 5 | Laplace Dönüşümü | [[05 Laplace Dönüşümü]] | 🔴 |
-| — | Formül Sayfası | [[SS Formül Sayfası]] | ⭐ |
+### Konu Anlatımları
+
+| # | Konu | Bağlantı | Öncelik | Kapsam |
+|---|------|----------|---------|--------|
+| 1 | Sinyal Sınıflandırması | [[Konu Anlatımları/01 Sinyal Sınıflandırması]] | 🔴 | Tam |
+| 2 | LTI Sistemler & Konvolüsyon | [[Konu Anlatımları/02 LTI Sistemler ve Konvolüsyon]] | 🔴 | 2.5 hariç |
+| 3 | Fourier Serisi | [[Konu Anlatımları/03 Fourier Serisi]] | 🔴 | 3.6'ya kadar |
+| 4 | Fourier Dönüşümü (CTFT) | [[Konu Anlatımları/04 Fourier Dönüşümü]] | 🔴 | 4.5'e kadar |
+| ~~5~~ | ~~Laplace Dönüşümü~~ | — | ~~—~~ | **Kapsam dışı** |
+
+### Örnek Sorular
+
+| # | Konu | Bağlantı |
+|---|------|----------|
+| 1 | Sinyal Örnekleri | [[Örnek Sorular/01 Sinyal Örnekleri]] |
+| 2 | LTI & Konvolüsyon Örnekleri | [[Örnek Sorular/02 LTI Örnekleri]] |
+| 3 | Fourier Serisi Örnekleri | [[Örnek Sorular/03 Fourier Serisi Örnekleri]] |
+| 4 | Fourier Dönüşümü Örnekleri | [[Örnek Sorular/04 Fourier Dönüşümü Örnekleri]] |
+
+### Diğer
+
+| Dosya | Bağlantı |
+|-------|----------|
+| Formül Sayfası | [[SS Formül Sayfası]] |
+| Sınav Gecesi Özeti | [[SS Sınav Gecesi]] |
 
 ---
 

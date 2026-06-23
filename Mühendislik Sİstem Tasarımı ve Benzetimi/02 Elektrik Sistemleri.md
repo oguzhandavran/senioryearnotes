@@ -26,7 +26,69 @@ tags: [mst, elektrik, rlc, kvl, kcl, transfer-fonksiyonu, op-amp]
 
 ## RLC Seri Devre
 
-![[rlc-seri-devre.svg]]
+<svg width="700" height="380" xmlns="http://www.w3.org/2000/svg">
+  <!-- Arka plan -->
+  <rect width="700" height="380" fill="white"/>
+
+  <!-- Ana kablo (üst) -->
+  <line x1="80" y1="150" x2="620" y2="150" stroke="black" stroke-width="2.5"/>
+
+  <!-- Voltaj kaynağı (V_in) -->
+  <circle cx="80" cy="150" r="28" fill="none" stroke="black" stroke-width="2.5"/>
+  <text x="80" y="158" font-size="16" font-weight="bold" text-anchor="middle">+</text>
+  <text x="80" y="195" font-size="13" text-anchor="middle" font-weight="bold">V_in(t)</text>
+
+  <!-- Direnç R (kare kutu) -->
+  <rect x="140" y="128" width="50" height="44" fill="white" stroke="black" stroke-width="2.5" rx="2"/>
+  <text x="165" y="159" font-size="16" font-weight="bold" text-anchor="middle">R</text>
+
+  <!-- Bobin L (sarmal) -->
+  <g id="coil">
+    <path d="M 260 150 Q 272 132 284 150 Q 296 168 308 150"
+          fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="284" y="195" font-size="16" font-weight="bold" text-anchor="middle">L</text>
+
+  <!-- Kondansatör C (iki paralel çizgi) -->
+  <line x1="375" y1="120" x2="375" y2="180" stroke="black" stroke-width="2.5"/>
+  <line x1="390" y1="120" x2="390" y2="180" stroke="black" stroke-width="2.5"/>
+  <text x="382" y="205" font-size="16" font-weight="bold" text-anchor="middle">C</text>
+
+  <!-- Çıkış V_c (sağ üst) -->
+  <text x="620" y="135" font-size="13" font-weight="bold">V_c</text>
+
+  <!-- Alt kablo (GND) -->
+  <line x1="80" y1="260" x2="620" y2="260" stroke="black" stroke-width="2.5"/>
+
+  <!-- Dikey bağlantılar -->
+  <line x1="80" y1="178" x2="80" y2="260" stroke="black" stroke-width="2.5"/>
+  <line x1="620" y1="150" x2="620" y2="260" stroke="black" stroke-width="2.5"/>
+
+  <!-- Ara bağlantı kabloları -->
+  <line x1="190" y1="150" x2="260" y2="150" stroke="black" stroke-width="2.5"/>
+  <line x1="308" y1="150" x2="375" y2="150" stroke="black" stroke-width="2.5"/>
+  <line x1="390" y1="150" x2="620" y2="150" stroke="black" stroke-width="2.5"/>
+
+  <!-- GND sembolü (üç çizgi) -->
+  <line x1="350" y1="260" x2="350" y2="280" stroke="black" stroke-width="2.5"/>
+  <line x1="330" y1="280" x2="370" y2="280" stroke="black" stroke-width="2.5"/>
+  <line x1="340" y1="290" x2="360" y2="290" stroke="black" stroke-width="2.5"/>
+  <line x1="345" y1="300" x2="355" y2="300" stroke="black" stroke-width="2.5"/>
+  <text x="350" y="325" font-size="12" font-weight="bold" text-anchor="middle">GND</text>
+
+  <!-- Düğüm noktaları (siyah daireler) -->
+  <circle cx="165" cy="150" r="3.5" fill="black"/>
+  <circle cx="260" cy="150" r="3.5" fill="black"/>
+  <circle cx="308" cy="150" r="3.5" fill="black"/>
+  <circle cx="375" cy="150" r="3.5" fill="black"/>
+  <circle cx="390" cy="150" r="3.5" fill="black"/>
+
+  <!-- Başlık -->
+  <text x="350" y="30" font-size="18" font-weight="bold" text-anchor="middle">RLC Seri Devresi</text>
+
+  <!-- Açıklama metni -->
+  <text x="350" y="360" font-size="11" text-anchor="middle" fill="#666">KVL: v_in = v_R + v_L + v_C</text>
+</svg>
 
 **KVL:** $v_{in} = v_R + v_L + v_C = Ri + L\dfrac{di}{dt} + \dfrac{1}{C}\int i\,dt$
 
@@ -68,37 +130,64 @@ $$V_2(s) = V_{in}(s) \cdot \frac{Z_2}{Z_1 + Z_2}$$
 
 ## Çözümlü Örnek 1: R-L-R₂-C Mesh Devresi
 
-
-<svg width="420" height="180" xmlns="http://www.w3.org/2000/svg">
-  <!-- Sol kaynak -->
-  <circle cx="40" cy="90" r="18" fill="none" stroke="#7dcfff" stroke-width="2"/>
-  <text x="40" y="95" text-anchor="middle" font-size="12" fill="#7dcfff">v_in</text>
-  <!-- Top wire -->
-  <line x1="58" y1="72" x2="100" y2="72" stroke="#a9b1d6" stroke-width="2"/>
-  <line x1="200" y1="72" x2="280" y2="72" stroke="#a9b1d6" stroke-width="2"/>
-  <line x1="320" y1="72" x2="380" y2="72" stroke="#a9b1d6" stroke-width="2"/>
-  <!-- R1 -->
-  <rect x="100" y="62" width="50" height="20" fill="none" stroke="#e0af68" stroke-width="2"/>
-  <text x="125" y="58" text-anchor="middle" font-size="11" fill="#e0af68">R₁</text>
-  <!-- L -->
-  <path d="M200,72 Q210,52 220,72 Q230,52 240,72 Q250,52 260,72 Q270,52 280,72" fill="none" stroke="#9ece6a" stroke-width="2"/>
-  <text x="240" y="55" text-anchor="middle" font-size="11" fill="#9ece6a">L</text>
-  <!-- R2 (middle branch vertical) -->
-  <line x1="240" y1="72" x2="240" y2="90" stroke="#a9b1d6" stroke-width="2"/>
-  <rect x="226" y="90" width="28" height="20" fill="none" stroke="#e0af68" stroke-width="2"/>
-  <text x="260" y="104" font-size="11" fill="#e0af68">R₂</text>
-  <line x1="240" y1="110" x2="240" y2="128" stroke="#a9b1d6" stroke-width="2"/>
-  <!-- C -->
-  <rect x="320" y="62" width="20" height="20" fill="none" stroke="#bb9af7" stroke-width="2"/>
-  <text x="330" y="58" text-anchor="middle" font-size="11" fill="#bb9af7">C</text>
-  <!-- Bottom wire -->
-  <line x1="58" y1="108" x2="380" y2="108" stroke="#a9b1d6" stroke-width="2"/>
-  <line x1="380" y1="72" x2="380" y2="108" stroke="#a9b1d6" stroke-width="2"/>
-  <line x1="40" y1="108" x2="58" y2="108" stroke="#a9b1d6" stroke-width="2"/>
-  <!-- v_out label -->
-  <text x="370" y="90" font-size="11" fill="#7dcfff">v_C</text>
+<svg width="660" height="310" viewBox="0 0 660 310" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-m1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L9,5 L0,9 Z" fill="#1e7a4a"/>
+    </marker>
+    <marker id="arr-m2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,1 L9,5 L0,9 Z" fill="#1a5a9a"/>
+    </marker>
+  </defs>
+  <text x="290" y="22" text-anchor="middle" font-family="'Helvetica Neue',sans-serif" font-size="14" font-weight="700" fill="#1a1a2e">R₁-L-R₂-C  İki Mesh Devresi</text>
+  <line x1="60" y1="65" x2="60" y2="105" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="60" cy="133" r="28" fill="white" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M46,133 C48,119 54,119 58,133 C62,147 66,147 70,133" fill="none" stroke="#1a1a2e" stroke-width="1.6" stroke-linecap="round"/>
+  <text x="60" y="122" text-anchor="middle" font-family="Helvetica,sans-serif" font-size="10" font-weight="700" fill="#1a1a2e">+</text>
+  <text x="60" y="148" text-anchor="middle" font-family="Helvetica,sans-serif" font-size="13" font-weight="700" fill="#1a1a2e">−</text>
+  <text x="22" y="131" font-family="'STIX Two Math','Times New Roman',serif" font-size="15" font-style="italic" fill="#1a1a2e">V_in</text>
+  <line x1="60" y1="161" x2="60" y2="255" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="65" x2="105" y2="65" stroke="#1a1a2e" stroke-width="2"/>
+  <polyline points="105,65 109,65 112,53 118,77 124,53 130,77 136,53 142,77 145,65 190,65" fill="none" stroke="#1a1a2e" stroke-width="2" stroke-linejoin="round"/>
+  <text x="125" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="15" font-style="italic" fill="#1a1a2e">R₁</text>
+  <line x1="113" y1="82" x2="141" y2="82" stroke="#1e7a4a" stroke-width="1.8" marker-end="url(#arr-m1)"/>
+  <text x="127" y="97" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1e7a4a">i₁</text>
+  <line x1="190" y1="65" x2="280" y2="65" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="280" cy="65" r="4.5" fill="#1a1a2e"/>
+  <line x1="280" y1="65" x2="280" y2="100" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M280,100 C264,100 264,120 280,120" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M280,120 C264,120 264,140 280,140" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M280,140 C264,140 264,160 280,160" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="280" y1="160" x2="280" y2="255" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="248" y="133" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="16" font-style="italic" fill="#1a1a2e">L</text>
+  <line x1="280" y1="65" x2="325" y2="65" stroke="#1a1a2e" stroke-width="2"/>
+  <polyline points="325,65 329,65 332,53 338,77 344,53 350,77 356,53 362,77 365,65 410,65" fill="none" stroke="#1a1a2e" stroke-width="2" stroke-linejoin="round"/>
+  <text x="345" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="15" font-style="italic" fill="#1a1a2e">R₂</text>
+  <line x1="333" y1="82" x2="361" y2="82" stroke="#1a5a9a" stroke-width="1.8" marker-end="url(#arr-m2)"/>
+  <text x="347" y="97" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a5a9a">i₂</text>
+  <line x1="410" y1="65" x2="490" y2="65" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="490" cy="65" r="4.5" fill="#1a1a2e"/>
+  <line x1="490" y1="65" x2="490" y2="152" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="458" y1="152" x2="522" y2="152" stroke="#1a1a2e" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="458" y1="170" x2="522" y2="170" stroke="#1a1a2e" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="534" y="165" font-family="'STIX Two Math','Times New Roman',serif" font-size="16" font-style="italic" fill="#1a1a2e">C</text>
+  <line x1="490" y1="170" x2="490" y2="255" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="490" y1="73"  x2="580" y2="73"  stroke="#a93226" stroke-width="1.4" stroke-dasharray="5,3"/>
+  <line x1="490" y1="247" x2="580" y2="247" stroke="#a93226" stroke-width="1.4" stroke-dasharray="5,3"/>
+  <line x1="580" y1="73"  x2="580" y2="247" stroke="#a93226" stroke-width="1.8"/>
+  <text x="592" y="165" font-family="'STIX Two Math','Times New Roman',serif" font-size="17" font-style="italic" fill="#a93226">V_C</text>
+  <line x1="60" y1="255" x2="490" y2="255" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="60"  cy="65"  r="4.5" fill="#1a1a2e"/>
+  <circle cx="60"  cy="255" r="4.5" fill="#1a1a2e"/>
+  <circle cx="280" cy="255" r="4.5" fill="#1a1a2e"/>
+  <circle cx="490" cy="255" r="4.5" fill="#1a1a2e"/>
+  <line x1="280" y1="255" x2="280" y2="272" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="258" y1="272" x2="302" y2="272" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="266" y1="282" x2="294" y2="282" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="274" y1="292" x2="286" y2="292" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="175" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1e7a4a" opacity="0.55">Mesh 1</text>
+  <text x="385" y="175" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a5a9a" opacity="0.55">Mesh 2</text>
 </svg>
-
 
 **Mesh 1** ($i_1$): $R_1 i_1 + L s (i_1 - i_2) = V_{in}$
 

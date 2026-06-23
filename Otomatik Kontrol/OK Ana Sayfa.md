@@ -38,16 +38,26 @@ mindmap
       PM GM Faz/Kazanç Payı
 ```
 
-## Notlar
+## Konu Anlatımları
 
 | # | Konu | Bağlantı |
 |---|------|----------|
-| 1 | Giriş, Kapalı Çevrim, Blok Diyagramlar, Mason | [[01 Giriş Kapalı Çevrim ve Blok Diyagramları]] |
-| 2 | Kararlılık ve Routh-Hurwitz | [[02 Kararlılık ve Routh-Hurwitz]] |
-| 3 | Kararlı Hal Hataları | [[03 Kararlı Hal Hataları]] |
-| 4 | Kök Yer Eğrisi | [[04 Kök Yer Eğrisi]] |
-| 5 | Frekans Analizi ve Bode | [[05 Frekans Analizi ve Bode Diyagramı]] |
+| 1 | Giriş, Kapalı Çevrim, Blok Diyagramlar, Mason | [[Konu Anlatımları/01 Giriş Kapalı Çevrim ve Blok Diyagramları]] |
+| 2 | Kararlılık ve Routh-Hurwitz | [[Konu Anlatımları/02 Kararlılık ve Routh-Hurwitz]] |
+| 3 | Kararlı Hal Hataları | [[Konu Anlatımları/03 Kararlı Hal Hataları]] |
+| 4 | Kök Yer Eğrisi | [[Konu Anlatımları/04 Kök Yer Eğrisi]] |
+| 5 | Frekans Analizi ve Bode | [[Konu Anlatımları/05 Frekans Analizi ve Bode Diyagramı]] |
 | 📄 | Formül Özeti | [[OK Formül Sayfası]] |
+
+## Örnek Sorular
+
+| # | Konu | Bağlantı |
+|---|------|----------|
+| 1 | Blok Diyagram Örnekleri | [[Örnek Sorular/01 Blok Diyagram Örnekleri]] |
+| 2 | Routh-Hurwitz Örnekleri | [[Örnek Sorular/02 Routh-Hurwitz Örnekleri]] |
+| 3 | Kararlı Hal Hata Örnekleri | [[Örnek Sorular/03 Kararlı Hal Hata Örnekleri]] |
+| 4 | Kök Yer Eğrisi Örnekleri | [[Örnek Sorular/04 Kök Yer Eğrisi Örnekleri]] |
+| 5 | Bode Diyagramı Örnekleri | [[Örnek Sorular/05 Bode Diyagramı Örnekleri]] |
 
 ## İlgili Derslerle Bağlantı
 

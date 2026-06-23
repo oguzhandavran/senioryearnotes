@@ -42,15 +42,24 @@ mindmap
 
 ---
 
-## Konular
+## Konu Anlatımları
 
 | # | Konu | Bağlantı | Öncelik |
 |---|------|----------|---------|
-| 1 | Ayrık Zaman Sinyalleri & Örnekleme | [[01 Ayrık Zaman Sinyalleri ve Örnekleme]] | 🔴 |
-| 2 | Z-Dönüşümü | [[02 Z-Dönüşümü]] | 🔴 |
-| 3 | DFT ve FFT | [[03 DFT ve FFT]] | 🔴 |
-| 4 | Sayısal Filtre Tasarımı | [[04 Sayısal Filtre Tasarımı]] | 🟡 |
+| 1 | Ayrık Zaman Sinyalleri & Örnekleme | [[Konu Anlatımları/01 Ayrık Zaman Sinyalleri ve Örnekleme]] | 🔴 |
+| 2 | Z-Dönüşümü | [[Konu Anlatımları/02 Z-Dönüşümü]] | 🔴 |
+| 3 | DFT ve FFT | [[Konu Anlatımları/03 DFT ve FFT]] | 🔴 |
+| 4 | Sayısal Filtre Tasarımı | [[Konu Anlatımları/04 Sayısal Filtre Tasarımı]] | 🟡 |
 | — | Formül Sayfası | [[SSI Formül Sayfası]] | ⭐ |
+
+## Örnek Sorular
+
+| # | Konu | Bağlantı | Öncelik |
+|---|------|----------|---------|
+| 1 | Örnekleme Örnekleri | [[Örnek Sorular/01 Örnekleme Örnekleri]] | 🔴 |
+| 2 | Z-Dönüşümü Örnekleri | [[Örnek Sorular/02 Z-Dönüşümü Örnekleri]] | 🔴 |
+| 3 | DFT-FFT Örnekleri | [[Örnek Sorular/03 DFT-FFT Örnekleri]] | 🔴 |
+| 4 | Filtre Tasarımı Örnekleri | [[Örnek Sorular/04 Filtre Tasarımı Örnekleri]] | 🟡 |
 
 ---
 
