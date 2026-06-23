@@ -1,6 +1,6 @@
 {
-  "cssTheme": "Adwaita",
-  "theme": "system",
+  "cssTheme": "Primary",
+  "theme": "obsidian",
   "enabledCssSnippets": [
     "mühendislik-theme"
   ],

@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBadgeCheck",
       "LiAudioLines",
       "LiAudioWaveform",
       "LiAsterisk",
-      "LiAxis3d",
-      "LiAtom"
+      "LiAxis3d"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -39,5 +39,9 @@
   "Otomatik Kontrol": "LiAsterisk",
   "Sayısal Sinyal İşleme": "LiAudioLines",
   "Sİnyaller ve Sistemler": "LiAudioWaveform",
-  "Mühendislik Sİstem Tasarımı ve Benzetimi": "LiAxis3d"
+  "Mühendislik Sİstem Tasarımı ve Benzetimi": "LiAxis3d",
+  "HOME.md": {
+    "iconName": "LiBadgeCheck",
+    "iconColor": "#3888f0"
+  }
 }

@@ -75,27 +75,7 @@
   "newStickyNotePath": "",
   "workspaceNotes": [
     {
-      "id": "e2898f460065cac1",
-      "color": {
-        "property": "background_color",
-        "value": "Yellow",
-        "lightColor": "#faf0d0",
-        "darkColor": "#ca8a04",
-        "isDefault": true
-      }
-    },
-    {
-      "id": "5502a11a460c1463",
-      "color": {
-        "property": "background_color",
-        "value": "Yellow",
-        "lightColor": "#faf0d0",
-        "darkColor": "#ca8a04",
-        "isDefault": true
-      }
-    },
-    {
-      "id": "6f58e5c61e5d1700",
+      "id": "51ddd3683792afd8",
       "color": {
         "property": "background_color",
         "value": "Yellow",
