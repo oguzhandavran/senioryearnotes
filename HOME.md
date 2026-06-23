@@ -11,13 +11,13 @@ cssclass: home
 
 ## Dersler
 
-| Ders                                                                             | Hub                                                        | Formül Sayfası                                                  | Durum |
-| -------------------------------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------- | ----- |
-| [[Elektromanyetik Dalga Teorisi/EMD Ana Sayfa\|⚡ Elektromanyetik Dalga Teorisi]] | [[Elektromanyetik Dalga Teorisi/EMD Ana Sayfa]]            | [[Elektromanyetik Dalga Teorisi/EMD Formül Sayfası]]            | 🔴    |
-| [[MST Ana Sayfa\|⚙️ MST & Benzetim]]    | [[MST Ana Sayfa]] | [[MST Formül Sayfası]] | 🔴    |
-| [[Otomatik Kontrol/OK Ana Sayfa\|🎛️ Otomatik Kontrol]]                          | [[Otomatik Kontrol/OK Ana Sayfa]]                          | [[Otomatik Kontrol/OK Formül Sayfası]]                          | 🔴    |
-| [[Sayısal Sinyal İşleme/SSI Ana Sayfa\|📡 Sayısal Sinyal İşleme]]                | [[Sayısal Sinyal İşleme/SSI Ana Sayfa]]                    | [[Sayısal Sinyal İşleme/SSI Formül Sayfası]]                    | 🔴    |
-| [[Sİnyaller ve Sistemler/SS Ana Sayfa\|〰️ Sinyaller ve Sistemler]]               | [[Sİnyaller ve Sistemler/SS Ana Sayfa]]                    | [[Sİnyaller ve Sistemler/SS Formül Sayfası]]                    | 🔴    |
+| Ders                                                                             | Hub                                             | Formül Sayfası                                       | Durum |
+| -------------------------------------------------------------------------------- | ----------------------------------------------- | ---------------------------------------------------- | ----- |
+| [[Elektromanyetik Dalga Teorisi/EMD Ana Sayfa\|⚡ Elektromanyetik Dalga Teorisi]] | [[Elektromanyetik Dalga Teorisi/EMD Ana Sayfa]] | [[Elektromanyetik Dalga Teorisi/EMD Formül Sayfası]] | 🔴    |
+| [[MST Ana Sayfa\|⚙️ MST & Benzetim]]                                             | [[MST Ana Sayfa]]                               | [[MST Formül Sayfası]]                               | 🔴    |
+| [[Otomatik Kontrol/OK Ana Sayfa\|🎛️ Otomatik Kontrol]]                          | [[Otomatik Kontrol/OK Ana Sayfa]]               | [[Otomatik Kontrol/OK Formül Sayfası]]               | 🔴    |
+| [[Sayısal Sinyal İşleme/SSI Ana Sayfa\|📡 Sayısal Sinyal İşleme]]                | [[Sayısal Sinyal İşleme/SSI Ana Sayfa]]         | [[Sayısal Sinyal İşleme/SSI Formül Sayfası]]         | 🔴    |
+| [[Sİnyaller ve Sistemler/SS Ana Sayfa\|〰️ Sinyaller ve Sistemler]]               | [[Sİnyaller ve Sistemler/SS Ana Sayfa]]         | [[Sİnyaller ve Sistemler/SS Formül Sayfası]]         | 🔴    |
 
 ---
 
