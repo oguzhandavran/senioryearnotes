@@ -1,53 +1,14 @@
 ---
-tags: [mst, durum-uzayı, state-space, matris, özdeğer, kontrol]
+tags: [mst, durum-uzayı, state-space, matris, özdeğer, kontrol, örnek-sorular]
 ---
 
-# 03 — Durum Uzayı (State Space)
+# 03 — Durum Uzayı Örnekleri
 
-← [[MST Ana Sayfa]]
-
-## Durum Uzayı Gösterimi
-
-$$\boxed{\dot{x}(t) = Ax(t) + Bu(t)}$$
-$$\boxed{y(t) = Cx(t) + Du(t)}$$
-
-| Sembol | Boyut | Açıklama |
-|--------|-------|---------|
-| $x$ | $n \times 1$ | Durum vektörü |
-| $u$ | $r \times 1$ | Giriş vektörü |
-| $y$ | $m \times 1$ | Çıkış vektörü |
-| $A$ | $n \times n$ | Sistem matrisi (dinamikler) |
-| $B$ | $n \times r$ | Giriş matrisi |
-| $C$ | $m \times n$ | Çıkış matrisi |
-| $D$ | $m \times r$ | İletim matrisi |
+← [[MST Ana Sayfa]] | Teori: [[../Konu Anlatımları/03 Durum Uzayı|03 Durum Uzayı]]
 
 ---
 
-## State-Space → Transfer Fonksiyonu
-
-Laplace dönüşümü ($x(0)=0$):
-
-$$sX(s) = AX(s) + BU(s) \implies X(s) = (sI - A)^{-1}BU(s)$$
-
-$$\boxed{G(s) = C(sI - A)^{-1}B + D}$$
-
----
-
-## Transfer Fonksiyonu → State-Space
-
-### Kontrolör Canonical Form (Faz Değişkenleri)
-
-$$G(s) = \frac{b_{n-1}s^{n-1} + \ldots + b_1 s + b_0}{s^n + a_{n-1}s^{n-1} + \ldots + a_1 s + a_0}$$
-
-**Durum değişkenleri:** $x_1 = y$, $x_2 = \dot{y}$, ..., $x_n = y^{(n-1)}$
-
-$$A = \begin{bmatrix} 0 & 1 & 0 & \cdots & 0 \\ 0 & 0 & 1 & \cdots & 0 \\ \vdots & & & \ddots & \vdots \\ -a_0 & -a_1 & -a_2 & \cdots & -a_{n-1} \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}$$
-
-$$C = \begin{bmatrix} b_0 & b_1 & \cdots & b_{n-1} \end{bmatrix}, \quad D = 0 \text{ (proper)}$$
-
----
-
-## Çözümlü Örnek 1: Mekanik Sistem
+## Çözümlü Örnek 1: Mekanik Sistem (Ders Notları)
 
 **Sistem:** $m\ddot{x} + b\dot{x} + kx = f(t)$, $m=1$, $b=3$, $k=2$
 
@@ -63,7 +24,7 @@ $$G(s) = C(sI-A)^{-1}B = \frac{1}{s^2+3s+2} \quad \checkmark$$
 
 ---
 
-## Çözümlü Örnek 2: RLC Devre
+## Çözümlü Örnek 2: RLC Devre (Ders Notları)
 
 **Devre:** $L = 1$, $R = 3$, $C = 0.5$ (seri RLC, $v_C$ çıkış)
 
@@ -82,7 +43,7 @@ $$A = \begin{bmatrix} 0 & 1 \\ -2 & -3 \end{bmatrix}, \quad B = \begin{bmatrix} 
 
 ---
 
-## Çözümlü Örnek 3: İki Kütleli Sistem
+## Çözümlü Örnek 3: İki Kütleli Sistem (Ders Notları)
 
 <svg width="400" height="140" xmlns="http://www.w3.org/2000/svg">
   <!-- Wall left -->
@@ -118,7 +79,6 @@ $$A = \begin{bmatrix} 0 & 1 \\ -2 & -3 \end{bmatrix}, \quad B = \begin{bmatrix} 
   </defs>
 </svg>
 
-
 **Denklemler:**
 $$m_1\ddot{x}_1 = -k_1 x_1 - k_2(x_1-x_2) - b_1\dot{x}_1$$
 $$m_2\ddot{x}_2 = -k_2(x_2-x_1) + f$$
@@ -131,51 +91,7 @@ $$B = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1/m_2 \end{bmatrix}$$
 
 ---
 
-## Özdeğer Analizi (Kararlılık)
-
-Sistemin özdeğerleri = $A$ matrisinin özdeğerleri = karakteristik polinomun kökleri
-
-$$\det(sI - A) = 0 \quad \text{(karakteristik denklem)}$$
-
-| Özdeğer konumu | Sistem davranışı |
-|----------------|-----------------|
-| Tüm özdeğerler $\text{Re}(s) < 0$ | **Kararlı** |
-| Herhangi $\text{Re}(s) > 0$ | **Kararsız** |
-| $\text{Re}(s) = 0$ | Sınır durumu |
-
-**Özdeğer hesabı:**
-$$\lambda_i: \quad \det(\lambda I - A) = 0$$
-
----
-
-## Kontrol Edilebilirlik ve Gözlenebilirlik
-
-**Kontrol Edilebilirlik Matrisi:**
-$$\mathcal{C} = \begin{bmatrix} B & AB & A^2B & \cdots & A^{n-1}B \end{bmatrix}$$
-
-Sistem kontrol edilebilir $\iff \text{rank}(\mathcal{C}) = n$
-
-**Gözlenebilirlik Matrisi:**
-$$\mathcal{O} = \begin{bmatrix} C \\ CA \\ CA^2 \\ \vdots \\ CA^{n-1} \end{bmatrix}$$
-
-Sistem gözlenebilir $\iff \text{rank}(\mathcal{O}) = n$
-
----
-
-> [!sinav] Sınav İpucu
-> - $G(s) = C(sI-A)^{-1}B + D$ → sınav sorusu olmaya devam eder!
-> - Özdeğerler → $\det(\lambda I-A) = 0$ → kararlılık kontrolü
-> - Faz değişkenleri: son satır $= [-a_0, -a_1, ..., -a_{n-1}]$
-> - Durum değişkeni seçimi özgür ama fiziksel anlam kolaylaştırır
-> - SS ve TF aynı sistem için eşdeğer — özdeğerler = kutuplar
-
----
-
----
-
-## Çözümlü Örnekler (Dataset)
-
-### SS Örnek 1 — Mekanik Sistem State-Space
+## SS Örnek 1 — Mekanik Sistem State-Space
 
 *Sistem: Kütle $m$, yay $k$, sönümleyici $b$, giriş $f(t)$*
 
@@ -240,7 +156,7 @@ G = ss(A,B,C,D);
 
 ---
 
-### SS Örnek 2 — Verilen Matrislerden TF Hesabı
+## SS Örnek 2 — Verilen Matrislerden TF Hesabı
 
 $$A = \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ -24 & -26 & -9 \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ 0 \\ 24 \end{bmatrix}, \quad C = \begin{bmatrix} 1 & 0 & 0 \end{bmatrix}, \quad D = 0$$
 
@@ -259,7 +175,7 @@ Tüm kutuplar sol yarı düzlemde → **asimptotik kararlı** ✓
 
 ---
 
-### SS Örnek 3 — İki Kütleli Sistem State-Space
+## SS Örnek 3 — İki Kütleli Sistem State-Space
 
 <svg width="520" height="140" viewBox="0 0 520 140" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -310,7 +226,7 @@ $y = y_2$ için $C = \begin{bmatrix} 0 & 1 & 0 & 0 \end{bmatrix}$, $D = 0$
 
 ---
 
-### SS Örnek 4 — RLC Devre State-Space
+## SS Örnek 4 — RLC Devre State-Space
 
 <svg width="500" height="240" viewBox="0 0 500 240" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -370,11 +286,9 @@ $$\dot{x}_1 = \frac{u(t)}{C} - \frac{x_2}{C}, \qquad \dot{x}_2 = \frac{x_1}{L} -
 
 $$\boxed{\begin{bmatrix} \dot{x}_1 \\ \dot{x}_2 \end{bmatrix} = \begin{bmatrix} 0 & -\dfrac{1}{C} \\ \dfrac{1}{L} & -\dfrac{R}{L} \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} + \begin{bmatrix} \dfrac{1}{C} \\ 0 \end{bmatrix} u, \quad y = \begin{bmatrix} 0 & R \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}}$$
 
-> **Kural:** Elektrik sistemlerde durum değişkenleri = **kondansatör gerilimleri** + **bobin akımları**.
-
 ---
 
-### SS Örnek 5 — $C(sI-A)^{-1}B$ Adım Adım
+## SS Örnek 5 — $C(sI-A)^{-1}B$ Adım Adım
 
 Örnek 2 ile aynı matrisler: $A_{3\times3}$, $B=[0\ 0\ 24]^T$, $C=[1\ 0\ 0]$
 
@@ -396,7 +310,7 @@ $$\boxed{G(s) = \frac{24}{s^3+9s^2+26s+24} = \frac{24}{(s+2)(s+3)(s+4)}}$$
 
 ---
 
-### SS Örnek 6 — C₁-R-L-C₂ Üçüncü Dereceden State-Space
+## SS Örnek 6 — C₁-R-L-C₂ Üçüncü Dereceden State-Space
 
 <svg width="520" height="260" viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -458,7 +372,3 @@ $$\dot{x}_3 = -\frac{1}{RC_2}x_1 - \frac{1}{RC_2}x_3 + \frac{1}{RC_2}V_i$$
 $$\boxed{A = \begin{bmatrix} -\frac{1}{RC_1} & \frac{1}{C_1} & -\frac{1}{RC_1} \\ -\frac{1}{L} & 0 & 0 \\ -\frac{1}{RC_2} & 0 & -\frac{1}{RC_2} \end{bmatrix}, \quad B = \begin{bmatrix} \frac{1}{RC_1} \\ \frac{1}{L} \\ \frac{1}{RC_2} \end{bmatrix}}$$
 
 $y = V_o = V_{C_2} = x_3$ için $C_{mat} = [0\ 0\ 1]$, $D=0$
-
----
-
-← [[02 Elektrik Sistemleri]] | [[MST Ana Sayfa]] | → [[04 Doğrusallaştırma]]

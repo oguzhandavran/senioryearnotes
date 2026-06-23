@@ -38,16 +38,26 @@ mindmap
       Özdeğer Analizi
 ```
 
-## Notlar
+## Konu Anlatımları
 
 | # | Konu | Bağlantı |
 |---|------|----------|
-| 1 | Mekanik Sistemler | [[01 Mekanik Sistemler]] |
-| 2 | Elektrik Sistemleri | [[02 Elektrik Sistemleri]] |
-| 3 | Durum Uzayı | [[03 Durum Uzayı]] |
-| 4 | Doğrusallaştırma | [[04 Doğrusallaştırma]] |
-| 5 | KYE ve Kompansasyon | [[05 Kök Yer Eğrisi ve Kompansasyon]] |
+| 1 | Mekanik Sistemler | [[Konu Anlatımları/01 Mekanik Sistemler]] |
+| 2 | Elektrik Sistemleri | [[Konu Anlatımları/02 Elektrik Sistemleri]] |
+| 3 | Durum Uzayı | [[Konu Anlatımları/03 Durum Uzayı]] |
+| 4 | Doğrusallaştırma | [[Konu Anlatımları/04 Doğrusallaştırma]] |
+| 5 | KYE ve Kompansasyon | [[Konu Anlatımları/05 Kök Yer Eğrisi ve Kompansasyon]] |
 | 📄 | Formül Özeti | [[MST Formül Sayfası]] |
+
+## Örnek Sorular
+
+| # | Konu | Bağlantı |
+|---|------|----------|
+| 1 | Mekanik Sistemler Örnekleri | [[Örnek Sorular/01 Mekanik Sistemler Örnekleri]] |
+| 2 | Elektrik Sistemleri Örnekleri | [[Örnek Sorular/02 Elektrik Sistemleri Örnekleri]] |
+| 3 | Durum Uzayı Örnekleri | [[Örnek Sorular/03 Durum Uzayı Örnekleri]] |
+| 4 | Doğrusallaştırma Örnekleri | [[Örnek Sorular/04 Doğrusallaştırma Örnekleri]] |
+| 5 | Kök Yer Eğrisi Örnekleri | [[Örnek Sorular/05 Kök Yer Eğrisi Örnekleri]] |
 
 ## Diğer Derslerle Bağlantı
 
