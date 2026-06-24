@@ -80,9 +80,22 @@ $x = V_C$ (kondansatör gerilimi, devrenin "hafızası")
 $$u(t) = V_C(t) + R(t) \cdot i(t)$$
 
 **Adım 3 — $i = C\dot{V}_C$ koyarak $\dot{x}$'i bul:**
-$$u(t) = x + R(t) \cdot C \cdot \dot{x}$$
 
-$$\boxed{\dot{x}(t) = \frac{u(t)}{R(t) \cdot C} - \frac{x(t)}{R(t) \cdot C}}$$
+Kondansatörde akım-gerilim ilişkisi: $i = C\dot{V}_C = C\dot{x}$
+
+Bunu Adım 2'deki KVL'ye koy:
+$$u(t) = x + R \cdot C \cdot \dot{x}$$
+
+$\dot{x}$'i yalnız bırak (her iki taraftan $x$'i çıkar, $RC$'ye böl):
+$$R \cdot C \cdot \dot{x} = u - x$$
+
+$$\boxed{\dot{x}(t) = \frac{u(t)}{RC} - \frac{x(t)}{RC}}$$
+
+> [!tip] Sezgi
+> - $+\dfrac{u}{RC}$ → giriş kondansatörü **doldurur**
+> - $-\dfrac{x}{RC}$ → zaten doluysa dolma hızı **yavaşlar** (negatif geri besleme)
+>
+> Bu, $\dot{x} = Ax + Bu$ formunun ta kendisi: $A = -\dfrac{1}{RC}$, $B = \dfrac{1}{RC}$
 
 **Adım 4 — Çıkış denklemi:**
 $$y(t) = u(t) - V_C(t) = -x(t) + u(t)$$
@@ -116,20 +129,74 @@ Bu tam olarak $\dot{x} = Ax + Bu$ formudur.
 
 ## Doğrusal Olmayan Sistemlerde State Space
 
-Doğrusal olmayan sistemlerde $A$, $B$, $C$, $D$ sabit matrisler olmaz. Bunun yerine:
+### Neden farklı?
 
-$$\dot{x}(t) = f(x, u, t)$$
-$$y(t) = h(x, u, t)$$
+Şimdiye kadar gördüğümüz $\dot{x} = Ax + Bu$ formunda $A$ ve $B$ **sabit** matrislerdi — sistem her noktada aynı şekilde davranıyordu.
 
-Birden fazla durum değişkeni varsa vektör olarak yazılır:
+Gerçek dünyada çoğu sistem doğrusal değildir: sarkaç, uçak, robot kolu… Bunlarda $A$ ve $B$ yok, onların yerine **genel fonksiyonlar** var:
 
-$$\begin{bmatrix} \dot{x}_1 \\ \dot{x}_2 \\ \vdots \\ \dot{x}_n \end{bmatrix} = \begin{bmatrix} f_1(x, u, t) \\ f_2(x, u, t) \\ \vdots \\ f_n(x, u, t) \end{bmatrix}$$
+$$\dot{x}(t) = f(x,\, u,\, t) \qquad \text{(durum denklemi)}$$
+$$y(t) = h(x,\, u,\, t) \qquad \text{(çıkış denklemi)}$$
 
-> [!warning] Önemli
-> $f$ ve $h$ zamana bağımlı değilse (**zamanla değişmeyen sistem** — time-invariant) $t$ argümanı düşer:
-> $$\dot{x} = f(x, u), \quad y = h(x, u)$$
+> [!info] Ne anlama geliyor?
+> - $f$ ve $h$ herhangi bir fonksiyon olabilir: $\sin$, $x^2$, çarpımlar…
+> - Matris yok, sabit katsayı yok — her durum noktasında sistem farklı davranır.
+> - $t$ argümanı varsa sistem **zamana bağımlı** (time-varying); yoksa **zamanla değişmeyen** (time-invariant, LTI).
 
-Analiz için: önce **denge noktası** bul → orada **doğrusallaştır** → bkz. [[04 Doğrusallaştırma]]
+---
+
+### Somut Örnek: Sarkaç
+
+Bir sarkacın hareketi:
+$$ml^2\ddot{\theta} + b\dot{\theta} + mgl\sin\theta = \tau$$
+
+**Adım 1 — Durum değişkenlerini seç:**
+
+İki türev var ($\theta$ ve $\dot{\theta}$) → 2 durum değişkeni:
+$$x_1 = \theta \quad \text{(açı)}, \qquad x_2 = \dot{\theta} \quad \text{(açısal hız)}$$
+
+**Adım 2 — $\dot{x}$'leri yaz:**
+
+$$\dot{x}_1 = x_2$$
+
+$$\dot{x}_2 = \frac{\tau}{ml^2} - \frac{b}{ml^2}x_2 - \frac{g}{l}\sin x_1$$
+
+**Adım 3 — Vektör formuna dök:**
+
+$$\begin{bmatrix} \dot{x}_1 \\ \dot{x}_2 \end{bmatrix} = \begin{bmatrix} x_2 \\ \dfrac{\tau}{ml^2} - \dfrac{b}{ml^2}x_2 - \dfrac{g}{l}\sin x_1 \end{bmatrix}$$
+
+Bu $f(x, u)$ fonksiyonudur. $\sin x_1$ terimi yüzünden **doğrusal değil** → $A$ matrisi yazılamaz.
+
+**Adım 4 — Ne yapılır?**
+
+Denge noktası bul (örn. $\theta = 0$, $\dot{\theta} = 0$) → orada **doğrusallaştır**:
+$$\sin\theta \approx \theta \quad \text{(küçük açı için)}$$
+
+Böylece tekrar $\dot{x} = Ax + Bu$ formuna dönülür ve klasik analiz yapılır.
+
+> [!warning] Genel Kural
+> Doğrusal olmayan sistem gelirse:
+> 1. Durum değişkenlerini seç ($n$ tane türev varsa $n$ tane $x$)
+> 2. Her $\dot{x}_i$'yi sistemi tanımlayan denklemden yaz
+> 3. Vektör formuna dök → $\dot{x} = f(x, u)$
+> 4. Analiz için denge noktasında doğrusallaştır → bkz. [[04 Doğrusallaştırma]]
+
+---
+
+### Zamana Bağlı Olmayan Form (Time-Invariant)
+
+Eğer $f$ ve $h$ içinde **$t$ açıkça geçmiyorsa** — yani sistem parametreleri zamanla değişmiyorsa — $t$ argümanı düşer:
+
+$$\dot{x} = f(x,\, u), \qquad y = h(x,\, u)$$
+
+> [!example] Fark nedir?
+> | | Zamana bağımlı | Zamana bağımsız |
+> |---|---|---|
+> | **Örnek** | $\dot{x} = -\frac{x}{R(t)C}$ — $R$ zamanla değişiyor | $\dot{x} = -\frac{x}{RC}$ — $R$, $C$ sabit |
+> | **$t$ argümanı** | $f(x, u, \mathbf{t})$ | $f(x, u)$ |
+> | **Analiz** | Zor, genel çözüm yok | Laplace, matris üstelleri kullanılabilir |
+>
+> **Kural:** Sarkacın $m$, $l$, $g$ sabitleri değişmiyorsa → time-invariant. RC devresi sabit dirençle → time-invariant.
 
 ---
 
@@ -194,14 +261,35 @@ Gözlenebilir $\iff \text{rank}(\mathcal{O}) = n$
 
 ## Özet: Türetme Adımları
 
-```mermaid
-flowchart TD
-    A["Sistemi tanımla\n(devre, mekanik...)"] --> B["Enerji depolayan elemanları say\n→ kaç durum değişkeni?"]
-    B --> C["Durum değişkenlerini seç\nVc, iL, x, v..."]
-    C --> D["KVL / KCL / Newton yasası yaz"]
-    D --> E["ẋ = ... formuna sok\n(türev = ...  şeklinde)"]
-    E --> F["Matris formuna yaz\nẋ = Ax + Bu\ny = Cx + Du"]
-```
+<svg width="340" height="346" viewBox="0 0 340 346" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-mst03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="30" y="10" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. Sistemi tanımla</text>
+  <text x="170" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">(elektrik devre, mekanik sistem…)</text>
+  <line x1="170" y1="52" x2="170" y2="68" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
+  <rect x="30" y="70" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="88" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. Enerji depolayan elemanları say</text>
+  <text x="170" y="104" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">→ kaç durum değişkeni gerekiyor?</text>
+  <line x1="170" y1="112" x2="170" y2="128" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
+  <rect x="30" y="130" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="148" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Durum değişkenlerini seç</text>
+  <text x="170" y="164" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">V_C, i_L, x(t), v(t) …</text>
+  <line x1="170" y1="172" x2="170" y2="188" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
+  <rect x="30" y="190" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="212" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. KVL / KCL / Newton yasası yaz</text>
+  <line x1="170" y1="224" x2="170" y2="240" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
+  <rect x="30" y="242" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="260" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">5. ẋ = f(x, u) formuna sok</text>
+  <text x="170" y="276" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">(her denklem: türev = …)</text>
+  <line x1="170" y1="284" x2="170" y2="300" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
+  <rect x="30" y="302" width="280" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="316" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">6. Matris formuna yaz ✓</text>
+  <text x="170" y="330" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#aac4e8">ẋ = Ax + Bu,   y = Cx + Du</text>
+</svg>
 
 ---
 

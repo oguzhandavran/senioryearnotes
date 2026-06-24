@@ -28,20 +28,53 @@ Kapalı çevrim sistem tasarımında tipik hedefler:
 
 ## Kompansatör Türleri
 
-```mermaid
-graph TD
-    K["Kompansatör Türleri"] --> PD["PD\n(türevsel)"]
-    K --> PI["PI\n(integral)"]
-    K --> PID["PID"]
-    K --> Lead["Lead\n(faz öncüsü)"]
-    K --> Lag["Lag\n(faz gericisi)"]
-    K --> LL["Lead-Lag\n(birleşik)"]
-
-    PD -->|"sıfır ekler\nhız arttırır"| PD2["Overshoot kontrolü\nSettling time azaltır"]
-    PI -->|"kutup ekler\ntip arttırır"| PI2["Kararlı hal hatasını\nsıfırlar"]
-    Lead -->|"sıfır + kutup\nfaz arttırır"| L2["PM arttırır\nBant genişliği artar"]
-    Lag -->|"sıfır + kutup\nkazanç arttırır"| G2["Düşük frekansta\nkazanç arttırır"]
-```
+<svg width="480" height="330" viewBox="0 0 480 330" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-mst05a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Root node -->
+  <rect x="130" y="10" width="220" height="36" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="240" y="33" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="white">Kompansatör Türleri</text>
+  <!-- Lines from root bottom (240,46) to 6 children -->
+  <line x1="240" y1="46" x2="120" y2="90" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05a)"/>
+  <line x1="240" y1="46" x2="360" y2="90" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05a)"/>
+  <line x1="240" y1="46" x2="120" y2="175" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05a)"/>
+  <line x1="240" y1="46" x2="360" y2="175" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05a)"/>
+  <line x1="240" y1="46" x2="120" y2="258" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05a)"/>
+  <line x1="240" y1="46" x2="360" y2="258" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05a)"/>
+  <!-- Row 1 Left: PD -->
+  <rect x="35" y="92" width="170" height="52" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="120" y="112" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="#1a1a2e">PD (türevsel)</text>
+  <text x="120" y="128" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">sıfır ekler → hız artar</text>
+  <text x="120" y="140" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">T_s azaltır, %OS kontrolü</text>
+  <!-- Row 1 Right: Lead -->
+  <rect x="275" y="92" width="170" height="52" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="360" y="112" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="#1a1a2e">Lead (faz öncüsü)</text>
+  <text x="360" y="128" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">sıfır + kutup, faz arttırır</text>
+  <text x="360" y="140" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">PM artar, BW artar</text>
+  <!-- Row 2 Left: PI -->
+  <rect x="35" y="177" width="170" height="52" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="120" y="197" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="#1a1a2e">PI (integral)</text>
+  <text x="120" y="213" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">kutup ekler → tip artar</text>
+  <text x="120" y="225" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">kararlı hal hatası → 0</text>
+  <!-- Row 2 Right: Lag -->
+  <rect x="275" y="177" width="170" height="52" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="360" y="197" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="#1a1a2e">Lag (faz gericisi)</text>
+  <text x="360" y="213" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">kazancı artırır (DC'de)</text>
+  <text x="360" y="225" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">geçici yanıt az değişir</text>
+  <!-- Row 3 Left: PID -->
+  <rect x="35" y="260" width="170" height="52" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="120" y="280" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="#1a1a2e">PID</text>
+  <text x="120" y="296" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">PD + PI kombinasyonu</text>
+  <text x="120" y="308" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">hız + hata kontrolü</text>
+  <!-- Row 3 Right: Lead-Lag -->
+  <rect x="275" y="260" width="170" height="52" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="360" y="280" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="#1a1a2e">Lead-Lag</text>
+  <text x="360" y="296" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Lead + Lag birleşimi</text>
+  <text x="360" y="308" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">hız + kararlı hal iyileştirme</text>
+</svg>
 
 ---
 
@@ -154,18 +187,65 @@ $p_1 < z_1 < z_2 < p_2$ (lag + lead birleşimi):
 
 ## KYE ile Tasarım Özeti
 
-```mermaid
-flowchart TD
-    A["İstenen specs\n%OS, Ts, ess"] --> B["ζ, ωn hesapla"]
-    B --> C["Baskın kutup sd hesapla"]
-    C --> D["Kompansatörsüz açı hesapla"]
-    D --> E{Açı farkı?}
-    E -->|"< 60°"| F["Lead kompansatör"]
-    E -->|"Kazanç yeterliyse"| G["Sadece K ayarı"]
-    F --> H["Açı şartından zc bul"]
-    H --> I["Genlik şartından Kc bul"]
-    I --> J["Doğrula: tüm specs ✓"]
-```
+<svg width="460" height="390" viewBox="0 0 460 390" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-mst05b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Step 1 -->
+  <rect x="90" y="10" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. İstenen specs: %OS, T_s, e_ss</text>
+  <line x1="230" y1="44" x2="230" y2="60" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst05b)"/>
+  <!-- Step 2 -->
+  <rect x="90" y="62" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="84" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. ζ, ω_n hesapla</text>
+  <line x1="230" y1="96" x2="230" y2="112" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst05b)"/>
+  <!-- Step 3 -->
+  <rect x="90" y="114" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="136" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Baskın kutup s_d hesapla</text>
+  <line x1="230" y1="148" x2="230" y2="164" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst05b)"/>
+  <!-- Step 4 -->
+  <rect x="90" y="166" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="188" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. Kompansatörsüz açı hesapla</text>
+  <line x1="230" y1="200" x2="230" y2="214" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst05b)"/>
+  <!-- Diamond: Açı farkı? -->
+  <polygon points="230,216 298,244 230,272 162,244" fill="white" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="240" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Açı farkı?</text>
+  <text x="230" y="256" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">(kompansatör gerekli mi?)</text>
+  <!-- Left branch label -->
+  <text x="108" y="240" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">&lt; 60°</text>
+  <!-- Left branch line from diamond left (162,244) → down to x=90, y=290 -->
+  <line x1="162" y1="244" x2="90" y2="244" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="90" y1="244" x2="90" y2="290" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05b)"/>
+  <!-- Left branch: Lead Kompansatör -->
+  <rect x="5" y="292" width="170" height="30" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="90" y="312" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Lead Kompansatör seç</text>
+  <line x1="90" y1="322" x2="90" y2="338" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05b)"/>
+  <!-- Açı şartından z_c -->
+  <rect x="5" y="340" width="170" height="30" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="90" y="360" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Açı şartından z_c bul</text>
+  <line x1="90" y1="370" x2="90" y2="383" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05b)"/>
+  <!-- Doğrula (dark box) at very bottom left -->
+  <!-- Right branch label -->
+  <text x="360" y="240" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Kazanç yeterli</text>
+  <!-- Right branch line from diamond right (298,244) → down to x=370, y=290 -->
+  <line x1="298" y1="244" x2="370" y2="244" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="370" y1="244" x2="370" y2="290" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05b)"/>
+  <!-- Right branch: Sadece K -->
+  <rect x="285" y="292" width="170" height="30" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="370" y="312" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Sadece K ayarı yeterli</text>
+  <!-- Genlik şartından K_c (shared / converging) -->
+  <line x1="370" y1="322" x2="370" y2="355" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="370" y1="355" x2="285" y2="355" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="285" y1="355" x2="230" y2="355" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05b)"/>
+  <line x1="90" y1="386" x2="175" y2="386" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="175" y1="386" x2="185" y2="386" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst05b)"/>
+  <!-- Final box: Doğrula -->
+  <rect x="185" y="348" width="120" height="44" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="245" y="367" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">Genlik şartı</text>
+  <text x="245" y="383" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">K_c bul ✓</text>
+</svg>
 
 ---
 

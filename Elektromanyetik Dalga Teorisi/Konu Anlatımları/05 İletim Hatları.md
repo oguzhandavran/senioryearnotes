@@ -117,13 +117,39 @@ $$P_{av} = \frac{|V_0^+|^2}{2Z_0}\left(1-|\Gamma_L|^2\right)$$
 
 ## Smith Çizimi (Kavramsal)
 
-```mermaid
-graph TD
-    A["Smith Çizimi\n(Normalized Impedance)"] --> B["r=1 Dairesi\n→ Γ çemberi"]
-    A --> C["x=const Dairesi\n→ Reaktans eğrisi"]
-    B --> D["Merkez: uyumlu nokta\nΓ=0, Z=Z₀"]
-    C --> E["Dış halka: |Γ|=1\nTam yansıma"]
-```
+<svg width="420" height="250" viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-emd05" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Root -->
+  <rect x="100" y="10" width="220" height="40" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="210" y="27" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">Smith Çizimi</text>
+  <text x="210" y="43" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#aac4e8">(Normalize empedans)</text>
+  <!-- Fan lines -->
+  <line x1="210" y1="50" x2="110" y2="90" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-emd05)"/>
+  <line x1="210" y1="50" x2="310" y2="90" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-emd05)"/>
+  <!-- Left branch: r=1 circles -->
+  <rect x="10" y="92" width="190" height="44" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="105" y="110" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">r = sabit daireler</text>
+  <text x="105" y="127" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Direnç çemberleri</text>
+  <!-- Right branch: x circles -->
+  <rect x="220" y="92" width="190" height="44" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="315" y="110" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">x = sabit yaylar</text>
+  <text x="315" y="127" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Reaktans eğrileri</text>
+  <!-- Sub-branches -->
+  <line x1="105" y1="136" x2="105" y2="162" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arr-emd05)"/>
+  <rect x="10" y="164" width="190" height="44" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="105" y="182" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Merkez: Γ = 0</text>
+  <text x="105" y="198" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Z = Z₀ (uyumlu)</text>
+  <line x1="315" y1="136" x2="315" y2="162" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arr-emd05)"/>
+  <rect x="220" y="164" width="190" height="44" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="315" y="182" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Dış halka: |Γ| = 1</text>
+  <text x="315" y="198" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#c0392b">Tam yansıma</text>
+  <!-- Note -->
+  <text x="210" y="236" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e" font-style="italic">Saat yönü → yüke doğru (WTL)  |  Tersi → generatöre (WTG)  |  λ/4 = 180°</text>
+</svg>
 
 Smith çiziminde:
 - Saat yönü → Yük'e doğru (WTL)

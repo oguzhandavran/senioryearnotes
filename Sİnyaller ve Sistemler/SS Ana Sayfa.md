@@ -26,34 +26,43 @@ aliases: [SS, Sinyaller ve Sistemler]
 
 ## Konu Haritası
 
-```mermaid
-mindmap
-  root((Sinyaller ve Sistemler))
-    Sinyal Sınıflandırması
-      CT x(t) / DT x[n]
-      Enerji / Güç
-      Periyodik / Aperiodik
-      Çift / Tek
-      Temel Sinyaller δ u ramp
-    LTI Sistemler
-      Doğrusallik
-      Zamanla Değişmezlik
-      Nedensellik
-      Kararlılık
-      Konvolüsyon
-    Fourier Serisi
-      CTFS katsayıları
-      DTFS katsayıları
-      Parseval
-    Fourier Dönüşümü
-      CTFT
-      DTFT
-      Özellikler
-    Laplace Dönüşümü
-      ROC
-      PFD
-      Transfer Fonksiyonu
-```
+<svg width="500" height="546" viewBox="0 0 500 546" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="100" height="526" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text transform="translate(60,273) rotate(-90)" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">Sinyaller ve Sistemler</text>
+  <line x1="110" y1="61" x2="110" y2="503" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="10" width="370" height="102" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="30" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Sinyal Sınıflandırması</text>
+  <text x="140" y="48" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• CT x(t) / DT x[n] (sürekli / ayrık)</text>
+  <text x="140" y="66" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Enerji (E&lt;∞) / Güç (0&lt;P&lt;∞)</text>
+  <text x="140" y="84" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Periyodik / Aperiodik, Çift / Tek</text>
+  <text x="140" y="102" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Temel sinyaller: δ(t), u(t), r(t)</text>
+  <line x1="110" y1="61" x2="120" y2="61" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="120" width="370" height="102" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="140" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">LTI Sistemler</text>
+  <text x="140" y="158" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Doğrusallik (superposition)</text>
+  <text x="140" y="176" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Zamanla Değişmezlik (TI)</text>
+  <text x="140" y="194" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Nedensellik, Kararlılık (BIBO)</text>
+  <text x="140" y="212" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Konvolüsyon: y(t) = x(t) * h(t)</text>
+  <line x1="110" y1="171" x2="120" y2="171" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="230" width="370" height="84" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="250" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Fourier Serisi</text>
+  <text x="140" y="268" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• CTFS: cₙ = (1/T)∫x(t)e^{−jnω₀t}dt</text>
+  <text x="140" y="286" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• DTFS katsayıları, Parseval bağıntısı</text>
+  <text x="140" y="304" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Periyodik → darbe serisi spektrumu</text>
+  <line x1="110" y1="272" x2="120" y2="272" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="322" width="370" height="84" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="342" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Fourier Dönüşümü (CTFT)</text>
+  <text x="140" y="360" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• X(f) = ∫x(t)e^{−j2πft}dt</text>
+  <text x="140" y="378" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• DTFT: X(e^{jω}) = Σx[n]e^{−jωn}</text>
+  <text x="140" y="396" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Özellikler: kaydırma, ölçekleme, modülasyon</text>
+  <line x1="110" y1="364" x2="120" y2="364" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="414" width="370" height="84" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="434" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Laplace Dönüşümü</text>
+  <text x="140" y="452" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• ROC (yakınsama bölgesi)</text>
+  <text x="140" y="470" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• PFD ile ters Laplace</text>
+  <text x="140" y="488" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Transfer Fonksiyonu H(s) = Y(s)/X(s)</text>
+  <line x1="110" y1="503" x2="120" y2="503" stroke="#1a1a2e" stroke-width="1.5"/>
+</svg>
 
 ---
 
@@ -91,17 +100,27 @@ mindmap
 
 ## Diğer Derslerle Bağlantı
 
-```mermaid
-graph LR
-    SS["SS: Sinyaller & Sistemler"] -->|"Ayrıklaştırma → x[n]"| SSI["📡 Sayısal Sinyal İşleme"]
-    SS -->|"Laplace → Transfer Fonksiyonu"| OK["🎛️ Otomatik Kontrol"]
-    SS -->|"Durum Uzayı → ODE"| MST["⚙️ MST&B"]
-    
-    style SS fill:#5B9BD5,color:#fff
-    style SSI fill:#9467BD,color:#fff
-    style OK fill:#FFA500,color:#000
-    style MST fill:#18B464,color:#fff
-```
+<svg width="460" height="170" viewBox="0 0 460 170" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ss-grl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="10" y="68" width="155" height="34" rx="2" fill="#5B9BD5" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="90" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">Sinyaller &amp; Sistemler</text>
+  <rect x="295" y="10" width="155" height="34" rx="2" fill="#9467BD" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="372" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">Sayısal Sinyal İşl.</text>
+  <rect x="295" y="68" width="155" height="34" rx="2" fill="#FFA500" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="372" y="90" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">Otomatik Kontrol</text>
+  <rect x="295" y="126" width="155" height="34" rx="2" fill="#18B464" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="372" y="148" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">MST &amp; Benzetim</text>
+  <line x1="165" y1="78" x2="295" y2="34" stroke="#1a1a2e" stroke-width="1.4" marker-end="url(#arr-ss-grl)"/>
+  <text x="228" y="50" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e" font-style="italic">Ayrıklaştırma → x[n]</text>
+  <line x1="165" y1="85" x2="295" y2="85" stroke="#1a1a2e" stroke-width="1.4" marker-end="url(#arr-ss-grl)"/>
+  <text x="228" y="80" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e" font-style="italic">Laplace → TF</text>
+  <line x1="165" y1="95" x2="295" y2="136" stroke="#1a1a2e" stroke-width="1.4" marker-end="url(#arr-ss-grl)"/>
+  <text x="228" y="128" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e" font-style="italic">Durum Uzayı → ODE</text>
+</svg>
 
 ---
 

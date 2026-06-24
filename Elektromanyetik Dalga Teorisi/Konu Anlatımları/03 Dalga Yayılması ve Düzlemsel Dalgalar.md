@@ -12,14 +12,33 @@ tags: [emd, bütünleme, dalga-yayılması, konu-anlatımı]
 
 ## Dalga Denkleminin Türetimi
 
-```mermaid
-flowchart TD
-    A["∇×E = -∂B/∂t"] --> B["∇×(∇×E) = -∂(∇×B)/∂t = -μ∂(∇×H)/∂t"]
-    B --> C["∇×H = J + ∂D/∂t\n→ kaynaksızda: ∇×H = ε∂E/∂t"]
-    C --> D["∇(∇·E) - ∇²E = -με·∂²E/∂t²"]
-    D --> E["Kaynaksız: ∇·E=0\n↓\n∇²E = με·∂²E/∂t²"]
-    E --> F["DALGA DENKLEMİ ✓"]
-```
+<svg width="340" height="354" viewBox="0 0 340 354" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-emd03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="20" y="10" width="300" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">∇×E = −∂B/∂t</text>
+  <line x1="170" y1="44" x2="170" y2="60" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd03)"/>
+  <rect x="20" y="62" width="300" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="84" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">∇×(∇×E) = −μ∂(∇×H)/∂t</text>
+  <line x1="170" y1="96" x2="170" y2="112" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd03)"/>
+  <rect x="20" y="114" width="300" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="132" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">∇×H = J + ∂D/∂t</text>
+  <text x="170" y="148" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">kaynaksızda: ∇×H = ε∂E/∂t</text>
+  <line x1="170" y1="156" x2="170" y2="172" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd03)"/>
+  <rect x="20" y="174" width="300" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="196" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">∇(∇·E) − ∇²E = −με·∂²E/∂t²</text>
+  <line x1="170" y1="208" x2="170" y2="224" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd03)"/>
+  <rect x="20" y="226" width="300" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="244" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Kaynaksız: ∇·E = 0</text>
+  <text x="170" y="260" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">→  ∇²E = με·∂²E/∂t²</text>
+  <line x1="170" y1="268" x2="170" y2="284" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd03)"/>
+  <rect x="20" y="286" width="300" height="44" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="306" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="white">DALGA DENKLEMİ ✓</text>
+  <text x="170" y="324" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#aac4e8">∇²E = με · ∂²E/∂t²</text>
+</svg>
 
 > [!formul] Dalga Denklemi (Kaynaksız, Basit Ortam)
 > $$\nabla^2\mathbf{E} - \mu\epsilon\frac{\partial^2\mathbf{E}}{\partial t^2} = 0$$

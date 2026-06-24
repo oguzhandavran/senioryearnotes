@@ -125,14 +125,43 @@ Denge noktaları ($\dot{x}_1=\dot{x}_2=0$): $(0,0)$ ve $(-3,0)$
 
 ## Özet Akış Diyagramı
 
-```mermaid
-flowchart TD
-    A["Doğrusal Olmayan Sistem\nẋ = f(x,u)"] --> B["Denge Noktası Bul\nf(xe,ue) = 0"]
-    B --> C["Jacobian Hesapla\nA = ∂f/∂x|xe,ue\nB = ∂f/∂u|xe,ue"]
-    C --> D["Lineer Model\nδẋ = Aδx + Bδu"]
-    D --> E["Kararlılık Analizi\nRe(λ) < 0 → Kararlı"]
-    D --> F["Kontrol Tasarımı\n(KYE, Pole Placement...)"]
-```
+<svg width="360" height="370" viewBox="0 0 360 370" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-mst04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Step 1 -->
+  <rect x="40" y="10" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="180" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. Doğrusal Olmayan Sistem</text>
+  <text x="180" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">ẋ = f(x, u)</text>
+  <line x1="180" y1="52" x2="180" y2="68" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst04)"/>
+  <!-- Step 2 -->
+  <rect x="40" y="70" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="180" y="88" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. Denge Noktası Bul</text>
+  <text x="180" y="104" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">f(x_e, u_e) = 0</text>
+  <line x1="180" y1="112" x2="180" y2="128" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst04)"/>
+  <!-- Step 3 -->
+  <rect x="40" y="130" width="280" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="180" y="150" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Jacobian Hesapla</text>
+  <text x="180" y="166" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">A = ∂f/∂x|_(x_e,u_e),   B = ∂f/∂u|_(x_e,u_e)</text>
+  <line x1="180" y1="180" x2="180" y2="196" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst04)"/>
+  <!-- Step 4 -->
+  <rect x="40" y="198" width="280" height="42" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="180" y="216" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">4. Lineer Model ✓</text>
+  <text x="180" y="232" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#aac4e8">δẋ = A·δx + B·δu</text>
+  <!-- Two output branches -->
+  <line x1="120" y1="240" x2="90" y2="270" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst04)"/>
+  <line x1="240" y1="240" x2="270" y2="270" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst04)"/>
+  <!-- Branch left: Kararlılık -->
+  <rect x="5" y="272" width="168" height="42" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="89" y="290" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Kararlılık Analizi</text>
+  <text x="89" y="306" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Re(λ) &lt; 0 → Kararlı</text>
+  <!-- Branch right: Kontrol -->
+  <rect x="187" y="272" width="168" height="42" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="271" y="290" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Kontrol Tasarımı</text>
+  <text x="271" y="306" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">KYE, Pole Placement…</text>
+</svg>
 
 ---
 

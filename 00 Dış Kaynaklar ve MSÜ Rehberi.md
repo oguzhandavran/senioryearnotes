@@ -99,23 +99,40 @@ tags: [meta, kaynaklar, msu, osint]
 
 ## Kaynakları Vault'a Bağlantıları
 
-```mermaid
-graph LR
-    UZEM["🔒 MSÜ UZEM\n(Giriş Gerekli)"] --> EMD["[[EMD Ana Sayfa]]"]
-    UZEM --> OK["[[OK Ana Sayfa]]"]
-    UZEM --> MST["[[MST Ana Sayfa]]"]
-    
-    JAST["📰 JAST Dergi\n(Açık Erişim)"] --> EMD
-    JAST --> SSI["[[SSI Ana Sayfa]]"]
-    
-    Karakus["📗 Dr. Karakuş\nSS Notu (PDF)"] --> SS["[[SS Ana Sayfa]]"]
-    Sonugur["📘 Sonugür OK Notu"] --> OK
-    
-    style UZEM fill:#ff6b6b,color:#fff
-    style JAST fill:#4ecdc4,color:#fff
-    style Karakus fill:#45b7d1,color:#fff
-    style Sonugur fill:#96ceb4,color:#000
-```
+<svg width="500" height="218" viewBox="0 0 500 218" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-diskaynk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="10" y="10" width="155" height="46" rx="2" fill="#ff6b6b" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="29" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">MSÜ UZEM</text>
+  <text x="87" y="46" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="white">(giriş gerekli)</text>
+  <rect x="10" y="76" width="155" height="46" rx="2" fill="#4ecdc4" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="95" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">JAST Dergi</text>
+  <text x="87" y="112" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">(açık erişim)</text>
+  <rect x="10" y="142" width="155" height="34" rx="2" fill="#45b7d1" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="164" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">Dr. Karakuş (SS PDF)</text>
+  <rect x="10" y="184" width="155" height="34" rx="2" fill="#96ceb4" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="87" y="206" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">Sonugür (OK Notu)</text>
+  <rect x="335" y="10" width="155" height="28" rx="2" fill="#DC503C" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="412" y="29" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="white">EMD Ana Sayfa</text>
+  <rect x="335" y="48" width="155" height="28" rx="2" fill="#FFA500" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="412" y="67" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">OK Ana Sayfa</text>
+  <rect x="335" y="86" width="155" height="28" rx="2" fill="#18B464" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="412" y="105" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="white">MST Ana Sayfa</text>
+  <rect x="335" y="124" width="155" height="28" rx="2" fill="#9467BD" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="412" y="143" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="white">SSI Ana Sayfa</text>
+  <rect x="335" y="162" width="155" height="28" rx="2" fill="#5B9BD5" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="412" y="181" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="white">SS Ana Sayfa</text>
+  <line x1="165" y1="28" x2="335" y2="24" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+  <line x1="165" y1="33" x2="335" y2="62" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+  <line x1="165" y1="38" x2="335" y2="100" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+  <line x1="165" y1="90" x2="335" y2="28" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+  <line x1="165" y1="99" x2="335" y2="138" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+  <line x1="165" y1="159" x2="335" y2="176" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+  <line x1="165" y1="201" x2="335" y2="62" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arr-diskaynk)"/>
+</svg>
 
 ---
 

@@ -12,11 +12,29 @@ tags: [emd, bütünleme, vektör-analizi, konu-anlatımı]
 
 ## Koordinat Sistemleri
 
-```mermaid
-flowchart LR
-    Kartezyen["Kartezyen\n(x, y, z)"] --> Silindirik["Silindirik\n(r, φ, z)"]
-    Kartezyen --> Kuresel["Küresel\n(R, θ, φ)"]
-```
+<svg width="380" height="130" viewBox="0 0 380 130" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-emd01a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Kartezyen (center-left) -->
+  <rect x="10" y="40" width="130" height="50" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="75" y="60" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">Kartezyen</text>
+  <text x="75" y="78" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#aac4e8">(x, y, z)</text>
+  <!-- Arrow to Silindirik (upper right) -->
+  <line x1="140" y1="55" x2="222" y2="28" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd01a)"/>
+  <!-- Silindirik box -->
+  <rect x="224" y="10" width="146" height="44" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="297" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">Silindirik</text>
+  <text x="297" y="46" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">(r, φ, z)</text>
+  <!-- Arrow to Küresel (lower right) -->
+  <line x1="140" y1="75" x2="222" y2="95" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd01a)"/>
+  <!-- Küresel box -->
+  <rect x="224" y="76" width="146" height="44" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="297" y="95" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">Küresel</text>
+  <text x="297" y="112" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">(R, θ, φ)</text>
+</svg>
 
 | Sistem | Hacim Elemanı $dv$ | Alan Elemanı |
 |--------|-------------------|--------------|
@@ -103,13 +121,31 @@ $$\nabla\cdot\mathbf{A} = \frac{1}{R^2}\frac{\partial(R^2 A_R)}{\partial R} + \f
 
 ## Özdeşliğin Kullanımı: Dalga Denklemi Türetimi
 
-```mermaid
-flowchart TD
-    A["Maxwell curl denklemleri\n∇×E = -∂B/∂t"] --> B["∇×(∇×E) = -∂(∇×B)/∂t"]
-    B --> C["Özdeşlik: ∇(∇·E) - ∇²E"]
-    C --> D["∇·E = ρ/ε → kaynaksızda 0"]
-    D --> E["∇²E = με·∂²E/∂t²\nDalga Denklemi ✓"]
-```
+<svg width="340" height="298" viewBox="0 0 340 298" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-emd01b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="20" y="10" width="300" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. Maxwell curl denklemleri</text>
+  <text x="170" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">∇×E = −∂B/∂t</text>
+  <line x1="170" y1="52" x2="170" y2="68" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd01b)"/>
+  <rect x="20" y="70" width="300" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="92" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">2. ∇×(∇×E) = −∂(∇×B)/∂t</text>
+  <line x1="170" y1="104" x2="170" y2="120" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd01b)"/>
+  <rect x="20" y="122" width="300" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="140" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">3. Vektör özdeşliği uygula</text>
+  <text x="170" y="156" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">∇(∇·E) − ∇²E</text>
+  <line x1="170" y1="164" x2="170" y2="180" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd01b)"/>
+  <rect x="20" y="182" width="300" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="200" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">4. Kaynaksız: ∇·E = 0</text>
+  <text x="170" y="216" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">→  −∇²E = −με·∂²E/∂t²</text>
+  <line x1="170" y1="224" x2="170" y2="240" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-emd01b)"/>
+  <rect x="20" y="242" width="300" height="44" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="260" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">5. Dalga Denklemi ✓</text>
+  <text x="170" y="278" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#aac4e8">∇²E = με · ∂²E/∂t²</text>
+</svg>
 
 ---
 

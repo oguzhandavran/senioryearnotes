@@ -66,12 +66,33 @@ $f_s < 2f_{max}$ olduğunda frekans bileşenleri birbirine örtüşür.
 Gözlemlenen frekans:
 $$f_{alias} = |f - k \cdot f_s|, \quad k \in \mathbb{Z}$$
 
-```mermaid
-graph LR
-    A["f_max = 1kHz"] --> B{f_s seç}
-    B -->|"f_s = 3kHz > 2kHz ✅"| C["Doğru örnekleme"]
-    B -->|"f_s = 1.5kHz < 2kHz ❌"| D["Aliasing!"]
-```
+<svg width="400" height="160" viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ssi01a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+    <marker id="arr-ssi01r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <rect x="10" y="55" width="110" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="65" y="76" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">f_max = 1 kHz</text>
+  <text x="65" y="93" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">Nyquist: f_s &gt; 2 kHz</text>
+  <line x1="120" y1="80" x2="148" y2="80" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ssi01a)"/>
+  <polygon points="172,56 212,80 172,104 132,80" fill="white" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="172" y="76" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">f_s</text>
+  <text x="172" y="90" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">seç?</text>
+  <line x1="212" y1="68" x2="268" y2="40" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi01a)"/>
+  <text x="234" y="46" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">3kHz &gt; 2kHz ✅</text>
+  <rect x="268" y="14" width="120" height="38" rx="2" fill="#e8f5e9" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="328" y="31" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Doğru örnekleme ✓</text>
+  <text x="328" y="46" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Bilgi kayıpsız</text>
+  <line x1="212" y1="92" x2="268" y2="120" stroke="#c0392b" stroke-width="1.5" marker-end="url(#arr-ssi01r)"/>
+  <text x="236" y="120" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#c0392b">1.5kHz &lt; 2kHz ❌</text>
+  <rect x="268" y="108" width="120" height="38" rx="2" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="328" y="125" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#c0392b">Aliasing!</text>
+  <text x="328" y="140" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#c0392b">Takma ad bozulması</text>
+</svg>
 
 ### Örnekleme İlişkisi
 

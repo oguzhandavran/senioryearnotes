@@ -90,13 +90,35 @@ $$h_d[n] = \frac{\sin(\omega_c n)}{\pi n}, \quad h_d[0] = \frac{\omega_c}{\pi}$$
 
 ### Analog Prototip → Sayısal
 
-```mermaid
-flowchart LR
-    A["Specs\nDigital"] --> B["Örnekleme frekans\ndeformasyon düzeltme"]
-    B --> C["Analog Prototip\nButterworth/Chebyshev"]
-    C --> D["Bilineer Dönüşüm\ns → z"]
-    D --> E["Sayısal H(z)"]
-```
+<svg width="480" height="110" viewBox="0 0 480 110" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ssi04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Step 1: Digital Specs -->
+  <rect x="5" y="30" width="100" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="55" y="52" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Sayısal</text>
+  <text x="55" y="68" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Specs</text>
+  <line x1="105" y1="55" x2="123" y2="55" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ssi04)"/>
+  <!-- Step 2: Prewarping -->
+  <rect x="125" y="20" width="108" height="70" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="179" y="42" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Frekans önceden</text>
+  <text x="179" y="57" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">düzeltme</text>
+  <text x="179" y="73" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" font-style="italic" fill="#1a1a2e">(prewarping)</text>
+  <line x1="233" y1="55" x2="251" y2="55" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ssi04)"/>
+  <!-- Step 3: Analog Prototype -->
+  <rect x="253" y="20" width="108" height="70" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="307" y="42" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Analog Prototip</text>
+  <text x="307" y="57" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">H_a(s)</text>
+  <text x="307" y="73" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" font-style="italic" fill="#1a1a2e">Butterworth / Cheby.</text>
+  <line x1="361" y1="55" x2="379" y2="55" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ssi04)"/>
+  <!-- Step 4: Bilinear → H(z) -->
+  <rect x="381" y="20" width="94" height="70" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="428" y="42" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="white">Bilineer Dön.</text>
+  <text x="428" y="57" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#aac4e8">s → z</text>
+  <text x="428" y="75" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="white">H(z) ✓</text>
+</svg>
 
 ### Bilineer Dönüşüm
 

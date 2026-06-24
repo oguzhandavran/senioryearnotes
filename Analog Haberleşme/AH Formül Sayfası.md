@@ -143,11 +143,37 @@ $$x_c(t) = \frac{A_c}{2}\,x(t)\cos(2\pi f_c t) \mp \frac{A_c}{2}\,\hat{x}(t)\sin
 
 ## Soru Çözme Sırası
 
-```mermaid
-flowchart TD
-    A["İşaret periyodik mi?"] -->|Evet| B["Fourier Serisi\nc_n hesapla\nX(f)=Σcnδ(f-n/T0)"]
-    A -->|Hayır| C["Fourier Dönüşümü\nFT tablosu + özellikler"]
-    C --> D["Zaman kaydırma?\n× e^{-j2πft0}"]
-    C --> E["Modülasyon?\nX(f±fc) ve /2"]
-    D & E --> F["Genlik/Faz\nspektrumu çiz"]
-```
+<svg width="492" height="332" viewBox="0 0 492 332" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ahfs" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <polygon points="246,12 376,52 246,92 116,52" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="246" y="57" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">İşaret periyodik mi?</text>
+  <text x="100" y="82" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">Evet</text>
+  <text x="380" y="44" text-anchor="start" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">Hayır</text>
+  <line x1="116" y1="52" x2="92" y2="110" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ahfs)"/>
+  <line x1="376" y1="52" x2="402" y2="110" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ahfs)"/>
+  <rect x="15" y="112" width="155" height="72" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="92" y="132" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Fourier Serisi</text>
+  <text x="92" y="149" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">cₙ katsayılarını hesapla</text>
+  <text x="92" y="166" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">X(f) = Σ cₙ δ(f − n/T₀)</text>
+  <rect x="322" y="112" width="158" height="48" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="401" y="132" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Fourier Dönüşümü</text>
+  <text x="401" y="149" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">FT tablosu + özellikler</text>
+  <line x1="401" y1="160" x2="308" y2="188" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ahfs)"/>
+  <line x1="401" y1="160" x2="432" y2="188" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ahfs)"/>
+  <rect x="238" y="190" width="130" height="44" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="303" y="209" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Zaman kaydırma?</text>
+  <text x="303" y="225" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">× e^{−j2πft₀}</text>
+  <rect x="372" y="190" width="110" height="44" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="427" y="209" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Modülasyon?</text>
+  <text x="427" y="225" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">X(f ± fc) / 2</text>
+  <line x1="92" y1="184" x2="92" y2="276" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ahfs)"/>
+  <line x1="303" y1="234" x2="303" y2="276" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ahfs)"/>
+  <line x1="427" y1="234" x2="427" y2="276" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ahfs)"/>
+  <rect x="68" y="278" width="390" height="44" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="263" y="297" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">Genlik/Faz spektrumu çiz ✓</text>
+  <text x="263" y="314" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#aac4e8">|X(f)| ve ∠X(f) grafiğini çiz</text>
+</svg>

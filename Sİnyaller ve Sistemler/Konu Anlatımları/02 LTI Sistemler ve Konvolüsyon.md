@@ -42,13 +42,29 @@ $$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\,h[n-k]$$
 
 ### Konvolüsyon Adımları (Grafik Yöntem)
 
-```mermaid
-flowchart TD
-    A["1. h[k] yaz"] --> B["2. h[-k] al: ters çevir"]
-    B --> C["3. h[n-k] yaz: n kadar kaydır"]
-    C --> D["4. x[k] ile h[n-k] çarp ve topla"]
-    D --> E["5. Her n için tekrar et"]
-```
+<svg width="340" height="298" viewBox="0 0 340 298" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ss02" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="30" y="10" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. h[k] yaz</text>
+  <line x1="170" y1="44" x2="170" y2="60" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
+  <rect x="30" y="62" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="84" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. h[−k] al: ters çevir</text>
+  <line x1="170" y1="96" x2="170" y2="112" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
+  <rect x="30" y="114" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="136" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. h[n−k] yaz: n kadar kaydır</text>
+  <line x1="170" y1="148" x2="170" y2="164" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
+  <rect x="30" y="166" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="184" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. x[k] ile h[n−k] çarp</text>
+  <text x="170" y="200" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">ve k üzerinden topla</text>
+  <line x1="170" y1="208" x2="170" y2="224" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
+  <rect x="30" y="226" width="280" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="248" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">5. Her n için tekrar et ✓</text>
+  <text x="170" y="280" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">y[n] = Σ x[k]·h[n−k]  =  x[n] ∗ h[n]</text>
+</svg>
 
 ### Önemli Konvolüsyon Özellikleri
 

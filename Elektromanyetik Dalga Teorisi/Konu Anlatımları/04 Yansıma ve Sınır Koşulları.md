@@ -12,12 +12,40 @@ tags: [emd, bütünleme, yansıma, kırılma, konu-anlatımı]
 
 ## Genel Senaryo
 
-```mermaid
-flowchart LR
-    A["Gelen Dalga\nEᵢ, Hᵢ (Ortam 1)"] --> B["Arayüzey z=0"]
-    B --> C["İletilen Dalga\nEₜ, Hₜ (Ortam 2)"]
-    B --> D["Yansıyan Dalga\nEᵣ, Hᵣ (Ortam 1)"]
-```
+<svg width="460" height="200" viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-emd04a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+    <marker id="arr-emd04r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <!-- Ortam 1 background -->
+  <rect x="0" y="0" width="220" height="180" rx="0" fill="#f8f9fa" stroke="none"/>
+  <text x="60" y="20" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Ortam 1 (η₁)</text>
+  <!-- Ortam 2 background -->
+  <rect x="240" y="0" width="220" height="180" rx="0" fill="#eef2f7" stroke="none"/>
+  <text x="340" y="20" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Ortam 2 (η₂)</text>
+  <!-- Arayüzey -->
+  <line x1="220" y1="0" x2="220" y2="180" stroke="#1a1a2e" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="220" y="192" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Arayüzey z = 0</text>
+  <!-- Gelen dalga: left→right to arayüzey -->
+  <line x1="30" y1="90" x2="208" y2="90" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr-emd04a)"/>
+  <text x="115" y="82" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Gelen Dalga</text>
+  <text x="115" y="108" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Eᵢ, Hᵢ</text>
+  <!-- İletilen dalga: arayüzey→right -->
+  <line x1="232" y1="90" x2="430" y2="90" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr-emd04a)"/>
+  <text x="330" y="82" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">İletilen Dalga</text>
+  <text x="330" y="108" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Eₜ, Hₜ</text>
+  <!-- Yansıyan dalga: arayüzey←left (going back) -->
+  <line x1="208" y1="130" x2="40" y2="130" stroke="#c0392b" stroke-width="2" marker-end="url(#arr-emd04r)"/>
+  <text x="115" y="122" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#c0392b">Yansıyan Dalga</text>
+  <text x="115" y="148" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#c0392b">Eᵣ, Hᵣ</text>
+  <!-- Gamma and tau labels -->
+  <text x="230" y="162" text-anchor="start" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">Γ = (η₂−η₁)/(η₂+η₁)</text>
+  <text x="230" y="176" text-anchor="start" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">τ = 2η₂/(η₂+η₁)</text>
+</svg>
 
 **Yansıma katsayısı (Γ):** $\Gamma = E_{r0}/E_{i0}$  
 **İletim katsayısı (τ):** $\tau = E_{t0}/E_{i0}$

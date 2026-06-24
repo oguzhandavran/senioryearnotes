@@ -11,16 +11,45 @@ tags: [otomatik-kontrol, blok-diyagram, mason, transfer-fonksiyonu, konu-anlatı
 > [!tanim] Otomatik Kontrol
 > Kontrol için gerekli tüm işlemlerin bir algoritma ile insana gerek duyulmadan gerçekleştirilmesi.
 
-```mermaid
-graph LR
-    subgraph Açık Çevrim
-        R1[R Giriş] --> C1[Kontrolör] --> P1[Proses] --> Y1[Çıkış]
-    end
-    subgraph Kapalı Çevrim
-        R2[R Giriş] --> sum((+/-)) --> C2[Kontrolör] --> P2[Proses] --> Y2[Çıkış]
-        Y2 --> H[Sensör] --> sum
-    end
-```
+<svg width="488" height="258" viewBox="0 0 488 258" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ok01a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="244" y="18" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e" letter-spacing="2">AÇIK ÇEVRİM</text>
+  <text x="10" y="65" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a1a2e">R(s)</text>
+  <line x1="44" y1="61" x2="74" y2="61" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <rect x="74" y="45" width="90" height="32" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="119" y="66" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">Kontrolör</text>
+  <line x1="164" y1="61" x2="196" y2="61" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <rect x="196" y="45" width="68" height="32" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="66" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="14" font-style="italic" fill="#1a1a2e">G(s)</text>
+  <line x1="264" y1="61" x2="300" y2="61" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <text x="303" y="65" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a1a2e">C(s)</text>
+  <line x1="8" y1="96" x2="480" y2="96" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,4" opacity="0.3"/>
+  <text x="244" y="114" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e" letter-spacing="2">KAPALI ÇEVRİM</text>
+  <text x="10" y="174" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a1a2e">R(s)</text>
+  <line x1="44" y1="170" x2="62" y2="170" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <circle cx="76" cy="170" r="12" fill="white" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="76" y="166" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">+</text>
+  <text x="72" y="177" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#c0392b">−</text>
+  <line x1="88" y1="170" x2="110" y2="170" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <rect x="110" y="154" width="90" height="32" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="155" y="175" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">Kontrolör</text>
+  <line x1="200" y1="170" x2="232" y2="170" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <rect x="232" y="154" width="68" height="32" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="266" y="175" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="14" font-style="italic" fill="#1a1a2e">G(s)</text>
+  <line x1="300" y1="170" x2="340" y2="170" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <text x="343" y="174" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a1a2e">C(s)</text>
+  <circle cx="338" cy="170" r="3" fill="#1a1a2e"/>
+  <line x1="338" y1="170" x2="338" y2="222" stroke="#1a1a2e" stroke-width="1.8"/>
+  <line x1="338" y1="222" x2="282" y2="222" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+  <rect x="212" y="208" width="70" height="28" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="247" y="227" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="14" font-style="italic" fill="#1a1a2e">H(s)</text>
+  <line x1="212" y1="222" x2="76" y2="222" stroke="#1a1a2e" stroke-width="1.8"/>
+  <line x1="76" y1="222" x2="76" y2="182" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01a)"/>
+</svg>
 
 | Özellik | Açık Çevrim | Kapalı Çevrim |
 |---------|------------|--------------|
@@ -59,14 +88,34 @@ $$G(s) = \frac{Y(s)}{U(s)} = \frac{b_m s^m + \cdots + b_0}{a_n s^n + \cdots + a_
 
 ### Öteleme Kuralları
 
-```mermaid
-flowchart LR
-    subgraph Toplama noktası ileriye taşıma
-        A1[G] --> sum1((+)) --> B1
-        subgraph original
-        end
-    end
-```
+<svg width="460" height="185" viewBox="0 0 460 185" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ok01b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="8" y="62" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a1a2e">R(s)</text>
+  <line x1="42" y1="58" x2="60" y2="58" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01b)"/>
+  <circle cx="74" cy="58" r="12" fill="white" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="74" y="54" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">+</text>
+  <text x="70" y="65" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#c0392b">−</text>
+  <text x="92" y="50" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">E(s)</text>
+  <line x1="86" y1="58" x2="130" y2="58" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01b)"/>
+  <rect x="130" y="42" width="80" height="32" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="63" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="14" font-style="italic" fill="#1a1a2e">G(s)</text>
+  <line x1="210" y1="58" x2="258" y2="58" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01b)"/>
+  <text x="261" y="62" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-style="italic" fill="#1a1a2e">C(s)</text>
+  <circle cx="258" cy="58" r="3" fill="#1a1a2e"/>
+  <line x1="258" y1="58" x2="258" y2="108" stroke="#1a1a2e" stroke-width="1.8"/>
+  <line x1="258" y1="108" x2="200" y2="108" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01b)"/>
+  <rect x="120" y="94" width="80" height="28" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="160" y="113" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="14" font-style="italic" fill="#1a1a2e">H(s)</text>
+  <line x1="120" y1="108" x2="74" y2="108" stroke="#1a1a2e" stroke-width="1.8"/>
+  <line x1="74" y1="108" x2="74" y2="70" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01b)"/>
+  <line x1="8" y1="138" x2="452" y2="138" stroke="#1a1a2e" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+  <text x="230" y="158" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">G_CL(s) = G(s) / [1 + G(s)H(s)]</text>
+  <text x="230" y="176" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">H(s) = 1 (unity geri besleme)  →  G(s) / [1 + G(s)]</text>
+</svg>
 
 | Hareket | Kural |
 |---------|-------|
@@ -88,15 +137,33 @@ $$\frac{Y(s)}{R(s)} = \frac{\sum_k P_k \Delta_k}{\Delta}$$
 
 ### Mason Adımları
 
-```mermaid
-flowchart TD
-    A[İşaret akış diyagramını çiz] --> B[İleri yolları bul: P_k]
-    B --> C[Tüm döngü kazançlarını bul: L_i]
-    C --> D[Temassız döngü çiftleri: L_i L_j]
-    D --> E[Δ = 1 - ΣLi + ΣLiLj - ...]
-    E --> F[Her ileri yol için Δ_k hesapla]
-    F --> G[T = ΣPkΔk / Δ]
-```
+<svg width="340" height="390" viewBox="0 0 340 390" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ok01c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <rect x="30" y="15" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="37" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. İşaret akış diyagramını çiz</text>
+  <line x1="170" y1="49" x2="170" y2="67" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01c)"/>
+  <rect x="30" y="69" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="91" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. İleri yolları bul: P_k</text>
+  <line x1="170" y1="103" x2="170" y2="121" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01c)"/>
+  <rect x="30" y="123" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="145" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Tüm döngü kazançlarını bul: L_i</text>
+  <line x1="170" y1="157" x2="170" y2="175" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01c)"/>
+  <rect x="30" y="177" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="199" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. Temassız döngü çiftleri: L_i · L_j</text>
+  <line x1="170" y1="211" x2="170" y2="229" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01c)"/>
+  <rect x="30" y="231" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="253" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">5. Δ = 1 − ΣL_i + ΣL_iL_j − …</text>
+  <line x1="170" y1="265" x2="170" y2="283" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01c)"/>
+  <rect x="30" y="285" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="307" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">6. Her ileri yol için Δ_k hesapla</text>
+  <line x1="170" y1="319" x2="170" y2="337" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok01c)"/>
+  <rect x="30" y="339" width="280" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="361" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="white">7. T = ΣP_k Δ_k / Δ</text>
+</svg>
 
 ---
 

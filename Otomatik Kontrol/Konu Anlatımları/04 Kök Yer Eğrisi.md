@@ -21,16 +21,49 @@ $$|G(s)| = 1 \quad \text{(genlik şartı)}$$
 
 ## KYE Çizim Adımları
 
-```mermaid
-flowchart TD
-    A["1. Kutup & Sıfırları Çiz\n(✕=kutup, ○=sıfır)"] --> B["2. Dal Sayısı = n kutup"]
-    B --> C["3. Gerçek Eksen Üzerindeki KYE\n(sağdaki kutup+sıfır sayısı tek → KYE)"]
-    C --> D["4. Asimptotlar\nAçı: θq, Merkez: σa"]
-    D --> E["5. Breakaway/Break-in Noktası\ndK/ds = 0"]
-    E --> F["6. j-Ekseni Kesişimi\n(Routh veya s=jω koy)"]
-    F --> G["7. Kompleks Kutup Çıkış Açısı\n(varsa)"]
-    G --> H["8. KYE'yi Çiz"]
-```
+<svg width="340" height="448" viewBox="0 0 340 448" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ok04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Step 1 -->
+  <rect x="30" y="10" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. Kutup &amp; Sıfırları Çiz</text>
+  <text x="170" y="45" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">(✕ = kutup,  ○ = sıfır)</text>
+  <line x1="170" y1="52" x2="170" y2="68" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 2 -->
+  <rect x="30" y="70" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="92" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. Dal Sayısı = n kutup</text>
+  <line x1="170" y1="104" x2="170" y2="120" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 3 -->
+  <rect x="30" y="122" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="140" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Gerçek Eksen Üzerindeki KYE</text>
+  <text x="170" y="157" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">(sağdaki kutup+sıfır sayısı tek ise → KYE var)</text>
+  <line x1="170" y1="164" x2="170" y2="180" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 4 -->
+  <rect x="30" y="182" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="200" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. Asimptotlar</text>
+  <text x="170" y="217" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">Açı: θ_q = (2q+1)·180°/(n−m),  Merkez: σ_a</text>
+  <line x1="170" y1="224" x2="170" y2="240" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 5 -->
+  <rect x="30" y="242" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="260" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">5. Breakaway / Break-in Noktası</text>
+  <text x="170" y="277" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">dK/ds = 0</text>
+  <line x1="170" y1="284" x2="170" y2="300" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 6 -->
+  <rect x="30" y="302" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="320" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">6. j-Ekseni Kesişimi</text>
+  <text x="170" y="337" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">Routh tablosu veya s = jω koy</text>
+  <line x1="170" y1="344" x2="170" y2="360" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 7 -->
+  <rect x="30" y="362" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="384" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">7. Kompleks Kutup Çıkış Açısı</text>
+  <line x1="170" y1="396" x2="170" y2="412" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok04)"/>
+  <!-- Step 8 — dark final box -->
+  <rect x="30" y="414" width="280" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="436" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="white">8. KYE'yi Çiz ✓</text>
+</svg>
 
 ---
 

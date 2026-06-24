@@ -13,44 +13,51 @@ aliases: [EMD, Elektromanyetik]
 
 ## Konu Haritası
 
-```mermaid
-mindmap
-  root((EMD))
-    Vektör Analizi
-      Gradient ∇φ
-      Divergence ∇·A
-      Curl ∇×A
-      Stokes & Gauss Teoremleri
-    Maxwell Denklemleri
-      Faraday
-      Ampere-Maxwell
-      Gauss-E
-      Gauss-B
-      Sınır Koşulları
-      Ortam Denklemleri
-    Dalga Yayılması
-      Dalga Denklemi
-      Helmholtz
-      Potansiyeller
-      Faz & Grup Hızı
-      Poynting Vektörü
-    Düzlemsel Dalgalar
-      Kayıpsız Ortam
-      Kayıplı Dielektrik
-      Polarizasyon
-      Deri Kalınlığı
-    Yansıma & Kırılma
-      Normal Gelme
-      Eğik Gelme
-      Fresnel Katsayıları
-      Snell Kanunu
-      Brewster Açısı
-    İletim Hatları
-      Telegraf Denklemi
-      Karakteristik Empedans
-      Duran Dalga
-      Smith Çizimi
-```
+<svg width="500" height="650" viewBox="0 0 500 650" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="100" height="630" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text transform="translate(60,325) rotate(-90)" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="14" font-weight="bold" fill="white">EMD</text>
+  <line x1="110" y1="47" x2="110" y2="607" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="10" width="370" height="84" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="30" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Vektör Analizi</text>
+  <text x="140" y="48" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Gradient ∇φ, Divergence ∇·A, Curl ∇×A</text>
+  <text x="140" y="66" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Stokes teoremi: ∮E·dl = ∫(∇×E)·dS</text>
+  <text x="140" y="84" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Gauss teoremi: ∮D·dS = ∫ρ dV</text>
+  <line x1="110" y1="47" x2="120" y2="47" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="102" width="370" height="120" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="122" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Maxwell Denklemleri</text>
+  <text x="140" y="140" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Faraday: ∇×E = −∂B/∂t</text>
+  <text x="140" y="158" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Ampere-Maxwell: ∇×H = J + ∂D/∂t</text>
+  <text x="140" y="176" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Gauss (E): ∇·D = ρ  |  Gauss (B): ∇·B = 0</text>
+  <text x="140" y="194" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Sınır koşulları (tanjansiyel/normal süreklilik)</text>
+  <text x="140" y="212" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Ortam denklemleri: D=εE, B=μH, J=σE</text>
+  <line x1="110" y1="162" x2="120" y2="162" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="230" width="370" height="102" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="250" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Dalga Yayılması</text>
+  <text x="140" y="268" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Dalga denklemi: ∇²E = με ∂²E/∂t²</text>
+  <text x="140" y="286" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Helmholtz: ∇²Es + k²Es = 0</text>
+  <text x="140" y="304" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Faz hızı up = 1/√με, grup hızı ug = 1/(dβ/dω)</text>
+  <text x="140" y="322" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Poynting: Sav = ½ Re[E × H*]</text>
+  <line x1="110" y1="281" x2="120" y2="281" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="340" width="370" height="84" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="360" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Düzlemsel Dalgalar</text>
+  <text x="140" y="378" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Kayıpsız: E = E₀e^{−jkz}, η = √μ/ε</text>
+  <text x="140" y="396" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Kayıplı: γ = α + jβ, deri kalınlığı δ = 1/α</text>
+  <text x="140" y="414" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Polarizasyon (doğrusal, dairesel)</text>
+  <line x1="110" y1="382" x2="120" y2="382" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="432" width="370" height="102" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="452" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">Yansıma &amp; Kırılma</text>
+  <text x="140" y="470" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Normal gelme: Γ = (η₂−η₁)/(η₂+η₁)</text>
+  <text x="140" y="488" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Snell: n₁ sin θᵢ = n₂ sin θₜ</text>
+  <text x="140" y="506" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Fresnel katsayıları (TE/TM)</text>
+  <text x="140" y="524" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Brewster açısı (TM) ve kritik açı</text>
+  <line x1="110" y1="483" x2="120" y2="483" stroke="#1a1a2e" stroke-width="1.5"/>
+  <rect x="120" y="542" width="370" height="84" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="130" y="562" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">İletim Hatları</text>
+  <text x="140" y="580" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Telegraf denklemleri, Z₀ = √L'/C'</text>
+  <text x="140" y="598" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• ΓL = (ZL−Z₀)/(ZL+Z₀), SWR</text>
+  <text x="140" y="616" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">• Smith çizimi, Zin formülü</text>
+  <line x1="110" y1="607" x2="120" y2="607" stroke="#1a1a2e" stroke-width="1.5"/>
+</svg>
 
 ---
 

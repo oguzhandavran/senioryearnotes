@@ -60,11 +60,21 @@ $$P = \int_{-\infty}^{\infty} G(f)\,df, \qquad S_y(f) = |H(f)|^2 \cdot S_x(f)$$
 
 ## LTI Sistemler ve Konvülüsyon
 
-```mermaid
-flowchart LR
-    X["x(t)"] --> H["LTI Sistem\nh(t) ↔ H(f)"]
-    H --> Y["y(t)"]
-```
+<svg width="340" height="90" viewBox="0 0 340 90" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ah04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="18" y="50" font-family="'STIX Two Math','Times New Roman',serif" font-size="15" font-style="italic" fill="#1a1a2e">x(t)</text>
+  <line x1="52" y1="45" x2="90" y2="45" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ah04)"/>
+  <rect x="92" y="20" width="156" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="170" y="41" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="#1a1a2e">LTI Sistem</text>
+  <text x="170" y="59" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">h(t)  ↔  H(f)</text>
+  <line x1="248" y1="45" x2="290" y2="45" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ah04)"/>
+  <text x="294" y="50" font-family="'STIX Two Math','Times New Roman',serif" font-size="15" font-style="italic" fill="#1a1a2e">y(t)</text>
+  <text x="170" y="80" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e" font-style="italic">Zaman: y = x ∗ h   |   Frekans: Y(f) = X(f)·H(f)</text>
+</svg>
 
 $$\boxed{y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(\tau)\,h(t-\tau)\,d\tau}$$
 

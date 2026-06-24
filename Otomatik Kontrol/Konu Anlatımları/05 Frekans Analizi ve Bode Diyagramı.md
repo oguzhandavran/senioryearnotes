@@ -58,13 +58,37 @@ $$\frac{\omega_n^2}{s^2 + 2\zeta\omega_n s + \omega_n^2}$$
 
 ## Faz Payı (PM) ve Kazanç Payı (GM)
 
-```mermaid
-graph LR
-    A["Bode Diyagramı"] --> B["Kazanç Kesişim Frekansı ωgc\n|G(jωgc)| = 0 dB"]
-    A --> C["Faz Kesişim Frekansı ωpc\n∠G(jωpc) = -180°"]
-    B --> D["Faz Payı PM = 180° + ∠G(jωgc)"]
-    C --> E["Kazanç Payı GM = -20log|G(jωpc)|"]
-```
+<svg width="460" height="200" viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-ok05" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Header: Bode Diyagramı -->
+  <rect x="140" y="10" width="180" height="32" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="230" y="31" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="white">Bode Diyagramı</text>
+  <!-- Fan lines from bottom of header -->
+  <line x1="230" y1="42" x2="115" y2="78" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ok05)"/>
+  <line x1="230" y1="42" x2="345" y2="78" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ok05)"/>
+  <!-- Left column: PM -->
+  <rect x="10" y="80" width="210" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="115" y="98" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Kazanç Kesişim Frekansı ω_gc</text>
+  <text x="115" y="114" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">|G(jω_gc)| = 0 dB</text>
+  <line x1="115" y1="122" x2="115" y2="140" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok05)"/>
+  <!-- PM result box (green tint) -->
+  <rect x="10" y="142" width="210" height="40" rx="2" fill="#e8f5e9" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="115" y="158" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">Faz Payı (PM)</text>
+  <text x="115" y="175" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">PM = 180° + ∠G(jω_gc)</text>
+  <!-- Right column: GM -->
+  <rect x="240" y="80" width="210" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="345" y="98" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Faz Kesişim Frekansı ω_pc</text>
+  <text x="345" y="114" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">∠G(jω_pc) = −180°</text>
+  <line x1="345" y1="122" x2="345" y2="140" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ok05)"/>
+  <!-- GM result box (blue tint) -->
+  <rect x="240" y="142" width="210" height="40" rx="2" fill="#e3f2fd" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="345" y="158" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">Kazanç Payı (GM)</text>
+  <text x="345" y="175" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">GM = −20 log|G(jω_pc)| dB</text>
+</svg>
 
 $$\text{PM} = 180° + \angle G(j\omega_{gc}) \quad \text{(kazanç kesişiminde)}$$
 
