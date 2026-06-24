@@ -62,4 +62,40 @@ Hata < 0.1 için: $K > 70$, ama kararlılık için $K < 10$. **Çelişki — mü
 
 ---
 
+## Örnek 4 — Tip 0 Sistem, Üç Giriş Tipi (Doç.Dr. Haluk Görgün Slayt 25)
+
+$$G(s) = \frac{120(s+2)}{(s+3)(s+4)} \quad \text{[Tip 0]}$$
+
+**Tip 0** — paydada $s$ yok. $K_p = \lim_{s\to 0}G(s) = \frac{120\cdot 2}{3\cdot 4} = 20$
+
+| Giriş | $e(\infty)$ formülü | Sonuç |
+|-------|---------------------|-------|
+| $5u(t)$ | $\dfrac{5}{1+K_p} = \dfrac{5}{21}$ | $\mathbf{5/21}$ |
+| $5t\,u(t)$ | $\dfrac{5}{K_v},\; K_v = \lim sG = 0$ | $\mathbf{\infty}$ |
+| $5t^2u(t)$ | $\dfrac{10}{K_a},\; K_a = \lim s^2G = 0$ | $\mathbf{\infty}$ |
+
+> Tip 0 sistemi rampa ve parabol girdilerini takip edemez.
+
+---
+
+## Örnek 5 — Bozucu Etki Sürekli Hal Hatası (Doç.Dr. Haluk Görgün Slayt 37–40)
+
+**Yapı:** Controller $G_1(s)$, bozucu $D(s)$, Plant $G_2(s)$ — standart geri besleme
+
+$$E(s) = \underbrace{\frac{1}{1+G_1G_2}R(s)}_{e_R} \;-\; \underbrace{\frac{G_2}{1+G_1G_2}D(s)}_{e_D}$$
+
+**Birim basamak bozucu** $D(s) = 1/s$:
+
+$$\boxed{e_D(\infty) = -\frac{1}{\displaystyle\lim_{s\to 0}\frac{1}{G_2(s)} + \lim_{s\to 0}G_1(s)}}$$
+
+$G_1$ DC kazancını **artır** veya $G_2$ DC kazancını **azalt** → $|e_D|$ küçülür.
+
+**Sayısal Örnek:** $G_1(s) = 1000$, $G_2(s) = \dfrac{1}{s(s+25)}$
+
+$$e_D(\infty) = -\frac{1}{0 + 1000} = -\frac{1}{1000}$$
+
+> $G_2$ orijinde kutuplu → $\lim 1/G_2 = 0$.
+
+---
+
 ← [[OK Ana Sayfa]] | Teori: [[../Konu Anlatımları/03 Kararlı Hal Hataları]]
