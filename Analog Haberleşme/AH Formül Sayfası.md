@@ -104,6 +104,22 @@ $$\boxed{x_{DSB}(t) = A_c\,x(t)\cos(2\pi f_c t)}$$
 
 $$P_{DSB} = \frac{A_c^2}{2}\langle x^2\rangle, \qquad \eta = 1$$
 
+### SSB (Tek Yan Bant)
+
+$$x_c(t) = \frac{A_c}{2}\,x(t)\cos(2\pi f_c t) \mp \frac{A_c}{2}\,\hat{x}(t)\sin(2\pi f_c t)$$
+
+- $-$: USB (Üst Yan Bant), $+$: LSB (Alt Yan Bant)
+- $\hat{x}(t)$: Hilbert dönüşümü ($\sin\to-\cos$, $\cos\to\sin$)
+- $B_{SSB} = W$ (AM/DSB'nin yarısı)
+
+### Modülasyon Karşılaştırma
+
+| Tür | $C_1$ | $C_2$ | $g(t)$ | $BW$ | $\eta$ |
+|-----|-------|-------|--------|------|--------|
+| AM | $A_c$ | $mA_c$ | $0$ | $2W$ | $<1$ |
+| DSB-SC | $0$ | $A_c$ | $0$ | $2W$ | $1$ |
+| SSB | $0$ | $A_c/2$ | $\pm\hat{x}$ | $W$ | $1$ |
+
 ### Bant Genişlikleri
 
 | Mod | $B_T$ |

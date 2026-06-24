@@ -24,6 +24,8 @@ $$x_c^{AM}=A_c[1+mx(t)]\cos(2\pi f_ct) \qquad x_c^{DSB}=A_cx(t)\cos(2\pi f_ct)$$
 
 $$m=\frac{C_{\max}-C_{\min}}{C_{\max}+C_{\min}} \qquad P_{AM}=\frac{A_c^2}{2}\!\left(1+\frac{m^2}{2}\right) \qquad P_{DSB}=\frac{A_c^2}{2}\langle x^2\rangle$$
 
+$$\text{SSB-USB: }x_c=\tfrac{A_c}{2}x(t)\cos(2\pi f_ct)-\tfrac{A_c}{2}\hat{x}(t)\sin(2\pi f_ct) \qquad \hat{\sin}=-\cos,\;\hat{\cos}=\sin$$
+
 ---
 
 ## SORU TİPİ → YÖNTEM
