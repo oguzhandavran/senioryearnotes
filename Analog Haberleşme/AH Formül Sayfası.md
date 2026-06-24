@@ -35,17 +35,17 @@ $$\boxed{x(t) = \int_{-\infty}^{\infty} X(f)\,e^{j2\pi ft}\,df}$$
 
 ## FT Özellikleri
 
-| Özellik | Zaman | Frekans |
-|---------|-------|---------|
-| Doğrusallık | $ax+by$ | $aX+bY$ |
-| Zaman kaydırma | $x(t-t_0)$ | $e^{-j2\pi ft_0}X(f)$ |
-| Frekans kaydırma | $x(t)e^{j2\pi f_0 t}$ | $X(f-f_0)$ |
-| Ölçekleme | $x(at)$ | $|a|^{-1}X(f/a)$ |
-| Konvülüsyon | $x(t)*h(t)$ | $X(f)H(f)$ |
-| Çarpma | $x(t)h(t)$ | $X(f)*H(f)$ |
-| Türev | $x^{(n)}(t)$ | $(j2\pi f)^nX(f)$ |
-| Parseval | $\int|x|^2 dt$ | $\int|X|^2 df$ |
-| Dualite | $X(t)$ | $x(-f)$ |
+| Özellik          | Zaman                 | Frekans               |        |              |     |        |
+| ---------------- | --------------------- | --------------------- | ------ | ------------ | --- | ------ |
+| Doğrusallık      | $ax+by$               | $aX+bY$               |        |              |     |        |
+| Zaman kaydırma   | $x(t-t_0)$            | $e^{-j2\pi ft_0}X(f)$ |        |              |     |        |
+| Frekans kaydırma | $x(t)e^{j2\pi f_0 t}$ | $X(f-f_0)$            |        |              |     |        |
+| Ölçekleme        | $x(at)$               | $                     | a      | ^{-1}X(f/a)$ |     |        |
+| Konvülüsyon      | $x(t)*h(t)$           | $X(f)H(f)$            |        |              |     |        |
+| Çarpma           | $x(t)h(t)$            | $X(f)*H(f)$           |        |              |     |        |
+| Türev            | $x^{(n)}(t)$          | $(j2\pi f)^nX(f)$     |        |              |     |        |
+| Parseval         | $\int                 | x                     | ^2 dt$ | $\int        | X   | ^2 df$ |
+| Dualite          | $X(t)$                | $x(-f)$               |        |              |     |        |
 
 ---
 

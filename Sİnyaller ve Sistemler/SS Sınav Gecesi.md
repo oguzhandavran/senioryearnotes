@@ -4,13 +4,12 @@ tags: [ss, sinyaller-sistemler, sinav-gecesi, ozet]
 
 # SS — Sınav Gecesi Özeti
 
-> Kapsam: B1 tam · B2 (2.5 hariç) · B3 (3.6'ya kadar) · B4 (4.5'e kadar)
+> Kapsam: B1 tam · B2 (2.5 hariç) · B3 (3.6'ya kadar) · B4 (4.5'e kadar) · **B7 Örnekleme**
 > **Laplace yok. DTFT yok. Ayrık zamanlı Fourier (DTFT) büt kapsamı dışı — WhatsApp teyit etti (21.06.2026)**
 
-> [!tip] BÜTÜNLEME İPUCU (Asım Hoca)
+> [!tip] BÜTÜNLEME İPUCU
 > 6 soru · Deftere çalış · Tanımsal yerlere ekstra bak · "Kolay olacak" dedi.
 > 38 kişi büte kaldı — hoca genel eğilimli not dağılımı yapıyor.
-> **⚠️ VİZE SONRASI SORULAR İÇİN → KİTABIN 9. BÖLÜMÜ!** (24.06.2026 — hoca bizzat söyledi: "9. Bölüme bakmamışsınız, orada var")
 
 ---
 

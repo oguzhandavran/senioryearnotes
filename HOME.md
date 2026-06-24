@@ -5,7 +5,7 @@ cssclass: home
 
 # Bütünleme Dönemi — Second Brain
 
-> **Sınav haftası:** Haziran 2026 · **Hedef:** 5 dersten geçmek 💪
+> **Sınav haftası:** Haziran 2026 · **Hedef:** 6 dersten geçmek 💪
 
 ---
 

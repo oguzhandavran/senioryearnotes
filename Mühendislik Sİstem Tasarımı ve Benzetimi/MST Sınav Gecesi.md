@@ -6,6 +6,13 @@ tags: [mst, sinav-gecesi, ozet]
 
 > Tek sayfa. Transfer fonksiyonu ve durum uzayı.
 
+> [!danger] BÜTÜNLEME İPUCU — Asım Hoca (24.06.2026)
+> Vize sonrası sorular için **Norman Nise Bölüm 9** bakın — hoca bizzat söyledi: "9. Bölüme bakmamışsınız, orada var."
+> **Bölüm 9 = Design via Root Locus (Kompansatör Tasarımı)** → PD/PI/PID/Lead/Lag/Lead-Lag
+> Vault'ta: [[Konu Anlatımları/05 Kök Yer Eğrisi ve Kompansasyon]] ve [[Örnek Sorular/05 Kök Yer Eğrisi Örnekleri]]
+> 6 soru · Deftere çalış · Tanımsal yerlere ekstra bak · "Kolay olacak" dedi.
+> 38 kişi büte kaldı — hoca genel eğilimli not dağılımı yapıyor.
+
 ---
 
 ## 1 — Transfer Fonksiyonu Çıkarma Prosedürü
