@@ -2,7 +2,7 @@
 tags: [analog-haberleşme, arasınav, çözümlü, fourier, am, dsb-sc, konvülüsyon, örnek-sorular]
 ---
 
-# 02 — AraSınav Soruları (Çözümlü)
+# 04 — AraSınav Soruları (Çözümlü)
 
 ← [[../AH Ana Sayfa]] | Teori: [[../Konu Anlatımları/05 Genlik Modülasyonu|05 Genlik Modülasyonu]]
 

@@ -2,7 +2,7 @@
 tags: [analog-haberleşme, fourier, spektrum, örnek-sorular]
 ---
 
-# 01 — Temel Fourier Örnekleri
+# 01 — Fourier Analizi Örnekleri
 
 ← [[../AH Ana Sayfa]] | Teori: [[../Konu Anlatımları/02 Fourier Analizi|02 Fourier Analizi]] | [[../Konu Anlatımları/03 Periyodik İşaretler ve Fourier Serisi|03 Fourier Serisi]]
 

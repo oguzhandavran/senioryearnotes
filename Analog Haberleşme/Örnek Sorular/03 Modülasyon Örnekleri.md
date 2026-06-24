@@ -2,7 +2,7 @@
 tags: [analog-haberleşme, am, dsb-sc, ssb, vsb, modülasyon, güç-analizi, örnek-sorular]
 ---
 
-# 04 — Modülasyon Örnekleri
+# 03 — Modülasyon Örnekleri
 
 ← [[../AH Ana Sayfa]] | Teori: [[../Konu Anlatımları/05 Genlik Modülasyonu|05 Genlik Modülasyonu]]
 

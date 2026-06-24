@@ -54,10 +54,10 @@ mindmap
 
 | # | Konu | Bağlantı |
 |---|------|----------|
-| 1 | Temel Fourier Örnekleri | [[Örnek Sorular/01 Temel Fourier Örnekleri]] |
-| 2 | AraSınav Soruları (Çözümlü) | [[Örnek Sorular/02 AraSınav Soruları (Çözümlü)]] |
-| 3 | Enerji, Güç ve LTI Örnekleri | [[Örnek Sorular/03 Enerji Güç ve LTI Örnekleri]] |
-| 4 | Modülasyon Örnekleri | [[Örnek Sorular/04 Modülasyon Örnekleri]] |
+| 1 | Fourier Analizi Örnekleri | [[Örnek Sorular/01 Fourier Analizi Örnekleri]] |
+| 2 | Enerji, Güç ve LTI Örnekleri | [[Örnek Sorular/02 Enerji Güç ve LTI Örnekleri]] |
+| 3 | Modülasyon Örnekleri | [[Örnek Sorular/03 Modülasyon Örnekleri]] |
+| 4 | **AraSınav Soruları (Çözümlü)** | [[Örnek Sorular/04 AraSınav Soruları (Çözümlü)]] |
 
 ## Diğer Derslerle Bağlantı
 

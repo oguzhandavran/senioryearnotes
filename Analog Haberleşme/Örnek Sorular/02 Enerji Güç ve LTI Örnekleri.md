@@ -2,7 +2,7 @@
 tags: [analog-haberleşme, enerji, güç, lti, konvülüsyon, fourier, örnek-sorular]
 ---
 
-# 03 — Enerji, Güç ve LTI Sistem Örnekleri
+# 02 — Enerji, Güç ve LTI Sistem Örnekleri
 
 ← [[../AH Ana Sayfa]] | Teori: [[../Konu Anlatımları/04 Güç Enerji ve LTI Sistemler|04 Güç Enerji ve LTI Sistemler]]
 
