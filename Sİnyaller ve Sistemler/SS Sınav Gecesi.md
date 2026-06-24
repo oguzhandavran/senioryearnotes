@@ -10,6 +10,7 @@ tags: [ss, sinyaller-sistemler, sinav-gecesi, ozet]
 > [!tip] BÜTÜNLEME İPUCU (Asım Hoca)
 > 6 soru · Deftere çalış · Tanımsal yerlere ekstra bak · "Kolay olacak" dedi.
 > 38 kişi büte kaldı — hoca genel eğilimli not dağılımı yapıyor.
+> **⚠️ VİZE SONRASI SORULAR İÇİN → KİTABIN 9. BÖLÜMÜ!** (24.06.2026 — hoca bizzat söyledi: "9. Bölüme bakmamışsınız, orada var")
 
 ---
 

@@ -8,7 +8,8 @@ tags: [otomatik-kontrol, sinav-gecesi, ozet]
 
 > [!danger] BÜTÜNLEME İPUCU (24.06.2026)
 > **Muhammet hoca:** "Vize ve final sorularına çalışırsanız 100 alırsınız — soruları ezberlemeyin, mantığını anlayın, rakamlar değişir."
-> Hoca vize + final sorularını göndermiş. Aynı soru tiplerini bekle, sayılar farklı olacak.
+> Hoca vize + final soruları benzeri yapacakmış, farklı bir şey beklemeyin.
+> **Classroom'daki çalışma sorularına da bak** — ekstra hazırlık materyali orada.
 
 ---
 
