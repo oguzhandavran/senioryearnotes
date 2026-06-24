@@ -1,18 +1,32 @@
 {
   "version": 1,
-  "activeWorkspaceId": null,
+  "activeWorkspaceId": "ws_mqrafut2",
   "workspaces": [
     {
-      "id": "ws_mqqjzoy2",
+      "id": "ws_mqrafut2",
       "name": "Sticky workspace 1",
-      "windows": [],
-      "updatedAt": 1782213661009
-    },
-    {
-      "id": "ws_mqqk0g2t",
-      "name": "Sticky workspace 2",
-      "windows": [],
-      "updatedAt": 1782213684581
+      "windows": [
+        {
+          "id": "3dc0cb46-6d0f-4d6a-b42d-02bc70018975",
+          "path": "StickyNotes/2026/2026-06-24.md",
+          "stickyId": "3dc0cb46-6d0f-4d6a-b42d-02bc70018975",
+          "bounds": {
+            "left": 1128,
+            "top": 71,
+            "width": 420,
+            "height": 360
+          },
+          "collapsed": false,
+          "hidden": false,
+          "stretched": false,
+          "bindings": [],
+          "yamlVisible": false,
+          "color": "mint",
+          "markdownMode": "preview",
+          "open": true
+        }
+      ],
+      "updatedAt": 1782260963442
     }
   ],
   "trash": []
