@@ -18,6 +18,7 @@ cssclass: home
 | [[Otomatik Kontrol/OK Ana Sayfa\|🎛️ Otomatik Kontrol]]                          | [[Otomatik Kontrol/OK Ana Sayfa]]               | [[Otomatik Kontrol/OK Formül Sayfası]]               | 🔴    |
 | [[Sayısal Sinyal İşleme/SSI Ana Sayfa\|📡 Sayısal Sinyal İşleme]]                | [[Sayısal Sinyal İşleme/SSI Ana Sayfa]]         | [[Sayısal Sinyal İşleme/SSI Formül Sayfası]]         | 🔴    |
 | [[Sİnyaller ve Sistemler/SS Ana Sayfa\|〰️ Sinyaller ve Sistemler]]               | [[Sİnyaller ve Sistemler/SS Ana Sayfa]]         | [[Sİnyaller ve Sistemler/SS Formül Sayfası]]         | 🔴    |
+| [[Analog Haberleşme/AH Ana Sayfa\|📻 Analog Haberleşme]]                         | [[Analog Haberleşme/AH Ana Sayfa]]              | [[Analog Haberleşme/AH Formül Sayfası]]              | 🔴    |
 
 ---
 
@@ -30,12 +31,14 @@ graph TD
     SS --> MST["⚙️ MST & Benzetim"]
     OK <--> MST
     EMD["⚡ Elektromanyetik\nDalga Teorisi"]
+    SS --> AH["📻 Analog Haberleşme"]
 
     style SS fill:#5B9BD5,color:#fff
     style SSI fill:#9467BD,color:#fff
     style OK fill:#FFA500,color:#000
     style MST fill:#18B464,color:#fff
     style EMD fill:#DC503C,color:#fff
+    style AH fill:#E05C2A,color:#fff
 ```
 
 ---

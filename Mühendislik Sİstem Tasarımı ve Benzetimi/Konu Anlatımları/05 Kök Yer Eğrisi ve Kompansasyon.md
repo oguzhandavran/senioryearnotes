@@ -177,4 +177,27 @@ flowchart TD
 > - PD = lead'in özel hali (sadece sıfır, kutup yok)
 > - Tasarımda her zaman: açı şartı → konumu bul, genlik şartı → K bul
 
+---
+
+## Op-Amp ile Kompansatör Gerçekleme (Hocanın Notu)
+
+Kompansatörler op-amp devreleri ile fiziksel olarak gerçeklenir. Genel yapı:
+
+$$G(s) = -\frac{Z_2(s)}{Z_1(s)}$$
+
+| Fonksiyon | $Z_1$ | $Z_2$ | Transfer Fonksiyonu |
+|-----------|-------|-------|-------------------|
+| **Kazanç** | $R_1$ | $R_2$ | $-R_2/R_1$ |
+| **İntegral** | $R$ | $C$ | $-\dfrac{1}{RCs}$ |
+| **Türev** | $C$ | $R$ | $-RCs$ |
+| **PI kontrolör** | $R_1$ | $R_2 \parallel C$ | $-\dfrac{R_2}{R_1}\!\left(s+\dfrac{1}{R_2C}\right)\dfrac{1}{s}$ |
+| **PD kontrolör** | $R_1 \parallel C_1$ | $R_2$ | $-R_2C_1\!\left(s+\dfrac{1}{R_1C_1}\right)$ |
+| **PID kontrolör** | $R_1 \parallel C_1$ | $R_2 \parallel C_2$ (seri) | $-\dfrac{R_2C_1\!\left(s+\frac{1}{R_1C_1}\right)\!\left(s+\frac{1}{R_2C_2}\right)}{s}$ |
+
+> [!sinav] PD Tasarımından Devreye Geçiş
+> PD sıfırunu $z_c$ bulduktan sonra:
+> - $G_{PD}(s) = -R_2C_1(s + z_c)$ formunda eşitleyin
+> - $z_c = 1/(R_1C_1)$ → $R_1C_1$ sabitini belirler
+> - $R_2C_1 = 1$ seçilirse kazanç $K_c$ ile $R_2$ belirlenir
+
 **İlgili:** [[../Otomatik Kontrol/04 Kök Yer Eğrisi|OK — Kök Yer Eğrisi]]

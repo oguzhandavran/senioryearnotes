@@ -58,6 +58,7 @@ mindmap
 | 3 | Durum Uzayı Örnekleri | [[Örnek Sorular/03 Durum Uzayı Örnekleri]] |
 | 4 | Doğrusallaştırma Örnekleri | [[Örnek Sorular/04 Doğrusallaştırma Örnekleri]] |
 | 5 | Kök Yer Eğrisi Örnekleri | [[Örnek Sorular/05 Kök Yer Eğrisi Örnekleri]] |
+| 6 | **Final Sınav Soruları (Çözümlü)** | [[Örnek Sorular/06 Final Sınav Soruları (Çözümlü)]] |
 
 ## Diğer Derslerle Bağlantı
 

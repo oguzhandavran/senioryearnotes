@@ -137,3 +137,68 @@ $$\delta I(s)(s + 0.677) = V(s) \implies \delta I(s) = \frac{V(s)}{s+0.677}$$
 $$\boxed{\frac{V_L(s)}{V(s)} = \frac{s}{s+0.677}}$$
 
 *Yüksek geçiren karakteristik — saf DC girişe sıfır yanıt (beklenen: endüktör DC'de kısa devre)*
+
+---
+
+## Örnek 5 — cos x İçeren ODE Doğrusallaştırma (Hocanın Notu)
+
+**Soru:** $\ddot{x} + 2\dot{x} + \cos x = 0$'ı $x_0 = \pi/4$ noktasında doğrusallaştırın.
+
+**Adım 1 — Doğrusal olmayan terim:** $\cos x$
+
+**Adım 2 — Taylor açılımı** ($x = x_0 + \delta x$):
+
+$$\cos(x_0 + \delta x) \approx \cos(x_0) - \sin(x_0)\,\delta x$$
+
+$$x_0 = \pi/4: \quad \cos\!\tfrac{\pi}{4} = \frac{\sqrt{2}}{2}, \quad \sin\!\tfrac{\pi}{4} = \frac{\sqrt{2}}{2}$$
+
+$$\cos x \approx \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}\,\delta x$$
+
+**Adım 3 — Doğrusallaştırılmış denklem:**
+
+$$\frac{d^2(\delta x)}{dt^2} + 2\frac{d(\delta x)}{dt} + \frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2}\,\delta x = 0$$
+
+$$\boxed{\frac{d^2(\delta x)}{dt^2} + 2\frac{d(\delta x)}{dt} - \frac{\sqrt{2}}{2}\,\delta x = -\frac{\sqrt{2}}{2}}$$
+
+**Laplace (sıfır B.K.):**
+
+$$\delta X(s)\!\left(s^2 + 2s - \frac{\sqrt{2}}{2}\right) = -\frac{\sqrt{2}/2}{s}$$
+
+$$\delta X(s) = \frac{-\sqrt{2}/2}{s\!\left(s^2+2s-\frac{\sqrt{2}}{2}\right)}$$
+
+---
+
+## Örnek 6 — Faz Düzlemi: Denge Noktası Kararlılığı (Hocanın Notu)
+
+**Soru:** $\ddot{x} + 0{,}6\dot{x} + 3x + x^2 = 0$ sisteminin denge noktalarını bulun ve kararlılıklarını inceleyin.
+
+**Adım 1 — Durum uzayı:**
+
+$$x_1 = x, \quad \dot{x}_1 = x_2$$
+$$\dot{x}_2 = -0{,}6x_2 - 3x_1 - x_1^2$$
+
+**Adım 2 — Denge noktaları** ($\dot{x}_1=\dot{x}_2=0$):
+
+$x_2=0$ ve $-3x_1-x_1^2 = x_1(x_1+3)=0$
+
+$$\boxed{(x_1, x_2) = (0,0) \quad \text{ve} \quad (-3, 0)}$$
+
+**Adım 3 — Jacobian:**
+
+$$J = \begin{bmatrix} 0 & 1 \\ -3-2x_1 & -0{,}6 \end{bmatrix}$$
+
+**Adım 4a — (0,0) noktası:**
+
+$$J_{(0,0)} = \begin{bmatrix} 0 & 1 \\ -3 & -0{,}6 \end{bmatrix}$$
+
+$$\det(\lambda I - J) = 0 \Rightarrow \lambda^2 + 0{,}6\lambda + 3 = 0 \Rightarrow \lambda_{1,2} = -0{,}3 \pm j1{,}71$$
+
+$\text{Re}(\lambda)<0$ → **Kararlı Odak (Stable Focus)** — iç içe sarılan spiraller
+
+**Adım 4b — (−3, 0) noktası:**
+
+$$J_{(-3,0)} = \begin{bmatrix} 0 & 1 \\ 3 & -0{,}6 \end{bmatrix}$$
+
+$$\lambda^2 + 0{,}6\lambda - 3 = 0 \Rightarrow \lambda_1 = 1{,}46, \quad \lambda_2 = -2{,}06$$
+
+Zıt işaretli gerçel → **Eyer Noktası (Saddle)** — hem yaklaşır hem uzaklaşır

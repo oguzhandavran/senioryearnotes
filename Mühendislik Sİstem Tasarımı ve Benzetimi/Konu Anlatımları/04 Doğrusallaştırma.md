@@ -92,6 +92,37 @@ Lineerleştirilmiş sistemin özdeğerleri:
 
 ---
 
+## Faz Düzlemi Analizi
+
+> Doğrusal olmayan, 2. dereceden, zamandan bağımsız sistemleri **grafik** olarak incelemenin yolu.
+
+**Durum uzayı gösterimi:** $x_1 = x$, $x_2 = \dot{x}$ alınarak $(\dot{x}_1, \dot{x}_2)$ faz düzleminde çizilir.
+
+| Özdeğer | Nokta Tipi | Grafik |
+|---------|-----------|--------|
+| $\lambda = \pm j\omega$ (saf sanal) | **Merkez** (Center) | İç içe daireler — salınım |
+| $\text{Re}(\lambda)<0$, karmaşık | **Kararlı Odak** (Stable Focus) | İçe sarılan spiral |
+| $\text{Re}(\lambda)>0$, karmaşık | **Kararsız Odak** | Dışa sarılan spiral |
+| $\lambda_{1,2}$ gerçel, negatif | **Kararlı Düğüm** | Doğrusal yaklaşma |
+| $\lambda_{1,2}$ gerçel, pozitif | **Kararsız Düğüm** | Doğrusal uzaklaşma |
+| $\lambda_1>0$, $\lambda_2<0$ | **Eyer (Saddle)** | Bir yön çekici, diğer itici |
+
+> [!sinav] Sınav İpucu — Yay-Kütle ($k=1, m=1$)
+> $\ddot{x}+x=0$ → $\lambda=\pm j$ → **Merkez noktası** → $x_1^2+x_2^2=r^2$ (daireler)
+
+**Örnek — ẍ + 0.6ẋ + 3x + x² = 0:**
+
+Durum uzayı: $\dot{x}_1=x_2$, $\dot{x}_2=-0{,}6x_2-3x_1-x_1^2$
+
+Denge noktaları ($\dot{x}_1=\dot{x}_2=0$): $(0,0)$ ve $(-3,0)$
+
+| Nokta | Jacobian | Özdeğerler | Tür |
+|-------|---------|-----------|-----|
+| $(0,0)$ | $\begin{bmatrix}0&1\\-3&-0{,}6\end{bmatrix}$ | $\lambda=-0{,}3\pm j1{,}71$ | **Kararlı Odak** |
+| $(-3,0)$ | $\begin{bmatrix}0&1\\3&-0{,}6\end{bmatrix}$ | $\lambda_1=1{,}46,\ \lambda_2=-2{,}06$ | **Eyer Noktası** |
+
+---
+
 ## Özet Akış Diyagramı
 
 ```mermaid

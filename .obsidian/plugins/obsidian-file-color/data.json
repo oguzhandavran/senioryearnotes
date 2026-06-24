@@ -26,6 +26,11 @@
       "id": "YsmhAt5Qbz9plpk5WAYCo",
       "name": "Sarı",
       "value": "#d5ff3d"
+    },
+    {
+      "id": "fsJBVJPkTuI_PF_-WWEPQ",
+      "name": "Mor",
+      "value": "#8c00ff"
     }
   ],
   "fileColors": [
@@ -48,6 +53,10 @@
     {
       "path": "Sİnyaller ve Sistemler",
       "color": "KMo_p3-VtP8xgCClwSIvV"
+    },
+    {
+      "path": "Analog Haberleşme",
+      "color": "fsJBVJPkTuI_PF_-WWEPQ"
     }
   ]
 }
