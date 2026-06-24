@@ -10,6 +10,15 @@ tags: [analog-haberleşme, sınav-gecesi, özet, cheat-sheet]
 
 ---
 
+> [!danger] BÜTÜNLEME ODAK KONULARI (WhatsApp · 11.06 + 23.06.2026)
+> **KESIN ÇIKACAK:** Fourier serisi $c_n$ · Enerji/Güç işaret sınıfı · ÇYB-TYB (DSB-SC/SSB) · Frekans modülasyonu (FM)
+> **ÇIKMAYACAK:** Süzgeç ❌ · Konvülüsyon ❌ · Faz modülasyonu ❌
+> **Hoca söyledi (23.06):** "Aynı tip sorular olur çıkanlarla — ters köşe yapmayacağım." → Vize + final soruları çalışmak yeterli, rakamlar değişir.
+> **Hilbert kısayolu:** Hoca 90° kaydırmayı kabul etti → $\hat{\sin}=-\cos,\;\hat{\cos}=\sin$ → sin yazıp geç.
+> **Ünite sonu ve ödev sorularından** 1 kesin soru var!
+
+---
+
 ## HIZLI FORMÜL BLOK
 
 $$X(f)=\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt \qquad \text{sinc}(x)=\frac{\sin(\pi x)}{\pi x}$$
@@ -100,3 +109,23 @@ Dikdörtgen ★ Dikdörtgen = **Trapez** (veya üçgen, eşit genişlikler)
 | Örnek | Kısa darbe, $e^{-at}u(t)$ | $\cos(\omega_0 t)$, sabit, periyodik |
 
 **Parseval:** $E = \int x^2 dt = \int |X(f)|^2 df$
+
+---
+
+## FREKANS MODÜLASYONU (FM) — BÜTÜNLEMEDE KESİN
+
+$$x_c^{FM}(t) = A_c\cos\!\left(2\pi f_c t + 2\pi k_f \int_0^t m(\tau)\,d\tau\right)$$
+
+| Büyüklük | Formül | Not |
+|----------|--------|-----|
+| Anlık frekans | $f_i(t) = f_c + k_f m(t)$ | $k_f$: frekans duyarlılığı (Hz/V) |
+| Frekans sapması | $\Delta f = k_f \max\|m(t)\|$ | Mesajın tepe değeriyle |
+| Modülasyon indeksi | $\beta = \Delta f / W$ | $W$: mesaj bant genişliği |
+| Bant genişliği | $B_T \approx 2(\Delta f + W) = 2W(\beta+1)$ | Carson kuralı |
+
+**FM ↔ PM farkı:**
+- FM: anlık **frekans** $\propto m(t)$ → $\phi(t) = 2\pi k_f \int m\,dt$
+- PM: anlık **faz** $\propto m(t)$ → bütünlemede faz mod YOK
+
+**Örnek:** $m(t) = A_m\cos(2\pi f_m t)$, $k_f$ verilmişse:
+$$\Delta f = k_f A_m \qquad \beta = \frac{k_f A_m}{f_m} \qquad B_T = 2(k_f A_m + f_m)$$

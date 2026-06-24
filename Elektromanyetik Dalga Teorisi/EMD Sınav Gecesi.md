@@ -6,6 +6,11 @@ tags: [emd, sinav-gecesi, ozet]
 
 > Tek sayfa. Maxwell'den İletim Hattına.
 
+> [!danger] BÜTÜNLEME İPUCU — Pınar Hoca (23.06.2026)
+> Konular **6. Bölümden başlıyor** — ama önce **Faraday kısmı var**, atlamayın!
+> **PDF'lere de bakın** — konu atlamayın dedi.
+> "Emdt chengte 6. Bölümden başlıyor konular ama onun öncesinde faraday kısmı var."
+
 ---
 
 ## 1 — Maxwell Denklemleri (Ezberle)

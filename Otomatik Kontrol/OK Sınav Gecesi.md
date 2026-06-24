@@ -6,6 +6,10 @@ tags: [otomatik-kontrol, sinav-gecesi, ozet]
 
 > Tek sayfa. Her şey burada. Başka yere bakma.
 
+> [!danger] BÜTÜNLEME İPUCU (24.06.2026)
+> **Muhammet hoca:** "Vize ve final sorularına çalışırsanız 100 alırsınız — soruları ezberlemeyin, mantığını anlayın, rakamlar değişir."
+> Hoca vize + final sorularını göndermiş. Aynı soru tiplerini bekle, sayılar farklı olacak.
+
 ---
 
 ## 1 — Kapalı Çevrim TF
