@@ -46,6 +46,8 @@ $$\boxed{G(s) = \frac{X(s)}{F(s)} = \frac{1}{ms^2 + bs + k}}$$
 
 **RLC Seri:** $G(s) = \dfrac{V_C}{V_{in}} = \dfrac{1/LC}{s^2 + (R/L)s + 1/(LC)}$
 
+**RLC Paralel** (akım kaynağı, çıkış $V$): $Z(s) = \dfrac{V}{I_{in}} = \dfrac{s/C}{s^2 + (1/RC)s + 1/(LC)}$
+
 **Gerilim bölücü:** $V_2 = V_{in} \cdot \dfrac{Z_2}{Z_1+Z_2}$
 
 ---
