@@ -20,3 +20,13 @@ _templates/
 Thumbs.db
 *~
 *.swp
+
+# ── Quartz statik site (build çıktıları, repo'ya girmesin) ──
+node_modules/
+public/
+content/
+.quartz-cache/
+.quartz/
+
+# Smart Second Brain AI vektör deposu (büyük binary, makineye özel)
+.obsidian/plugins/smart-second-brain/vectorstores/

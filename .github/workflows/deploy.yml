@@ -1,0 +1,68 @@
+name: Quartz sitesini GitHub Pages'e dağıt
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Actions sekmesinden elle de tetiklenebilir
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tarih bilgisi için tüm git geçmişi
+
+      - name: Node.js kur
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+
+      - name: npm önbelleği
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Quartz eklenti önbelleği
+        uses: actions/cache@v4
+        with:
+          path: .quartz/plugins
+          key: ${{ runner.os }}-quartz-plugins-${{ hashFiles('quartz.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-quartz-plugins-
+
+      - name: Bağımlılıkları kur
+        run: npm ci
+
+      - name: Siteyi derle (content hazırla + ASCII slug + Quartz build)
+        run: bash build-site.sh
+
+      - name: Pages artefaktını yükle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Pages'e dağıt
+        id: deployment
+        uses: actions/deploy-pages@v4
