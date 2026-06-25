@@ -112,6 +112,35 @@ Diferansiyel denklem:
 $$C\ddot{v} + \frac{1}{R}\dot{v} + \frac{1}{L}v = \dot{i}_{in}$$
 
 $$G(s) = \frac{V(s)}{I_{in}(s)} = \frac{s/C}{s^2 + s/(RC) + 1/(LC)}$$
+>[!tip] Davran'ın notu
+Saçma bir formatta görünüyor biliyorum ama aslında o ifadeler **zaten sadeleştirilmiş** halleri. İçindeki $1/LC$, $R/L$ gibi "bölümlü" katsayılar bir hata değil, kasıtlı bir **normalizasyon** sonucu. Açıklayayım:
+
+## Ham (sadeleşmemiş) hal
+
+Gerilim bölücüden direkt çıkarırsan, kesirsiz katsayılı temiz formu bu:
+
+**Seri:**
+$$\frac{V_C}{V_{in}} = \frac{1/Cs}{Ls + R + 1/Cs} = \frac{1}{LCs^2 + RCs + 1}$$
+
+**Paralel:** $Y = \frac{1}{R} + \frac{1}{Ls} + Cs$ olduğundan
+$$Z = \frac{1}{Y} = \frac{Ls}{LCs^2 + \frac{L}{R}s + 1}$$
+
+Gördüğün gibi bu hallerde **iç içe kesir yok** — daha "temiz" duruyor.
+
+## Neden normalize edilmiş hali yazıyoruz?
+
+Pay ve paydayı $LC$'ye bölünce senin formül sayfandaki hale dönüyor:
+
+$$\frac{1/LC}{s^2 + (R/L)s + 1/(LC)}$$
+
+Bunun tek sebebi: paydanın **standart 2. mertebe formuna** oturması →
+$$s^2 + 2\zeta\omega_n s + \omega_n^2$$
+
+Bu sayede katsayılara bakar bakmaz okuyabiliyorsun:
+- $\omega_n = \dfrac{1}{\sqrt{LC}}$
+- Seri: $2\zeta\omega_n = R/L$, Paralel: $2\zeta\omega_n = 1/RC$
+
+Yani $s^2$ katsayısı **1 olsun** diye bilerek kesirli yazılıyor. İki form da matematiksel olarak birebir aynı; sadece biri "$\zeta, \omega_n$ okumak" için, diğeri "temiz katsayı" için uygun.
 
 ---
 
