@@ -12,40 +12,37 @@ tags: [emd, bütünleme, yansıma, kırılma, konu-anlatımı]
 
 ## Genel Senaryo
 
-<svg width="460" height="200" viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-emd04a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
-    </marker>
-    <marker id="arr-emd04r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
-    </marker>
-  </defs>
-  <!-- Ortam 1 background -->
-  <rect x="0" y="0" width="220" height="180" rx="0" fill="#f8f9fa" stroke="none"/>
-  <text x="60" y="20" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Ortam 1 (η₁)</text>
-  <!-- Ortam 2 background -->
-  <rect x="240" y="0" width="220" height="180" rx="0" fill="#eef2f7" stroke="none"/>
-  <text x="340" y="20" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Ortam 2 (η₂)</text>
-  <!-- Arayüzey -->
-  <line x1="220" y1="0" x2="220" y2="180" stroke="#1a1a2e" stroke-width="2.5" stroke-dasharray="6,3"/>
-  <text x="220" y="192" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e">Arayüzey z = 0</text>
-  <!-- Gelen dalga: left→right to arayüzey -->
-  <line x1="30" y1="90" x2="208" y2="90" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr-emd04a)"/>
-  <text x="115" y="82" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Gelen Dalga</text>
-  <text x="115" y="108" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Eᵢ, Hᵢ</text>
-  <!-- İletilen dalga: arayüzey→right -->
-  <line x1="232" y1="90" x2="430" y2="90" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr-emd04a)"/>
-  <text x="330" y="82" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">İletilen Dalga</text>
-  <text x="330" y="108" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Eₜ, Hₜ</text>
-  <!-- Yansıyan dalga: arayüzey←left (going back) -->
-  <line x1="208" y1="130" x2="40" y2="130" stroke="#c0392b" stroke-width="2" marker-end="url(#arr-emd04r)"/>
-  <text x="115" y="122" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#c0392b">Yansıyan Dalga</text>
-  <text x="115" y="148" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#c0392b">Eᵣ, Hᵣ</text>
-  <!-- Gamma and tau labels -->
-  <text x="230" y="162" text-anchor="start" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">Γ = (η₂−η₁)/(η₂+η₁)</text>
-  <text x="230" y="176" text-anchor="start" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">τ = 2η₂/(η₂+η₁)</text>
-</svg>
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{tikzpicture}[>=Stealth, font=\small]
+  % Ortamlar
+  \fill[gray!8]  (-4.4,-1.8) rectangle (0,1.8);
+  \fill[blue!8]  (0,-1.8) rectangle (4.4,1.8);
+  \node at (-2.2,1.55) {Ortam 1 ($\eta_1$)};
+  \node at (2.2,1.55)  {Ortam 2 ($\eta_2$)};
+  % Arayüzey
+  \draw[very thick, dashed] (0,-1.8) -- (0,1.8);
+  \node[below] at (0,-1.8) {Arayüzey $z=0$};
+  % Gelen dalga
+  \draw[->, thick] (-3.6,0.3) -- (-0.15,0.3);
+  \node[above] at (-1.9,0.45) {Gelen Dalga};
+  \node[below] at (-1.9,0.2) {$E_i,\,H_i$};
+  % İletilen dalga
+  \draw[->, thick] (0.15,0.3) -- (3.8,0.3);
+  \node[above] at (2.0,0.45) {İletilen Dalga};
+  \node[below] at (2.0,0.2) {$E_t,\,H_t$};
+  % Yansıyan dalga
+  \draw[->, thick, red!70!black] (-0.15,-0.5) -- (-3.4,-0.5);
+  \node[above, red!70!black] at (-1.9,-0.4) {Yansıyan Dalga};
+  \node[below, red!70!black] at (-1.9,-0.7) {$E_r,\,H_r$};
+  % Katsayılar
+  \node[anchor=west] at (0.2,-1.2) {$\Gamma = \dfrac{\eta_2-\eta_1}{\eta_2+\eta_1}$};
+  \node[anchor=west] at (2.4,-1.2) {$\tau = \dfrac{2\eta_2}{\eta_2+\eta_1}$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Yansıma katsayısı (Γ):** $\Gamma = E_{r0}/E_{i0}$  
 **İletim katsayısı (τ):** $\tau = E_{t0}/E_{i0}$

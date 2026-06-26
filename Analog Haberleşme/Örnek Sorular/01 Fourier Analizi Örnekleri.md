@@ -12,6 +12,12 @@ tags: [analog-haberleşme, fourier, spektrum, örnek-sorular]
 
 **Soru:** $x(t) = e^{3t}u(-t)$ işaretinin Fourier dönüşümünü bulun.
 
+> [!note]- Semboller
+> - $u(-t)$: zaman-ters basamak → $t\le0$ için 1, $t>0$ için 0 (sinyal sadece geçmişte var)
+> - $X(f)=\int_{-\infty}^{\infty}x(t)e^{-j2\pi ft}dt$: Fourier dönüşümü (frekans $f$ Hz cinsinden)
+> - Yakınsama koşulu: üstelin reel kısmı $>0$ olduğu uçta integral sıfıra gider
+> - $|X(f)|$: genlik spektrumu; $\angle X(f)$: faz spektrumu
+
 **Çözüm:**
 
 $u(-t) = 1$ için $t \leq 0$, 0 için $t > 0$:
@@ -31,6 +37,12 @@ $$\boxed{X(f) = \frac{1}{3 - j2\pi f}}$$
 ## Örnek 2 — Kaydırılmış Dikdörtgen Darbe FD
 
 **Soru:** $x(t) = \Pi\!\left(\dfrac{t-\tau}{2a}\right)$ işaretinin Fourier dönüşümünü bulun ($0 < a < \tau$).
+
+> [!note]- Semboller
+> - $\Pi(\cdot)$: birim dikdörtgen fonksiyon (argüman $|\cdot|<1/2$ iken 1); $\Pi\!\big(\tfrac{t-\tau}{2a}\big)$ → merkez $\tau$, genişlik $2a$
+> - $\tau$: zaman kaydırması (gecikme, s); $a$: yarı-genişlik
+> - $\text{sinc}(x)=\dfrac{\sin(\pi x)}{\pi x}$ (normalize sinc); Euler: $e^{j\theta}-e^{-j\theta}=2j\sin\theta$
+> - Zaman kaydırma teoremi: $x(t-\tau)\leftrightarrow e^{-j2\pi f\tau}X(f)$ → sadece **doğrusal faz** ekler
 
 **Çözüm:**
 
@@ -55,6 +67,12 @@ $$\boxed{X(f) = 2a\,e^{-j2\pi f\tau}\,\text{sinc}(2af)}$$
 ## Örnek 3 — Genlik ve Faz Spektrumu
 
 **Soru:** $x(t) = 1 + \sin(2\pi f_c t) + 3\cos(2\pi ft) + 5\sin(2\pi f_m t)$, $f_m < f < f_c$
+
+> [!note]- Semboller
+> - $f_c,f,f_m$: taşıyıcı / ara / mesaj frekansları (Hz); DC terim "1" → $f=0$ bileşeni
+> - Çift taraflı spektrum: her gerçek kosinüs $A\cos\to \pm f$'de $A/2$ genlikli iki çizgi
+> - $\sin(\omega t)=\cos(\omega t-\pi/2)$ → genlik aynı, faz $-\pi/2$
+> - Genlik spektrumu **çift** (simetrik), faz spektrumu **tek** (antisimetrik) fonksiyondur
 
 **Çözüm:** $\sin(\omega t) = \cos(\omega t - \pi/2)$ dönüşümünü uygula:
 
@@ -86,6 +104,11 @@ $$\boxed{X(f) = 2a\,e^{-j2\pi f\tau}\,\text{sinc}(2af)}$$
 
 **Soru:** $x(t) = 1 + 3\cos(2\pi \cdot 16t - \pi/6) + \sin(60\pi t) + 5\cos(70\pi t)$
 
+> [!note]- Semboller
+> - $\omega=2\pi f$ → frekansı bulmak için açısal terimi $2\pi$'ye böl: $60\pi t\Rightarrow f=30$ Hz, $70\pi t\Rightarrow f=35$ Hz
+> - $|c_n|$: $n$. harmoniğin (çift taraflı) genliği $=$ tek-taraflı genliğin yarısı; $\theta_n$: faz açısı
+> - Kosinüsün fazı $\pm f$'de işaret değiştirir: $A\cos(\omega t-\phi)\to$ pozitif $f$'de $-\phi$, negatif $f$'de $+\phi$
+
 **Çözüm:**
 
 | Terim | $f$ (Hz) | $|c_n|$ | $\theta_n$ |
@@ -103,23 +126,34 @@ $$\boxed{X(f) = 2a\,e^{-j2\pi f\tau}\,\text{sinc}(2af)}$$
 
 **Soru:** $h(t)$: $[1,3]$ aralığında genlik 1; $x(t)$: $[0,2]$ aralığında genlik $1/2$. $y(t) = x(t) * h(t)$'yi bulun.
 
-**Çözüm:** Örtüşme bölgelerini analiz et ($h(t-\tau)$'yu kaydır):
+> [!note]- Semboller
+> - $*$: konvolüsyon; $y(t)=\int_{-\infty}^{\infty}x(\tau)h(t-\tau)\,d\tau$
+> - $h(t-\tau)$: $\tau$ ekseninde **ters çevrilip** $t$ kadar kaydırılan darbe
+> - Örtüşme uzunluğu $L(t)$ → dikdörtgenlerde $y(t)=(\text{genlik}_x\cdot\text{genlik}_h)\cdot L(t)$
+> - Eşit genişlikli iki dikdörtgen → **üçgen**; farklı genişlikte → trapez. Tepe konumu $=$ merkezlerin toplamı
 
-| Koşul | İntegral | $y(t)$ |
+**Çözüm:** $y(t)=\int x(\tau)h(t-\tau)\,d\tau$. $x(\tau)$: $[0,2]$'de $1/2$; $h(t-\tau)$: $1\le t-\tau\le3$ → $t-3\le\tau\le t-1$. Örtüşme aralığı $[\max(0,t-3),\,\min(2,t-1)]$, uzunluğu $L(t)$ → $y(t)=\tfrac12 L(t)$:
+
+| Koşul | Örtüşme uzunluğu $L(t)$ | $y(t)$ |
 |-------|---------|--------|
-| $t < 1$ | — | $0$ |
-| $1 \leq t < 2$ | $\int_0^{t-1}\frac{1}{2}d\tau$ | $(t-1)/2$ |
-| $2 \leq t < 3$ | $\int_0^{2}\frac{1}{2}d\tau$ | $1$ |
-| $3 \leq t < 5$ | $\int_{t-3}^{2}\frac{1}{2}d\tau$ | $(5-t)/2$ |
-| $t \geq 5$ | — | $0$ |
+| $t < 1$ | $0$ | $0$ |
+| $1 \leq t < 3$ | $\int_0^{t-1}d\tau=t-1$ | $(t-1)/2$ |
+| $3 \leq t < 5$ | $\int_{t-3}^{2}d\tau=5-t$ | $(5-t)/2$ |
+| $t \geq 5$ | $0$ | $0$ |
 
-**Çıkış:** Trapez şekli. Max değer $y = 1$, $t = 2$'den $t = 3$'e kadar sürer.
+**Çıkış:** **Üçgen** şekli (eşit genişlikli iki dikdörtgenin konvolüsyonu). Tepe değer $y=1$, yalnızca $t=3$'te; taban $t=1\to5$.
 
 ---
 
 ## Örnek 6 — $c_n$ Hesabı ve Çizgi Spektrumu
 
 **Soru:** $f_0 = 1$ Hz, $T_0 = 1$ s, $A = 2$, $\tau = 0.5$ s kare dalga. $c_n$'yi hesapla.
+
+> [!note]- Semboller
+> - $T_0$: periyot (s); $f_0=1/T_0$: temel frekans (Hz); $A$: darbe genliği; $\tau$: darbe genişliği
+> - $\tau/T_0$: doluluk oranı (duty cycle); $c_n$: $n$. Fourier serisi katsayısı (çizgi spektrumu)
+> - $c_n=\dfrac{A\tau}{T_0}\,\text{sinc}\!\big(\tfrac{n\tau}{T_0}\big)$; $c_0=A\tau/T_0$ ortalama (DC) değer
+> - $\text{sinc}$ sıfırları tam sayılarda → doluluk $1/2$ iken çift harmonikler ($n=\pm2,\pm4,\dots$) sıfır
 
 **Çözüm:**
 

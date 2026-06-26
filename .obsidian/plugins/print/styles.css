@@ -1,0 +1,103 @@
+@media print {
+
+    html,
+    body {
+        color-scheme: light;
+        background: #fff !important;
+        color: #111827;
+    }
+
+    body {
+        margin: 20px;
+    }
+
+    .obsidian-print,
+    .obsidian-print * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .markdown-preview-sizer {
+        min-height: 0 !important;
+        padding: 0 !important;
+    }
+
+    .collapse-indicator,
+    .metadata-container,
+    pre button {
+        display: none;
+    }
+
+    .obsidian-print-page-break {
+        page-break-before: always;
+    }
+
+    .callout,
+    .mermaid,
+    .obsidian-print-frontmatter,
+    .obsidian-print-frontmatter-properties,
+    .obsidian-print-frontmatter-property,
+    .obsidian-print-frontmatter-object,
+    .obsidian-print-frontmatter-object-row,
+    pre,
+    blockquote,
+    table,
+    img {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .callout {
+        margin-block: 1rem;
+    }
+
+    .callout.is-collapsed .callout-content {
+        display: block !important;
+    }
+
+    .callout-fold {
+        display: none !important;
+    }
+
+    .callout-content > :first-child,
+    .callout-title > :first-child {
+        margin-top: 0;
+    }
+
+    .callout-content > :last-child,
+    .callout-title > :last-child {
+        margin-bottom: 0;
+    }
+
+    .mermaid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .mermaid svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        overflow: visible;
+        background: transparent;
+    }
+
+    .obsidian-print-frontmatter-value,
+    .obsidian-print-frontmatter-object-value,
+    .obsidian-print-frontmatter-link {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+}

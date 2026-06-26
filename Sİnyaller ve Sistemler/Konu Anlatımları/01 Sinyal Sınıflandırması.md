@@ -12,7 +12,7 @@ tags: [ss, sinyal, sınıflandırma, konu-anlatımı]
 
 ---
 
-## 1. CT vs DT Sinyaller
+## 1. CT(Contunious Time) vs DT (Discrete Time) Sinyaller
 
 > [!tanim] Tanım
 > - **CT (Sürekli-Zaman):** $x(t)$, $t \in \mathbb{R}$ — her anda tanımlı

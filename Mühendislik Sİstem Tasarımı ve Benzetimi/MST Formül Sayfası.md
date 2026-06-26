@@ -72,14 +72,31 @@ Tüm $\text{Re}(\lambda_i) < 0 \implies$ **kararlı**
 
 ## Doğrusallaştırma
 
+Doğrusal olmayan $\dot{x} = f(x, u)$ sistemini denge noktası civarında **Taylor 1. mertebe** ile lineerleştir.
+
 **Denge noktası:** $f(x_e, u_e) = 0$
 
-**Lineer model:**
+**Lineer model:** ($\delta x = x - x_e$, $\delta u = u - u_e$ sapmalar)
 $$\delta\dot{x} = A\,\delta x + B\,\delta u$$
 
 $$A = \left.\frac{\partial f}{\partial x}\right|_{x_e, u_e}, \qquad B = \left.\frac{\partial f}{\partial u}\right|_{x_e, u_e}$$
 
-**Küçük açı:** $\sin\theta \approx \theta$, $\cos\theta \approx 1$ (radyan)
+> [!note] Nasıl yapılır? (4 adım)
+> 1. **Modeli kur:** $\dot{x} = f(x,u)$ (genelde 2. derece ODE'yi durum uzayına aç).
+> 2. **Denge noktasını bul:** $\dot{x}=0$ koy, $f(x_e,u_e)=0$ çöz.
+> 3. **Jacobian'ları al:** $f$'in $x$ ve $u$'ya göre kısmi türevleri $\to A, B$ matrisleri.
+> 4. **Denge noktasında değerlendir:** $x_e, u_e$ yerine koy. Türevler içindeki $\sin/\cos$ vb. sayısallaşır.
+
+> [!example] Sarkaç: $\ddot{\theta} = -\frac{g}{L}\sin\theta - \frac{b}{mL^2}\dot{\theta} + \frac{1}{mL^2}u$
+> **Durumlar:** $x_1=\theta,\; x_2=\dot{\theta}$
+> $$\dot{x}_1 = x_2, \qquad \dot{x}_2 = -\tfrac{g}{L}\sin x_1 - \tfrac{b}{mL^2}x_2 + \tfrac{1}{mL^2}u$$
+> **Denge ($u_e=0$):** $\sin x_1 = 0 \Rightarrow x_e=(0,0)$ (alt) veya $(\pi,0)$ (üst).
+> **Jacobian:**
+> $$A = \begin{bmatrix} 0 & 1 \\ -\tfrac{g}{L}\cos x_1 & -\tfrac{b}{mL^2} \end{bmatrix}_{x_e}, \quad B = \begin{bmatrix} 0 \\ \tfrac{1}{mL^2} \end{bmatrix}$$
+> **Alt denge $(0,0)$:** $\cos 0 = 1 \Rightarrow A = \begin{bmatrix} 0 & 1 \\ -g/L & -b/mL^2 \end{bmatrix}$ → kararlı (salınımlı).
+> **Üst denge $(\pi,0)$:** $\cos\pi = -1 \Rightarrow +g/L$ terimi → **kararsız** (pozitif özdeğer).
+
+**Küçük açı:** $\sin\theta \approx \theta$, $\cos\theta \approx 1$ (radyan) — denge $\theta=0$ ise Jacobian'la aynı sonucu verir, hızlı kontrol için.
 
 ---
 

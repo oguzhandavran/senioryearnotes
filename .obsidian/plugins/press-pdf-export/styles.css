@@ -1,0 +1,67 @@
+/* Press PDF Export - Plugin UI Styles */
+
+.obsidian-press-progress {
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 4px;
+  background: var(--background-secondary);
+  font-size: 0.9em;
+}
+
+.obsidian-press-progress .progress-bar {
+  height: 4px;
+  background: var(--background-modifier-border);
+  border-radius: 2px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.obsidian-press-progress .progress-bar-fill {
+  height: 100%;
+  background: var(--interactive-accent);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.obsidian-press-success {
+  color: var(--text-success);
+}
+
+.obsidian-press-error {
+  color: var(--text-error);
+}
+
+.obsidian-press-progress-notice {
+  min-width: 260px;
+}
+
+.obsidian-press-progress-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.obsidian-press-progress-detail {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obsidian-press-progress-bar {
+  background: var(--background-modifier-border);
+  border-radius: 999px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.obsidian-press-progress-bar-fill {
+  background: var(--interactive-accent);
+  border-radius: inherit;
+  height: 100%;
+  transition: width 180ms ease;
+  width: 0;
+}

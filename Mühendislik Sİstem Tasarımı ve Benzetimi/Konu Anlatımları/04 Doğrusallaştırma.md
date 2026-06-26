@@ -29,6 +29,37 @@ Kontrol teorisi araçları (KYE, Bode, Routh) sadece **lineer** sistemler için 
 2. $\dot{x} = 0$ koy (denge şartı)
 3. $x_e$, $u_e$ bul (birden fazla denge noktası olabilir)
 
+> [!example] Örnek — Denge Noktası Bulma
+>
+> Sistemi durum uzayına çevir ($x_1 = x$, $x_2 = \dot{x}$):
+>
+> $$
+> \begin{cases}
+> \dot{x}_1 = x_2 \\[2pt]
+> \dot{x}_2 = -0.6x_2 - 3x_1 - x_1^2
+> \end{cases}
+> $$
+>
+> $\dot{x} = 0$ koy:
+>
+> $$
+> \begin{cases}
+> x_2 = 0 \\[2pt]
+> -0.6x_2 - 3x_1 - x_1^2 = 0
+> \end{cases}
+> $$
+>
+> $x_2 = 0$'ı ikinci denklemde yerine koy:
+>
+> $$-3x_1 - x_1^2 = 0 \;\Longrightarrow\; -x_1(3 + x_1) = 0$$
+>
+> $$
+> \boxed{(x_1, x_2) = (0, 0)} \quad\text{ve}\quad \boxed{(x_1, x_2) = (-3, 0)}
+> $$
+>
+> **Not:** Girişsiz sistemde ($\dot{x} = f(x)$) $u_e = 0$ kabul edilir.
+> Girişli sistemde ($\dot{x} = f(x, u)$) $f(x_e, u_e) = 0$ birlikte çözülür.
+
 ---
 
 ## Taylor Serisi Doğrusallaştırma
@@ -125,43 +156,17 @@ Denge noktaları ($\dot{x}_1=\dot{x}_2=0$): $(0,0)$ ve $(-3,0)$
 
 ## Özet Akış Diyagramı
 
-<svg width="360" height="370" viewBox="0 0 360 370" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-mst04" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
-    </marker>
-  </defs>
-  <!-- Step 1 -->
-  <rect x="40" y="10" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="180" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. Doğrusal Olmayan Sistem</text>
-  <text x="180" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">ẋ = f(x, u)</text>
-  <line x1="180" y1="52" x2="180" y2="68" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst04)"/>
-  <!-- Step 2 -->
-  <rect x="40" y="70" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="180" y="88" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. Denge Noktası Bul</text>
-  <text x="180" y="104" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">f(x_e, u_e) = 0</text>
-  <line x1="180" y1="112" x2="180" y2="128" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst04)"/>
-  <!-- Step 3 -->
-  <rect x="40" y="130" width="280" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="180" y="150" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Jacobian Hesapla</text>
-  <text x="180" y="166" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">A = ∂f/∂x|_(x_e,u_e),   B = ∂f/∂u|_(x_e,u_e)</text>
-  <line x1="180" y1="180" x2="180" y2="196" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst04)"/>
-  <!-- Step 4 -->
-  <rect x="40" y="198" width="280" height="42" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="180" y="216" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">4. Lineer Model ✓</text>
-  <text x="180" y="232" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#aac4e8">δẋ = A·δx + B·δu</text>
-  <!-- Two output branches -->
-  <line x1="120" y1="240" x2="90" y2="270" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst04)"/>
-  <line x1="240" y1="240" x2="270" y2="270" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-mst04)"/>
-  <!-- Branch left: Kararlılık -->
-  <rect x="5" y="272" width="168" height="42" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="89" y="290" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Kararlılık Analizi</text>
-  <text x="89" y="306" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">Re(λ) &lt; 0 → Kararlı</text>
-  <!-- Branch right: Kontrol -->
-  <rect x="187" y="272" width="168" height="42" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="271" y="290" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Kontrol Tasarımı</text>
-  <text x="271" y="306" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" font-style="italic" fill="#1a1a2e">KYE, Pole Placement…</text>
-</svg>
+```mermaid
+flowchart TD
+    A["1 · Doğrusal Olmayan Sistem<br/><i>ẋ = f(x, u)</i>"] --> B["2 · Denge Noktası Bul<br/><i>f(x_e, u_e) = 0</i>"]
+    B --> C["3 · Jacobian Hesapla<br/><i>A = ∂f/∂x, B = ∂f/∂u (x_e, u_e)</i>"]
+    C --> D["4 · Lineer Model ✓<br/>δẋ = A·δx + B·δu"]
+    D --> E["Kararlılık Analizi<br/><i>Re(λ) &lt; 0 → Kararlı</i>"]
+    D --> F["Kontrol Tasarımı<br/><i>KYE, Pole Placement…</i>"]
+    style D fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e
+    style E fill:#d6e0f0,stroke:#1a1a2e
+    style F fill:#d6e0f0,stroke:#1a1a2e
+```
 
 ---
 

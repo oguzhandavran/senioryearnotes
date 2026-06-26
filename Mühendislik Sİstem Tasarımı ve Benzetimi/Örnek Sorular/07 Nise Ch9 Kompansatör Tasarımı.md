@@ -8,6 +8,18 @@ tags: [mst, kompansator, pid, lead, lag, kye, nise-ch9, ornek-sorular]
 
 > Tüm sorularda aksi belirtilmedikçe **şekil P9.1** = birim geri besleme sistemi: $R(s) \to G_c(s)G(s) \to C(s)$.
 
+> [!note]- Ortak Semboller (tüm P9.x soruları için)
+> - $G(s)$: bitki (plant); $G_c(s)$: kompansatör; $R(s),C(s)$: referans giriş ve çıkış
+> - $K$: değişken kazanç; $z_c,p_c$: kompansatör sıfırı ve kutbu
+> - $\%OS$: yüzde aşım; $\zeta$: sönüm oranı ($\%OS\to\zeta$); $\beta=\cos^{-1}\zeta$: kutup açısı
+> - $\sigma=\zeta\omega_n=4/T_s$: kutbun reel kısmı; $\omega_d=\sigma\tan\beta$: sönümlü frekans; $s_d=-\sigma\pm j\omega_d$: baskın kutup
+> - $T_s$: yerleşme süresi; $T_p$: doruk (peak) zamanı; $\omega_n$: doğal frekans
+> - $K_p=\lim_{s\to0}G$ (Tip 0, basamak), $K_v=\lim_{s\to0}sG$ (Tip 1, rampa): statik hata sabitleri; $e_{ss}$: kalıcı hal hatası
+> - **PI** $\frac{s+z_c}{s}$: hatayı sıfırlar · **PD** $s+z_c$: $T_s$ azaltır · **Lag**/**Lead**/**Lag-Lead**: aşağıdaki özet tabloya bak
+
+> [!tip] Bu dosya bir **alıştırma bankası**
+> Aşağıdaki P9.x soruları Nise Bölüm 9'dan; şu an yalnızca **soru metinleri** var. Adım adım çözümler için dosya sonundaki **"Tasarım Adımları (Ezber)"** reçetesini ve çözümlü örnekler için [[05 Kök Yer Eğrisi Örnekleri]] ile [[06 Final Sınav Soruları (Çözümlü)]] dosyalarını kullan.
+
 ---
 
 ## 9.2 — PI ve Lag Kompansatörü

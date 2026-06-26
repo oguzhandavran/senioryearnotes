@@ -10,6 +10,12 @@ tags: [ss, fourier-dönüşümü, ctft, örnek-sorular]
 
 ## Örnek 1 — Transfer Fonksiyonu (Fark Denkleminden)
 
+> [!note]- Semboller
+> - $x[n],y[n]$: giriş/çıkış dizileri; $x[n-k]$: $k$ gecikmiş giriş
+> - $H(e^{j\omega})=Y/X$: frekans yanıtı (DTFT)
+> - DTFT kaydırma: $x[n-k]\leftrightarrow e^{-j\omega k}X(e^{j\omega})$
+> - Pay = girişin katsayıları, payda = çıkışın katsayıları
+
 **Soru:** Aşağıdaki fark denkleminden $H(e^{j\omega})$ bul.
 
 $$y[n] - \frac{1}{4}y[n-1] = 2x[n] + x[n-2]$$
@@ -24,6 +30,11 @@ $$\boxed{H(e^{j\omega}) = \frac{Y(e^{j\omega})}{X(e^{j\omega})} = \frac{2 + e^{-
 
 ## Örnek 2 — CTFT Özelliği: Zaman Kayması
 
+> [!note]- Semboller
+> - $x(t)=e^{-2t}u(t)$: nedensel üstel; çift $e^{-at}u(t)\leftrightarrow\frac{1}{a+j\omega}$
+> - Zaman kayması: $x(t-t_0)\leftrightarrow e^{-j\omega t_0}X(j\omega)$ (sadece faz değişir, genlik aynı)
+> - $X,Y$: giriş/çıkış CTFT'leri; $t_0=3$: gecikme
+
 **Soru:** $x(t) = e^{-2t}u(t)$ için $X(j\omega)$ bul. Sonra $y(t) = x(t-3)$ için $Y(j\omega)$ nedir?
 
 **Çözüm:**
@@ -36,6 +47,11 @@ $$Y(j\omega) = e^{-3j\omega}\cdot X(j\omega) = \frac{e^{-3j\omega}}{2+j\omega}$$
 
 ## Örnek 3 — CT Konvolüsyon: Üstel × Basamak
 *(Arş. Gör. Ecmel TERZİ)*
+
+> [!note]- Semboller
+> - $x(t)=e^{2t}u(t)$: nedensel **büyüyen** üstel; $h(t)=u(t-3)$: 3'te başlayan basamak
+> - $\tau$: konvolüsyon değişkeni; $u(\tau)$ ve $u(t-\tau-3)$ örtüşme sınırlarını verir
+> - Örtüşme: $0\le\tau\le t-3$ (yalnız $t>3$); $y(t)$ bu yüzden $u(t-3)$ ile çarpılır
 
 **Soru:** $x(t) = e^{2t}u(t)$, $h(t) = u(t-3)$ için $y(t) = x(t)*h(t)$ bul.
 
@@ -60,6 +76,11 @@ $$\boxed{y(t) = \frac{1}{2}\!\left(e^{2(t-3)}-1\right)u(t-3)}$$
 
 ## Örnek 4 — Çarpma Özelliği Uygulaması (4.5)
 
+> [!note]- Semboller
+> - $\operatorname{rect}(t)$: birim genişlikli kapı (0/1 değerli); $\operatorname{rect}^2=\operatorname{rect}$ (çünkü değerler 0/1)
+> - Çarpma özelliği: zamanda çarpım ↔ frekansta $\frac{1}{2\pi}$ ölçekli **evrişim**
+> - $\operatorname{sinc}$: dikdörtgenin Fourier dönüşümü; $Y(j\omega)$: çıkışın CTFT'si
+
 **Soru:** $x(t) = \operatorname{rect}(t)$ ve $h(t) = \operatorname{rect}(t)$ için $y(t) = x(t)\cdot h(t)$ nedir ve $Y(j\omega) = ?$
 
 **Çözüm:**
@@ -75,6 +96,12 @@ $$Y(j\omega) = \mathcal{F}\{\operatorname{rect}(t)\} = \operatorname{sinc}\!\lef
 ---
 
 ## Örnek 5 — Parseval ile Enerji Hesabı
+
+> [!note]- Semboller
+> - $x(t)=e^{-at}u(t)$: nedensel sönen üstel, $a>0$
+> - $E=\int|x(t)|^2dt$: zaman domeni enerjisi
+> - Parseval (CTFT): $E=\frac{1}{2\pi}\int|X(j\omega)|^2d\omega$
+> - $|X(j\omega)|^2=\frac{1}{a^2+\omega^2}$; $\int\frac{d\omega}{a^2+\omega^2}=\frac{\pi}{a}$ (arctan integrali)
 
 **Soru:** $x(t) = e^{-at}u(t)$ ($a>0$) için toplam enerjiyi hem zaman hem frekans domeninde bul.
 

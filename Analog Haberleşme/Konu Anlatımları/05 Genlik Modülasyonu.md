@@ -10,54 +10,25 @@ tags: [analog-haberleşme, am, dsb-sc, modülasyon, bant-genişliği, güç-anal
 
 ## Modülasyon Türleri (Genlik)
 
-<svg width="480" height="300" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-ah05" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
-    </marker>
-  </defs>
-  <!-- Root -->
-  <rect x="115" y="10" width="250" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="240" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="13" font-weight="bold" fill="white">Genlik Modülasyonu (AM)</text>
-  <!-- 4 fan lines -->
-  <line x1="240" y1="44" x2="60" y2="90" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ah05)"/>
-  <line x1="240" y1="44" x2="180" y2="88" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ah05)"/>
-  <line x1="240" y1="44" x2="300" y2="88" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ah05)"/>
-  <line x1="240" y1="44" x2="420" y2="90" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ah05)"/>
-  <!-- Standart AM -->
-  <rect x="5" y="92" width="110" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="60" y="110" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">Standart AM</text>
-  <text x="60" y="126" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">ÇYB + taşıyıcı</text>
-  <text x="60" y="138" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e" font-style="italic">DSB-LC</text>
-  <!-- DSB-SC -->
-  <rect x="125" y="90" width="110" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="180" y="108" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">DSB-SC</text>
-  <text x="180" y="124" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Taşıyıcısız ÇYB</text>
-  <text x="180" y="136" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Verimli güç</text>
-  <!-- SSB -->
-  <rect x="245" y="90" width="110" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="300" y="108" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">SSB</text>
-  <text x="300" y="124" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Tek Yan Bant</text>
-  <text x="300" y="136" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">En az bant genişliği</text>
-  <!-- VSB -->
-  <rect x="365" y="92" width="110" height="50" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="420" y="110" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-weight="bold" fill="#1a1a2e">VSB/AYB</text>
-  <text x="420" y="126" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Artık Yan Bant</text>
-  <text x="420" y="138" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">TV yayıncılığı</text>
-  <!-- Application notes below each -->
-  <line x1="60" y1="142" x2="60" y2="162" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arr-ah05)"/>
-  <rect x="5" y="164" width="110" height="40" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="60" y="180" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Basit demodülasyon</text>
-  <text x="60" y="196" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Zarf dedektörü</text>
-  <line x1="180" y1="140" x2="180" y2="162" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arr-ah05)"/>
-  <rect x="125" y="164" width="110" height="40" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="180" y="180" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Yayıncılık</text>
-  <text x="180" y="196" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Karmaşık alıcı</text>
-  <line x1="300" y1="140" x2="300" y2="162" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arr-ah05)"/>
-  <rect x="245" y="164" width="110" height="40" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.5"/>
-  <text x="300" y="180" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">SSB radyo</text>
-  <text x="300" y="196" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="9" fill="#1a1a2e">Karmaşık tasarım</text>
-</svg>
+```mermaid
+flowchart TD
+    AM["<b>Genlik Modülasyonu (AM)</b>"]
+    AM --> SAM["<b>Standart AM</b><br/>ÇYB + taşıyıcı<br/><i>DSB-LC</i>"]
+    AM --> DSB["<b>DSB-SC</b><br/>Taşıyıcısız ÇYB<br/>Verimli güç"]
+    AM --> SSB["<b>SSB</b><br/>Tek Yan Bant<br/>En az bant genişliği"]
+    AM --> VSB["<b>VSB / AYB</b><br/>Artık Yan Bant<br/>TV yayıncılığı"]
+    SAM --> SAMu["Basit demodülasyon<br/>Zarf dedektörü"]
+    DSB --> DSBu["Yayıncılık<br/>Karmaşık alıcı"]
+    SSB --> SSBu["SSB radyo<br/>Karmaşık tasarım"]
+    style AM fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e
+    style SAM fill:#eef2f7,stroke:#1a1a2e
+    style DSB fill:#eef2f7,stroke:#1a1a2e
+    style SSB fill:#eef2f7,stroke:#1a1a2e
+    style VSB fill:#eef2f7,stroke:#1a1a2e
+    style SAMu fill:#d6e0f0,stroke:#1a1a2e
+    style DSBu fill:#d6e0f0,stroke:#1a1a2e
+    style SSBu fill:#d6e0f0,stroke:#1a1a2e
+```
 
 **Mesaj işareti:** $x(t)$, $|f| \leq W$'de bant sınırlı, $|x(t)| \leq 1$
 

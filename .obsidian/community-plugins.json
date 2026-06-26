@@ -3,7 +3,6 @@
   "templater-obsidian",
   "advanced-tables",
   "obsidian-tasks-plugin",
-  "obsidian-excalidraw-plugin",
   "obsidian-kanban",
   "calendar",
   "obsidian-reading-time",
@@ -17,11 +16,14 @@
   "obsidian-file-color",
   "colored-text",
   "highlightr-plugin",
-  "sticky-notes",
   "colorful-stickynotes",
-  "obsidian-math-plus",
-  "excalidraw-extras",
   "cycle-through-panes",
   "ctrl-scroll-zoom",
-  "mehrmaid"
+  "mehrmaid",
+  "obsidian-tikzjax",
+  "obsidian-plantuml",
+  "code-suite",
+  "obsidian-pandoc",
+  "print",
+  "press-pdf-export"
 ]

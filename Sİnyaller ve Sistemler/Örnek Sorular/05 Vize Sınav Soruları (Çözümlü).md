@@ -16,6 +16,13 @@ tags: [ss, vize, sınav-soruları, çözümlü, konvolüsyon, lti]
 $$x[n] = \delta[n] - \delta[n+1] + 2\delta[n-1]$$
 $$y[n] = x[n-1] + x[n] + x[n+1]$$
 
+> [!note]- Semboller
+> - $x[n]$: giriş dizisi; $\delta[n-k]$: $k$'da dürtü ($\delta[n+1]$ → $n=-1$'de)
+> - $h[n]$: dürtü yanıtı ($x[n]=\delta[n]$ verince çıkış)
+> - Nedensellik: $h[n]=0$, $\forall n<0$ olmalı; gelecek değer ($x[n+1]$) kullanımı nedenselliği bozar
+> - BIBO kararlılık: $\sum_n|h[n]|<\infty$
+> - $y[n]=x*h$: çıkış (konvolüsyon)
+
 ---
 
 ### 1a — İmpuls Yanıtı ve Sistem Özellikleri (15p)
@@ -65,14 +72,7 @@ $$y[n] = x[n] * h[n]$$
 $$y[n] = x[n] * \delta[n+1] + x[n] * \delta[n] + x[n] * \delta[n-1]$$
 $$= x[n+1] + x[n] + x[n-1]$$
 
-**Hesaplama:**
-
-$x[n] = \delta[n] - \delta[n+1] + 2\delta[n-1]$ → sıfırdan farklı değerler: $x[-1]=0, x[0]=1, x[1]=-1+0=...$
-
-Dikkat: $\delta[n+1]$'in değeri $n=-1$'de 1'dir.
-- $x[-1] = -\delta[0] = -1$ ✗
-
-Doğru okuma:
+**Hesaplama.** Önce $x[n]$'in değerlerini her $n$ için tek tek oku ($\delta[n+1]$ → $n=-1$'de 1, dikkat):
 - $n=-1$: $x[-1] = \delta[-1] - \delta[0] + 2\delta[-2] = 0 - 1 + 0 = -1$
 - $n=0$: $x[0] = \delta[0] - \delta[1] + 2\delta[-1] = 1 - 0 + 0 = 1$
 - $n=1$: $x[1] = \delta[1] - \delta[2] + 2\delta[0] = 0 - 0 + 2 = 2$
@@ -98,6 +98,12 @@ $$\boxed{y[n] = -\delta[n+2] + 2\delta[n] + 3\delta[n-1] + 2\delta[n-2]}$$
 **Verilen:**
 $$x(t) = \begin{cases} -1, & -1 < t < 0 \\ 2, & 0 < t < 1 \\ 1, & 1 < t < 2 \\ 0, & \text{diğer} \end{cases}$$
 $$h(t) = u(t) - u(t-1) = \begin{cases} 1, & 0 \leq t \leq 1 \\ 0, & \text{diğer} \end{cases}$$
+
+> [!note]- Semboller
+> - $x(t)$: parçalı sabit sinyal; $h(t)$: $[0,1]$ kapısı (genişlik 1 dikdörtgen)
+> - $u(t)$: birim basamak; $\tau$: konvolüsyon değişkeni
+> - $y(t)=\int_{t-1}^{t}x(\tau)d\tau$: 1 birimlik kayan pencere (h yansıyıp kayar)
+> - $E=\int|x|^2dt$: enerji; $x(2-t)$: önce yansıma sonra kaydırma
 
 ---
 
@@ -146,10 +152,8 @@ Pencere $[t-1, t]$, sol uç $t-1 < -1$, sağ uç $t \in (-1,0)$
 $$y(t) = \int_{-1}^{t}(-1)\,d\tau = -(t+1)$$
 
 **Bölge 3:** $0 < t \leq 1$
-Pencere $[t-1, t]$, $t-1 \in (-1,0)$, $t \in (0,1)$
-$$y(t) = \int_{t-1}^{0}(-1)\,d\tau + \int_{0}^{t}2\,d\tau = (t-1) + 2t + ... $$
-
-$$= -(0-(t-1)) + 2t = -(1-t) + 2t = 3t - 1$$
+Pencere $[t-1, t]$, $t-1 \in (-1,0)$, $t \in (0,1)$ → sol parça $x=-1$, sağ parça $x=2$:
+$$y(t) = \int_{t-1}^{0}(-1)\,d\tau + \int_{0}^{t}2\,d\tau = -\big(0-(t-1)\big) + 2t = -(1-t) + 2t = 3t - 1$$
 
 **Bölge 4:** $1 < t \leq 2$
 Pencere $[t-1, t]$, $t-1 \in (0,1)$, $t \in (1,2)$
@@ -194,6 +198,12 @@ x(2-t)
 $$x(t) = \begin{cases} 1-|t|, & -1 \leq t \leq 1 \\ 0, & \text{diğer} \end{cases} \quad \text{(üçgen/tri)}$$
 
 $$h(t) = u(t+0.5) - u(t-0.5) = \begin{cases} 1, & -0.5 \leq t \leq 0.5 \\ 0, & \text{diğer} \end{cases} \quad \text{(rect)}$$
+
+> [!note]- Semboller
+> - $x(t)=1-|t|$: birim üçgen ($[-1,1]$, tepe 1); $h(t)$: $[-0.5,0.5]$ kapısı (genişlik 1)
+> - $\tau$: konvolüsyon değişkeni; pencere her iki yana $\pm0.5$
+> - $y(t)=\int_{t-0.5}^{t+0.5}x(\tau)d\tau$; sonuç **çift** fonksiyon (her ikisi de simetrik)
+> - Parçalı $x$: $\tau<0$'da $1+\tau$, $\tau>0$'da $1-\tau$
 
 ---
 

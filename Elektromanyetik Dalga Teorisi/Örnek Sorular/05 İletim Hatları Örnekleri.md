@@ -12,6 +12,12 @@ tags: [emd, bütünleme, iletim-hatları, örnek-sorular]
 
 *Not: Bu örnekler dersin temel elektrostatik bölümünden alınmıştır.*
 
+> [!note]- Semboller
+> - $\varepsilon_{r1},\varepsilon_{r2}$: bağıl geçirgenlikler; sınır $y=0$ → normal $\hat a_y$
+> - Teğetsel ($E_x,E_z$): sürekli; normal ($E_y$): $\varepsilon_1E_{1n}=\varepsilon_2E_{2n}$
+> - $\alpha_1,\alpha_2$: alanların normalle açıları; $\rho_s$: yüzey yükü
+> - *(EMD 04 ile aynı tip — ayrıntı: [[04 Yansıma ve Sınır Koşulları Örnekleri]])*
+
 **Örnek (sayfa 11):** $\varepsilon_{r1}=3$, $\varepsilon_{r2}=2$, sınır $y=0$, $\bar{E}_1$ bileşenleriyle verilmiş. Açılar:
 
 $$\cos\alpha_1 = \frac{E_{1n}}{|E_1|}, \quad \cos\alpha_2 = \frac{E_{2n}}{|E_2|}$$
@@ -31,6 +37,12 @@ $$D_{2n}-D_{1n}=\rho_s \implies \varepsilon_2 E_{2n}-\varepsilon_1 E_{1n}=\rho_s
 ---
 
 ## Kapasitans Formülleri ve Hesapları
+
+> [!note]- Semboller
+> - $Q$: yük (C); $V$: gerilim (V); $C=Q/V$: kapasitans (F)
+> - $\bar E$: elektrik alan; $\rho_s=Q/S$: yüzey yük yoğunluğu
+> - Paralel plaka: $S$ alan, $d$ aralık; silindirik: $a,b$ iç/dış yarıçap, $L$ uzunluk
+> - $\varepsilon=\varepsilon_0\varepsilon_r$: ortam geçirgenliği; Gauss yasası alanı, çizgi integrali gerilimi verir
 
 > [!formul] Temel Kapasitans Hesabı
 > 1. Gauss yasasıyla $\bar{E}$ bul

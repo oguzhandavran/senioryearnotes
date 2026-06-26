@@ -6,6 +6,18 @@ tags: [ss, ornekleme, sampling, ornek-sorular, bolum7]
 
 ← [[SS Ana Sayfa]] | Teori: [[../Konu Anlatımları/05 Örnekleme|05 Örnekleme]]
 
+> [!warning] Kapsam notu
+> [[SS Ana Sayfa]] kapsam uyarısına göre bütünleme **Bölüm 1–4** ile sınırlı; örnekleme (Bölüm 7) büyük olasılıkla **sınav kapsamı dışında**. Bu dosya bir **alıştırma bankası**dır — aşağıdaki 7.x soruları Oppenheim'dan alınmış olup şu an yalnızca **soru metinleridir** (çözüm yok). Önceliğini diğer SS dosyalarına ver.
+
+> [!note]- Ortak Semboller (tüm 7.x örnekleme soruları)
+> - $x(t)/x_c(t)$: sürekli sinyal; $x[n]/x_d[n]$: örneklenmiş ayrık sinyal
+> - $T$: örnekleme periyodu; $\omega_s=2\pi/T$: örnekleme açısal frekansı
+> - $\omega_M$: sinyalin maksimum (bant) frekansı; **Nyquist:** örtüşmesiz için $\omega_s>2\omega_M$ ⇔ $T<\pi/\omega_M$
+> - $x_p(t)=\sum_n x(nT)\delta(t-nT)$: dürtü-katar (impuls train) örneklemesi
+> - Örtüşme (aliasing): $\omega_s<2\omega_M$ olduğunda spektrum kopyalarının üst üste binmesi (geri döndürülemez)
+> - İdeal yeniden oluşturma: kesim $\omega_c\in[\omega_M,\omega_s-\omega_M]$, kazanç $T$ olan LPF; sinc interpolasyonu
+> - ZOH/FOH: sıfırıncı/birinci dereceden tutma; $H(e^{j\omega})$: ayrık frekans yanıtı; $h[n]$: dürtü yanıtı
+
 ---
 
 ## Temel Sorular (7.8–7.20)

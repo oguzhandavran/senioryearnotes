@@ -1,0 +1,16 @@
+{
+  "printTitle": false,
+  "printFrontmatter": false,
+  "fontSize": "14px",
+  "h1Size": "20px",
+  "h2Size": "18px",
+  "h3Size": "16px",
+  "h4Size": "14px",
+  "h5Size": "14px",
+  "h6Size": "12px",
+  "combineFolderNotes": false,
+  "hrPageBreaks": true,
+  "debugMode": false,
+  "inheritNoteCssClasses": false,
+  "normalizeStyle": false
+}

@@ -80,42 +80,24 @@ $$X[k] = \underbrace{\sum_{n=0}^{N/2-1}x[2n]W_{N/2}^{kn}}_{X_e[k]} + W_N^k\under
 $$X[k] = X_e[k] + W_N^k X_o[k], \quad k=0,...,N/2-1$$
 $$X[k+N/2] = X_e[k] - W_N^k X_o[k]$$
 
-<svg width="440" height="300" viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-ssi03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
-    </marker>
-  </defs>
-  <!-- Input: x[n] -->
-  <rect x="155" y="10" width="130" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="220" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">x[n], N nokta</text>
-  <!-- Fan lines -->
-  <line x1="220" y1="44" x2="110" y2="82" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <line x1="220" y1="44" x2="330" y2="82" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <!-- Even branch -->
-  <rect x="30" y="84" width="160" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="110" y="102" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Çift: x[2n]</text>
-  <text x="110" y="118" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">N/2 noktalı FFT</text>
-  <line x1="110" y1="126" x2="110" y2="150" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <rect x="30" y="152" width="160" height="32" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="110" y="173" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-style="italic" fill="#1a1a2e">X_e[k]</text>
-  <!-- Odd branch -->
-  <rect x="250" y="84" width="160" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="330" y="102" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#1a1a2e">Tek: x[2n+1]</text>
-  <text x="330" y="118" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">N/2 noktalı FFT</text>
-  <line x1="330" y1="126" x2="330" y2="150" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <rect x="250" y="152" width="160" height="32" rx="2" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="330" y="173" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-style="italic" fill="#1a1a2e">X_o[k]</text>
-  <!-- Combine arrows -->
-  <line x1="110" y1="184" x2="170" y2="218" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <line x1="330" y1="184" x2="270" y2="218" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <!-- Butterfly combine boxes -->
-  <rect x="100" y="220" width="240" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="220" y="242" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" font-style="italic" fill="#1a1a2e">X[k] = X_e[k] + W_N^k · X_o[k]</text>
-  <line x1="220" y1="254" x2="220" y2="272" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arr-ssi03)"/>
-  <rect x="80" y="274" width="280" height="24" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="220" y="291" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="white">X[k+N/2] = X_e[k] − W_N^k · X_o[k]</text>
-</svg>
+```mermaid
+flowchart TD
+    XN["<b>x[n], N nokta</b>"]
+    XN --> E["Çift: x[2n]<br/><i>N/2 noktalı FFT</i>"]
+    XN --> O["Tek: x[2n+1]<br/><i>N/2 noktalı FFT</i>"]
+    E --> Xe["<i>X_e[k]</i>"]
+    O --> Xo["<i>X_o[k]</i>"]
+    Xe --> C["<i>X[k] = X_e[k] + W_N^k · X_o[k]</i>"]
+    Xo --> C
+    C --> C2["X[k+N/2] = X_e[k] − W_N^k · X_o[k]"]
+    style XN fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e
+    style E fill:#eef2f7,stroke:#1a1a2e
+    style O fill:#eef2f7,stroke:#1a1a2e
+    style Xe fill:#d6e0f0,stroke:#1a1a2e
+    style Xo fill:#d6e0f0,stroke:#1a1a2e
+    style C fill:#eef2f7,stroke:#1a1a2e
+    style C2 fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e
+```
 
 ---
 

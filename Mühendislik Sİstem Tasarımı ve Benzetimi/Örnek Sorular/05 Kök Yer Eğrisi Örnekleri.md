@@ -10,9 +10,20 @@ tags: [mst, kök-yer-eğrisi, kompansatör, pd, pi, lead-lag, kontrol-tasarımı
 
 ## Çözümlü Örnek 1: PD Tasarımı
 
-**Bitki:** $G_p(s) = \dfrac{1}{s(s+4)(s+6)}$
+> [!example] Problem
+> **Bitki:** $G_p(s) = \dfrac{1}{s(s+4)(s+6)}$.
+>
+> **İstenen:** $\%OS = 16\%$ ve $T_s \leq 2$ s sağlayan PD kompansatörü $G_c(s)=K_c(s+z_c)$ tasarla (açı kriteriyle $z_c$, genlik kriteriyle $K_c$).
 
-**Hedef:** $\%OS = 16\%$, $T_s \leq 2$ s
+> [!note]- Semboller
+> - $G_p$: bitki (plant) transfer fonksiyonu; $G_c=K_c(s+z_c)$: PD kompansatör
+> - $\%OS$: yüzde aşım; $\zeta$: sönüm oranı (≈0.5 ↔ %16 OS); $\omega_n$: doğal frekans
+> - $T_s=4/(\zeta\omega_n)$: %2 yerleşme süresi; $\sigma=\zeta\omega_n$: kutbun reel kısmı; $\omega_d=\omega_n\sqrt{1-\zeta^2}$: sönümlü frekans
+> - $s_d$: hedeflenen baskın (dominant) kapalı çevrim kutbu
+> - Açı kriteri: $\angle G(s_d)=-180°$; $\theta_c$: kompansatör sıfırının eklemesi gereken açı
+> - $z_c$: kompansatör sıfırı; $K_c$: kompansatör kazancı (genlik kriterinden $|K_cG(s_d)|=1$)
+
+**Bitki:** $G_p(s) = \dfrac{1}{s(s+4)(s+6)}$, **Hedef:** $\%OS = 16\%$, $T_s \leq 2$ s
 
 **Adım 1:** $\%OS = 16\% \implies \zeta \approx 0.5$
 
@@ -44,18 +55,32 @@ $$G_c(s) = K_c(s + 6)$$
 
 **Not:** Bu durumda $z_c = 6$ bitki kutpunu iptal eder → **kutup-sıfır iptali**
 
-**Adım 5:** Genlik şartından $K_c$:
+**Adım 5:** Genlik şartından $K_c$. Sıfır $(s+6)$, bitki kutbu $(s+6)$'yı iptal ettiğinden o terimler sadeleşir:
 
-$$|K_c G_p(s_d)| = 1 \implies K_c = \frac{|s_d||s_d+4||s_d+6|}{|s_d+6|} \approx \frac{|s_d||s_d+4|}{1}$$
+$$|K_c G_c G_p(s_d)| = 1 \implies K_c = \frac{|s_d|\,|s_d+4|\,|s_d+6|}{|s_d+z_c|} = \frac{|s_d|\,|s_d+4|\,|s_d+6|}{|s_d+6|} = |s_d|\,|s_d+4|$$
+
+Uzunlukları koy: $|s_d|=|-2+j3{,}46|=\sqrt{4+12}=4$, $\;|s_d+4|=|2+j3{,}46|=\sqrt{4+12}=4$:
+
+$$\boxed{K_c = 4\times4 = 16,\qquad G_c(s)=16(s+6)}$$
 
 ---
 
 ## Çözümlü Örnek 2: PD Tasarımı — 3× Yerleşme Süresi İyileştirme (Hocanın Notu)
 
-**Bitki:**
-$$G(s) = \frac{K}{s(s+4)(s+6)}$$
+> [!example] Problem
+> **Bitki:** $G(s) = \dfrac{K}{s(s+4)(s+6)}$.
+>
+> **İstenen:** $\%OS = 16\%$ korunurken yerleşme süresini **3 kat** düşüren PD kompansatörü, kazancı $K$ ve kalıcı hal hatası.
 
-**Hedef:** $\%OS = 16\%$ ile çalışırken yerleşme süresini **3 kat** düşüren PD kompansatörü tasarla.
+> [!note]- Semboller
+> - $\%OS$: yüzde aşım; $\zeta$: sönüm oranı; $\beta=\cos^{-1}\zeta$: kutbun açısı (gerçel eksenden)
+> - $\sigma=\zeta\omega_n$: kutbun reel kısmı; $\omega_d$: sönümlü (sanal) kısım; $s_d$: baskın kutup
+> - $\sigma_a$: asimptot kesişimi; ayrılma (breakaway): $dK/ds=0$ noktası
+> - $t_s=4/\sigma$: yerleşme süresi; alt-indis $y$ = "yeni" (tasarım hedefi)
+> - $\theta_1,\theta_2,\theta_3$: bitki kutuplarının $s_d$'ye açıları; $\theta_{z_c}$: PD sıfırının açısı (açı kriteri)
+> - $z_c$: PD sıfırı; $\ell_i$: $s_d$'den kutup/sıfırlara vektör uzunlukları; $K$: kök yer eğrisi kazancı
+> - $K_v=\lim_{s\to0}sG(s)$: hız hata sabiti (Tip 1); $e_{ss}=1/K_v$: ramp kalıcı hal hatası
+> - $R_1,R_2,C$: op-amp gerçeklemesi eleman değerleri
 
 ---
 

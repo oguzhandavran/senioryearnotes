@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "activeWorkspaceId": "ws_mqrafut2",
+  "activeWorkspaceId": null,
   "workspaces": [
     {
       "id": "ws_mqrafut2",
-      "name": "Sticky workspace 1",
+      "name": "MST&B",
       "windows": [
         {
           "id": "3dc0cb46-6d0f-4d6a-b42d-02bc70018975",
@@ -23,10 +23,29 @@
           "yamlVisible": false,
           "color": "mint",
           "markdownMode": "preview",
-          "open": true
+          "open": false
+        },
+        {
+          "id": "4f3339b0-a4b3-4477-8ada-e663618df0e7",
+          "path": "_sticky_notes/2026/2026-06-26.md",
+          "stickyId": "4f3339b0-a4b3-4477-8ada-e663618df0e7",
+          "bounds": {
+            "left": 635,
+            "top": 108,
+            "width": 448,
+            "height": 360
+          },
+          "collapsed": false,
+          "hidden": false,
+          "stretched": false,
+          "open": false,
+          "yamlVisible": false,
+          "color": "mint",
+          "markdownMode": "source"
         }
       ],
-      "updatedAt": 1782260963442
+      "updatedAt": 1782476566680,
+      "remark": "başlangıç"
     }
   ],
   "trash": []

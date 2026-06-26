@@ -54,17 +54,17 @@ Tek taraflı gösterim → çift taraflı spektrumda genlikler **ikiye bölünü
 
 ## Fourier Dönüşümü Özellikleri
 
-| Özellik | Zaman $x(t)$ | Frekans $X(f)$ |
-|---------|-------------|----------------|
-| **Doğrusallık** | $ax(t) + by(t)$ | $aX(f) + bY(f)$ |
-| **Zaman kaydırma** | $x(t - t_0)$ | $e^{-j2\pi ft_0}X(f)$ |
-| **Frekans kaydırma** | $x(t)e^{j2\pi f_0 t}$ | $X(f - f_0)$ |
-| **Ölçekleme** | $x(at)$ | $\dfrac{1}{|a|}X\!\left(\dfrac{f}{a}\right)$ |
-| **Konvülüsyon** | $x(t) * h(t)$ | $X(f) \cdot H(f)$ |
-| **Çarpma** | $x(t) \cdot y(t)$ | $X(f) * Y(f)$ |
-| **Türev** | $x^{(n)}(t)$ | $(j2\pi f)^n X(f)$ |
-| **Parseval** | $\int\|x\|^2\,dt$ | $\int\|X\|^2\,df$ |
-| **Dualite** | $X(t)$ | $x(-f)$ |
+| Özellik              | Zaman $x(t)$          | Frekans $X(f)$                             |
+| -------------------- | --------------------- | ------------------------------------------ |
+| **Doğrusallık**      | $ax(t) + by(t)$       | $aX(f) + bY(f)$                            |
+| **Zaman kaydırma**   | $x(t - t_0)$          | $e^{-j2\pi ft_0}X(f)$                      |
+| **Frekans kaydırma** | $x(t)e^{j2\pi f_0 t}$ | $X(f - f_0)$                               |
+| **Ölçekleme**        | $x(at)$               | $\dfrac{1}{a}X\!\left(\dfrac{f}{a}\right)$ |
+| **Konvülüsyon**      | $x(t) * h(t)$         | $X(f) \cdot H(f)$                          |
+| **Çarpma**           | $x(t) \cdot y(t)$     | $X(f) * Y(f)$                              |
+| **Türev**            | $x^{(n)}(t)$          | $(j2\pi f)^n X(f)$                         |
+| **Parseval**         | $\int\|x\|^2\,dt$     | $\int\|X\|^2\,df$                          |
+| **Dualite**          | $X(t)$                | $x(-f)$                                    |
 
 > [!sinav] Zaman Kaydırma
 > $x(t-t_0) \leftrightarrow e^{-j2\pi ft_0}X(f)$

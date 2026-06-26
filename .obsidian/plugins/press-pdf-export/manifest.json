@@ -1,0 +1,9 @@
+{
+  "id": "press-pdf-export",
+  "name": "Press PDF Export",
+  "version": "1.0.0",
+  "description": "High-fidelity PDF export powered by Pandoc. Supports multiple engines (XeLaTeX, wkhtmltopdf, WeasyPrint), Mermaid diagrams, custom CSS/templates, and batch export.",
+  "minAppVersion": "1.8.7",
+  "author": "Taylor Chen",
+  "isDesktopOnly": true
+}

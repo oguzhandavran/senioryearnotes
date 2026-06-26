@@ -10,6 +10,14 @@ tags: [ssi, dsp, filtre, fir, iir, butterworth, örnek-sorular]
 
 ## Örnek 1 — 2. Derece Butterworth Sayısal LP Filtre (Tam Çözüm)
 
+> [!note]- Semboller
+> - $\omega_p,\omega_s$: sayısal geçiş/durdurma (band kenarı) frekansları (rad); $A_p,A_s$: izin verilen zayıflama (dB)
+> - $T$: örnekleme periyodu; $\Omega$ (büyük omega): **analog** frekans
+> - Prewarping: $\Omega=\frac{2}{T}\tan(\omega/2)$ — bilineer dönüşümün frekans bükmesini telafi eder
+> - $N$: filtre derecesi; $\Omega_c$: analog kesim frekansı; $s_k$: analog kutuplar (birim çemberde eşit aralıklı)
+> - $H_a(s)$: analog prototip; bilineer $s=\frac{2}{T}\frac{1-z^{-1}}{1+z^{-1}}$ ile $H(z)$ sayısal filtreye geçilir
+> - $b_i,a_i$: sayısal filtre pay/payda katsayıları
+
 **Şartlar:** $\omega_p = 0.2\pi$ (geçiş), $A_p = 3$ dB; $\omega_s = 0.4\pi$ (durdurma), $A_s = 20$ dB; $T = 1$ s
 
 ### Adım 1: Önceden Düzeltme (Prewarping)
@@ -51,6 +59,12 @@ $$H(z) = \frac{b_0 + b_1 z^{-1} + b_2 z^{-2}}{1 + a_1 z^{-1} + a_2 z^{-2}}, \qua
 ---
 
 ## Örnek 2 — Fark Denklemi → Z-TF → FIR/IIR Tayini
+
+> [!note]- Semboller
+> - $x[n],y[n]$: giriş/çıkış; $y[n-1]$: geri besleme terimi (geçmiş çıkış)
+> - $H(z)=Y(z)/X(z)$: transfer fonksiyonu; kutup $z=0.5$, $|z|<1$ → kararlı
+> - **IIR**: paydada geri besleme → sonsuz dürtü yanıtı; **FIR**: yalnız $x$ terimleri → sonlu, daima kararlı
+> - $h[n]$: dürtü yanıtı ($x=\delta$ girişine çıkış)
 
 **Verilen:** $y[n] = x[n] + 0.5y[n-1]$
 

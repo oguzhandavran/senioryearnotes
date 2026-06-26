@@ -30,44 +30,34 @@ tags: [mst, mekanik, newton, lagrange, transfer-fonksiyonu, dc-motor, disli, kon
 
 ## Tek Kütleli Sistem (Yay-Kütle-Sönümleyici)
 
-<svg width="380" height="180" viewBox="0 0 380 180" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arrm1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#a93226"/>
-    </marker>
-    <marker id="arrx1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#1e7a4a"/>
-    </marker>
-  </defs>
-  <!-- Wall -->
-  <line x1="20" y1="30" x2="20" y2="160" stroke="#1a1a2e" stroke-width="3"/>
-  <line x1="8" y1="40" x2="20" y2="30" stroke="#1a1a2e" stroke-width="1.3"/>
-  <line x1="8" y1="60" x2="20" y2="50" stroke="#1a1a2e" stroke-width="1.3"/>
-  <line x1="8" y1="80" x2="20" y2="70" stroke="#1a1a2e" stroke-width="1.3"/>
-  <line x1="8" y1="100" x2="20" y2="90" stroke="#1a1a2e" stroke-width="1.3"/>
-  <line x1="8" y1="120" x2="20" y2="110" stroke="#1a1a2e" stroke-width="1.3"/>
-  <line x1="8" y1="140" x2="20" y2="130" stroke="#1a1a2e" stroke-width="1.3"/>
-  <!-- Spring top -->
-  <line x1="20" y1="60" x2="48" y2="60" stroke="#1a1a2e" stroke-width="1.8"/>
-  <polyline points="48,60 53,60 57,48 63,72 69,48 75,72 81,48 87,72 93,48 99,72 102,60 128,60"
-    fill="none" stroke="#1a1a2e" stroke-width="1.8" stroke-linejoin="round"/>
-  <text x="72" y="44" text-anchor="middle" font-family="serif" font-size="15" font-style="italic" fill="#1a1a2e">k</text>
-  <!-- Damper bottom -->
-  <line x1="20" y1="125" x2="65" y2="125" stroke="#1a1a2e" stroke-width="1.8"/>
-  <line x1="65" y1="112" x2="65" y2="138" stroke="#1a1a2e" stroke-width="1.8"/>
-  <rect x="65" y="112" width="30" height="26" fill="#d6e0f0" stroke="#1a1a2e" stroke-width="1.8"/>
-  <line x1="95" y1="125" x2="128" y2="125" stroke="#1a1a2e" stroke-width="1.8"/>
-  <text x="79" y="108" text-anchor="middle" font-family="serif" font-size="15" font-style="italic" fill="#1a1a2e">b</text>
-  <!-- Mass -->
-  <rect x="128" y="65" width="75" height="72" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="165" y="108" text-anchor="middle" font-family="serif" font-size="20" font-style="italic" fill="#1a1a2e">m</text>
-  <!-- Force -->
-  <line x1="203" y1="100" x2="255" y2="100" stroke="#a93226" stroke-width="2.2" marker-end="url(#arrm1)"/>
-  <text x="265" y="106" font-family="serif" font-size="16" font-style="italic" fill="#a93226">f(t)</text>
-  <!-- x -->
-  <line x1="148" y1="45" x2="192" y2="45" stroke="#1e7a4a" stroke-width="1.6" marker-end="url(#arrx1)"/>
-  <text x="142" y="40" font-family="serif" font-size="14" font-style="italic" fill="#1e7a4a">x(t)</text>
-</svg>
+```tikz
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing, arrows.meta}
+\begin{document}
+\begin{tikzpicture}[>={Stealth[length=2.2mm]}, font=\small,
+  spring/.style={decorate, decoration={zigzag, pre length=3mm, post length=3mm, segment length=3mm, amplitude=2.4mm}}]
+% Duvar (taralı)
+\draw[very thick] (0,-1.5) -- (0,1.5);
+\foreach \y in {-1.3,-0.9,...,1.3}{ \draw (0,\y) -- (-0.28,\y+0.22); }
+% Yay (üst)
+\draw[spring] (0,0.7) -- (3,0.7);
+\node at (1.5,1.2) {$k$};
+% Sönümleyici (alt): silindir + piston
+\draw[thick] (0,-0.7) -- (1.2,-0.7);
+\draw[thick] (1.2,-1.05) rectangle (1.85,-0.35);
+\draw[thick] (1.55,-1.0) -- (1.55,-0.4);
+\draw[thick] (1.55,-0.7) -- (3,-0.7);
+\node at (0.95,-0.2) {$b$};
+% Kütle
+\draw[very thick, fill=blue!5] (3,-1.05) rectangle (4.5,1.05);
+\node at (3.75,0) {\large $m$};
+% Kuvvet
+\draw[->, red!70!black, very thick] (4.5,0) -- (5.8,0) node[right]{$f(t)$};
+% Yer değiştirme
+\draw[->, green!50!black, thick] (3.5,1.4) -- (4.6,1.4) node[right]{$x(t)$};
+\end{tikzpicture}
+\end{document}
+```
 
 **Hareket denklemi:**
 
@@ -138,55 +128,24 @@ $$J\ddot{\theta} + B\dot{\theta} + K\theta = T(t) \quad\longrightarrow\quad G(s)
 
 ## DC Motor Modeli (Armatür Kontrolü)
 
-<svg width="560" height="220" viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arria" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M0,1 L9,5 L0,9 Z" fill="#1e7a4a"/>
-    </marker>
-  </defs>
-  <!-- Voltage source Va -->
-  <line x1="55" y1="50" x2="55" y2="90" stroke="#1a1a2e" stroke-width="2"/>
-  <circle cx="55" cy="115" r="25" fill="white" stroke="#1a1a2e" stroke-width="2"/>
-  <path d="M44,115 C46,105 50,105 53,115 C56,125 60,125 62,115" fill="none" stroke="#1a1a2e" stroke-width="1.6" stroke-linecap="round"/>
-  <text x="55" y="105" text-anchor="middle" font-family="Helvetica,sans-serif" font-size="10" font-weight="700" fill="#1a1a2e">+</text>
-  <text x="55" y="130" text-anchor="middle" font-family="Helvetica,sans-serif" font-size="13" font-weight="700" fill="#1a1a2e">−</text>
-  <text x="22" y="110" font-family="serif" font-size="14" font-style="italic" fill="#1a1a2e">V_a</text>
-  <line x1="55" y1="140" x2="55" y2="185" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Top wire -->
-  <line x1="55" y1="50" x2="100" y2="50" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Ra -->
-  <polyline points="100,50 104,50 107,38 113,62 119,38 125,62 131,38 137,62 140,50 170,50"
-    fill="none" stroke="#1a1a2e" stroke-width="2" stroke-linejoin="round"/>
-  <text x="120" y="30" text-anchor="middle" font-family="serif" font-size="13" font-style="italic" fill="#1a1a2e">R_a</text>
-  <!-- ia arrow -->
-  <line x1="108" y1="65" x2="136" y2="65" stroke="#1e7a4a" stroke-width="1.8" marker-end="url(#arria)"/>
-  <text x="122" y="80" text-anchor="middle" font-family="serif" font-size="12" font-style="italic" fill="#1e7a4a">i_a</text>
-  <!-- La -->
-  <path d="M170,50 C170,38 186,38 186,50" fill="none" stroke="#1a1a2e" stroke-width="2"/>
-  <path d="M186,50 C186,38 202,38 202,50" fill="none" stroke="#1a1a2e" stroke-width="2"/>
-  <path d="M202,50 C202,38 218,38 218,50" fill="none" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="218" y1="50" x2="260" y2="50" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="194" y="30" text-anchor="middle" font-family="serif" font-size="13" font-style="italic" fill="#1a1a2e">L_a</text>
-  <!-- Back EMF eb -->
-  <line x1="260" y1="50" x2="260" y2="90" stroke="#1a1a2e" stroke-width="2"/>
-  <circle cx="260" cy="112" r="22" fill="#fffbe8" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="260" y="108" text-anchor="middle" font-family="serif" font-size="12" font-style="italic" fill="#8b6914">e_b</text>
-  <text x="260" y="100" text-anchor="middle" font-family="Helvetica" font-size="10" font-weight="700" fill="#1a1a2e">+</text>
-  <text x="260" y="128" text-anchor="middle" font-family="Helvetica" font-size="12" font-weight="700" fill="#1a1a2e">−</text>
-  <line x1="260" y1="134" x2="260" y2="185" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Bottom wire -->
-  <line x1="55" y1="185" x2="260" y2="185" stroke="#1a1a2e" stroke-width="2"/>
-  <!-- Shaft -->
-  <line x1="260" y1="112" x2="330" y2="112" stroke="#1a1a2e" stroke-width="2.5" stroke-dasharray="6,4"/>
-  <!-- Motor block -->
-  <ellipse cx="360" cy="112" rx="30" ry="35" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="360" y="108" text-anchor="middle" font-family="serif" font-size="13" font-style="italic" fill="#1a1a2e">J_m</text>
-  <text x="360" y="125" text-anchor="middle" font-family="serif" font-size="11" fill="#1a1a2e">B_m</text>
-  <!-- Output -->
-  <line x1="390" y1="112" x2="450" y2="112" stroke="#1a1a2e" stroke-width="3"/>
-  <path d="M410 85 A28 28 0 0 1 440 99" fill="none" stroke="#a93226" stroke-width="2" marker-end="url(#arria)"/>
-  <text x="450" y="85" font-family="serif" font-size="14" font-style="italic" fill="#a93226">Θ_m</text>
-</svg>
+```tikz
+\usepackage{circuitikz}
+\usetikzlibrary{arrows.meta}
+\begin{document}
+\begin{circuitikz}[american, >={Stealth[length=2mm]}]
+\draw (0,0) to[V=$V_a$, invert] (0,3);
+\draw (0,3) to[R=$R_a$, i>^=$i_a$] (2.5,3) to[L=$L_a$] (5,3) -- (6,3);
+\draw (6,3) to[european voltage source, l_=$e_b$] (6,0);
+\draw (0,0) -- (6,0);
+% Mil
+\draw[dashed, very thick] (6,1.5) -- (7.4,1.5);
+% Rotor (mekanik)
+\node[draw, very thick, circle, minimum size=14mm, fill=blue!5] (m) at (8.1,1.5) {$J_m,B_m$};
+\draw[->, thick, red!70!black] (8.7,2.35) arc (55:-35:1.0);
+\node[red!70!black] at (9.9,1.5) {$\Theta_m$};
+\end{circuitikz}
+\end{document}
+```
 
 **Üç temel denklem:**
 
@@ -205,20 +164,24 @@ $$\boxed{\frac{\Theta_m(s)}{V_a(s)} = \frac{K_t/R_a J_m}{s\!\left(s + \dfrac{R_a
 
 ## Dişli (Gear) Sistemi
 
-<svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg">
-  <!-- Small gear -->
-  <circle cx="80" cy="80" r="35" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="80" y="76" text-anchor="middle" font-family="serif" font-size="12" fill="#1a1a2e">N₁,r₁</text>
-  <text x="80" y="92" text-anchor="middle" font-family="serif" font-size="11" fill="#1a1a2e">T₁,θ₁</text>
-  <!-- Large gear -->
-  <circle cx="195" cy="80" r="60" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="195" y="76" text-anchor="middle" font-family="serif" font-size="12" fill="#1a1a2e">N₂,r₂</text>
-  <text x="195" y="92" text-anchor="middle" font-family="serif" font-size="11" fill="#1a1a2e">T₂,θ₂</text>
-  <!-- Contact point -->
-  <circle cx="115" cy="80" r="4" fill="#a93226"/>
-  <!-- Labels -->
-  <text x="150" y="155" text-anchor="middle" font-family="Helvetica,sans-serif" font-size="11" fill="#555">N₂ &gt; N₁ → Yavaş, yüksek tork</text>
-</svg>
+```tikz
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[font=\small]
+% Küçük dişli
+\draw[thick, fill=blue!5] (0,0) circle (1);
+\node at (0,0.22) {$N_1, r_1$};
+\node at (0,-0.28) {$T_1,\theta_1$};
+% Büyük dişli
+\draw[thick, fill=blue!5] (2.6,0) circle (1.6);
+\node at (2.6,0.28) {$N_2, r_2$};
+\node at (2.6,-0.32) {$T_2,\theta_2$};
+% Temas noktası (dış temas: merkezler arası = r1+r2)
+\fill[red] (1.0,0) circle (1.6pt);
+\node[gray, font=\footnotesize] at (1.3,-2.3) {$N_2 > N_1 \;\Rightarrow\;$ Yavaş, yüksek tork};
+\end{tikzpicture}
+\end{document}
+```
 
 **Dişli oranı formülleri:**
 

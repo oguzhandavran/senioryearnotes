@@ -35,10 +35,17 @@ $$\unicode{x222F}_S\bar{B}\cdot d\bar{S} = 0$$
 
 ## Deplasman Akımı — Kapasitör Örneği
 
-**Problem:** $V_0$ genlikli ve $\omega$ açısal frekanslı $V_c(t)=V_0\sin(\omega t)$ AC kaynağa bağlı $C_1$ paralel plakalı kapasitörde:
+> [!example] Problem
+> $V_c(t)=V_0\sin(\omega t)$ AC kaynağa bağlı $C_1$ paralel plakalı kapasitör için: **(a)** deplasman akımının teldeki iletim akımına eşit olduğunu göster; **(b)** telden $r$ uzaklıktaki $H$ alanını bul.
 
-a) Kapasitördeki deplasman akımının teldeki iletim akımına eşit olduğunu göster  
-b) İletken telden $r$ uzaklıktaki $H$ alanını bul
+> [!note]- Semboller
+> - $V_c$: kapasitör gerilimi (V); $V_0,\omega$: genlik ve açısal frekans
+> - $q=C_1V_c$: plaka yükü; $i=dq/dt$: iletim akımı (A)
+> - $E=V_c/d$: plakalar arası alan ($d$: plaka aralığı); $A$: plaka alanı; $C_1=\varepsilon A/d$
+> - $J_D=\varepsilon\,\partial E/\partial t$: deplasman akım yoğunluğu; $i_D=J_D A$: deplasman akımı
+> - Ampere: $\oint\bar H\cdot d\bar l=I_{toplam}$ → $H\cdot2\pi r=i$
+
+**Çözüm a):**
 
 **Çözüm a):**
 
@@ -69,27 +76,40 @@ Manyetik akı yoğunluğu: $\bar{B} = \mu_0\bar{H}$ — sağ el kuralı ile çep
 
 ## Karşılıklı İndüktans ve Faraday — Örnek (Soru 3)
 
-**Problem:** Halka şeklinde iletken tel (a=0.1 m, b=0.2 m), $I(t)=10\cos(2\pi\times10^2 t)$ A taşıyan düz telle aynı düzlemde. Sonsuz düz telden kaynaklanan manyetik akıyı ve indüklenen EMF'yi bul.
+> [!example] Problem
+> Dikdörtgen iletken çerçeve ($a=0.1$ m, $b=0.2$ m), $I(t)=10\cos(2\pi\times10^2 t)$ A taşıyan sonsuz düz telle aynı düzlemde. Telden kaynaklanan manyetik akıyı ve çerçevede indüklenen EMF'yi bul.
 
-**Çözüm:**
+> [!note]- Semboller
+> - $I(t)$: düz telin akımı; $\bar B=\frac{\mu_0 I}{2\pi y}$: telden $y$ uzaklıkta manyetik alan
+> - $a$: telin çerçeveye en yakın kenarına uzaklık; $b$: çerçeve boyutu; sınırlar $y\in[a,a+b]$, $z\in[0,b]$
+> - $\Phi_m=\iint\bar B\cdot d\bar S$: çerçeveden geçen akı (Wb)
+> - $\mathcal{E}=-d\Phi_m/dt$: Faraday indüksiyon EMF'si (V)
+> - $\mu_0=4\pi\times10^{-7}$ H/m; $\ln\frac{a+b}{a}=\ln3$
 
-Düz telden $y$ uzaklıkta: $\bar{B} = \dfrac{\mu_0 I(t)}{2\pi y}\hat{a}_x$
+**Çözüm.** Düz telden $y$ uzaklıkta: $\bar{B} = \dfrac{\mu_0 I(t)}{2\pi y}\hat{a}_x$.
 
-Akı: $\Phi_m = \int_a^{a+b}\int_0^b \dfrac{\mu_0 I(t)}{2\pi y}dz\,dy = \dfrac{\mu_0 I(t)\cdot b}{2\pi}\ln\!\left(\dfrac{a+b}{a}\right)$
+Akı (genişlik $z\in[0,b]$, uzaklık $y\in[a,a+b]$):
+$$\Phi_m = \int_a^{a+b}\!\!\int_0^b \frac{\mu_0 I(t)}{2\pi y}\,dz\,dy = \frac{\mu_0 I(t)\,b}{2\pi}\ln\!\left(\frac{a+b}{a}\right)$$
 
 $$\mathcal{E} = -\frac{d\Phi_m}{dt} = -\frac{\mu_0 b}{2\pi}\ln\!\left(\frac{a+b}{a}\right)\frac{dI}{dt}$$
 
-$\mu_0=4\pi\times10^{-7}$, $a=0.1$, $b=0.2$, $\ln(3)\approx1.0986$:
+Katsayıyı hesapla: $\dfrac{\mu_0 b}{2\pi}\ln3 = \dfrac{4\pi\times10^{-7}\cdot0.2}{2\pi}\cdot1.0986 = 0.4\times10^{-7}\cdot1.0986 \approx 4.39\times10^{-8}$.
 
-$$\frac{dI}{dt} = -10\cdot2\pi\times10^2\sin(2\pi\times10^2 t)$$
+$\dfrac{dI}{dt} = -10\cdot(2\pi\times10^2)\sin(2\pi\times10^2 t) \approx -6283\sin(2\pi\times10^2 t)$. Çarp:
 
-$$\mathcal{E}(t) \approx 2.76\sin(2\pi\times10^2 t) \;\text{mV}$$
+$$\boxed{\mathcal{E}(t) \approx 4.39\times10^{-8}\cdot6283\,\sin(\cdots) \approx 2.76\times10^{-4}\,\sin(2\pi\times10^2 t)\ \text{V} = 0.276\sin(2\pi\times10^2 t)\ \text{mV}}$$
 
-$$\boxed{i(t) = \frac{\mathcal{E}}{R_{toplam}} = \frac{2.76\sin(2\pi\times10^2 t)\text{ mV}}{5\;\Omega} \approx 0.552\sin(2\pi\times10^2 t) \;\text{mA}}$$
+> Devre direnci $R$ verilirse indüklenen akım $i=\mathcal{E}/R$ olur (örn. $R=5\,\Omega$ için $i\approx0.0552\sin(\cdots)$ mA). *(Not: önceki sürümdeki $2.76$ mV değeri 10× yanlıştı; doğru genlik $0.276$ mV.)*
 
 ---
 
 ## Süreklilik Denkleminin Türetimi (Soru 4)
+
+> [!note]- Semboller
+> - $\bar J$: akım yoğunluğu; $\rho_v$: hacim yük yoğunluğu; süreklilik: $\nabla\cdot\bar J=-\partial\rho_v/\partial t$ (yük korunumu)
+> - Ohm: $\bar J=\sigma\bar E$ ($\sigma$: iletkenlik); Gauss: $\nabla\cdot\bar E=\rho_v/\varepsilon$
+> - $\tau=\varepsilon/\sigma$: relaksasyon (gevşeme) süresi — serbest yükün sönme zaman sabiti
+> - Çözüm: $\rho_v(t)=\rho_{v0}e^{-t/\tau}$ (üstel sönüm)
 
 Doğrusal, homojen, izotropik ortamda yük yoğunluğunun zamanla yok olduğu gösterilir:
 
@@ -114,6 +134,13 @@ $$\boxed{\frac{\partial\rho_v}{\partial t} + \frac{\sigma}{\varepsilon}\rho_v = 
 > | $\bar{D}$ normal | $(\bar{D}_1-\bar{D}_2)\cdot\hat{n}=\rho_s$ | $\rho_s=0$ ise $\varepsilon_1 E_{1n}=\varepsilon_2 E_{2n}$ |
 > | $\bar{H}$ teğetsel | $(\bar{H}_1-\bar{H}_2)\times\hat{n}=\bar{J}_s$ | $J_s=0$ ise $H_{1t}=H_{2t}$ |
 > | $\bar{B}$ normal | $(\bar{B}_1-\bar{B}_2)\cdot\hat{n}=0$ → $B_{1n}=B_{2n}$ | Sürekli |
+
+> [!note]- Semboller (sınır koşulları örnekleri)
+> - $\varepsilon_{r1},\varepsilon_{r2}$: bağıl dielektrik sabitleri; $\hat n$: yüzey normali (burada $\hat a_y$, çünkü sınır $y=0$)
+> - Teğetsel ($E_t$): yüzeye paralel bileşenler ($E_x,E_z$) — sürekli
+> - Normal ($E_n$): yüzeye dik bileşen ($E_y$) — $\varepsilon_1 E_{1n}=\varepsilon_2 E_{2n}$ ($\rho_s=0$)
+> - $\bar D=\varepsilon_0\varepsilon_r\bar E$: deplasman; $\bar P=\varepsilon_0(\varepsilon_r-1)\bar E$: polarizasyon
+> - $\theta_1$: $\bar E_1$'in normalle açısı; $\rho_s$: yüzey yük yoğunluğu
 
 **Örnek:** $\varepsilon_{r1}=2.5$, $\varepsilon_{r2}=4$, sınır $y=0$, $\bar{E}_1=-30\hat{a}_x+50\hat{a}_y+70\hat{a}_z$ V/m. $\bar{D}_2$, $\bar{P}_2$, $\theta_1$ bul.
 

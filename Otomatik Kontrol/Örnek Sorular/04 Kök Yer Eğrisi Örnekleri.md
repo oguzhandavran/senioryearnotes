@@ -10,6 +10,14 @@ tags: [otomatik-kontrol, kök-yer-eğrisi, kye, root-locus, örnek-sorular]
 
 ## Örnek 1: $G(s) = \dfrac{K}{s^3+10s^2+25s+10}$
 
+> [!note]- Semboller
+> - **KYE**: $K$ değiştikçe kapalı çevrim kutuplarının izlediği eğri ($0\le K<\infty$); dal sayısı $=$ kutup sayısı $n$
+> - $n$: kutup, $m$: sıfır sayısı; asimptot sayısı $=n-m$, açılar $\dfrac{(2k+1)180°}{n-m}$
+> - $\sigma_a=\dfrac{\sum\text{kutup}-\sum\text{sıfır}}{n-m}$: asimptot merkezi (gerçek eksende)
+> - **Breakaway** (ayrılma): KYE'nin gerçek ekseni terk ettiği nokta; $\dfrac{dK}{ds}=0$ ya da $D'(s)=0$
+> - **$j$-ekseni kesişimi**: kararlılık sınırı; Routh'tan kritik $K$ ve yardımcı polinomdan $\omega$
+> - Gerçek eksen kuralı: bir noktanın sağındaki kutup+sıfır sayısı **tek** ise o nokta KYE üzerindedir
+
 **Kutuplar:** $p_1 = -6.264$, $p_2 = -3.244$, $p_3 = -0.492$ (sıfır yok)
 
 **Dal sayısı:** 3
@@ -48,6 +56,13 @@ $$\sigma_a = \frac{0 + (-5.118) + (-0.941) + (-0.941)}{4} = \frac{-7}{4} = -1.75
 
 ## Örnek 3: %5 Aşım için $K$ Tasarımı (Tam Çözüm)
 
+> [!note]- Semboller
+> - $\zeta$: sönüm oranı; %5 aşım → $\zeta\approx0.690$; $\theta=\arccos\zeta$: $\zeta$ doğrusunun gerçek eksenle açısı
+> - $s_d$: istenen baskın kutup (deneme noktası); $\zeta$ doğrusu üzerinde aranır
+> - **Açı şartı**: $\angle G(s_d)=-180°$ → $s_d$'nin KYE üzerinde olması; kutuplara çizilen vektör açıları toplamı
+> - **Genlik şartı**: $K=\dfrac{\prod|\text{kutup vektörleri}|}{\prod|\text{sıfır vektörleri}|}$ → o noktadaki $K$ değeri
+> - $\omega_d=\omega_n\sqrt{1-\zeta^2}$: sönümlü frekans; $T_p=\pi/\omega_d$, $T_s\approx4/(\zeta\omega_n)$
+
 $G(s) = \dfrac{K}{s(s+2)(s+5)}$, unity feedback
 
 **Kutuplar:** $0,\,-2,\,-5$ (sıfır yok)
@@ -84,11 +99,16 @@ $$K = |s_d|\cdot|s_d+2|\cdot|s_d+5| = 1.72\times1.47\times4.28 \approx \boxed{10
 
 ## Örnek 4 — KYE ve $j$-Ekseni Kesişimi Özet
 
+> [!note]- Semboller
+> - $j$-ekseni kesişimi: karakteristik denkleme $s=j\omega$ koyup reel ve imajiner kısımları **ayrı ayrı sıfıra** eşitle
+> - İmajiner kısım $=0$ → salınım frekansı $\omega$; reel kısım $=0$ → kritik kazanç $K_\text{kritik}$
+> - $K_\text{kritik}$: sistemin kararlılık sınırındaki kazanç (bu değerin üstünde sağ yarı düzleme geçer)
+
 $G(s) = \dfrac{K}{s(s+3)(s+6)}$
 
 $\sigma_a = (-3-6)/3 = -3$; asimptot açıları $60°, 180°, 300°$
 
-Breakaway: $3s^2+18s+18=0 \implies s=-1\pm\sqrt{1-2}$ → gerçek çözüm $s \approx -1.27$
+Breakaway: $3s^2+18s+18=0 \Rightarrow s^2+6s+6=0 \Rightarrow s=-3\pm\sqrt{3}$ → KYE üzerindeki kök $s \approx -1.27$
 
 $j$-ekseni ($s=j\omega$):
 

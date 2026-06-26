@@ -14,13 +14,13 @@ tags: [ss, lti, konvolüsyon, sistem-özellikleri, konu-anlatımı]
 
 ## 1. Sistem Özellikleri — Hızlı Test Tablosu
 
-| Özellik | Tanım | Test Yöntemi | Bozucu Örnekler |
-|---------|-------|--------------|-----------------|
-| **Hafızasız** | $y[n]$ sadece $x[n]$'e bağlı | Geçmiş/gelecek terim var mı? | $y[n]=x[n-1]$ → hafızalı |
-| **Nedensellik** | $y[n]$ gelecek $x$ değerine bağlı değil | $x[n+k]$, $k>0$ var mı? | $y[n]=x[n+1]$ → nedensel değil |
-| **Doğrusallik** | Süperpozisyon: $T\{ax_1+bx_2\}=ay_1+by_2$ | Kare/çarpım terimleri; sıfır girişe sıfır çıkış | $y[n]=x^2[n]$ → doğrusal değil |
-| **Zamanla Değişmezlik** | $T\{x[n-n_0]\}=y[n-n_0]$ | Katsayıda bağımsız $n$ var mı? | $y[n]=nx[n]$ → ZD değil |
-| **Kararlılık (BIBO)** | $\|x\|<B_x<\infty \Rightarrow \|y\|<B_y<\infty$ | $\sum|h[n]|<\infty$ mı? | Sonsuz birikimli sistem |
+| Özellik                 | Tanım                                           | Test Yöntemi                                    | Bozucu Örnekler                |
+| ----------------------- | ----------------------------------------------- | ----------------------------------------------- | ------------------------------ |
+| **Hafızasız**           | $y[n]$ sadece $x[n]$'e bağlı                    | Geçmiş/gelecek terim var mı?                    | $y[n]=x[n-1]$ → hafızalı       |
+| **Nedensellik**         | $y[n]$ gelecek $x$ değerine bağlı değil         | $x[n+k]$, $k>0$ var mı?                         | $y[n]=x[n+1]$ → nedensel değil |
+| **Doğrusallik**         | Süperpozisyon: $T\{ax_1+bx_2\}=ay_1+by_2$       | Kare/çarpım terimleri; sıfır girişe sıfır çıkış | $y[n]=x^2[n]$ → doğrusal değil |
+| **Zamanla Değişmezlik** | $T\{x[n-n_0]\}=y[n-n_0]$                        | Katsayıda bağımsız $n$ var mı?                  | $y[n]=nx[n]$ → ZD değil        |
+| **Kararlılık (BIBO)**   | $\|x\|<B_x<\infty \Rightarrow \|y\|<B_y<\infty$ | $\sum h[n]<\infty$ mı?                          | Sonsuz birikimli sistem        |
 
 > [!sinav] LTI Testi — Sınavda Hızlı Yol
 > 1. Sistemde $x[n+k]$ ($k>0$) var mı? → **Nedensel değil**
@@ -42,29 +42,22 @@ $$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\,h[n-k]$$
 
 ### Konvolüsyon Adımları (Grafik Yöntem)
 
-<svg width="340" height="298" viewBox="0 0 340 298" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-ss02" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
-    </marker>
-  </defs>
-  <rect x="30" y="10" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="32" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. h[k] yaz</text>
-  <line x1="170" y1="44" x2="170" y2="60" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
-  <rect x="30" y="62" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="84" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. h[−k] al: ters çevir</text>
-  <line x1="170" y1="96" x2="170" y2="112" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
-  <rect x="30" y="114" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="136" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. h[n−k] yaz: n kadar kaydır</text>
-  <line x1="170" y1="148" x2="170" y2="164" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
-  <rect x="30" y="166" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="184" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. x[k] ile h[n−k] çarp</text>
-  <text x="170" y="200" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">ve k üzerinden topla</text>
-  <line x1="170" y1="208" x2="170" y2="224" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-ss02)"/>
-  <rect x="30" y="226" width="280" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="248" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">5. Her n için tekrar et ✓</text>
-  <text x="170" y="280" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">y[n] = Σ x[k]·h[n−k]  =  x[n] ∗ h[n]</text>
-</svg>
+```mermaid
+flowchart TD
+    S1["<b>1.</b> h[k] yaz"]
+    S2["<b>2.</b> h[−k] al: ters çevir"]
+    S3["<b>3.</b> h[n−k] yaz: n kadar kaydır"]
+    S4["<b>4.</b> x[k] ile h[n−k] çarp<br/>ve k üzerinden topla"]
+    S5["<b>5. Her n için tekrar et ✓</b>"]
+    S1 --> S2 --> S3 --> S4 --> S5
+    style S1 fill:#eef2f7,stroke:#1a1a2e
+    style S2 fill:#eef2f7,stroke:#1a1a2e
+    style S3 fill:#eef2f7,stroke:#1a1a2e
+    style S4 fill:#eef2f7,stroke:#1a1a2e
+    style S5 fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e
+```
+
+*$y[n] = \sum_k x[k]\cdot h[n-k] = x[n] * h[n]$*
 
 ### Önemli Konvolüsyon Özellikleri
 

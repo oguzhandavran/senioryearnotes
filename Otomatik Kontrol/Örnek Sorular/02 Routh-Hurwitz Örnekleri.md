@@ -10,6 +10,12 @@ tags: [otomatik-kontrol, kararlılık, routh-hurwitz, bibo, örnek-sorular]
 
 ## Örnek 1 — Kararlılık Aralığı
 
+> [!note]- Semboller
+> - $G(s)$: açık çevrim TF; $K$: kazanç; birim geri besleme → karakteristik denklem payda$+K\cdot$pay
+> - Routh tablosu: 1. sütundaki işaret değişimi sayısı = sağ yarı düzlem kök sayısı
+> - 3. derece kararlılık kuralı: tüm katsayılar $>0$ **ve** $a_2a_1>a_0$
+> - Sınırda kararlı: $K$ kritikte $s^2$ satırından **yardımcı polinom** → sanal eksen kökleri ($\pm j\omega$)
+
 $$G(s) = \frac{K}{s^3 + 10s^2 + 25s + 10}$$
 
 Unity feedback kapalı çevrim karakteristik denklem:
@@ -33,6 +39,12 @@ $$\boxed{\omega_\text{salınım} = 5 \text{ rad/s}}$$
 ---
 
 ## Örnek 2 — 4. Derece Sistem
+
+> [!note]- Semboller
+> - $G(s)$: açık çevrim TF; $K$: kazanç; karakteristik denklem $=$ payda $+K\cdot$pay
+> - Routh tablosu satırları $s^4\dots s^0$: her satır bir önceki iki satırdan determinant kuralıyla üretilir
+> - $\dfrac{70-7K}{10}$: $s^1$ satırının ilk elemanı ($s^2$ ve $s^3$ satırlarından)
+> - Sınırda kararlı: $s^2$ satırından **yardımcı polinom** $\to$ sanal eksen kökleri $\pm j\omega$
 
 $$G(s) = \frac{K}{s^4 + 7s^3 + 11s^2 + 7s}$$
 
@@ -60,6 +72,12 @@ $$\omega_\text{salınım} = 1 \text{ rad/s}$$
 
 ## Örnek 3 — %5 Aşım ile K Tasarımı
 
+> [!note]- Semboller
+> - $\zeta$: sönüm oranı (boyutsuz); $\omega_n$: doğal frekans (rad/s)
+> - $\%OS$: yüzde maksimum aşım; $\zeta=\dfrac{-\ln(\%OS/100)}{\sqrt{\pi^2+\ln^2(\%OS/100)}}$
+> - Standart 2. derece payda: $s^2+2\zeta\omega_n s+\omega_n^2$
+> - $T_s\approx\dfrac{4}{\zeta\omega_n}$: %2 yerleşme süresi (s)
+
 $$G(s) = \frac{K}{(s+2)(s+4)}$$
 
 Kapalı çevrim: $T(s) = \dfrac{K}{s^2 + 6s + (8+K)}$
@@ -75,6 +93,12 @@ $$T_s = \frac{4}{\zeta\omega_n} = \frac{4}{3} \approx 1.33 \text{ s}$$
 ---
 
 ## Geçici Yanıt — Transfer Fonksiyonlarından
+
+> [!note]- Semboller
+> - $\omega_n=\sqrt{a_0}$: doğal frekans (paydanın sabit teriminin karekökü); $\zeta=\dfrac{a_1}{2\omega_n}$ ($a_1$: $s$ katsayısı)
+> - $T_r$: yükselme süresi (%10→%90); $T_p=\dfrac{\pi}{\omega_n\sqrt{1-\zeta^2}}$: tepe süresi (s)
+> - $T_s\approx\dfrac{4}{\zeta\omega_n}$: yerleşme süresi (s); $\%OS=100\,e^{-\zeta\pi/\sqrt{1-\zeta^2}}$
+> - $e_{ss}$: birim basamağa karşı kalıcı durum hatası; DC kazanç $=1$ ise $e_{ss}=0$
 
 ### Verilen TF → $T_r, T_p, T_s$, aşım, $e_{ss}$
 

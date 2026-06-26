@@ -33,12 +33,12 @@ Ama bu yöntem **tek giriş — tek çıkış** sistemlerde işe yarar ve sistem
 
 **Fiziksel kural:** Sistemde kaç tane enerji depolayan eleman varsa, o kadar durum değişkeni gerekir.
 
-| Eleman | Durum değişkeni |
-|--------|----------------|
-| Kondansatör | $V_C$ (gerilim) |
-| Bobin (endüktans) | $i_L$ (akım) |
-| Yay (mekanik) | $x$ (konum) |
-| Kütle | $v$ (hız) |
+| Eleman            | Durum değişkeni |
+| ----------------- | --------------- |
+| Kondansatör       | $V_C$ (gerilim) |
+| Bobin (endüktans) | $i_L$ (akım)    |
+| Yay (mekanik)     | $x$ (konum)     |
+| Kütle             | $v$ (hız)       |
 
 ---
 
@@ -285,35 +285,15 @@ Gözlenebilir $\iff \text{rank}(\mathcal{O}) = n$
 
 ## Özet: Türetme Adımları
 
-<svg width="340" height="346" viewBox="0 0 340 346" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-mst03" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
-    </marker>
-  </defs>
-  <rect x="30" y="10" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="28" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">1. Sistemi tanımla</text>
-  <text x="170" y="44" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">(elektrik devre, mekanik sistem…)</text>
-  <line x1="170" y1="52" x2="170" y2="68" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
-  <rect x="30" y="70" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="88" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">2. Enerji depolayan elemanları say</text>
-  <text x="170" y="104" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">→ kaç durum değişkeni gerekiyor?</text>
-  <line x1="170" y1="112" x2="170" y2="128" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
-  <rect x="30" y="130" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="148" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">3. Durum değişkenlerini seç</text>
-  <text x="170" y="164" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">V_C, i_L, x(t), v(t) …</text>
-  <line x1="170" y1="172" x2="170" y2="188" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
-  <rect x="30" y="190" width="280" height="34" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="212" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">4. KVL / KCL / Newton yasası yaz</text>
-  <line x1="170" y1="224" x2="170" y2="240" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
-  <rect x="30" y="242" width="280" height="42" rx="2" fill="#eef2f7" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="260" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" fill="#1a1a2e">5. ẋ = f(x, u) formuna sok</text>
-  <text x="170" y="276" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="10" fill="#1a1a2e" font-style="italic">(her denklem: türev = …)</text>
-  <line x1="170" y1="284" x2="170" y2="300" stroke="#1a1a2e" stroke-width="1.8" marker-end="url(#arr-mst03)"/>
-  <rect x="30" y="302" width="280" height="34" rx="2" fill="#1a1a2e" stroke="#1a1a2e" stroke-width="2"/>
-  <text x="170" y="316" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="12" font-weight="bold" fill="white">6. Matris formuna yaz ✓</text>
-  <text x="170" y="330" text-anchor="middle" font-family="'STIX Two Math','Times New Roman',serif" font-size="11" fill="#aac4e8">ẋ = Ax + Bu,   y = Cx + Du</text>
-</svg>
+```mermaid
+flowchart TD
+    A["1 · Sistemi tanımla<br/><i>(elektrik devre, mekanik sistem…)</i>"] --> B["2 · Enerji depolayan elemanları say<br/><i>→ kaç durum değişkeni gerekiyor?</i>"]
+    B --> C["3 · Durum değişkenlerini seç<br/><i>V_C, i_L, x(t), v(t) …</i>"]
+    C --> D["4 · KVL / KCL / Newton yasası yaz"]
+    D --> E["5 · ẋ = f(x, u) formuna sok<br/><i>(her denklem: türev = …)</i>"]
+    E --> F["6 · Matris formuna yaz ✓<br/>ẋ = Ax + Bu,  y = Cx + Du"]
+    style F fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e
+```
 
 ---
 

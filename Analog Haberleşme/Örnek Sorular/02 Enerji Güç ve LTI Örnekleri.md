@@ -12,6 +12,13 @@ tags: [analog-haberleşme, enerji, güç, lti, konvülüsyon, fourier, örnek-so
 
 **Soru:** $x(t) = e^{-3|t|}$ işaretinin Fourier dönüşümünü bulun ve enerji/güç sınıfını belirleyin.
 
+> [!note]- Semboller
+> - $|t|$: mutlak değer → sinyal çift fonksiyon; $t<0$'da $e^{3t}$, $t>0$'da $e^{-3t}$ olarak ikiye bölünür
+> - $X(f)$: Fourier dönüşümü; çift gerçek sinyal → $X(f)$ gerçek ve çift
+> - **Enerji işareti**: $E=\int|x(t)|^2dt<\infty$ (sönen sinyaller); **güç işareti**: $E=\infty$ ama $P<\infty$ (kalıcı sinyaller)
+> - Parseval: $E=\int|x(t)|^2dt=\int|X(f)|^2df$
+> - Eşlenik çarpım: $(3-j2\pi f)(3+j2\pi f)=9+4\pi^2f^2$ (paydayı gerçekleştirir)
+
 **Çözüm:**
 
 Mutlak değer nedeniyle iki parçaya böl:
@@ -48,6 +55,12 @@ $E = \int_{-\infty}^{\infty} |X(f)|^2\,df = \int_{-\infty}^{\infty} \frac{36}{(9
 
 **Soru:** $h(t)$: $[1,3]$ aralığında genlik 1; $x(t)$: $[0,2]$ aralığında genlik $\frac{1}{2}$. $y(t) = x(t)*h(t)$'yi hesaplayın.
 
+> [!note]- Semboller
+> - $*$: konvolüsyon; $y(t)=\int x(\tau)h(t-\tau)d\tau$
+> - $h(t-\tau)$: $\tau$ ekseninde ters çevrilmiş, $t$ kadar kaydırılmış darbe → $[t-3,t-1]$ aralığını kaplar
+> - Dikdörtgenlerde $y(t)=(\text{genlik çarpımı})\times(\text{örtüşme uzunluğu})$
+> - Eşit genişlik → üçgen; başlangıç/bitiş = kenarların toplamı, tepe = merkezlerin toplamı
+
 **Çözüm:** $h(t-\tau)$'yu kaydırarak örtüşme bölgelerini analiz et:
 
 $h(t-\tau)$: $[t-3, t-1]$ aralığında genlik 1 — $t$ arttıkça sağa kayar.
@@ -74,6 +87,12 @@ $$\boxed{y(t) = \begin{cases} 0 & t<1 \\ \dfrac{t-1}{2} & 1 \leq t < 3 \\ \dfrac
 **Soru:** Aşağıdaki sinyalin Fourier dönüşümünü bulun:
 
 $$x(t) = \begin{cases} A & -3T \leq t \leq -T \\ A & T \leq t \leq 3T \\ 0 & \text{diğer} \end{cases}$$
+
+> [!note]- Semboller
+> - $A$: darbe genliği; $T$: zaman ölçeği; sinyal çift (simetrik) → $X(f)$ gerçek
+> - İki darbe: merkezler $\pm2T$, genişlik $2T$; her biri sinc verir, kayma $\cos$ çarpanı doğurur
+> - Euler: $e^{j\theta}-e^{-j\theta}=2j\sin\theta$; toplam-fark: $\sin a-\sin b=2\cos\tfrac{a+b}{2}\sin\tfrac{a-b}{2}$
+> - $\text{sinc}(x)=\sin(\pi x)/(\pi x)$; $\cos(4\pi fT)$: iki darbenin $\pm2T$ konumundan gelen girişim çarpanı
 
 **Çözüm:**
 
@@ -105,6 +124,12 @@ $$\boxed{X(f) = 4AT\,\cos(4\pi fT)\,\text{sinc}(2fT)}$$
 
 **Soru:** Bir işaretin tüm frekanslardaki güç spektral yoğunluğu sabit $S_x(f) = 4$ J/Hz olsun. Bu işaret kesim frekansı $f_0 = 50$ Hz ve kazanç $k = 3$ olan alçak geçiren filtreden geçiriliyor. Çıkış işaretinin enerjisini hesaplayın.
 
+> [!note]- Semboller
+> - $S_x(f)$: (enerji) spektral yoğunluk (J/Hz) — birim frekans başına enerji
+> - $H(f)$: filtre transfer fonksiyonu; $|H(f)|^2$: güç/enerji kazancı
+> - Alçak geçiren: $|f|\le f_0$ → $k$ kazanç, $|f|>f_0$ → 0 (bant dışını bloke eder)
+> - Çıkış: $S_y(f)=|H(f)|^2S_x(f)$; toplam enerji $E_y=\int S_y(f)\,df$ (yalnız geçen bantta)
+
 **Çözüm:**
 
 **Adım 1:** Transfer fonksiyonu $H(f) = k = 3$ ($|f| \leq f_0$ için):
@@ -130,6 +155,12 @@ $$E_y = \int_{-50}^{50} S_y(f)\,df = 36 \times 100 = \boxed{3600 \text{ J}}$$
 ## Örnek 5 — $x(t) = \cos(\omega_0 t)$ Güç mü Enerji mi?
 
 **Soru:** $x(t) = \cos(\omega_0 t)$ işaretini sınıflandırın.
+
+> [!note]- Semboller
+> - $\omega_0=2\pi f_0$: açısal frekans (rad/s); $\cos$ sonsuza dek sürer → enerjisi $\infty$
+> - $E=\int|x|^2dt$: enerji; $P=\lim_{T\to\infty}\frac1T\int_{-T/2}^{T/2}|x|^2dt$: ortalama güç
+> - Trig özdeşlik: $\cos^2x=\tfrac{1+\cos2x}{2}$ → ortalaması $\tfrac12$ (salınım terimi uzun ortalama da sıfır)
+> - Genel kural: genlik $A$ sinüzoid → $P=A^2/2$ (güç işareti); sönen üstel → enerji işareti
 
 **Çözüm:**
 

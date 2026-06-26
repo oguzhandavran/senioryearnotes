@@ -10,6 +10,12 @@ tags: [emd, bütünleme, dalga-yayılması, örnek-sorular]
 
 ## Soru 2 — Düzlemsel Dalga Anlık Görüntü
 
+> [!note]- Semboller
+> - $\omega$: açısal frekans (rad/s); $f=\omega/2\pi$: frekans (Hz)
+> - $\beta=2\pi/\lambda=\omega/c$: faz sabiti (dalga sayısı, rad/m); $\lambda$: dalga boyu (m)
+> - $c=3\times10^8$ m/s: ışık hızı (serbest uzay); $\hat a_y$: alan yönü
+> - $t_1=\frac{\lambda/4}{c}=\frac{T}{4}$: çeyrek dalga boyu ilerleme süresi
+
 **Problem:** Serbest uzayda $\bar{E}=\hat{a}_y 20\sin(4\pi\times10^8 t - \beta z)$ V/m. $t=0$'da $z$ boyunca $\lambda/4$ ilerlemesi için gereken $t_1$'i bul; $\beta$ ve $\lambda$ değerlerini hesapla.
 
 **Çözüm:**
@@ -25,6 +31,12 @@ $$\lambda/4 = 0.375 \;\text{m}, \quad t_1 = \frac{\lambda/4}{c} = \frac{0.375}{3
 ---
 
 ## Soru 5 — Düzlemsel Dalga H Bileşeni (Serbest Uzay)
+
+> [!note]- Semboller
+> - $\bar E$: elektrik alan ($\hat a_y$ yönlü); $\bar H$: manyetik alan; yayılma $+\hat a_z$
+> - $\eta_0=120\pi\approx377\,\Omega$: serbest uzay dalga empedansı; $H_0=E_0/\eta_0$
+> - Yön kuralı: yayılma $\hat k=\hat E\times\hat H$ → $\hat a_z=\hat a_y\times\hat H$ → $\hat H=-\hat a_x$
+> - $\beta=\omega/c$: faz sabiti
 
 **Problem:** $f=50$ MHz'lik dalga: $\bar{E}(z,t)=\hat{a}_y\,12\pi\sin(\omega t-\beta z)$ V/m. H bileşenini bul ve $t=0$'daki anlık görüntüyü çiz.
 
@@ -43,26 +55,32 @@ $$\boxed{\bar{H}(z,t) = -\hat{a}_x\,0.1\sin\!\left(10^8\pi t - \frac{\pi}{3}z\ri
 
 ## Soru 6 — Kayıp Tanjantı (Bakır ve Deniz Suyu)
 
-**Problem:** $\varepsilon_r=1$, $\sigma=5.8\times10^7$ S/m bakır ile $\varepsilon_r=81$, $\sigma=4$ S/m deniz suyu için 100 MHz ve 10 GHz'de kayıp tanjantını hesapla.
+> [!note]- Semboller
+> - $\tan\delta=\dfrac{\sigma}{\omega\varepsilon}=\dfrac{\sigma}{2\pi f\varepsilon_0\varepsilon_r}$: kayıp tanjantı (iletim/deplasman akımı oranı)
+> - $\sigma$: iletkenlik (S/m); $\varepsilon_r$: bağıl geçirgenlik; $\varepsilon_0=8.854\times10^{-12}$ F/m
+> - Kısayol: $\dfrac{1}{2\pi\varepsilon_0}\approx1.8\times10^{10}$ → $\tan\delta=\dfrac{1.8\times10^{10}\,\sigma}{\varepsilon_r\,f}$
+> - $\tan\delta\gg1$: iyi iletken · $\tan\delta\approx1$: kayıplı dielektrik · $\tan\delta\ll1$: iyi dielektrik
 
-$$\tan\delta = \frac{\varepsilon''}{\varepsilon'} = \frac{\sigma}{\omega\varepsilon} = \frac{\sigma}{2\pi f\varepsilon_0\varepsilon_r}$$
+**Problem:** $\varepsilon_r=1$, $\sigma=5.8\times10^7$ S/m bakır ile $\varepsilon_r=81$, $\sigma=4$ S/m deniz suyu için kayıp tanjantını hesapla.
 
-**Bakır** ($\varepsilon_r=1$, $\sigma=5.8\times10^7$):
-$$\tan\delta_{bakır} \approx \frac{18\times5.8\times10^7\times10^7}{f} = \frac{1.044\times10^{15}}{f}$$
+$$\tan\delta = \frac{\sigma}{2\pi f\varepsilon_0\varepsilon_r} = \frac{1.8\times10^{10}\,\sigma}{\varepsilon_r\,f}$$
 
-| Frekans | $\tan\delta$ | Sınıf |
-|---------|-------------|-------|
-| 100 MHz | $1.044\times10^7 \gg 1$ | **İyi iletken** |
-| 10 GHz | $1.044\times10^5 \gg 1$ | **İyi iletken** |
-
-**Deniz suyu** ($\varepsilon_r=81$, $\sigma=4$):
-$$\tan\delta_{deniz} \approx \frac{0.888\times10^8}{f}$$
+**Bakır** ($\varepsilon_r=1$, $\sigma=5.8\times10^7$): $\;\tan\delta = \dfrac{1.8\times10^{10}\times5.8\times10^7}{f} = \dfrac{1.04\times10^{18}}{f}$
 
 | Frekans | $\tan\delta$ | Sınıf |
 |---------|-------------|-------|
-| 100 Hz | $\approx8.88\times10^5 \gg 1$ | **İyi iletken** |
-| 1 GHz | $\approx0.888 < 1$ | **Kayıplı dielektrik** |
-| 10 GHz | $\approx0.088 \ll 1$ | **Dielektrik** |
+| 100 MHz ($10^8$) | $1.04\times10^{10} \gg 1$ | **İyi iletken** |
+| 10 GHz ($10^{10}$) | $1.04\times10^{8} \gg 1$ | **İyi iletken** |
+
+**Deniz suyu** ($\varepsilon_r=81$, $\sigma=4$): $\;\tan\delta = \dfrac{1.8\times10^{10}\times4}{81\,f} = \dfrac{8.89\times10^{8}}{f}$
+
+| Frekans | $\tan\delta$ | Sınıf |
+|---------|-------------|-------|
+| 100 Hz ($10^2$) | $\approx8.89\times10^6 \gg 1$ | **İyi iletken** |
+| 1 GHz ($10^9$) | $\approx0.889 \approx 1$ | **Kayıplı dielektrik** |
+| 10 GHz ($10^{10}$) | $\approx0.0889 \ll 1$ | **Dielektrik** |
+
+> *(Düzeltme: önceki sürümde $\frac{1}{2\pi\varepsilon_0}$ çarpanı eksik girilmişti; sınıflandırmalar doğruydu ama sayılar ~$10^3$ kata kadar küçüktü. Yukarıdaki değerler doğru büyüklüktedir.)*
 
 > [!sinav] Sınıflandırma Kriteri
 > - $\tan\delta \gg 1$: İyi iletken ($\sigma \gg \omega\varepsilon$)

@@ -10,12 +10,18 @@ tags: [ssi, dsp, z-dönüşümü, roc, pfd, örnek-sorular]
 
 ## Örnek 1 — PFD ile Ters Z-Dönüşümü (Sınav Sorusundan)
 
-**Verilen:**
-$$X(z) = \frac{1}{1-\frac{1}{2}z^{-1}-\frac{1}{6}z^{-2}}$$
+> [!note]- Semboller
+> - $X(z)$: Z-dönüşümü; $z^{-1}$: birim gecikme operatörü
+> - PFD (kısmi kesirler): paydayı çarpanlara ayırıp basit terimlere böl
+> - $A,B$: kalıntı (residue) katsayıları; her biri ilgili kutupta hesaplanır
+> - Ters çift: $\dfrac{1}{1-pz^{-1}}\leftrightarrow p^n u[n]$ (nedensel, $|z|>|p|$); kutuplar burada $p=\tfrac13,\,-\tfrac12$
+
+**Verilen:** *(payda nedensel; kutuplar $\tfrac13$ ve $-\tfrac12$)*
+$$X(z) = \frac{1}{1+\frac{1}{6}z^{-1}-\frac{1}{6}z^{-2}}$$
 
 **Çözüm:**
 
-Paydayı çarpanlara ayır: $(1-\frac{1}{3}z^{-1})(1+\frac{1}{2}z^{-1})$
+Paydayı çarpanlara ayır: $1+\tfrac{1}{6}z^{-1}-\tfrac{1}{6}z^{-2}=(1-\tfrac{1}{3}z^{-1})(1+\tfrac{1}{2}z^{-1})$
 
 $$X = \frac{A}{1-\frac{1}{3}z^{-1}} + \frac{B}{1+\frac{1}{2}z^{-1}}$$
 
@@ -28,6 +34,12 @@ $$\boxed{x[n] = \frac{2}{5}\left(\frac{1}{3}\right)^n u[n] + \frac{3}{5}\left(-\
 ---
 
 ## Örnek 2 — ROC ile Doğru Ters Z (Tam Çözüm)
+
+> [!note]- Semboller
+> - $X(z)$: Z-dönüşümü; kutuplar $z=1,2$; **ROC** $|z|>2$ → nedensel (sağ taraflı)
+> - $X(z)/z$ ile böl: kalıntı yöntemi için standart hile
+> - $A,B$: kalıntı katsayıları; ters çift $\dfrac{z}{z-p}\leftrightarrow p^n u[n]$
+> - ROC $|z|<1$ olsaydı sol taraflı: $-p^n u[-n-1]$
 
 **Verilen:**
 $$X(z) = \frac{z^2}{(z-1)(z-2)}, \quad \text{ROC: } |z|>2 \text{ (nedensel)}$$
@@ -50,6 +62,12 @@ $$\boxed{x[n] = -u[n] + 2\cdot2^n u[n] = (-1+2^{n+1})u[n]}$$
 
 ## Örnek 3 — Birim Gecikme İspatı (Sınav Sorusu)
 
+> [!note]- Semboller
+> - $\mathcal{Z}\{\cdot\}$: Z-dönüşümü operatörü; $X(z)=\sum_n x[n]z^{-n}$ (tanım)
+> - $x[n-1]$: bir örnek gecikmiş dizi
+> - $m=n-1$: indeks değişken dönüşümü (toplam sınırları değişmez, $\pm\infty$)
+> - Sonuç: gecikme ↔ $z^{-1}$ çarpanı (zaman kaydırma özelliği)
+
 **İste:** $\mathcal{Z}\{x[n-1]\} = z^{-1}X(z)$ olduğunu göster.
 
 **Çözüm:**
@@ -63,6 +81,12 @@ $$= \sum_{m=-\infty}^{\infty}x[m]z^{-(m+1)} = z^{-1}\sum_m x[m]z^{-m} = z^{-1}X(
 ---
 
 ## Örnek 4 — Fark Denklemi → Transfer Fonksiyonu
+
+> [!note]- Semboller
+> - $x[n],y[n]$: giriş/çıkış; $y[n-1]$: geri besleme (geçmiş çıkış)
+> - $H(z)=Y(z)/X(z)$: transfer fonksiyonu; kutup $z=0.5$ ($|z|<1$ → kararlı)
+> - **IIR**: geri besleme var → sonsuz dürtü yanıtı; **FIR**: yalnız giriş terimleri → sonlu
+> - $h[n]$: dürtü yanıtı ($x[n]=\delta[n]$ verince çıkış)
 
 **Verilen:** $y[n] = x[n] + 0.5y[n-1]$
 

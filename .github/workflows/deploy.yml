@@ -18,6 +18,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Tüm Quartz/Pages altyapısı _pages/ altında toplandı; run adımları orada çalışır.
+    defaults:
+      run:
+        working-directory: _pages
     steps:
       - name: Depoyu indir
         uses: actions/checkout@v4
@@ -27,7 +31,7 @@ jobs:
       - name: Node.js kur
         uses: actions/setup-node@v4
         with:
-          node-version-file: .node-version
+          node-version-file: _pages/.node-version
 
       - name: npm önbelleği
         uses: actions/cache@v4
@@ -40,8 +44,8 @@ jobs:
       - name: Quartz eklenti önbelleği
         uses: actions/cache@v4
         with:
-          path: .quartz/plugins
-          key: ${{ runner.os }}-quartz-plugins-${{ hashFiles('quartz.lock.json') }}
+          path: _pages/.quartz/plugins
+          key: ${{ runner.os }}-quartz-plugins-${{ hashFiles('_pages/quartz.lock.json') }}
           restore-keys: |
             ${{ runner.os }}-quartz-plugins-
 
@@ -54,7 +58,7 @@ jobs:
       - name: Pages artefaktını yükle
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: _pages/public
 
   deploy:
     needs: build

@@ -29,6 +29,12 @@ $\hat{x}(t)$: $x(t)$'nin **Hilbert dönüşümü** (90° faz kaydırma)
 
 **Soru:** Modüle edilmiş dalga $x_c(t) = 2\!\left[1+\dfrac{3}{2}x_1(t)\right]\cos(2\pi f_c t)$ ile veriliyor. $x_1(t)$ kare dalga: max $= 3.5$, min $= 0.5$ ($k=3/2$). Standart AM formuna dönüştürün.
 
+> [!note]- Semboller
+> - $A_c$: taşıyıcı genliği; $f_c$: taşıyıcı frekansı; $m$: modülasyon indeksi (standart AM'de $m\le1$ olmalı, aşmaması gerekir)
+> - $x(t)$: $[-1,1]$ aralığına **normalize** mesaj; $x_1(t)$: ham (normalize edilmemiş) mesaj
+> - $a=\dfrac{\max+\min}{2}$ (DC ortalama), $b=\dfrac{\max-\min}{2}$ (tepe sapması) → $x_1=a+bx$
+> - Standart form: $x_c=A_c[1+mx(t)]\cos(2\pi f_ct)$; $m=\dfrac{kb}{1+ka}$
+
 **Çözüm:**
 
 **Adım 1:** $a$ ve $b$ hesapla:
@@ -57,6 +63,12 @@ $$m = \frac{kb}{1+ka} = \frac{\frac{3}{2}\cdot\frac{3}{2}}{1+\frac{3}{2}\cdot 2}
 
 **Soru:** $x(t) = A_m\cos(2\pi f_m t)$, $A_m \leq 1$ birimiyle tek tonlu mesaj. AM işaretini açın, spektrumu yazın ve gücü hesaplayın.
 
+> [!note]- Semboller
+> - $A_m$: mesaj genliği; $f_m$: mesaj (ton) frekansı; $A_c,f_c$: taşıyıcı genliği/frekansı; $m$: modülasyon indeksi
+> - Yan bantlar: $f_c\pm f_m$ → AYB (alt) ve ÜYB (üst); bilgi yan bantlarda taşınır
+> - Çarpım→toplam: $\cos A\cos B=\tfrac12[\cos(A-B)+\cos(A+B)]$
+> - Güç: bir kosinüsün ($B\cos$) ortalama gücü $=B^2/2$; verimlilik $\eta=\dfrac{P_\text{yan bant}}{P_T}$
+
 **Çözüm:**
 
 **AM işareti:**
@@ -67,21 +79,19 @@ $\cos A\cos B = \frac{1}{2}[\cos(A-B)+\cos(A+B)]$ kullan:
 
 $$= A_c\cos(2\pi f_c t) + \frac{mA_c}{2}\cos(2\pi(f_c-f_m)t) + \frac{mA_c}{2}\cos(2\pi(f_c+f_m)t)$$
 
-**Spektrum bileşenleri:**
+**Spektrum bileşenleri** (zaman-kosinüs genliği = ilgili terimin önündeki katsayı):
 
-| Bileşen | Frekans | Genlik (tek taraflı) | Güç |
+| Bileşen | Frekans | Kosinüs genliği | Güç $=\dfrac{(\text{genlik})^2}{2}$ |
 |---------|---------|---------------------|-----|
-| Taşıyıcı | $\pm f_c$ | $A_c/2$ | $P_c = A_c^2/2$ |
-| Alt yan bant | $\pm(f_c-f_m)$ | $mA_c/4$ | $P_{AYB} = (mA_c)^2/8$ |
-| Üst yan bant | $\pm(f_c+f_m)$ | $mA_c/4$ | $P_{ÜYB} = (mA_c)^2/8$ |
+| Taşıyıcı | $\pm f_c$ | $A_c$ | $P_c = \dfrac{A_c^2}{2}$ |
+| Alt yan bant | $\pm(f_c-f_m)$ | $\dfrac{mA_cA_m}{2}$ | $P_{AYB} = \dfrac{m^2A_c^2A_m^2}{8}$ |
+| Üst yan bant | $\pm(f_c+f_m)$ | $\dfrac{mA_cA_m}{2}$ | $P_{ÜYB} = \dfrac{m^2A_c^2A_m^2}{8}$ |
 
-**Toplam güç:**
+**Toplam güç** (taşıyıcı + iki yan bant):
 
-$$P_c = \left(\frac{A_c}{2}\right)^2 \cdot 2 = \frac{A_c^2}{2}$$
+$$P_c = \frac{A_c^2}{2}, \qquad P_{AYB}+P_{ÜYB} = 2\cdot\frac{m^2A_c^2A_m^2}{8} = \frac{m^2A_c^2A_m^2}{4}$$
 
-$$2P_y = 2\cdot\left(\frac{mA_c}{4}\right)^2 \cdot 2 \cdot 2 = \frac{A_c^2 m^2 A_m^2}{4}$$
-
-$$\boxed{P_T = \frac{A_c^2}{2} + \frac{A_c^2 m^2 A_m^2}{4}}$$
+$$\boxed{P_T = \frac{A_c^2}{2} + \frac{m^2 A_c^2 A_m^2}{4}}$$
 
 Eğer $A_m = 1$: $P_T = \dfrac{A_c^2}{2}\!\left(1+\dfrac{m^2}{2}\right)$
 
@@ -100,6 +110,12 @@ Eğer $A_m = 1$: $P_T = \dfrac{A_c^2}{2}\!\left(1+\dfrac{m^2}{2}\right)$
 **(b)** $a = 0$ için ÇYB, $a = 0.5$ için USB (üst yan bant), $a = -0.5$ için LSB (alt yan bant) olduğunu gösterin.
 
 **Filtre:** $H(f_c+f_m) = 0.5+a$, $H(f_c-f_m) = 0.5-a$
+
+> [!note]- Semboller
+> - **ÇYB/DSB-SC**: çift yan bant–bastırılmış taşıyıcı; **TYB/SSB**: tek yan bant; **USB/LSB**: üst/alt yan bant
+> - $\hat x(t)$: Hilbert dönüşümü (90° faz kaydırma); SSB'yi üreten alternatif yöntem
+> - $a$: yan bant ağırlık parametresi; filtre kazançları $0.5\pm a$ ile bir bandı geçirip diğerini bastırır
+> - Bant genişliği: ÇYB $\to2f_m$, SSB $\to f_m$ (yarısı, spektrum verimli)
 
 **Çözüm:**
 
@@ -137,6 +153,12 @@ $a = -0.5$: $x_c(t) = A_c\cos(2\pi(f_c-f_m)t)$ → LSB
 
 **(b)** Frekans spektrumunu çizin.
 
+> [!note]- Semboller
+> - $c(t)=\cos(2\pi f_ct)$: taşıyıcı; çarpımsal modülatör mesajı taşıyıcıyla çarpar (ÇYB)
+> - $200\pi t\Rightarrow f=100$ Hz, $400\pi t\Rightarrow f=200$ Hz, $600\pi t\Rightarrow f=300$ Hz ($\omega=2\pi f$)
+> - İki kez $\cos A\cos B$ açılımı: önce mesaj iki tona ayrışır, sonra her ton taşıyıcıyla iki yan banda
+> - Her ÇYB yan bant çizgisi: katsayı $\dfrac{A_c}{8}$ ($\tfrac14\cdot\tfrac12 A_c$)
+
 **Çözüm:**
 
 **Adım 1:** Mesajı açalım:
@@ -162,6 +184,12 @@ $$+\frac{A_c}{8}\bigl[\cos(2\pi(f_c-300)t)+\cos(2\pi(f_c+300)t)\bigr]$$
 
 **Verilen:** $m(t) = \cos(2\pi \cdot 10^3 t)$, $c(t) = 10\cos(2\pi \cdot 10^6 t)$, $m=1$
 
+> [!note]- Semboller
+> - $m(t)$: mesaj ($f_m=10^3$ Hz); $c(t)$: taşıyıcı ($A_c=10$, $f_c=10^6$ Hz)
+> - $P_c$: taşıyıcı gücü (bilgi taşımaz); $2P_y$: iki yan bandın toplam gücü (bilgi burada)
+> - $P_T=P_c+2P_y$: toplam güç; $\eta=\dfrac{2P_y}{P_T}$: güç verimliliği
+> - DSB-SC taşıyıcıyı yok eder → $P_c=0$, $\eta=1$ (aynı bilgi için 3 kat az güç)
+
 | Büyüklük | Standart AM | DSB-SC |
 |----------|-------------|--------|
 | $x_c(t)$ | $10[1+m(t)]\cos(2\pi\cdot10^6t)$ | $m(t)\cdot10\cos(2\pi\cdot10^6t)$ |
@@ -180,6 +208,12 @@ $$+\frac{A_c}{8}\bigl[\cos(2\pi(f_c-300)t)+\cos(2\pi(f_c+300)t)\bigr]$$
 **Soru:** Aşağıdaki AM zarfından modülasyon indeksini bulun:
 
 $$C_{\max} = 10 \text{ V}, \quad C_{\min} = 2 \text{ V}$$
+
+> [!note]- Semboller
+> - $C_{\max},C_{\min}$: AM zarfının tepe ve dip genlikleri (V) — osiloskopta okunur
+> - $m=\dfrac{C_{\max}-C_{\min}}{C_{\max}+C_{\min}}$: modülasyon indeksi; $A_c=\dfrac{C_{\max}+C_{\min}}{2}$: taşıyıcı genliği
+> - $C_{\max}=A_c(1+m)$, $C_{\min}=A_c(1-m)$ (zarfın üst/alt sınırları)
+> - $m>1$ → aşırı modülasyon (zarf bozulur, zarf detektörü hata verir)
 
 **Çözüm:**
 
