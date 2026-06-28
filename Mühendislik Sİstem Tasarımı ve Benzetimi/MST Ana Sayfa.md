@@ -47,7 +47,8 @@ flowchart LR
 | 5 | Kök Yer Eğrisi Örnekleri | [[Örnek Sorular/05 Kök Yer Eğrisi Örnekleri]] |
 | 6 | **Final Sınav Soruları (Çözümlü)** | [[Örnek Sorular/06 Final Sınav Soruları (Çözümlü)]] |
 | 7 | Nise Ch9 Kompansatör Tasarımı | [[Örnek Sorular/07 Nise Ch9 Kompansatör Tasarımı]] |
-| 8 | **Vize Soruları ve Hoca Örnekleri (Çözümlü)** | [[Örnek Sorular/08 Vize Soruları ve Hoca Örnekleri]] |
+| 8 | Vize Quizleri ve Hoca Örnekleri (Çözümlü) | [[Örnek Sorular/08 Vize Soruları ve Hoca Örnekleri]] |
+| 9 | **★ Resmi Vize Sınavı (Cevap Anahtarlı)** | [[Örnek Sorular/09 Resmi Vize Sınavı (Cevap Anahtarlı)]] |
 
 ## Diğer Derslerle Bağlantı
 

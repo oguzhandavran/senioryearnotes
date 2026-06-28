@@ -8,6 +8,9 @@ tags: [mst, vize, sınav-soruları, çözümlü, durum-uzayı, lagrange, dişli,
 
 > Kaynak: Hoca (Asım) vize hazırlık çözümlü örnekleri (`Asım vize 1.pdf`, 24 sf.) + quiz soruları (`Asım vize 2.pdf`, 4 sf.). Tüm sorular soru metni + adım adım çözüm + sembol hatırlatıcısı ile yeniden yazıldı; el yazısı taramalardaki birkaç özensiz ara satır temiz biçimde yeniden türetildi.
 
+> [!tip] Resmi vize sınavı ayrı dosyada
+> Bu dosya hocanın **hazırlık örnekleri + quizleridir**. Resmi (puanlı cevap anahtarlı) **gerçek vize sınavı** ayrı dosyada: [[09 Resmi Vize Sınavı (Cevap Anahtarlı)]]. Aynı konu/yöntemleri farklı sorularla işler; ikisini birlikte çalış.
+
 > [!sinav] Vize Kapsamı — Tek Bakışta
 > Bu dersin vizesi **sistem modelleme** üzerinedir: bir fiziksel sistemi (mekanik, elektrik, elektromekanik) denklemlerine dök → Laplace'a geçir → **transfer fonksiyonu** veya **durum-uzayı** modeli çıkar. Yinelenen iskelet:
 > 1. Her kütle/düğüm/göz için denge denklemi (Newton, KVL/KCL, Lagrange)
