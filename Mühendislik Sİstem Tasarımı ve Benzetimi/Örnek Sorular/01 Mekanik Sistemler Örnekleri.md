@@ -1,7 +1,7 @@
 ---
 tags: [mst, mekanik, newton, lagrange, transfer-fonksiyonu, dc-motor, disli, örnek-sorular]
 ---
-
+	
 # 01 — Mekanik Sistemler Örnekleri
 
 ← [[MST Ana Sayfa]] | Teori: [[../Konu Anlatımları/01 Mekanik Sistemler|01 Mekanik Sistemler]]
