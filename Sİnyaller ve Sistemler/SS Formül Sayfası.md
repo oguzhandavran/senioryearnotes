@@ -8,6 +8,19 @@ tags: [ss, formül, cheatsheet]
 
 > Sınavda yanında tut. Tüm kritik formüller tek sayfada.
 
+> [!key] 🔑 Kısaltma & Sembol Anahtarı (önce bunu oku)
+> | Sembol | Okunuş / anlamı | Sembol | Okunuş / anlamı |
+> |---|---|---|---|
+> | $x(t)$ / $x[n]$ | CT / DT sinyal | $h$ | dürtü yanıtı |
+> | $\delta$ | birim dürtü | $u$ | birim basamak |
+> | $*$ | konvolüsyon | $\omega_0$ | temel açısal frekans $2\pi/T$ |
+> | $a_k,c_n$ | Fourier serisi katsayısı | $\omega$ | açısal frekans (rad/s) |
+> | $X(j\omega)$ | Fourier dönüşümü (spektrum) | $H(j\omega)$ | frekans yanıtı |
+> | $E_\infty,P_\infty$ | enerji / güç | $\tau$ | konvolüsyon kukla değişkeni |
+> | $\lvert\cdot\rvert$ | genlik/modül | $\angle$ | faz (açı) |
+>
+> **CT** = sürekli-zaman · **DT** = ayrık-zaman · **LTI** = doğrusal & zamanla-değişmez · **BIBO** = sınırlı giriş–sınırlı çıkış · **CTFS/CTFT** = sürekli-zaman Fourier serisi/dönüşümü · **PFD** = kısmi kesir ayrışımı.
+
 ---
 
 ## Sinyal Özellikleri

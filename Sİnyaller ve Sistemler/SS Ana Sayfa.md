@@ -66,6 +66,8 @@ flowchart LR
 | 4 | Fourier Dönüşümü Örnekleri | [[Örnek Sorular/04 Fourier Dönüşümü Örnekleri]] |
 | 5 | **Vize Sınav Soruları (Çözümlü)** | [[Örnek Sorular/05 Vize Sınav Soruları (Çözümlü)]] |
 | 6 | **Final Sınav Soruları (Çözümlü)** | [[Örnek Sorular/06 Final Sınav Soruları (Çözümlü)]] |
+| 7 | Örnekleme Örnekleri | [[Örnek Sorular/07 Örnekleme Örnekleri]] |
+| 8 | ⭐ **Çalışma Kağıdı — Çözümlü Soru Bankası** (sıfırdan + grafikli) | [[Örnek Sorular/08 Çalışma Kağıdı — Çözümlü Soru Bankası]] |
 
 ### Diğer
 

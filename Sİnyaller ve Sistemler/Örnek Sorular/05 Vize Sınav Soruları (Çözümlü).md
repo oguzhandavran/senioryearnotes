@@ -2,11 +2,24 @@
 tags: [ss, vize, sınav-soruları, çözümlü, konvolüsyon, lti]
 ---
 
-# 05 — Vize Sınav Soruları (Çözümlü)
+# 05 — Vize Sınav Soruları (Çözümlü · Sıfırdan Öğretici)
 
-← [[SS Ana Sayfa]]
+← [[SS Ana Sayfa]]  ·  Aynı sorular grafiklerle: [[08 Çalışma Kağıdı — Çözümlü Soru Bankası]]
 
-> Kaynak görsel: `DATASET/Sinyaller Ve Sistemler/SS_Vize_Sorular.jpg`
+> Kaynak: `_dataset/Sinyaller Ve Sistemler/SS_Vize.pdf` · resmi çözüm `SS Çalışma Kağıdı 1–2.jpeg`
+
+> [!abstract] Bu sınav neyi ölçüyor? (önce büyük resim)
+> Vize tamamen **LTI sistemler + konvolüsyon** üzerine. Üç soru da aynı iskelet: *bir sistem/sinyal ver → özelliklerini söyle → çıkışı $y=x*h$ ile bul*.
+>
+> | Kısaltma | Açılım (İng. → Tür.) |
+> |---|---|
+> | **LTI** | Linear Time-Invariant → **Doğrusal & Zamanla-Değişmez** |
+> | **CT / DT** | Continuous / Discrete-Time → **Sürekli / Ayrık-zaman** |
+> | **BIBO** | Bounded-Input Bounded-Output → **Sınırlı giriş–sınırlı çıkış** (kararlılık) |
+> | $h$ | impulse response → **dürtü yanıtı** (girişe $\delta$ verince çıkış) |
+> | $*$ | convolution → **konvolüsyon (evrişim)** |
+>
+> **Nereden geliyor?** Konvolüsyon $y(t)=\int x(\tau)h(t-\tau)d\tau$, "her giriş anını bir $\delta$ kabul edip sistemin $h$ yanıtını üst üste bindirme (süperpozisyon)" fikrinden doğar. Adım adım anlatımı ve tüm grafikler için → [[08 Çalışma Kağıdı — Çözümlü Soru Bankası]].
 
 ---
 
@@ -43,12 +56,21 @@ $$\boxed{h[n] = \delta[n+1] + \delta[n] + \delta[n-1]}$$
 | diğer | 0 |
 
 **Grafik:**
-```
-h[n]
- 1 |  ×    ×    ×
-   |
-───┼──────────────── n
-  -1    0    1
+
+```tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+  width=8cm, height=4.5cm, ymin=0, ymax=1.4, xmin=-2.6, xmax=2.6,
+  axis lines=middle, xlabel={$n$}, ylabel={$h[n]$},
+  xtick={-2,-1,0,1,2}, ytick={1}, ymajorgrids, grid style={dashed,gray!30},
+  every axis plot/.append style={ycomb, thick, mark=*, mark options={fill=red!70}}]
+\addplot coordinates {(-1,1) (0,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{document}
 ```
 
 **Sistem Özellikleri:**
@@ -109,16 +131,9 @@ $$h(t) = u(t) - u(t-1) = \begin{cases} 1, & 0 \leq t \leq 1 \\ 0, & \text{diğer
 
 ### 2a — x(t) Grafiği ve Özellikleri (15p)
 
-**Grafik:**
-```
-x(t)
- 2 |       ████
- 1 |            ████
-   |
-─ ─┼───────────────── t
--1 |████
--1  0    1    2
-```
+**Grafik (numpy ile render — $x$, $h$, $y$ birlikte):**
+
+![[ss-q2-konv.png]]
 
 **Özellikler:**
 
@@ -209,24 +224,9 @@ $$h(t) = u(t+0.5) - u(t-0.5) = \begin{cases} 1, & -0.5 \leq t \leq 0.5 \\ 0, & \
 
 ### 3a — Grafikler (10p)
 
-**x(t) — Üçgen:**
-```
-x(t)
- 1 |      /\
-   |     /  \
-   |    /    \
-───┼───────────── t
-   -1   0    1
-```
+**Üçgen $x(t)$, dikdörtgen $h(t)$ ve parabolik sonuç $y(t)$ (numpy):**
 
-**h(t) — Dikdörtgen:**
-```
-h(t)
- 1 |   ████
-   |
-───┼──────────── t
-  -0.5  0  0.5
-```
+![[ss-q3-ucgen.png]]
 
 ---
 

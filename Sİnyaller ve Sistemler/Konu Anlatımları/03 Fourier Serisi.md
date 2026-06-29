@@ -10,6 +10,23 @@ tags: [ss, fourier-serisi, ctfs, dtfs, konu-anlatımı]
 
 > Periyodik sinyalleri harmonik sinüzoidlerin toplamı olarak yaz. CTFS: sürekli zaman periyodik → karmaşık üstel katsayılar. DTFS: ayrık periyodik → sonlu N-terimli toplam.
 
+> [!abstract] 🔰 Sıfırdan: Kısaltmalar, Semboller, Sezgi
+> **Ana fikir:** Her periyodik sinyal, temel frekansın **katları (harmonikleri)** olan sinüzoidlerin toplamıdır. Fourier serisi bu toplamın "tarifini" verir.
+>
+> | Kısaltma / sembol | Açılım (İng.) | Türkçe / anlamı |
+> |---|---|---|
+> | **CTFS** | Continuous-Time Fourier Series | **Sürekli-zaman Fourier serisi** |
+> | **DTFS** | Discrete-Time Fourier Series | **Ayrık-zaman Fourier serisi** |
+> | $a_k,\ c_k$ | Fourier coefficient | $k.$ harmoniğin **karmaşık ağırlığı** |
+> | $\omega_0$ | fundamental frequency | **temel açısal frekans** $=2\pi/T$ (rad/s) |
+> | $T$ , $N$ | period | **periyot** (CT için $T$, DT için tam sayı $N$) |
+> | $k$ | harmonic index | **harmonik numarası** ($k=0$ DC/ortalama) |
+> | $e^{jk\omega_0 t}$ | complex exponential | $k.$ **harmonik** (dönen birim vektör) |
+>
+> **Analiz denklemi nereden? ($a_k=\frac1T\int_T x\,e^{-jk\omega_0 t}dt$)** Harmonikler **ortogonaldir**: $\frac1T\int_T e^{jk\omega_0 t}e^{-jm\omega_0 t}dt = 1$ (eğer $k=m$), $0$ (aksi halde). Sentez denklemini $e^{-jm\omega_0 t}$ ile çarpıp bir periyot boyunca integral alırsan, $k=m$ dışındaki tüm terimler sıfırlanır → geriye yalnız $a_m$ kalır. Yani analiz formülü = "$m.$ harmonik kadar olanı süzme" işlemidir.
+>
+> **Pratik kısayol:** Sinyal zaten $\sin/\cos$ toplamıysa integral alma — **Euler** ile üstele aç ($\cos\theta=\tfrac12(e^{j\theta}+e^{-j\theta})$), katsayıları doğrudan **oku**.
+
 ---
 
 ## 1. Sürekli Zaman Fourier Serisi (CTFS)

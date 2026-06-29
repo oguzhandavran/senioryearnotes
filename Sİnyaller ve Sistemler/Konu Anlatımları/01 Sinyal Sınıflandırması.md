@@ -10,6 +10,21 @@ tags: [ss, sinyal, sınıflandırma, konu-anlatımı]
 
 > Sinyaller zamanın türüne (CT/DT) ve genlik özelliklerine göre sınıflandırılır. Sınav için: enerji/güç hesabı, çift/tek simetri, temel sinyaller kritik.
 
+> [!abstract] 🔰 Sıfırdan: Kısaltmalar, Semboller, Sezgi
+> **Sinyal nedir?** Bilgi taşıyan, bir değişkenin (genelde zaman) fonksiyonu olan büyüklük. Örn. mikrofon gerilimi $x(t)$.
+>
+> | Kısaltma / sembol | Açılım (İng.) | Türkçe / anlamı |
+> |---|---|---|
+> | **CT** | Continuous-Time | **Sürekli-zaman**: $x(t)$, her $t$ anında değer var |
+> | **DT** | Discrete-Time | **Ayrık-zaman**: $x[n]$, yalnız tam sayı $n$'de |
+> | $t$ | — | sürekli zaman değişkeni, $t\in\mathbb{R}$ (reel sayılar) |
+> | $n$ | — | ayrık zaman indeksi, $n\in\mathbb{Z}$ (tam sayılar) |
+> | $\lvert x\rvert$ | magnitude | büyüklük (karmaşıksa modül, reelse mutlak değer) |
+> | $\int$ , $\sum$ | integral / sum | sürekli toplam / ayrık toplam |
+> | $E_\infty,\ P_\infty$ | energy / power | toplam **enerji** / ortalama **güç** |
+>
+> **Enerji formülü nereden? ($E=\int\lvert x(t)\rvert^2 dt$)** Elektrikte $1\,\Omega$ dirençte anlık güç $p(t)=v^2(t)$. Toplam enerji = gücün zamana integrali. Bu yüzden sinyal "enerjisi" $=\int\lvert x\rvert^2 dt$ diye genelleştirilir. **Güç** ise enerjinin zaman ortalamasıdır (sonsuza yayılan sinyallerde enerji patlar, ama ortalama güç sonlu kalabilir).
+
 ---
 
 ## 1. CT(Contunious Time) vs DT (Discrete Time) Sinyaller

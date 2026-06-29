@@ -10,6 +10,24 @@ tags: [ss, lti, konvolüsyon, sistem-özellikleri, konu-anlatımı]
 
 > LTI = Doğrusal (Linear) + Zamanla Değişmez (Time-Invariant). Bu iki özellik bir araya gelince sistem tamamen **impuls yanıtı h(t)** ile tanımlanır ve konvolüsyon devreye girer.
 
+> [!abstract] 🔰 Sıfırdan: Kısaltmalar, Semboller, Sezgi
+> **Sistem nedir?** Giriş sinyalini $x$ alıp çıkış sinyali $y$ üreten kutu: $y=T\{x\}$.
+>
+> | Kısaltma / sembol | Açılım (İng.) | Türkçe / anlamı |
+> |---|---|---|
+> | **LTI** | Linear Time-Invariant | **Doğrusal & Zamanla-değişmez** |
+> | **BIBO** | Bounded-Input Bounded-Output | **Sınırlı giriş → sınırlı çıkış** (kararlılık ölçütü) |
+> | **TI / ZD** | Time-Invariant | **Zamanla-değişmez** |
+> | $h(t),\ h[n]$ | impulse response | **dürtü yanıtı**: girişe $\delta$ verince çıkış |
+> | $*$ | convolution | **konvolüsyon (evrişim)** |
+> | $\delta$ | impulse | **birim dürtü** ("iğne") |
+> | $T\{\cdot\}$ | transformation | sistemin giriş→çıkış işlemi |
+>
+> **Doğrusallık (superposition):** $T\{a x_1+b x_2\}=a\,T\{x_1\}+b\,T\{x_2\}$. "Girişleri ayrı ayrı geçir, topla — aynı sonucu verir."
+> **Zamanla-değişmezlik:** girişi geciktirince çıkış da aynı kadar gecikir, şekli değişmez.
+>
+> **Konvolüsyon nereden geliyor?** Her giriş sinyali kaydırılmış dürtülerin toplamı olarak yazılabilir: $x[n]=\sum_k x[k]\,\delta[n-k]$. Sistem **doğrusal** olduğu için her dürtünün yanıtını ($x[k]\,h[n-k]$) toplayabiliriz; **zamanla-değişmez** olduğu için her dürtünün yanıtı aynı $h$'nin kaydırılmışıdır. İkisi birleşince: $y[n]=\sum_k x[k]\,h[n-k]=x*h$. **İşte konvolüsyon bu yüzden LTI sistemin tek formülüdür.**
+
 ---
 
 ## 1. Sistem Özellikleri — Hızlı Test Tablosu

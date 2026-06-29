@@ -2,11 +2,25 @@
 tags: [ss, final, sınav-soruları, çözümlü, fourier-serisi, fourier-dönüşümü, frekans-yanıtı, konvolüsyon]
 ---
 
-# 06 — Final Sınav Soruları (Çözümlü)
+# 06 — Final Sınav Soruları (Çözümlü · Sıfırdan Öğretici)
 
-← [[SS Ana Sayfa]]
+← [[SS Ana Sayfa]]  ·  Ek çözümlü örnekler & grafikler: [[08 Çalışma Kağıdı — Çözümlü Soru Bankası]]
 
-> Kaynak görsel: `DATASET/Sinyaller Ve Sistemler/SS_Final_Sorular.jpg`
+> Kaynak: `_dataset/Sinyaller Ve Sistemler/SS_Final.pdf` · resmi çözüm `SS Çalışma Kağıdı 3–8.jpeg`
+
+> [!abstract] Bu sınav neyi ölçüyor? (önce büyük resim)
+> Final **Fourier ağırlıklı**: konvolüsyon (S1) + Fourier serisi (S2) + Fourier dönüşümü (S3) + frekans yanıtıyla çıkış (S4). Ortak fikir: **sinyali frekans bileşenlerine ayır, sistemi orada çarp, geri dön**.
+>
+> | Kısaltma / sembol | Açılım (İng. → Tür.) |
+> |---|---|
+> | **CTFS** | Continuous-Time Fourier Series → **Sürekli-zaman Fourier serisi** (periyodik sinyaller) |
+> | **CTFT** | Continuous-Time Fourier Transform → **Sürekli-zaman Fourier dönüşümü** (her sinyal) |
+> | $c_n,\,a_k$ | Fourier serisi katsayısı → $n.$ **harmoniğin ağırlığı** |
+> | $X(j\omega)$ | spektrum → sinyalin **frekans içeriği** |
+> | $\omega_0$ | fundamental frequency → **temel açısal frekans** $=2\pi/T_0$ |
+> | $H(j\omega)$ | frequency response → **frekans yanıtı** (sistemin her frekansa kazancı/fazı) |
+>
+> **Nereden geliyor?** Bir LTI sistemde karmaşık üstel $e^{j\omega t}$ **özfonksiyondur**: çıkış aynı frekansta, sadece $H(j\omega)$ ile çarpılmış. Bu yüzden $Y(j\omega)=H(j\omega)X(j\omega)$ — tüm Fourier yöntemi buradan doğar. Euler köprüsü ($\cos,\sin\to e^{\pm j\theta}$) ise sinüsleri bu üstellere çevirmemizi sağlar.
 
 ---
 
@@ -66,17 +80,9 @@ $$y(t) = \int_{t-2}^{2}(-1)\,d\tau = -(2-(t-2)) = t-4$$
 
 $$\boxed{y(t) = \begin{cases} 0, & t \leq 0 \\ t, & 0 < t \leq 1 \\ 2-t, & 1 < t \leq 3 \\ t-4, & 3 < t \leq 4 \\ 0, & t > 4 \end{cases}}$$
 
-**Grafik:**
-```
-y(t)
- 1 |    /\
-   |   /  \
-   |  /    \
-   | /      \        /
-───┼──────────────/─────── t
-   0  1  2  3  \/  4
-              -1
-```
+**Grafik (numpy — "yansıt-kaydır-çarp-topla" 5 adımı, panel 5 = $y(t)$):**
+
+![[ss-konv-kayan-pencere.png]]
 
 **Süreklilik kontrolü:** $t=1$: $1=1$ ✓ | $t=3$: $2-3=-1=3-4$ ✓ | $t=4$: $0$ ✓
 
@@ -123,31 +129,9 @@ $$\cos\!\left(2\omega_0 t + \frac{\pi}{4}\right) = \frac{1}{2}e^{j\pi/4}e^{j2\om
 
 ### 2b — Genlik ve Faz Spektrumları (10p)
 
-**Genlik Spektrumu $|c_n|$:**
-```
-|cn|
- 1 |  ×    ×    ×
-   |
-0.5|       ×         ×
-   |
-───┼──────────────────── n
-  -2   -1   0   +1  +2
-```
+**Genlik ve Faz Spektrumu (numpy `stem`):**
 
-**Faz Spektrumu $\angle c_n$:**
-```
-∠cn (rad)
-3π/8|       ×
-    |
-π/4 |                  ×
-    |
-  π |            ×
-────┼──────────────────── n
-   -2   -1   0   +1  +2
--π/4|   ×
-    |
--3π/8|                ×
-```
+![[ss-q5-spektrum.png]]
 
 *(Çift simetri: $|c_n| = |c_{-n}|$ ve $\angle c_{-n} = -\angle c_n$ — karmaşık konjugat özelliği)*
 
@@ -157,6 +141,9 @@ $$\cos\!\left(2\omega_0 t + \frac{\pi}{4}\right) = \frac{1}{2}e^{j\pi/4}e^{j2\om
 
 **Verilen:**
 $$x(t) = e^{1+t}u(1-t)$$
+
+> [!tip] 📘 Önce kavram — bu soru neden farklı?
+> Buradaki tuzak $u(1-t)$: **aynalanmış basamak**. $u(1-t)=1$ koşulu $1-t>0$, yani $t<1$ demek → sinyal **sola** uzanır (sağ tarafı kesilmiş). Çoğu tablo çifti sağa uzanan ($u(t)$) sinyaller için. Bu yüzden tabloyu körlemesine kullanamayız; **tanımdan integral** alırız: $X(j\omega)=\int x(t)e^{-j\omega t}dt$. Yakınsama, üstelin $t\to-\infty$'da sönmesine bağlıdır — onu kontrol etmek şart.
 
 > [!note]- Semboller
 > - $u(1-t)$: $t\le1$'de 1 olan **yansımış** basamak (sağ tarafı keser)
@@ -187,6 +174,9 @@ $$\boxed{X(j\omega) = \frac{e^2 \cdot e^{-j\omega}}{1-j\omega}}$$
 **Verilen:**
 $$H(j\omega) = \frac{j\omega+4}{2-\omega^2+3j\omega}$$
 $$x(t) = e^{-4(t-2)}u(t-2)$$
+
+> [!tip] 📘 Önce kavram — strateji
+> "Sisteme giriş verilmiş, çıkışı bul" = frekansta **çarp**: $Y(j\omega)=H(j\omega)\,X(j\omega)$, sonra ters dönüşümle $y(t)$. İki anahtar hamle: **(1)** paydadaki $2-\omega^2+3j\omega$'yı $s=j\omega$ koyarak $s^2+3s+2$ gibi çarpanlarına ayır (kutupları gör); **(2)** $X$'i bilinen çift + zaman kaydırma ile yaz. Sonunda **kısmi kesirler** her terimi tabloya indirger.
 
 > [!note]- Semboller
 > - $H(j\omega)$: frekans yanıtı; $s=j\omega$ ile $-\omega^2+3j\omega+2 = s^2+3s+2$

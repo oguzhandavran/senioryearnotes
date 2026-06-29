@@ -11,6 +11,23 @@ tags: [ss, fourier-dönüşümü, ctft, konu-anlatımı]
 > Periyodik olmayan sinyalleri de frekans domenine taşı. CTFT: $x(t) \leftrightarrow X(j\omega)$.
 > **Kapsam: 4.1–4.5 (Çarpma Özelliğine kadar)**
 
+> [!abstract] 🔰 Sıfırdan: Kısaltmalar, Semboller, Sezgi
+> **Ana fikir:** Fourier serisi sadece **periyodik** sinyaller içindi. Periyodik olmayan bir sinyali "periyodu sonsuz" kabul edersek ($T\to\infty$), harmonikler birbirine yaklaşıp **sürekli bir frekans ekseni** olur. İşte Fourier dönüşümü budur: sinyalin hangi frekansları ne kadar içerdiğinin sürekli haritası.
+>
+> | Kısaltma / sembol | Açılım (İng.) | Türkçe / anlamı |
+> |---|---|---|
+> | **CTFT** | Continuous-Time Fourier Transform | **Sürekli-zaman Fourier dönüşümü** |
+> | **FT** | Fourier Transform | Fourier dönüşümü |
+> | $X(j\omega)$ | spectrum | sinyalin **frekans içeriği** (genelde karmaşık) |
+> | $\lvert X(j\omega)\rvert$ | magnitude spectrum | **genlik spektrumu** |
+> | $\angle X(j\omega)$ | phase spectrum | **faz spektrumu** |
+> | $\omega$ | angular frequency | **açısal frekans** (rad/s), $\omega=2\pi f$ |
+> | $\mathcal{F},\ \mathcal{F}^{-1}$ | (inverse) transform | (ters) dönüşüm operatörü |
+>
+> **Analiz denklemi nereden? ($X(j\omega)=\int x(t)e^{-j\omega t}dt$)** $e^{-j\omega t}$ çarpanı, sinyali $\omega$ frekanslı bir "prob" ile karşılaştırır; integral o frekansın sinyaldeki toplam katkısını ölçer. **Sentez** ($x=\frac1{2\pi}\int X e^{j\omega t}d\omega$) ise tüm frekansları geri toplayıp sinyali yeniden kurar.
+>
+> **Sınav refleksi:** İntegral almadan önce **tabloya** bak ($e^{-at}u(t)\to\frac1{a+j\omega}$ vb.) + **özellikleri** uygula (kaydırma → $e^{-j\omega t_0}$, türev → $j\omega$). İntegrali ancak tablo yetmezse al (örn. sola uzanan $u(1-t)$ sinyali).
+
 ---
 
 ## 1. CTFT — Analiz ve Sentez (4.1)

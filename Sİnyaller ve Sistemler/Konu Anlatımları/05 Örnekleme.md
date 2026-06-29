@@ -6,6 +6,24 @@ tags: [ss, ornekleme, sampling, konu-anlatimi, bolum7]
 
 ← [[SS Ana Sayfa]] | Örnekler: [[../Örnek Sorular/07 Örnekleme Örnekleri|07 Örnekleme Örnekleri]]
 
+> [!warning] Kapsam notu
+> Örnekleme (Bölüm 7), **bütünleme kapsamının dışında** görünüyor (sınav: Bölüm 1–4.5; vize/final soruları konvolüsyon + Fourier). Genel kültür/SSİ dersi için tutuldu, yarınki sınava öncelik verme.
+
+> [!abstract] 🔰 Sıfırdan: Kısaltmalar, Semboller, Sezgi
+> **Ana fikir:** Sürekli sinyali bilgisayara almak için belirli aralıklarla "örnek" alırız. Eğer yeterince sık örneklersek sinyali **tam** geri kurabiliriz; seyrek örneklersek bilgi karışır (aliasing).
+>
+> | Kısaltma / sembol | Açılım (İng.) | Türkçe / anlamı |
+> |---|---|---|
+> | **ZOH** | Zero-Order Hold | **Sıfırcı-dereceden tutma** (örneği bir periyot sabit tut) |
+> | **LPF** | Low-Pass Filter | **Alçak geçiren süzgeç** (yeniden kurmada kullanılır) |
+> | **C/D, D/C** | Continuous↔Discrete | sürekli↔ayrık dönüştürücü |
+> | $T$ | sampling period | **örnekleme periyodu** (örnekler arası süre) |
+> | $\omega_s$ | sampling frequency | **örnekleme frekansı** $=2\pi/T$ |
+> | $\omega_M$ | max frequency | sinyaldeki **en yüksek frekans** (bant sınırı) |
+> | aliasing | — | **örtüşme**: spektrum kopyaları üst üste biner |
+>
+> **Nyquist neden $\omega_s>2\omega_M$?** Örnekleme, spektrumun $\omega_s$ aralıklarla kopyalarını üretir. Kopyalar üst üste binmesin diye iki komşu kopya arasındaki boşluk ($\omega_s$) sinyalin toplam genişliğinden ($2\omega_M$) büyük olmalı.
+
 ---
 
 ## 7.1 — İdeal Dürtü-Katar Örneklemesi
