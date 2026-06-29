@@ -216,14 +216,7 @@ $x(2-t)$ = önce **yansıt** ($x(-t)$) sonra **+2 kaydır**. Eşitlik $\tau=2-t$
 - $x=-1$ ($\tau\in(-1,0)$) → $t\in(2,3)$
 - $x=2$ ($\tau\in(0,1)$) → $t\in(1,2)$
 - $x=1$ ($\tau\in(1,2)$) → $t\in(0,1)$
-```
-x(2-t)
- 2 |    ████
- 1 |         ████
-───┼─────────────────── t
--1 |              ████
-   0    1    2    3
-```
+![[ss-q2c-yansima.png]]
 
 > [!success] 🎯 Çıkarım
 > Kapı ($u(t)-u(t-T)$) ile konvolüsyon = $T$ genişlikli **kayan integral**. Sınır kontrolü olarak komşu parçaların uç değerleri uyuşmalı.
