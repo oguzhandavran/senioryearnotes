@@ -29,6 +29,11 @@ tags: [ss, vize, sınav-soruları, çözümlü, konvolüsyon, lti]
 $$x[n] = \delta[n] - \delta[n+1] + 2\delta[n-1]$$
 $$y[n] = x[n-1] + x[n] + x[n+1]$$
 
+> [!question] 📝 Soru metni (sınavda sorulan)
+> Yukarıda verilen $x[n]$ sinyali ve giriş-çıkış ilişkisi verilen bir **S** sistemini kullanarak,
+> **a)** Sistemin transfer fonksiyonunu $h[n]$ elde ediniz ve grafiğini çiziniz. Sistem özelliklerini; nedensellik, hafıza, kararlılık, zamanla değişmezlik ve doğrusallık açısından sebepleri ile yazınız? **(15p)**
+> **b)** Sistem çıkışını $y[n]=x[n]*h[n]$ konvolüsyon işlemini yaparak elde ediniz? **(15p)**
+
 > [!note]- Semboller
 > - $x[n]$: giriş dizisi; $\delta[n-k]$: $k$'da dürtü ($\delta[n+1]$ → $n=-1$'de)
 > - $h[n]$: dürtü yanıtı ($x[n]=\delta[n]$ verince çıkış)
@@ -40,7 +45,7 @@ $$y[n] = x[n-1] + x[n] + x[n+1]$$
 
 ### 1a — İmpuls Yanıtı ve Sistem Özellikleri (15p)
 
-**İmpuls yanıtı h[n]:**
+**İmpuls yanıtı $h[n]$:**
 
 $x[n] = \delta[n]$ girişi verilince çıkış doğrudan $h[n]$ olur:
 
@@ -120,6 +125,12 @@ $$\boxed{y[n] = -\delta[n+2] + 2\delta[n] + 3\delta[n-1] + 2\delta[n-2]}$$
 **Verilen:**
 $$x(t) = \begin{cases} -1, & -1 < t < 0 \\ 2, & 0 < t < 1 \\ 1, & 1 < t < 2 \\ 0, & \text{diğer} \end{cases}$$
 $$h(t) = u(t) - u(t-1) = \begin{cases} 1, & 0 \leq t \leq 1 \\ 0, & \text{diğer} \end{cases}$$
+
+> [!question] 📝 Soru metni (sınavda sorulan)
+> $x(t)$ sinyali ve $h(t)=u(t)-u(t-1)$ transfer fonksiyonuna sahip bir sisteme verilmektedir.
+> **a)** $x(t)$ sinyalini çiziniz ve özelliklerini zamanda ve değerde ayrıklık/süreklilik, sınırlılık, periyodiklik ve enerji/güç açısından sebepleri ile yazınız. **(15p)**
+> **b)** Sistem çıkışını $y(t)=x(t)*h(t)$ konvolüsyonu ile bulunuz? **(15p)**
+> **c)** $x(2-t)$ sinyalini çiziniz. **(10p)**
 
 > [!note]- Semboller
 > - $x(t)$: parçalı sabit sinyal; $h(t)$: $[0,1]$ kapısı (genişlik 1 dikdörtgen)
@@ -205,6 +216,11 @@ $x(2-t)$: $\tau = 2-t$ dönüşümü ile:
 $$x(t) = \begin{cases} 1-|t|, & -1 \leq t \leq 1 \\ 0, & \text{diğer} \end{cases} \quad \text{(üçgen/tri)}$$
 
 $$h(t) = u(t+0.5) - u(t-0.5) = \begin{cases} 1, & -0.5 \leq t \leq 0.5 \\ 0, & \text{diğer} \end{cases} \quad \text{(rect)}$$
+
+> [!question] 📝 Soru metni (sınavda sorulan)
+> $x(t)$ sinyali, transfer fonksiyonu $h(t)=u(t+0.5)-u(t-0.5)$ olan bir sisteme verilmektedir.
+> **a)** $x(t)$ sinyali ve $h(t)$'nin grafiklerini çiziniz? **(10p)**
+> **b)** Sistem çıkışını $y(t)=x(t)*h(t)$ konvolüsyonu ile bulunuz? **(20p)**
 
 > [!note]- Semboller
 > - $x(t)=1-|t|$: birim üçgen ($[-1,1]$, tepe 1); $h(t)$: $[-0.5,0.5]$ kapısı (genişlik 1)
