@@ -68,13 +68,61 @@ $$\boxed{\dfrac{Y(s)}{X_i(s)}=\dfrac{-ms^2}{ms^2+fs+k}=\dfrac{-s^2}{s^2+\frac{f}
 
 **(b)** Değerleri yerleştir ($\frac{f}{m}=\frac{6}{2}=3$, $\frac{k}{m}=\frac{4}{2}=2$):
 $$\dfrac{Y(s)}{X_i(s)}=\dfrac{-s^2}{s^2+3s+2}=\dfrac{-s^2}{(s+1)(s+2)}$$
-Giriş $x_i=(1-e^{-3t})u(t)$ → $X_i(s)=\dfrac1s-\dfrac1{s+3}=\dfrac{3}{s(s+3)}$. O hâlde:
-$$Y(s)=\frac{-s^2}{(s+1)(s+2)}\cdot\frac{3}{s(s+3)}=\frac{-3s}{(s+1)(s+2)(s+3)}=\frac{A}{s+1}+\frac{B}{s+2}+\frac{C}{s+3}$$
-Kalıntılar:
-$$A=\left.\frac{-3s}{(s+2)(s+3)}\right|_{s=-1}=\frac{3}{(1)(2)}=\tfrac32,\quad B=\left.\frac{-3s}{(s+1)(s+3)}\right|_{s=-2}=\frac{6}{(-1)(1)}=-6$$
-$$C=\left.\frac{-3s}{(s+1)(s+2)}\right|_{s=-3}=\frac{9}{(-2)(-1)}=\tfrac92=4{,}5$$
-Ters Laplace:
+
+> [!info]- **Adım 1 — Neden (s+1)(s+2)?**
+> Paydayı çarpanlara ayır: $s^2+3s+2=0$ denkleminin kökleri $s=\frac{-3\pm\sqrt{9-8}}{2}=\frac{-3\pm1}{2}$, yani $s=-1$ ve $s=-2$.
+> Bu yüzden $s^2+3s+2=(s+1)(s+2)$.
+
+Giriş $x_i=(1-e^{-3t})u(t)$ → $X_i(s)=\dfrac1s-\dfrac1{s+3}=\dfrac{3}{s(s+3)}$
+
+> [!info]- **Adım 2 — Girişin Laplace dönüşümü nasıl yapıldı?**
+> Standart çiftler: $\mathcal{L}\{u(t)\}=\frac{1}{s}$ ve $\mathcal{L}\{e^{-at}u(t)\}=\frac{1}{s+a}$
+>
+> Yani $\mathcal{L}\{1\cdot u(t)\}=\frac{1}{s}$ ve $\mathcal{L}\{e^{-3t}u(t)\}=\frac{1}{s+3}$
+>
+> Ortak paydaya getirme:
+> $$\frac{1}{s}-\frac{1}{s+3}=\frac{(s+3)-s}{s(s+3)}=\frac{3}{s(s+3)}$$
+
+O hâlde:
+$$Y(s)=\underbrace{\frac{-s^2}{(s+1)(s+2)}}_{\text{TF}}\cdot\underbrace{\frac{3}{s(s+3)}}_{X_i(s)}=\frac{-3s^2}{s\cdot(s+1)(s+2)(s+3)}$$
+
+> [!info]- **Adım 3 — $s$ sadeleşmesi**
+> Paydada $s$ var, payde $s^2$; bir tane sadeleşir:
+> $$\frac{-3s^{\cancel{2}}}{\cancel{s}\cdot(s+1)(s+2)(s+3)}=\frac{-3s}{(s+1)(s+2)(s+3)}$$
+
+$$Y(s)=\frac{-3s}{(s+1)(s+2)(s+3)}=\frac{A}{s+1}+\frac{B}{s+2}+\frac{C}{s+3}$$
+
+> [!info]- **Adım 4 — Kısmi kesir açılımı neden böyle?**
+> Pay 1. dereceden ($-3s$), payda 3. dereceden → gerçek kesir. Payda üç ayrı reel kök içeriyor ($(s+1),(s+2),(s+3)$), bu yüzden her köke karşılık bir sabit terim yazılır.
+
+Kalıntılar (örtme/cover-up yöntemi — o kutbu $(s+k)$ ile çarp, sonra $s=-k$ koy):
+
+$$A=\left.\frac{-3s}{(s+2)(s+3)}\right|_{s=-1}=\frac{-3\cdot(-1)}{(-1+2)(-1+3)}=\frac{3}{(1)(2)}=\boxed{\tfrac32}$$
+
+$$B=\left.\frac{-3s}{(s+1)(s+3)}\right|_{s=-2}=\frac{-3\cdot(-2)}{(-2+1)(-2+3)}=\frac{6}{(-1)(1)}=\boxed{-6}$$
+
+$$C=\left.\frac{-3s}{(s+1)(s+2)}\right|_{s=-3}=\frac{-3\cdot(-3)}{(-3+1)(-3+2)}=\frac{9}{(-2)(-1)}=\boxed{\tfrac92=4{,}5}$$
+
+> [!info]- **Adım 5 — Kalıntı (cover-up) yöntemi nasıl çalışır?**
+> $A$'yı bulmak için: $Y(s)\cdot(s+1)$ çarp → $\frac{-3s}{(s+2)(s+3)}$ kalır, $s=-1$ koy.
+> $B$'yi bulmak için: $Y(s)\cdot(s+2)$ çarp → $\frac{-3s}{(s+1)(s+3)}$ kalır, $s=-2$ koy.
+> $C$ için de aynı şekilde $s=-3$ koymak yeterli.
+>
+> Mantık: $s=-1$ koyunca $B$ ve $C$'nin terimleri $\frac{B}{0+\text{bir şey}}+\frac{C}{0+\text{bir şey}}$ olarak sıfırlanmaz ama $(s+1)$ ile çarpınca $A$ yalnız kalır.
+
+Ters Laplace ($\frac{K}{s+a}\leftrightarrow Ke^{-at}u(t)$):
 $$\boxed{y(t)=x_0(t)=\Big(\tfrac32 e^{-t}-6e^{-2t}+4{,}5\,e^{-3t}\Big)u(t)}$$
+
+> [!info]- **Adım 6 — Ters Laplace nasıl alındı?**
+> Her terim standart çift: $\mathcal{L}^{-1}\!\left\{\frac{K}{s+a}\right\}=K\,e^{-at}u(t)$
+>
+> | $s$-domenindeki terim | Zaman domenindeki karşılığı |
+> |---|---|
+> | $\dfrac{3/2}{s+1}$ | $\tfrac{3}{2}e^{-t}u(t)$ |
+> | $\dfrac{-6}{s+2}$ | $-6\,e^{-2t}u(t)$ |
+> | $\dfrac{4{,}5}{s+3}$ | $4{,}5\,e^{-3t}u(t)$ |
+>
+> Hepsini topla → sonuç kutu içindeki ifade.
 
 ---
 
@@ -126,26 +174,103 @@ Kuvvet $f(t)$ $M_2$'ye, $K_1$ ve $f_{v1}$ duvardan $M_1$'e, $K_2$ ve $f_{v2}$ ik
 
 **Çözüm:**
 
-**(a) Lagrange.** Enerji/sönüm fonksiyonları:
-$$KE=\tfrac12 M_1\dot x_1^2+\tfrac12 M_2\dot x_2^2,\;\; PE=\tfrac12 K_1x_1^2+\tfrac12 K_2(x_2-x_1)^2,\;\; D=\tfrac12 f_{v1}\dot x_1^2+\tfrac12 f_{v2}(\dot x_2-\dot x_1)^2+\tfrac12 f_{v3}\dot x_2^2$$
+**(a) Lagrange.**
 
-**$x_1$ koordinatı için** ($M_1$, dış kuvvet yok):
-$$M_1\ddot x_1+(f_{v1}+f_{v2})\dot x_1+(K_1+K_2)x_1-f_{v2}\dot x_2-K_2x_2=0$$
-$$\ddot x_1+6\dot x_1+9x_1-3\dot x_2-5x_2=0 \;\xrightarrow{\mathcal L}\; X_1(s^2+6s+9)-X_2(3s+5)=0$$
+> [!info]- **Lagrange formülü nedir, ne anlama gelir?**
+> Klasik Lagrange hareket denklemi her koordinat $x_i$ için şöyle yazılır:
+> $$\frac{d}{dt}\!\left(\frac{\partial KE}{\partial \dot x_i}\right)-\frac{\partial KE}{\partial x_i}+\frac{\partial PE}{\partial x_i}+\frac{\partial D}{\partial \dot x_i}=F_i$$
+>
+> | Terim | Fiziksel anlamı |
+> |---|---|
+> | $\frac{d}{dt}\!\left(\frac{\partial KE}{\partial \dot x_i}\right)$ | $x_i$'ye bağlı **atalet kuvveti** ($M\ddot x$'e eşdeğer) |
+> | $-\frac{\partial KE}{\partial x_i}$ | KE konuma bağlıysa katkı (öteleme sistemlerde **genellikle sıfır**) |
+> | $\frac{\partial PE}{\partial x_i}$ | $x_i$'nin uzadığı yay kuvvetleri (geri yükleyen) |
+> | $\frac{\partial D}{\partial \dot x_i}$ | $\dot x_i$'ye bağlı sönüm kuvvetleri |
+> | $F_i$ | Dışarıdan $x_i$ yönünde uygulanan **genelleştirilmiş kuvvet** |
+>
+> **$F_i = 0$ ne demek?** O koordinata dışarıdan hiçbir kuvvet uygulanmıyor demek. Burada $f(t)$ yalnızca $M_2$'ye uygulandığından $F_1=0$, $F_2=f(t)$.
 
-**$x_2$ koordinatı için** ($M_2$, kuvvet $f$):
-$$M_2\ddot x_2+(f_{v2}+f_{v3})\dot x_2+K_2x_2-f_{v2}\dot x_1-K_2x_1=f(t)$$
-$$\xrightarrow{\mathcal L}\; -X_1(3s+5)+X_2(2s^2+5s+5)=F(s)$$
+**Enerji ve sönüm fonksiyonlarını yaz** (sistemdeki tüm elemanları tara):
+
+$$KE=\tfrac12 M_1\dot x_1^2+\tfrac12 M_2\dot x_2^2$$
+$$PE=\tfrac12 K_1x_1^2+\tfrac12 K_2(x_2-x_1)^2$$
+$$D=\tfrac12 f_{v1}\dot x_1^2+\tfrac12 f_{v2}(\dot x_2-\dot x_1)^2+\tfrac12 f_{v3}\dot x_2^2$$
+
+> [!info]- **Neden $(x_2-x_1)$ ve $(\dot x_2-\dot x_1)$ yazıyoruz?**
+> $K_2$ ve $f_{v2}$ **iki kütle arasında**. Yay ne kadar uzuyor? İki ucun farkı kadar: $(x_2-x_1)$. Sönüm de hız farkına bakıyor: $(\dot x_2-\dot x_1)$. Duvarla bağlantılı elemanlarda ise duvar sabit ($x=0$) olduğu için sadece $x_1$ ya da $\dot x_1$ yazılır.
+
+---
+
+**$x_1$ koordinatına Lagrange formülünü uygula** ($F_1=0$, $M_1$'e dışarıdan kuvvet yok):
+
+*Terim 1 — kinetik enerji türevi:*
+$$\frac{\partial KE}{\partial \dot x_1}=M_1\dot x_1=1\cdot\dot x_1 \;\xrightarrow{\frac{d}{dt}}\; M_1\ddot x_1=\ddot x_1$$
+
+*Terim 2 — $-\partial KE/\partial x_1$:*
+$$KE\text{ içinde } x_1 \text{ yok (sadece } \dot x_1\text{ var)} \;\Rightarrow\; \frac{\partial KE}{\partial x_1}=0$$
+
+*Terim 3 — potansiyel enerji türevi:*
+$$PE=\tfrac12 K_1 x_1^2+\tfrac12 K_2(x_2-x_1)^2$$
+$$\frac{\partial PE}{\partial x_1}=K_1x_1+K_2(x_2-x_1)\cdot(-1)=K_1x_1-K_2x_2+K_2x_1=(K_1+K_2)x_1-K_2x_2$$
+$$=(4+5)x_1-5x_2=9x_1-5x_2$$
+
+*Terim 4 — sönüm fonksiyonu türevi:*
+$$D=\tfrac12 f_{v1}\dot x_1^2+\tfrac12 f_{v2}(\dot x_2-\dot x_1)^2+\ldots$$
+$$\frac{\partial D}{\partial \dot x_1}=f_{v1}\dot x_1+f_{v2}(\dot x_2-\dot x_1)\cdot(-1)=f_{v1}\dot x_1-f_{v2}\dot x_2+f_{v2}\dot x_1=(f_{v1}+f_{v2})\dot x_1-f_{v2}\dot x_2$$
+$$=(3+3)\dot x_1-3\dot x_2=6\dot x_1-3\dot x_2$$
+
+*Hepsini $F_1=0$'a eşitle:*
+$$\underbrace{\ddot x_1}_{\text{atalet}}+\underbrace{(9x_1-5x_2)}_{\text{yaylar}}+\underbrace{(6\dot x_1-3\dot x_2)}_{\text{sönüm}}=0$$
+$$\boxed{\ddot x_1+6\dot x_1+9x_1-3\dot x_2-5x_2=0}$$
+
+Laplace al ($\dot x\to sX$, $\ddot x\to s^2X$, sıfır başlangıç):
+$$s^2X_1+6sX_1+9X_1-3sX_2-5X_2=0\;\Rightarrow\; \boxed{X_1(s^2+6s+9)-X_2(3s+5)=0}$$
+
+---
+
+**$x_2$ koordinatına Lagrange formülünü uygula** ($F_2=f(t)$, kuvvet $M_2$'ye uygulanıyor):
+
+*Terim 1:*
+$$\frac{d}{dt}\!\left(\frac{\partial KE}{\partial \dot x_2}\right)=M_2\ddot x_2=2\ddot x_2$$
+
+*Terim 2:* $\partial KE/\partial x_2=0$ (yine sadece $\dot x_2$ var)
+
+*Terim 3 — $\partial PE/\partial x_2$:*
+$$\frac{\partial PE}{\partial x_2}=K_2(x_2-x_1)\cdot(+1)=K_2x_2-K_2x_1=5x_2-5x_1$$
+
+*Terim 4 — $\partial D/\partial \dot x_2$:*
+$$\frac{\partial D}{\partial \dot x_2}=f_{v2}(\dot x_2-\dot x_1)\cdot(+1)+f_{v3}\dot x_2=(f_{v2}+f_{v3})\dot x_2-f_{v2}\dot x_1=(3+2)\dot x_2-3\dot x_1=5\dot x_2-3\dot x_1$$
+
+*Hepsini $F_2=f(t)$'ye eşitle:*
+$$\underbrace{2\ddot x_2}_{\text{atalet}}+\underbrace{(5x_2-5x_1)}_{\text{yaylar}}+\underbrace{(5\dot x_2-3\dot x_1)}_{\text{sönüm}}=f(t)$$
+$$\boxed{2\ddot x_2+(5\dot x_2-3\dot x_1)+(5x_2-5x_1)=f(t)}$$
+
+Laplace al:
+$$2s^2X_2+5sX_2+5X_2-3sX_1-5X_1=F(s)\;\Rightarrow\;\boxed{-X_1(3s+5)+X_2(2s^2+5s+5)=F(s)}$$
+
+> [!info]- **$X_1/F(s)$ neden isteniyor — iki denklemde iki bilinmeyenden nasıl çıkarılıyor?**
+> İki denklem var, iki bilinmeyen ($X_1,X_2$). "Giriş" $F(s)$, "çıkış" $X_1(s)$. $X_2$'yi elimine edip $X_1/F$ oranını bulmamız lazım.
+> Bunu Cramer kuralıyla yapıyoruz (matris yöntemi, aşağıda).
 
 **(b) Newton 2. yasası.** Her kütleye serbest cisim diyagramı — $M_1$'e etkiyen kuvvetler (duvar yay/sönüm + arabağ yay/sönüm) ve $M_2$'ye etkiyenler aynı denklemleri verir (yöntem farklı, sonuç özdeş):
 $$M_1\ddot x_1+(f_{v1}+f_{v2})\dot x_1+(K_1+K_2)x_1-f_{v2}\dot x_2-K_2x_2=0$$
 $$M_2\ddot x_2+(f_{v2}+f_{v3})\dot x_2+K_2x_2-f_{v2}\dot x_1-K_2x_1=f(t)$$
 
 **Matris formu ve determinant:**
-$$\begin{bmatrix}s^2+6s+9 & -(3s+5)\\ -(3s+5) & 2s^2+5s+5\end{bmatrix}\begin{bmatrix}X_1\\X_2\end{bmatrix}=\begin{bmatrix}0\\F(s)\end{bmatrix}$$
-$$\Delta=(s^2+6s+9)(2s^2+5s+5)-(3s+5)^2 = 2s^4+17s^3+44s^2+45s+20$$
 
-**Cramer ile $X_1$** (1. sütuna sağ tarafı koy):
+İki Laplace denklemini matrise yaz — $X_1$ ve $X_2$ bilinmeyenlerin katsayıları sol tarafa:
+$$\begin{bmatrix}s^2+6s+9 & -(3s+5)\\ -(3s+5) & 2s^2+5s+5\end{bmatrix}\begin{bmatrix}X_1\\X_2\end{bmatrix}=\begin{bmatrix}0\\F(s)\end{bmatrix}$$
+
+> [!info]- **Neden sağ taraf $[0,\; F(s)]^T$?**
+> 1. denklem (x₁ için): sağ taraf $F_1=0$ → matrisin sağ tarafına $0$
+> 2. denklem (x₂ için): sağ taraf $F_2=f(t)$ → Laplace'ı $F(s)$
+> $X_1$ ve $X_2$ bilinmeyen; $F(s)$ giriş (bilinen). Transfer fonksiyonu = çıkış/giriş = $X_1/F$.
+
+Ana determinant $\Delta$ (2×2 matrisin determinantı = çapraz çarpım farkı):
+$$\Delta=(s^2+6s+9)(2s^2+5s+5)-(-(3s+5))(-(3s+5))$$
+$$=(s^2+6s+9)(2s^2+5s+5)-(3s+5)^2 = 2s^4+17s^3+44s^2+45s+20$$
+
+**Cramer ile $X_1$** — 1. sütunu sağ tarafla ($[0,F]^T$) değiştir, yeni determinantı $\Delta$'ya böl:
 $$X_1=\frac{1}{\Delta}\det\begin{bmatrix}0 & -(3s+5)\\ F & 2s^2+5s+5\end{bmatrix}=\frac{(3s+5)F(s)}{\Delta}$$
 $$\boxed{\dfrac{X_1(s)}{F(s)}=\dfrac{3s+5}{2s^4+17s^3+44s^2+45s+20}}$$
 (Bonus — cevap anahtarında: $\dfrac{X_2(s)}{F(s)}=\dfrac{s^2+6s+9}{2s^4+17s^3+44s^2+45s+20}$.)
@@ -222,9 +347,11 @@ Kalıcı durumda ($t\to\infty$) yük yer değiştirmesi $\theta_L(\infty)=\dfrac
 
 ## Soru 4 — RC Merdiven Devre: Durum-Uzayı ve Dürtü Yanıtı · 25p
 
-**Soru:** Verilen elektrik devresinin **(a)** durum-uzayı modelini çıkarın (15p). **(b)** Durum-uzayı modelini kullanarak transfer fonksiyonunu bulun; $R=1\,\Omega$ ve $C=1\,\text F$ olan sistemde $u(t)=\delta(t)$ ise $y(t)$ nedir? (10p)
+**Soru:** Verilen elektrik devresinin 
+**(a)** durum-uzayı modelini çıkarın (15p). 
+**(b)** Durum-uzayı modelini kullanarak transfer fonksiyonunu bulun; $R=1\,\Omega$ ve $C=1\,\text F$ olan sistemde $u(t)=\delta(t)$ ise $y(t)$ nedir? (10p)
 
-Devre: giriş $u(t)$ → seri $R$ → $v_1$ düğümü (toprağa $C$) → seri $R$ → $v_2$ düğümü (toprağa $C$) → çıkış $y=v_2$.
+<span style="color:rgb(0, 176, 240)"><span style="color:rgb(0, 176, 240)">Devre: giriş $u(t)$ → seri $R$ → $v<i>1$ düğümü (toprağa $C$) → seri $R$ → $v</i>2$ düğümü (toprağa $C$) → çıkış $y=v_2$.</span></span>
 
 ```tikz
 \usepackage{circuitikz}
@@ -244,33 +371,202 @@ Devre: giriş $u(t)$ → seri $R$ → $v_1$ düğümü (toprağa $C$) → seri $
 \end{document}
 ```
 
-> [!note]- Semboller
-> - $v_1,v_2$: iki kapasitör düğüm gerilimleri = **durum değişkenleri** ($x_1=v_1$, $x_2=v_2$)
-> - $i_1,i_2$: seri dirençlerden geçen akımlar; $i_3,i_4$: kapasitör akımları
-> - Kapasitör: $i_C=C\dfrac{dv_C}{dt}$; düğüm denklemi (KCL) ile $\dot x_i$'ler yalnızca durumlar + giriş cinsinden yazılır
-> - 2 enerji elemanı (2 kapasitör) → **2 durum**; çıkış $y=v_2=x_2$
+---
 
-**Çözüm:**
+### 🧠 Önce Kavramlar: Durum-Uzayı Nedir?
 
-**(a)** Durumlar $x_1=v_1$, $x_2=v_2$.
+> [!info]- **Durum değişkeni neden kapasitör gerilimi?**
+> Kapasitör enerji depolar: $E=\frac{1}{2}Cv^2$. Sistemin "durumu" = şu an depolanan enerji miktarı.
+> Kaç kapasitör varsa o kadar durum değişkeni olur.
+> Burada **2 kapasitör** → **2 durum** → $x_1=v_1$, $x_2=v_2$.
+>
+> Aynı mantık mekanikte: yay (potansiyel enerji) → konum durum değişkeni, kütle (kinetik enerji) → hız durum değişkeni.
 
-**$v_1$ düğümünde KCL** ($i_1=i_3+i_2$):
-$$\frac{u-v_1}{R}=C\frac{dv_1}{dt}+\frac{v_1-v_2}{R}\;\Rightarrow\;\boxed{\dot x_1=-\frac{2x_1}{RC}+\frac{x_2}{RC}+\frac{u}{RC}}$$
+> [!info]- **Durum-uzayı modeli ne demek?**
+> Sistemi şu formda yazıyoruz:
+> $$\dot{\mathbf{x}} = A\mathbf{x} + Bu \qquad \text{(durum denklemi)}$$
+> $$y = C\mathbf{x} + Du \qquad \text{(çıkış denklemi)}$$
+>
+> | Matris | Boyut | Ne anlama gelir |
+> |---|---|---|
+> | $A$ | $n\times n$ | Durumların birbirini nasıl etkilediği |
+> | $B$ | $n\times 1$ | Girişin durumları nasıl etkilediği |
+> | $C$ | $1\times n$ | Hangi durum(lar) çıkışa gidiyor |
+> | $D$ | $1\times 1$ | Direkt giriş→çıkış bağlantısı (çoğu fiziksel sistemde $0$) |
+>
+> Burada: $n=2$ (2 durum), giriş $u$, çıkış $y=v_2=x_2$.
 
-**$v_2$ düğümünde KCL** ($i_2=i_4$):
-$$\frac{v_1-v_2}{R}=C\frac{dv_2}{dt}\;\Rightarrow\;\boxed{\dot x_2=\frac{x_1}{RC}-\frac{x_2}{RC}}$$
+> [!info]- **Kapasitör denklemi — KCL'ye nasıl giriyor?**
+> Kapasitörden geçen akım: $i_C = C\dfrac{dv_C}{dt}$
+> Bunu $\dot{x}$ için çözersek: $\dfrac{dv_C}{dt} = \dfrac{i_C}{C}$
+>
+> Yani KCL ile "düğüme giren = düğümden çıkan" yazınca kapasitör akımını bulduk, onu $C$'ye böldük → $\dot{x}$ elde ettik. İşte bu yüzden KCL yazıyoruz.
 
-Matris formu, $y=v_2=x_2$:
-$$\begin{bmatrix}\dot x_1\\\dot x_2\end{bmatrix}=\begin{bmatrix}-\frac{2}{RC}&\frac{1}{RC}\\[2pt]\frac{1}{RC}&-\frac{1}{RC}\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}+\begin{bmatrix}\frac{1}{RC}\\0\end{bmatrix}u,\qquad y=\begin{bmatrix}0&1\end{bmatrix}\mathbf x$$
+---
 
-**(b)** $R=C=1$ ile $A=\begin{bmatrix}-2&1\\1&-1\end{bmatrix}$, $B=\begin{bmatrix}1\\0\end{bmatrix}$, $C=[0\;1]$. Transfer fonk. $\;G(s)=C(sI-A)^{-1}B$:
-$$sI-A=\begin{bmatrix}s+2&-1\\-1&s+1\end{bmatrix},\quad \det=(s+2)(s+1)-1=s^2+3s+1$$
-$$(sI-A)^{-1}=\frac{1}{s^2+3s+1}\begin{bmatrix}s+1&1\\1&s+2\end{bmatrix}$$
-$$G(s)=[0\;1]\cdot\frac{1}{s^2+3s+1}\begin{bmatrix}s+1&1\\1&s+2\end{bmatrix}\begin{bmatrix}1\\0\end{bmatrix}=\frac{1}{s^2+3s+1}$$
+### **(a) Durum Denklemlerini Çıkar**
+
+**Adım 1 — Devredeki akımları tanımla:**
+
+$$i_1 = \frac{u - v_1}{R} \quad \text{(sol dirençten gelen akım)}$$
+$$i_2 = \frac{v_1 - v_2}{R} \quad \text{(sağ dirençten geçen akım)}$$
+$$i_3 = C\frac{dv_1}{dt} \quad \text{(sol kapasitörün akımı)}$$
+$$i_4 = C\frac{dv_2}{dt} \quad \text{(sağ kapasitörün akımı)}$$
+
+---
+
+**Adım 2 — $v_1$ düğümünde KCL** (giren = çıkan):
+
+$$i_1 = i_3 + i_2$$
+$$\frac{u-v_1}{R} = C\frac{dv_1}{dt} + \frac{v_1-v_2}{R}$$
+
+> [!info]- **Bu eşitlik nereden geliyor?**
+> $v_1$ düğümüne soldan $i_1$ giriyor. Bu akım iki yere gidiyor: ya kapasitöre ($i_3$) ya da sağa doğru ($i_2$). KCL der ki "giren = çıkan".
+
+$\dfrac{dv_1}{dt}$'yi yalnız bırak — her şeyi $C$'ye böl, sağ tarafı sola taşı:
+
+$$C\frac{dv_1}{dt} = \frac{u-v_1}{R} - \frac{v_1-v_2}{R} = \frac{u - v_1 - v_1 + v_2}{R} = \frac{u - 2v_1 + v_2}{R}$$
+
+$$\frac{dv_1}{dt} = \frac{-2v_1}{RC} + \frac{v_2}{RC} + \frac{u}{RC}$$
+
+$$\boxed{\dot x_1 = -\frac{2}{RC}x_1 + \frac{1}{RC}x_2 + \frac{1}{RC}u}$$
+
+> [!info]- **Neden $-2v_1$ çıktı?**
+> Sol dirençte gerilim farkı $(u-v_1)$, sağ dirençte $(v_1-v_2)$. İkisinde de $v_1$ var: soldaki $-v_1$, sağdaki $-v_1$ → toplam $-2v_1$.
+
+---
+
+**Adım 3 — $v_2$ düğümünde KCL** (giren = çıkan):
+
+$$i_2 = i_4$$
+$$\frac{v_1 - v_2}{R} = C\frac{dv_2}{dt}$$
+
+$\dfrac{dv_2}{dt}$'yi yalnız bırak:
+
+$$\frac{dv_2}{dt} = \frac{v_1 - v_2}{RC}$$
+
+$$\boxed{\dot x_2 = \frac{1}{RC}x_1 - \frac{1}{RC}x_2}$$
+
+> [!info]- **$v_2$ denkleminde neden giriş $u$ yok?**
+> Giriş $u$ sadece sol tarafta. $v_2$ düğümüne $u$ doğrudan bağlı değil — $v_1$ üzerinden geliyor. Dolayısıyla $v_2$'nin denklemi yalnızca $v_1$ ve $v_2$'ye bağlı.
+
+---
+
+**Adım 4 — Matris formuna yaz** ($y = v_2 = x_2$):
+
+$$\underbrace{\begin{bmatrix}\dot x_1\\\dot x_2\end{bmatrix}}_{\dot{\mathbf{x}}}=\underbrace{\begin{bmatrix}-\dfrac{2}{RC}&\dfrac{1}{RC}\\[6pt]\dfrac{1}{RC}&-\dfrac{1}{RC}\end{bmatrix}}_{A}\underbrace{\begin{bmatrix}x_1\\x_2\end{bmatrix}}_{\mathbf{x}}+\underbrace{\begin{bmatrix}\dfrac{1}{RC}\\[6pt]0\end{bmatrix}}_{B}u$$
+
+$$y=\underbrace{\begin{bmatrix}0&1\end{bmatrix}}_{C}\begin{bmatrix}x_1\\x_2\end{bmatrix}$$
+
+> [!info]- **$B$ matrisinde neden alt eleman sıfır?**
+> $\dot x_1$ denkleminde $u$ var ($+\frac{u}{RC}$) → $B$'nin ilk elemanı $\frac{1}{RC}$.
+> $\dot x_2$ denkleminde $u$ yok → $B$'nin ikinci elemanı $0$.
+
+> [!info]- **$C=[0\;1]$ neden?**
+> Çıkış $y=x_2$. Yani $y = 0\cdot x_1 + 1\cdot x_2$. Bunu $[0\;1]\begin{bmatrix}x_1\\x_2\end{bmatrix}$ olarak yazıyoruz.
+
+---
+
+### **(b) Transfer Fonksiyonu ve Dürtü Yanıtı**
+
+$R=C=1$ koy → $RC=1$:
+$$A=\begin{bmatrix}-2&1\\1&-1\end{bmatrix},\quad B=\begin{bmatrix}1\\0\end{bmatrix},\quad C=[0\;1],\quad D=0$$
+
+**Transfer fonksiyonu formülü:** $G(s)=C(sI-A)^{-1}B$
+
+> [!info]- **Bu formül nereden geliyor?**
+> Durum denkleminin Laplace dönüşümünü al (sıfır başlangıç):
+> $sX(s) = AX(s) + BU(s)$
+> $(sI-A)X(s) = BU(s)$
+> $X(s) = (sI-A)^{-1}BU(s)$
+> Çıkış: $Y(s) = CX(s) = C(sI-A)^{-1}B\cdot U(s)$
+> Yani $G(s)=Y(s)/U(s) = C(sI-A)^{-1}B$.
+
+---
+
+**Adım 1 — $(sI-A)$ hesapla:**
+
+$$sI - A = s\begin{bmatrix}1&0\\0&1\end{bmatrix}-\begin{bmatrix}-2&1\\1&-1\end{bmatrix}=\begin{bmatrix}s+2&-1\\-1&s+1\end{bmatrix}$$
+
+> [!info]- **$sI-A$ nasıl hesaplanır?**
+> $sI$ = $s$ ile çarpılmış birim matris = köşegene $s$ yaz, geri kalan sıfır.
+> Sonra $A$'yı çıkar: her elemanın işareti değişir.
+> $A_{11}=-2$ → $-(−2)=+2$ → $(s+2)$; $A_{12}=1$ → $-1$; $A_{21}=1$ → $-1$; $A_{22}=-1$ → $-(−1)=+1$ → $(s+1)$.
+
+---
+
+**Adım 2 — Determinantı hesapla:**
+
+$$\det(sI-A) = (s+2)(s+1)-(-1)(-1) = s^2+3s+2-1 = s^2+3s+1$$
+
+---
+
+**Adım 3 — Matris tersini hesapla:**
+
+2×2 matris tersi formülü: $\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1} = \dfrac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$
+
+$$\begin{bmatrix}s+2&-1\\-1&s+1\end{bmatrix}^{-1} = \frac{1}{s^2+3s+1}\begin{bmatrix}s+1&1\\1&s+2\end{bmatrix}$$
+
+> [!info]- **Ters matris formülü ne yapıyor?**
+> 4 işlem: köşegenleri yer değiştir ($a\leftrightarrow d$), diğer ikisinin işaretini değiştir ($b\to -b$, $c\to -c$), sonucu determinanta böl.
+> Burada: $(s+2)\leftrightarrow(s+1)$ yer değiştirdi, $(-1)\to(+1)$ oldu, determinant $s^2+3s+1$.
+
+---
+
+**Adım 4 — $G(s) = C(sI-A)^{-1}B$ çarp:**
+
+Önce $C\cdot(sI-A)^{-1}$:
+$$[0\;1]\cdot\frac{1}{s^2+3s+1}\begin{bmatrix}s+1&1\\1&s+2\end{bmatrix} = \frac{1}{s^2+3s+1}\underbrace{[0\cdot(s+1)+1\cdot1\;,\; 0\cdot1+1\cdot(s+2)]}_{=[1,\;s+2]}$$
+
+Sonra $B$ ile çarp:
+$$G(s)=\frac{1}{s^2+3s+1}\,[1\;,\;s+2]\begin{bmatrix}1\\0\end{bmatrix}=\frac{1\cdot1+(s+2)\cdot0}{s^2+3s+1}=\frac{1}{s^2+3s+1}$$
+
 $$\boxed{\dfrac{Y(s)}{U(s)}=\dfrac{1}{s^2+3s+1}}$$
 
-$u(t)=\delta(t)\Rightarrow U(s)=1$ → $Y(s)=\dfrac{1}{s^2+3s+1}=\dfrac{1}{(s+1{,}5)^2-1{,}25}$. Kökler reel-ayrık ($b=\sqrt{1{,}25}=1{,}118\approx1{,}12$) → $\sinh$:
-$$\boxed{y(t)=\frac{1}{1{,}12}\,e^{-1{,}5t}\sinh(1{,}12t)\approx 0{,}89\,e^{-1{,}5t}\sinh(1{,}12t)}$$
+---
+
+**Adım 5 — Dürtü yanıtı** ($u(t)=\delta(t)\Rightarrow U(s)=1$):
+
+$$Y(s)=\frac{1}{s^2+3s+1}$$
+
+**Kökleri bul** — ikinci dereceden denklem $s^2+3s+1=0$, kökleri şu formülle:
+$$s_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}=\frac{-3\pm\sqrt{3^2-4\cdot1\cdot1}}{2\cdot1}=\frac{-3\pm\sqrt{9-4}}{2}=\frac{-3\pm\sqrt{5}}{2}$$
+$$s_1=\frac{-3+2{,}24}{2}\approx-0{,}38,\qquad s_2=\frac{-3-2{,}24}{2}\approx-2{,}62$$
+
+Her ikisi de **reel** (karmaşık değil) ve **negatif** (sol yarı düzlemde) → sistem kararlı ve **aşırı sönümlü**.
+
+> [!info]- **Sönüm türü nasıl belirleniyor? — Diskriminant ve $\zeta$ yöntemi**
+> **Yöntem 1 — Diskriminant ($\Delta = b^2-4ac$):**
+>
+> | Diskriminant | Kök tipi | Sönüm türü |
+> |---|---|---|
+> | $\Delta > 0$ | 2 farklı reel kök | **Aşırı sönümlü** ($\zeta > 1$) → $\sinh$ |
+> | $\Delta = 0$ | 1 tekrar eden reel kök | **Kritik sönümlü** ($\zeta = 1$) → $te^{-at}$ |
+> | $\Delta < 0$ | 2 karmaşık eşlenik kök | **Az sönümlü** ($\zeta < 1$) → $e^{-at}\sin(\omega t)$ |
+>
+> Burada $\Delta = 9-4 = 5 > 0$ → **aşırı sönümlü**.
+>
+> **Yöntem 2 — Standart form karşılaştırması:**
+> Standart ikinci derece sistem: $s^2 + 2\zeta\omega_n s + \omega_n^2$
+> Bunu $s^2+3s+1$ ile karşılaştır:
+> $$\omega_n^2 = 1 \Rightarrow \omega_n = 1\,\text{rad/s}$$
+> $$2\zeta\omega_n = 3 \Rightarrow \zeta = \frac{3}{2\cdot1} = 1{,}5$$
+> $\zeta = 1{,}5 > 1$ → **aşırı sönümlü** ✓
+
+Kareyi tamamla:
+$$s^2+3s+1 = \left(s+\frac{3}{2}\right)^2 - \frac{9}{4}+1 = (s+1{,}5)^2-1{,}25$$
+
+$\sinh$ Laplace çifti: $\mathcal{L}^{-1}\!\left\{\dfrac{b}{(s+a)^2-b^2}\right\}=e^{-at}\sinh(bt)$
+
+> [!info]- **Neden $\sinh$ kullanıyoruz, $\sin$ değil?**
+> $\sin$ kullanmak için paydanın $(s+a)^2+\omega^2$ formunda olması gerekir — yani karekök içi **pozitif** olmalı.
+> Burada $(s+1{,}5)^2 - 1{,}25$ → karekök içi **negatif** → bu **reel kökler** demek → $\sinh$ (hiperbolik sinüs) kullanılır.
+> $\sinh(bt)=\frac{e^{bt}-e^{-bt}}{2}$, yani iki üstel terimin farkı.
+
+$b=\sqrt{1{,}25}\approx1{,}12$ ile:
+$$Y(s)=\frac{1}{(s+1{,}5)^2-1{,}12^2}=\frac{1}{1{,}12}\cdot\frac{1{,}12}{(s+1{,}5)^2-1{,}12^2}$$
+
+$$\boxed{y(t)=\frac{1}{1{,}12}\,e^{-1{,}5t}\sinh(1{,}12\,t)\approx 0{,}89\,e^{-1{,}5t}\sinh(1{,}12\,t)}$$
 
 > [!tip] Sınav notu
 > Cevap anahtarındaki taslakta $Y/U$ bir ara satırda $\frac{-s}{s^2+3s+1}$ olarak görünüyor; doğru ve nihai matris hesabı **$\frac{1}{s^2+3s+1}$** verir (çıkış kapasitör gerilimi, dürtüye karşı pozitif $\sinh$ yanıtı). Yöntem aynı, sonuç bu kutudaki gibidir.
