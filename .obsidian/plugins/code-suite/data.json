@@ -17,7 +17,7 @@
   "executionTimeout": 30000,
   "executionCwd": "vault",
   "executionCwdCustom": "",
-  "pythonPath": "",
+  "pythonPath": "/home/ozi/.venvs/obsidian-code/bin/python",
   "nodePath": "",
   "bashPath": "",
   "zshPath": "",
