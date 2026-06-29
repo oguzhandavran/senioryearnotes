@@ -13,12 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/03 Durum Uzayı.md",
+                "file": "Mühendislik Sİstem Tasarımı ve Benzetimi/Örnek Sorular/05 Kök Yer Eğrisi Örnekleri.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03 Durum Uzayı"
+              "title": "05 Kök Yer Eğrisi Örnekleri"
+            }
+          }
+        ]
+      },
+      {
+        "id": "9493f5cce9914e8c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "927b3cfcea084826",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/04 Doğrusallaştırma.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04 Doğrusallaştırma"
             }
           }
         ]
@@ -112,8 +132,8 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/03 Durum Uzayı.md",
-            "collapseAll": false,
+            "file": "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/04 Doğrusallaştırma.md",
+            "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
             "showSearch": false,
@@ -175,8 +195,33 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1c346a419f9dd76a",
+  "active": "927b3cfcea084826",
   "lastOpenFiles": [
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/Örnek Sorular/05 Kök Yer Eğrisi Örnekleri.md",
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/04 Doğrusallaştırma.md",
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/05 Kök Yer Eğrisi ve Kompansasyon.md",
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/MST Ana Sayfa.md",
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/Örnek Sorular/08 Vize Soruları ve Hoca Örnekleri.md",
+    "Sİnyaller ve Sistemler/Konu Anlatımları/01 Sinyal Sınıflandırması.md",
+    "_sticky_notes/2026/2026-06-26.md",
+    "_sticky_notes/2026",
+    "_sticky_notes",
+    "_pages/quartz/static/giscus/light.css",
+    "_pages/quartz/static/giscus/dark.css",
+    "_pages/quartz/plugins/transformers/index.ts",
+    "_pages/quartz/plugins/pageTypes/matchers.ts",
+    "_pages/quartz/plugins/pageTypes/index.ts",
+    "_pages/quartz/plugins/pageTypes/dispatcher.ts",
+    "_pages/quartz/plugins/pageTypes/404.ts",
+    "_pages/quartz/plugins/loader/types.ts",
+    "_pages/quartz/static/og-image.png",
+    "_pages/quartz/static/icon.png",
+    "_assets/ok05-bode.png",
+    "_assets/ok01-birim-adim-yaniti.png",
+    "_assets/mst06-kye.png",
+    "_assets/mst06-faz-portresi.png",
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/Örnek Sorular/01 Mekanik Sistemler Örnekleri.md",
+    "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/03 Durum Uzayı.md",
     "Mühendislik Sİstem Tasarımı ve Benzetimi/Konu Anlatımları/01 Mekanik Sistemler.md"
   ]
 }
