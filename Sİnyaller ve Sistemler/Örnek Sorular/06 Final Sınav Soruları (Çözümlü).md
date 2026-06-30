@@ -113,24 +113,88 @@ $$x(t) = 2\sin\!\left(\frac{\pi}{4}t + \frac{\pi}{8}\right) + \cos\!\left(\frac{
 
 ### 2a — Fourier Seri Katsayıları (15p)
 
-**Temel periyot:**
-- $\omega_1 = \pi/4 \Rightarrow T_1 = 2\pi/(\pi/4) = 8$
-- $\omega_2 = \pi/2 \Rightarrow T_2 = 2\pi/(\pi/2) = 4$
-- $T_0 = \text{OKK}(8,4) = 8$ → **Temel frekans:** $\omega_0 = 2\pi/8 = \pi/4$
+**Büyük resim:** Fourier serisi bir periyodik sinyali dönen kompleks üstellerin toplamı olarak yazar:
 
-**Euler formuna dönüşüm:**
+$$x(t) = \sum_{n=-\infty}^{\infty} c_n\, e^{jn\omega_0 t}$$
 
-$$2\sin\!\left(\omega_0 t + \frac{\pi}{8}\right) = \frac{2}{2j}\left[e^{j(\omega_0 t+\pi/8)} - e^{-j(\omega_0 t+\pi/8)}\right] = -je^{j\pi/8}e^{j\omega_0 t} + je^{-j\pi/8}e^{-j\omega_0 t}$$
+$c_n$ → $n.$ harmoniğin ağırlığı. Görevimiz: verilen $x(t)$'yi bu forma sokmak ve her $c_n$'i okumak. Sinyal zaten sinüs+kosinüs toplamı olduğundan Euler formülleriyle direkt dönüştüreceğiz.
 
-$$\cos\!\left(2\omega_0 t + \frac{\pi}{4}\right) = \frac{1}{2}e^{j\pi/4}e^{j2\omega_0 t} + \frac{1}{2}e^{-j\pi/4}e^{-j2\omega_0 t}$$
+---
 
-**Fourier katsayıları** $x(t) = \sum_{n=-\infty}^{\infty} c_n e^{jn\omega_0 t}$:
+**① Temel frekansı bul**
 
-| n | $c_n$ | $\|c_n\|$ | $\angle c_n$ |
-|---|-------|-----------|-------------|
-| 0 | $-1$ | $1$ | $\pi$ rad |
+Her bileşenin $\omega$'sını oku, $T = 2\pi/\omega$'dan periyodunu bul:
+
+| Terim | $\omega$ | $T = 2\pi/\omega$ |
+|---|---|---|
+| $\sin\!\left(\frac{\pi}{4}t+\ldots\right)$ | $\omega_1 = \pi/4$ | $T_1 = 8$ |
+| $\cos\!\left(\frac{\pi}{2}t+\ldots\right)$ | $\omega_2 = \pi/2$ | $T_2 = 4$ |
+
+İkisi birlikte ne zaman tekrarlar? $T_0 = \text{OKK(EKOK)}(8,4) = 8$
+
+$$\omega_0 = \frac{2\pi}{T_0} = \frac{2\pi}{8} = \frac{\pi}{4}$$
+
+> $\omega_1 = 1\cdot\omega_0$ → 1. harmonik; $\omega_2 = 2\cdot\omega_0$ → 2. harmonik. Yani $n=\pm1$ ve $n=\pm2$'de terimler olacak.
+
+---
+
+**② Euler formülleri — araç kutusu**
+
+$$\cos\theta = \frac{e^{j\theta}+e^{-j\theta}}{2} \qquad \sin\theta = \frac{e^{j\theta}-e^{-j\theta}}{2j}$$
+
+Pratik not: $\dfrac{1}{j} = -j$ (çünkü $j \cdot (-j) = -j^2 = 1$). Bunu kullanarak $\dfrac{1}{2j} = \dfrac{-j}{2}$ yazar.
+
+---
+
+**③ 1. terimi dönüştür: $2\sin\!\left(\omega_0 t + \frac{\pi}{8}\right)$**
+
+Euler'deki $\theta = \omega_0 t + \pi/8$ al:
+
+$$2\sin\!\left(\omega_0 t + \tfrac{\pi}{8}\right) = 2\cdot\frac{e^{j(\omega_0 t+\pi/8)}-e^{-j(\omega_0 t+\pi/8)}}{2j}$$
+
+2'ler sadeleşir, $\frac{1}{j} = -j$, üstelleri ayır:
+
+$$= -j\left[e^{j\omega_0 t}\cdot e^{j\pi/8} - e^{-j\omega_0 t}\cdot e^{-j\pi/8}\right]$$
+
+$$= \underbrace{(-j\,e^{j\pi/8})}_{c_1}\cdot e^{j\omega_0 t} + \underbrace{(+j\,e^{-j\pi/8})}_{c_{-1}}\cdot e^{-j\omega_0 t}$$
+
+Katsayıları oku:
+- $c_1 = -j\,e^{j\pi/8}$ → genlik: $|-j|\cdot|e^{j\pi/8}| = 1\cdot1 = 1$ → faz: $\angle(-j)+\angle(e^{j\pi/8}) = -\frac{\pi}{2}+\frac{\pi}{8} = -\frac{3\pi}{8}$
+- $c_{-1} = j\,e^{-j\pi/8}$ → genlik: $1$ → faz: $+\frac{\pi}{2}-\frac{\pi}{8} = +\frac{3\pi}{8}$
+
+> Kontrol: $c_{-1} = c_1^*$ ✓ (gerçel sinyal özelliği)
+
+---
+
+**④ 2. terimi dönüştür: $\cos\!\left(2\omega_0 t + \frac{\pi}{4}\right)$**
+
+Euler'de $\theta = 2\omega_0 t + \pi/4$:
+
+$$\cos\!\left(2\omega_0 t + \tfrac{\pi}{4}\right) = \frac{e^{j(2\omega_0 t+\pi/4)}+e^{-j(2\omega_0 t+\pi/4)}}{2}$$
+
+$$= \underbrace{\frac{1}{2}e^{j\pi/4}}_{c_2}\cdot e^{j2\omega_0 t} + \underbrace{\frac{1}{2}e^{-j\pi/4}}_{c_{-2}}\cdot e^{-j2\omega_0 t}$$
+
+Katsayıları oku:
+- $c_2 = \frac{1}{2}e^{j\pi/4}$ → genlik: $1/2$ → faz: $+\pi/4$
+- $c_{-2} = \frac{1}{2}e^{-j\pi/4}$ → genlik: $1/2$ → faz: $-\pi/4$
+
+---
+
+**⑤ DC terim: $-1$**
+
+$-1$ sabit (frekansı yok) → $n=0$ terimi → $c_0 = -1$
+
+Genlik: $|-1| = 1$. Faz: $\angle(-1) = \pi$ (negatif gerçel sayı $\pi$ rad döndürülmüş)
+
+---
+
+**Tüm katsayılar:**
+
+| $n$ | $c_n$ | $\|c_n\|$ | $\angle c_n$ |
+|---|---|---|---|
+| $0$ | $-1$ | $1$ | $\pi$ rad |
 | $+1$ | $-je^{j\pi/8} = e^{-j3\pi/8}$ | $1$ | $-3\pi/8$ rad |
-| $-1$ | $je^{-j\pi/8} = e^{j3\pi/8}$ | $1$ | $+3\pi/8$ rad |
+| $-1$ | $je^{-j\pi/8} = e^{+j3\pi/8}$ | $1$ | $+3\pi/8$ rad |
 | $+2$ | $\frac{1}{2}e^{j\pi/4}$ | $1/2$ | $+\pi/4$ rad |
 | $-2$ | $\frac{1}{2}e^{-j\pi/4}$ | $1/2$ | $-\pi/4$ rad |
 | diğer | $0$ | — | — |
@@ -139,11 +203,19 @@ $$\cos\!\left(2\omega_0 t + \frac{\pi}{4}\right) = \frac{1}{2}e^{j\pi/4}e^{j2\om
 
 ### 2b — Genlik ve Faz Spektrumları (10p)
 
-**Genlik ve Faz Spektrumu (numpy `stem`):**
+**Nedir bu spektrumlar?**
 
-![[ss-q5-spektrum.png]]
+- **Genlik spektrumu** $|c_n|$: hangi harmonik ne kadar güçlü — $n$ ekseninde dikey çizgiler
+- **Faz spektrumu** $\angle c_n$: her harmoniğin faz kayması
 
-*(Çift simetri: $|c_n| = |c_{-n}|$ ve $\angle c_{-n} = -\angle c_n$ — karmaşık konjugat özelliği)*
+**Simetri özellikleri** (gerçel sinyal → her zaman geçerli):
+
+$$|c_{-n}| = |c_n| \quad \text{(genlik çift simetrik)}$$
+$$\angle c_{-n} = -\angle c_n \quad \text{(faz tek simetrik)}$$
+
+**Genlik ve Faz Spektrumu:**
+
+![[ss-q5-spektrum.png|637]]
 
 ---
 
@@ -165,20 +237,63 @@ $$x(t) = e^{1+t}u(1-t)$$
 > - Yakınsama: $\mathrm{Re}(1-j\omega)=1>0$ → integral $-\infty$'da sıfıra gider
 > - $|X|$: genlik, $\angle X$: faz spektrumu
 
-$u(1-t) = 1$ için $t \leq 1$, yani $x(t) = e^{1+t}$ ($t \leq 1$), $0$ ($t > 1$).
+**① $u(1-t)$ nedir? — tuzak burada**
 
-**Fourier Dönüşümü:**
-$$X(j\omega) = \int_{-\infty}^{\infty} x(t)e^{-j\omega t}\,dt = \int_{-\infty}^{1} e^{1+t}e^{-j\omega t}\,dt$$
+Normal $u(t) = 1$ iken $t \geq 0$. Ama $u(1-t)$'de argüman $(1-t)$:
+$$u(1-t) = 1 \iff 1-t > 0 \iff t < 1$$
 
-$$= e\int_{-\infty}^{1} e^{(1-j\omega)t}\,dt$$
+Yani $t \leq 1$'de 1, $t > 1$'de 0 → normal basamağın **aynası**, sağ tarafı $t=1$'de kesilmiş.
 
-**Yakınsama:** $t\to-\infty$ için $e^{(1-j\omega)t} \to 0$ çünkü $\text{Re}(1-j\omega) = 1 > 0$ ✓
+**② Sinyalin şekli:**
 
-$$= e\left[\frac{e^{(1-j\omega)t}}{1-j\omega}\right]_{-\infty}^{1} = e \cdot \frac{e^{1-j\omega}}{1-j\omega}$$
+$$x(t) = \begin{cases} e^{1+t}, & t \leq 1 \\ 0, & t > 1 \end{cases}$$
 
-$$\boxed{X(j\omega) = \frac{e^2 \cdot e^{-j\omega}}{1-j\omega}}$$
+- $t=1$'de tepe: $e^{1+1} = e^2 \approx 7.39$
+- $t \to -\infty$'da $e^{1+t} \to 0$ → sinyal **sola** doğru sönüyor
+- Tablo çiftleri $u(t)$ (sağa uzanan) için → **tanımdan integral almak gerekiyor**
 
-**Not:** $|X(j\omega)| = \dfrac{e^2}{\sqrt{1+\omega^2}}$. Faz: $\angle X = \underbrace{-\omega}_{\angle e^{-j\omega}} - \underbrace{\angle(1-j\omega)}_{-\arctan\omega} = -\omega + \arctan(\omega)$ ($e^2$ pozitif gerçel, faza katkısı 0).
+**③ İntegral kurulumu — neden $-\infty$'dan $1$'e?**
+
+$u(1-t)$ yüzünden $t > 1$'de $x(t) = 0$, üst sınır $\infty$ değil $1$:
+
+$$X(j\omega) = \int_{-\infty}^{\infty} x(t)e^{-j\omega t}\,dt = \int_{-\infty}^{1} e^{1+t}\,e^{-j\omega t}\,dt$$
+
+$e^{1+t} = e \cdot e^t$ diye ayır, sabit $e$'yi dışarı çek, üstelleri birleştir:
+
+$$= e\int_{-\infty}^{1} e^{t}\,e^{-j\omega t}\,dt = e\int_{-\infty}^{1} e^{(1-j\omega)t}\,dt$$
+
+**④ Yakınsama kontrolü — alt sınır sorunsuz mu?**
+
+Alt sınır $-\infty$; $t \to -\infty$'da $e^{(1-j\omega)t}$ ne yapar?
+
+$$\left|e^{(1-j\omega)t}\right| = e^{\,\mathrm{Re}(1-j\omega)\cdot t} = e^{1\cdot t} = e^t \xrightarrow{t\to-\infty} 0 \checkmark$$
+
+$\mathrm{Re}(1-j\omega) = 1 > 0$ → katsayı pozitif, $t$ negatif gittikçe üstel sönüyor. İntegral yakınsar.
+
+**⑤ İntegrali hesapla:**
+
+$$e\int_{-\infty}^{1} e^{(1-j\omega)t}\,dt = e\left[\frac{e^{(1-j\omega)t}}{1-j\omega}\right]_{-\infty}^{1}$$
+
+- **Alt sınır** ($t\to-\infty$): $e^{(1-j\omega)t} \to 0$ → katkısı yok
+- **Üst sınır** ($t=1$): $e^{(1-j\omega)\cdot 1} = e^{1}\cdot e^{-j\omega}$
+
+$$= e \cdot \frac{e^{1}\cdot e^{-j\omega} - 0}{1-j\omega} = \frac{e^2\, e^{-j\omega}}{1-j\omega}$$
+
+$$\boxed{X(j\omega) = \frac{e^2\, e^{-j\omega}}{1-j\omega}}$$
+
+**Sonucu oku:**
+
+| Terim | Nereden geliyor | Ne anlama gelir |
+|---|---|---|
+| $e^2$ | $e\cdot e^1$ (üst sınırdan) | düz büyüklük ölçeği |
+| $e^{-j\omega}$ | $t=1$'de kesim | faz kayması ($t=1$ gecikmesi gibi) |
+| $\dfrac{1}{1-j\omega}$ | üstelin şekli | frekans zarfı, $\omega$ büyüdükçe küçülür |
+
+**Genlik ve faz:**
+
+$$|X(j\omega)| = \frac{e^2}{\sqrt{1+\omega^2}}, \qquad \angle X(j\omega) = -\omega + \arctan(\omega)$$
+
+> $e^{-j\omega}$ faza $-\omega$ katar. $\angle(1-j\omega) = -\arctan\omega$ (dördüncü çeyrek) → payda fazı tersine çevirir: $+\arctan\omega$.
 
 ---
 
@@ -215,9 +330,19 @@ $$\boxed{H(j\omega) = \frac{j\omega+4}{(j\omega+1)(j\omega+2)}}$$
 
 $x(t) = e^{-4(t-2)}u(t-2)$: $f(t) = e^{-4t}u(t)$'nin 2 birim gecikmesi.
 
+**① $f(t) = e^{-4t}u(t)$'nin dönüşümü — tanımdan:**
+
+$$F(j\omega) = \int_{-\infty}^{\infty} e^{-4t}u(t)\,e^{-j\omega t}\,dt = \int_{0}^{\infty} e^{-(4+j\omega)t}\,dt$$
+
+$$= \left[\frac{e^{-(4+j\omega)t}}{-(4+j\omega)}\right]_0^{\infty} = 0 - \frac{1}{-(4+j\omega)}$$
+
 $$\mathcal{F}\{e^{-4t}u(t)\} = \frac{1}{j\omega+4}$$
 
-**Zaman kaydırma teoremi:** $x(t) = f(t-2) \Rightarrow X(j\omega) = F(j\omega)\,e^{-2j\omega}$
+> $t\to\infty$'da $e^{-4t}\to 0$ ($4>0$ şartı), üst sınır sıfırlanır.
+
+**② Zaman kaydırma teoremi:** $x(t) = f(t-2) \Rightarrow X(j\omega) = F(j\omega)\,e^{-2j\omega}$
+
+> **Neden?** Tanımda $\tau = t-2$ koy → $e^{-j\omega(\tau+2)}d\tau = e^{-2j\omega}\cdot e^{-j\omega\tau}d\tau$; $e^{-2j\omega}$ sabit olarak dışarı çıkar.
 
 $$X(j\omega) = \frac{e^{-2j\omega}}{j\omega+4}$$
 
@@ -231,13 +356,28 @@ $$Y(j\omega) = \frac{e^{-2j\omega}}{(j\omega+1)(j\omega+2)}$$
 
 ---
 
-### Adım 4 — Kısmi Kesirler
+### Adım 4 — Kısmi Kesirler (Cover-Up Yöntemi)
+
+Hedef: $\dfrac{1}{(j\omega+1)(j\omega+2)}$ ifadesini tablodan okuyabileceğimiz basit kesirlere ayırmak.
 
 $$\frac{1}{(j\omega+1)(j\omega+2)} = \frac{A}{j\omega+1} + \frac{B}{j\omega+2}$$
 
-$$A = \lim_{j\omega \to -1}\frac{1}{j\omega+2} = \frac{1}{1} = 1$$
+Her iki tarafı $(j\omega+1)(j\omega+2)$ ile çarp → özdeşlik elde et:
 
-$$B = \lim_{j\omega \to -2}\frac{1}{j\omega+1} = \frac{1}{-1} = -1$$
+$$1 = A(j\omega+2) + B(j\omega+1)$$
+
+**A için:** $j\omega = -1$ koy → $B$ terimi düşer:
+
+$$1 = A\underbrace{(-1+2)}_{=\,1} + B\cdot 0 \implies \boxed{A = 1}$$
+
+> Kural: hangi kutbu arıyorsan o kutbun paydakesrini "ört" (cover-up), geri kalanı değerlendir.
+> $A$ için $(j\omega+1)$'i ört → $\dfrac{1}{j\omega+2}\big|_{j\omega=-1} = \dfrac{1}{1} = 1$
+
+**B için:** $j\omega = -2$ koy → $A$ terimi düşer:
+
+$$1 = A\cdot 0 + B\underbrace{(-2+1)}_{=\,-1} \implies \boxed{B = -1}$$
+
+> $(j\omega+2)$'yi ört → $\dfrac{1}{j\omega+1}\big|_{j\omega=-2} = \dfrac{1}{-1} = -1$
 
 $$Y(j\omega) = e^{-2j\omega}\left[\frac{1}{j\omega+1} - \frac{1}{j\omega+2}\right]$$
 
@@ -245,9 +385,29 @@ $$Y(j\omega) = e^{-2j\omega}\left[\frac{1}{j\omega+1} - \frac{1}{j\omega+2}\righ
 
 ### Adım 5 — Ters Fourier
 
-$\dfrac{1}{j\omega+a} \xleftrightarrow{\mathcal{F}^{-1}} e^{-at}u(t)$
+**Temel çift** (ezbere / tablodan):
 
-$e^{-2j\omega}F(j\omega) \xleftrightarrow{\mathcal{F}^{-1}} f(t-2)$
+$$\frac{1}{j\omega+a} \;\xleftrightarrow{\;\mathcal{F}^{-1}\;}\; e^{-at}u(t)$$
+
+Her terimi ayrı ayrı uygula:
+
+$$\mathcal{F}^{-1}\!\left\{\frac{1}{j\omega+1}\right\} = e^{-t}u(t) \qquad (a=1)$$
+
+$$\mathcal{F}^{-1}\!\left\{\frac{1}{j\omega+2}\right\} = e^{-2t}u(t) \qquad (a=2)$$
+
+Şimdi önde $e^{-2j\omega}$ var — bu **zaman kaydırma** demek:
+
+$$e^{-2j\omega} \cdot F(j\omega) \;\xleftrightarrow{\;\mathcal{F}^{-1}\;}\; f(t-2)$$
+
+> Her $e^{-at}u(t)$'yi $f(t)$ say, $e^{-2j\omega}$ faktörü $t$'yi $(t-2)$ yapar, $u(t)$'yi $u(t-2)$ yapar.
+
+İkisini birden uygula:
+
+$$e^{-2j\omega}\cdot\frac{1}{j\omega+1} \;\to\; e^{-(t-2)}u(t-2)$$
+
+$$e^{-2j\omega}\cdot\frac{1}{j\omega+2} \;\to\; e^{-2(t-2)}u(t-2)$$
+
+Süperpozisyon (A=1, B=−1):
 
 $$\boxed{y(t) = \left[e^{-(t-2)} - e^{-2(t-2)}\right]u(t-2)}$$
 

@@ -80,13 +80,13 @@ $$\boxed{h[n] = \delta[n+1] + \delta[n] + \delta[n-1]}$$
 
 **Sistem Özellikleri:**
 
-| Özellik | Karar | Gerekçe |
-|---------|-------|---------|
-| **Nedensellik** | ❌ Nedensel Değil | $h[n] \neq 0$ için $n = -1 < 0$; sistem $x[n+1]$ (gelecek değeri) kullanıyor |
-| **Hafıza** | Hafızalı | $h[n]$ yalnızca $n=0$'da sıfırdan farklı değil; $x[n-1]$ geçmiş, $x[n+1]$ gelecek kullanılıyor |
-| **Kararlılık** | ✅ BIBO Kararlı | $\sum_{n=-\infty}^{\infty} |h[n]| = 1+1+1 = 3 < \infty$ |
-| **Zamanla Değişmezlik** | ✅ ZD | Girişin gecikmesi çıkışı aynı miktarda geciktirir (koeffisyenler sabit) |
-| **Doğrusallık** | ✅ Doğrusal | Süperpozisyon ilkesi sağlanıyor |
+| Özellik                 | Karar            | Gerekçe                                                                                        |
+| ----------------------- | ---------------- | ---------------------------------------------------------------------------------------------- |
+| **Nedensellik**         | ❌ Nedensel Değil | $h[n] \neq 0$ için $n = -1 < 0$; sistem $x[n+1]$ (gelecek değeri) kullanıyor                   |
+| **Hafıza**              | Hafızalı         | $h[n]$ yalnızca $n=0$'da sıfırdan farklı değil; $x[n-1]$ geçmiş, $x[n+1]$ gelecek kullanılıyor |
+| **Kararlılık**          | ✅ BIBO Kararlı   | $\sum_{n=-\infty}^{\infty}h[n]= 1+1+1 = 3 < \infty$                                            |
+| **Zamanla Değişmezlik** | ✅ ZD             | Girişin gecikmesi çıkışı aynı miktarda geciktirir (koeffisyenler sabit)                        |
+| **Doğrusallık**         | ✅ Doğrusal       | Süperpozisyon ilkesi sağlanıyor                                                                |
 
 ---
 
@@ -117,6 +117,10 @@ $y[n] = x[n-1] + x[n] + x[n+1]$ ile doğrudan hesap:
 | 2  | 2        | 0      | 0        | **2**  |
 
 $$\boxed{y[n] = -\delta[n+2] + 2\delta[n] + 3\delta[n-1] + 2\delta[n-2]}$$
+
+**Adım adım görselleştirme (çevir + kaydır + çarp + topla):**
+
+![[ss-q1-konv-adimlar.png]]
 
 ---
 
@@ -194,6 +198,14 @@ $$y(t) = \int_{t-1}^{2}1\,d\tau = 2-(t-1) = 3-t$$
 $$\boxed{y(t) = \begin{cases} 0, & t \leq -1 \\ -(t+1), & -1 < t \leq 0 \\ 3t-1, & 0 < t \leq 1 \\ 3-t, & 1 < t \leq 3 \\ 0, & t > 3 \end{cases}}$$
 
 **Süreklilik kontrolü:** $t=-1$: $0$ ✓ | $t=0$: $-1$ ✓ | $t=1$: $2$ ✓ | $t=3$: $0$ ✓
+
+**Adım adım görselleştirme (kayan pencere):**
+
+![[ss-q2-konv-adimlar.png]]
+
+**Animasyon — pencere kayarken y(t) nasıl oluşuyor:**
+
+![[ss-q2-konv-animasyon.gif]]
 
 ---
 
@@ -273,3 +285,7 @@ $$y(t) = \int_{t-0.5}^{1}(1-\tau)\,d\tau = \left[\tau-\frac{\tau^2}{2}\right]_{t
 - $t=0$: $y(0) = 0.75$ (tepe)
 - $t=\pm 0.5$: $y(\pm 0.5) = 0.75 - 0.25 = 0.5$ ✓ (süreklilik)
 - $t=\pm 1.5$: $y(\pm 1.5) = 0$ ✓
+
+**Animasyon — pencere kayarken y(t) nasıl oluşuyor:**
+
+![[ss-q3-konv-animasyon.gif]]
