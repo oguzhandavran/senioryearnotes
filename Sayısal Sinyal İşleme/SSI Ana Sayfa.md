@@ -49,6 +49,8 @@ flowchart LR
 | 2 | Z-Dönüşümü Örnekleri | [[Örnek Sorular/02 Z-Dönüşümü Örnekleri]] | 🔴 |
 | 3 | DFT-FFT Örnekleri | [[Örnek Sorular/03 DFT-FFT Örnekleri]] | 🔴 |
 | 4 | Filtre Tasarımı Örnekleri | [[Örnek Sorular/04 Filtre Tasarımı Örnekleri]] | 🟡 |
+| 5 | ⭐ Vize (Ara Sınav) Soruları — Çözümlü | [[Örnek Sorular/05 Vize Sınav Soruları (Çözümlü)]] | 🔴 |
+| 6 | ⭐ Final (Bitirme) Soruları — Çözümlü | [[Örnek Sorular/06 Final Sınav Soruları (Çözümlü)]] | 🔴 |
 
 ---
 
