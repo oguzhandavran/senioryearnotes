@@ -38,13 +38,13 @@ $$E_\infty = \sum_{n=-\infty}^{\infty}|x[n]|^2, \qquad P_\infty = \lim_{N\to\inf
 
 > [!tanim] Temel Testler (Sınavda Her Seferinde Uygula)
 
-| Özellik | Test | Bozucu Örnek |
-|---------|------|-------------|
-| **Hafızasız** | $y[n]$ sadece $x[n]$'e bağlı mı? | $y[n]=x[n-1]$ → Hafızalı |
-| **Nedensellik** | Gelecek: $x[n+k]$, $k>0$ var mı? | $y[n]=x[n+1]$ → Nedensel değil |
-| **Doğrusallik** | Süperpozisyon + $x=0 \Rightarrow y=0$ | $y[n]=x^2[n]$ → Doğrusal değil |
-| **Zamanla Değişmezlik** | Katsayıda $n$ var mı? | $y[n]=nx[n]$ → ZD değil |
-| **Kararlılık (BIBO)** | $|x|\leq B_x$ → $|y|\leq B_y$ | $\sum|h[n]|<\infty$ ↔ kararlı |
+| Özellik                 | Test                                  | Bozucu Örnek                   |
+| ----------------------- | ------------------------------------- | ------------------------------ |
+| **Hafızasız**           | $y[n]$ sadece $x[n]$'e bağlı mı?      | $y[n]=x[n-1]$ → Hafızalı       |
+| **Nedensellik**         | Gelecek: $x[n+k]$, $k>0$ var mı?      | $y[n]=x[n+1]$ → Nedensel değil |
+| **Doğrusallik**         | Süperpozisyon + $x=0 \Rightarrow y=0$ | $y[n]=x^2[n]$ → Doğrusal değil |
+| **Zamanla Değişmezlik** | Katsayıda $n$ var mı?                 | $y[n]=nx[n]$ → ZD değil        |
+| **Kararlılık (BIBO)**   | $x\leq B_x$ → $y\leq B_y$             | $\sum[n]<\infty$ ↔ kararlı     |
 
 > [!sinav] y[n] = nx[n] analizi
 > - **Doğrusal**: $T\{ax_1+bx_2\} = n(ax_1+bx_2) = aTx_1+bTx_2$ ✅

@@ -47,16 +47,16 @@ $z \in \mathbb{C}$ — karmaşık değişken.
 
 ## 3. Temel Z-Dönüşümü Çiftleri
 
-| $x[n]$ | $X(z)$ | ROC |
-|--------|--------|-----|
-| $\delta[n]$ | $1$ | Tüm $z$ |
-| $\delta[n-k]$ | $z^{-k}$ | $z\neq 0$ ($k>0$) veya $z\neq\infty$ ($k<0$) |
-| $u[n]$ | $\dfrac{1}{1-z^{-1}} = \dfrac{z}{z-1}$ | $|z|>1$ |
-| $a^n u[n]$ | $\dfrac{1}{1-az^{-1}} = \dfrac{z}{z-a}$ | $|z|>|a|$ |
-| $-a^n u[-n-1]$ | $\dfrac{1}{1-az^{-1}}$ | $|z|<|a|$ |
-| $na^n u[n]$ | $\dfrac{az^{-1}}{(1-az^{-1})^2}$ | $|z|>|a|$ |
-| $\cos(\omega_0 n)u[n]$ | $\dfrac{1-\cos(\omega_0)z^{-1}}{1-2\cos(\omega_0)z^{-1}+z^{-2}}$ | $|z|>1$ |
-| $\sin(\omega_0 n)u[n]$ | $\dfrac{\sin(\omega_0)z^{-1}}{1-2\cos(\omega_0)z^{-1}+z^{-2}}$ | $|z|>1$ |
+| $x[n]$                 | $X(z)$                                                           | ROC                                          | <mark style="background: #ABF7F7A6;"></mark> |     |     |     |
+| ---------------------- | ---------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------- | --- | --- | --- |
+| $\delta[n]$            | $1$                                                              | Tüm $z$                                      |                                              |     |     |     |
+| $\delta[n-k]$          | $z^{-k}$                                                         | $z\neq 0$ ($k>0$) veya $z\neq\infty$ ($k<0$) |                                              |     |     |     |
+| $u[n]$                 | $\dfrac{1}{1-z^{-1}} = \dfrac{z}{z-1}$                           | $                                            | z                                            | >1$ |     |     |
+| $a^n u[n]$             | $\dfrac{1}{1-az^{-1}} = \dfrac{z}{z-a}$                          | $                                            | z                                            | >   | a   | $   |
+| $-a^n u[-n-1]$         | $\dfrac{1}{1-az^{-1}}$                                           | $                                            | z                                            | <   | a   | $   |
+| $na^n u[n]$            | $\dfrac{az^{-1}}{(1-az^{-1})^2}$                                 | $                                            | z                                            | >   | a   | $   |
+| $\cos(\omega_0 n)u[n]$ | $\dfrac{1-\cos(\omega_0)z^{-1}}{1-2\cos(\omega_0)z^{-1}+z^{-2}}$ | $                                            | z                                            | >1$ |     |     |
+| $\sin(\omega_0 n)u[n]$ | $\dfrac{\sin(\omega_0)z^{-1}}{1-2\cos(\omega_0)z^{-1}+z^{-2}}$   | $                                            | z                                            | >1$ |     |     |
 
 ---
 
