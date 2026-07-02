@@ -1,5 +1,5 @@
 {
-  "cssTheme": "Primary",
+  "cssTheme": "Border",
   "theme": "moonstone",
   "enabledCssSnippets": [
     "mühendislik-theme"
@@ -12,5 +12,5 @@
   "showRibbon": true,
   "showViewHeader": false,
   "baseFontSizeAction": false,
-  "accentColor": "#d66677"
+  "accentColor": ""
 }
